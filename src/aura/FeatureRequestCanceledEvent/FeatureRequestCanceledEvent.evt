@@ -1,0 +1,7 @@
+<!-- Fired to indicate that FRC processing is complete in the FeatureRequestCanceledTable component. -->
+<aura:event type="COMPONENT" description="FeatureRequestCanceledEvent">
+    <!-- Was the call successful -->
+    <aura:attribute name="success" type="Boolean"/>
+    <!-- What is the next navigation location -->
+    <aura:attribute name="location" type="String"/>
+</aura:event>

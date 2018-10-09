@@ -1,0 +1,36 @@
+<apex:page controller="RequestTSRFPChangesController" title="{!changesTask.Purpose__c}">
+	<apex:pageMessages />
+	<apex:form rendered="{!relatedTSRFP.Submitted_for_Production__c}">
+		<apex:pageBlock title="Request {!relatedTSRFP.RecordType.Name} Changes" mode="edit" id="formBlock">
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!save}" value="Save" reRender="formBlock"/>
+				<apex:commandButton action="{!cancel}" value="Cancel" reRender="formBlock" immediate="true"/>
+			</apex:pageBlockButtons>
+			<apex:pageMessages />
+			<apex:pageBlockSection title="Changes Task Information" columns="1">
+				<apex:outputField value="{!changesTask.WhatId}" />
+				<apex:outputField value="{!changesTask.Subject}" />
+				<!-- for TS, if the Sales Dev Needed has been checked, it will be populated on the page and cannot be edited.
+				For RFP, if the Sales Dev Needed has been checked, it will be populated on the page and can be edited.
+				if the Sales Dev Needed has been Unchecked, it will not be populated on the page-->
+				<apex:pageBlockSectionItem rendered="{!relatedTSRFP.Sales_Dev_Needed__c}">
+					<apex:outputLabel for="salesDevNeeded" value="Sales Dev Needed"/>
+					<apex:inputCheckbox value="{!salesDevNeeded}" id="salesDevNeeded" disabled="{!relatedTSRFP.RecordType.Name == 'ThoughtStarter'}"/>
+				</apex:pageBlockSectionItem>
+				<!-- The accountStrategistNeeded will only be populated on the page for RFP, and if Sales Dev Needed has been unchecked, accountStrategistNeeded cannot be edited.-->
+				<apex:pageBlockSectionItem rendered="{!relatedTSRFP.RecordType.Name == 'RFP'}">
+					<apex:outputLabel for="accountStrategistNeeded" value="Account Strategist Needed"/>
+					<apex:inputCheckbox value="{!accountStrategistNeeded}" id="accountStrategistNeeded" disabled="{!!relatedTSRFP.Sales_Dev_Needed__c}"/>
+				</apex:pageBlockSectionItem>
+				
+				<apex:inputField value="{!changesTask.ActivityDate}" required="true"/>
+				<apex:inputField value="{!changesTask.ReminderDateTime}" />
+				<apex:inputField value="{!changesTask.Status}" />
+				<apex:inputField value="{!changesTask.Priority}" />
+				<apex:inputField value="{!changesTask.Description}" style="width: 50%; min-height: 100px;" required="true" html-placeholder="Describe the changes required for this {!relatedTSRFP.RecordType.Name}..."/>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+		<!-- Comment for the ticket CSP-1700, the  Submitted_for_Production__c is always assigned to true in the before trigger-->
+		<!-- <apex:outputLink value="/{!relatedTSRFP.Id}" rendered="{!!relatedTSRFP.Submitted_for_Production__c}">Go back to the {!relatedTSRFP.RecordType.Name}!</apex:outputLink> -->
+</apex:page>

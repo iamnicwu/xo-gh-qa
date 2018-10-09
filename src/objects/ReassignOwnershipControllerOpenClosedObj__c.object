@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>List of objects that are defined as &quot;open&quot; and &quot;closed&quot;, like cases and opportunities, and what defines them as such</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Closed_SOQL_Statement__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The partial SOQL statement that defines what defines this object as Closed.  Do not include the &quot;where&quot; clause.  The value for Task for example would be:
+isclosed = true</inlineHelpText>
+        <label>&quot;Closed&quot; SOQL Statement</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Open_SOQL_Statement__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The partial SOQL statement that defines what defines this object as Open.  Do not include the &quot;where&quot; clause.  The value for Task for example would be:
+isclosed = false</inlineHelpText>
+        <label>&quot;Open&quot; SOQL Statement</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Reassign User - Open and Closed Objects</label>
+    <visibility>Public</visibility>
+</CustomObject>

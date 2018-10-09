@@ -1,0 +1,63 @@
+<apex:page showHeader="true" sidebar="true" controller="UpdateActivityDateController">
+    <style>
+        .filterFieldClass{
+            margin: 0 15px;
+            padding: 2px 5px;
+            width: 225px;
+        }
+    </style>
+    <script>
+        var keyUpTimeOut;
+    </script>
+
+    <apex:form >
+        <apex:pageBlock id="pageBlockTable" title="{!totalTasks} total tasks with no due dates!">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!saveDate}" value="Save" reRender="pageBlockTable"/>
+                <apex:commandButton value="Cancel" action="{!URLFOR('/')}" />
+            </apex:pageBlockButtons>
+
+            <apex:actionFunction action="{!filterAction}" reRender="tablePanel" name="filterResults" status="actionStatus"/>
+            <apex:outputPanel id="filterPanel" layout="block" style="text-align: center; padding: 10px 0; background-color: #1797c0; margin-bottom: 5px;">
+                FILTER BY:&nbsp;
+                <apex:inputText styleClass="filterFieldClass" html-placeholder="Assigned To" value="{!filterTask.CallObject}" onkeyup="clearTimeout(keyUpTimeOut);keyUpTimeOut = setTimeout(function(){ filterResults(); }, 500);" rendered="{!assignedToFilter}"/>
+                <apex:inputText styleClass="filterFieldClass" html-placeholder="Subject" value="{!filterTask.Subject}" onkeyup="clearTimeout(keyUpTimeOut);keyUpTimeOut = setTimeout(function(){ filterResults(); }, 500);"/>
+                <!--apex:inputField value="{!filterTask.Purpose__c}" onchange="filterResults();"/-->
+                <apex:inputField styleClass="filterFieldClass" value="{!filterTask.Type}" onchange="filterResults();"/>             
+            </apex:outputPanel>
+            <apex:actionStatus startText="updating...." id="actionStatus" />
+
+            <br/><br/>
+            
+            <apex:outputPanel id="tablePanel" >
+                <apex:pageMessages />
+                <apex:pageBlockTable value="{!noDateTaskList}" var="task" rendered="{!noDateTaskList.size > 0}">
+                    <apex:column headerValue="Filter Results: {!totalFilteredTasks}">
+                        <apex:outputLink target="_blank" value="/{!task.Id}">
+                            View Task
+                        </apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Related to">
+                        <apex:outputField value="{!task.WhatId}" />
+                    </apex:column>
+                    <apex:column value="{!task.OwnerId}"/>
+                    <apex:column headerValue="Due Date">
+                        <apex:inputField value="{!task.ActivityDate}" />
+                    </apex:column>
+                    <apex:column headerValue="Status">
+                        <apex:outputField value="{!task.Status}" />
+                    </apex:column>
+                    <apex:column value="{!task.Subject}" />
+                    <!--apex:column value="{!task.Purpose__c}" /-->
+                    <apex:column value="{!task.Type}" />
+                </apex:pageBlockTable>
+
+                <apex:pageMessage strength="1" severity="info" summary="No results" rendered="{!noDateTaskList.size = 0}"/>
+                
+                <apex:commandLink action="{!previousPage}" value="Previous Page" rendered="{!pageNumber > 1}" reRender="pageBlockTable" style="float: left;"/>
+                <apex:commandLink action="{!nextPage}" value="Next Page" rendered="{!hasNext}" reRender="pageBlockTable" style="float: right;"/>
+                <div style="text-align: center;">{!pageNumber}</div>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

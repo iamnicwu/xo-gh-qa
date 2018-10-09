@@ -1,0 +1,122 @@
+<apex:page standardController="Feature_Requested_Cancelled__c" extensions="FeatureRequestedCancelledController">
+  
+<apex:includeScript value="{!$Resource.zqu__jquery_1_9_1}" />
+
+  <script type="text/javascript">
+    //select all checkboxes or cancelled all checkboxes
+    //csp-2589 If status is saved or cancelled do not cancel all checkboxes
+    function selectAllCheckboxes(obj){
+      var $inputCheckBox = $("input[id*='inputId']");
+      var isCheck = $(obj).prop("checked");
+      $inputCheckBox.each(function(index,Element){
+          var $select = $(Element).parent().next().children("select");
+          if(isCheck == true){
+              $(Element).prop("checked",isCheck);
+          }
+          else{
+            //when cancelled all checkboxes, saved or cancelled do not cancelled
+            if($select.val() === "Requested Cancelled"){
+              $(Element).prop("checked",isCheck);
+            }
+          }
+      });
+    };
+    //CSP-2589 Allow for automatic save of Feature Requested Cancel if "Saved" or "Cancelled" is set as a status
+    function changeStatus(obj) {
+      var $checkBox = $(obj).parent().prev().children("input");
+      if(obj.value === 'Cancelled' || obj.value === 'Saved') {
+        $checkBox.prop("checked",true);
+      }
+    }
+  </script>
+
+
+  <apex:form id="FRCFormId">
+    <!-- <apex:sectionHeader title="Feature Request Cancelled Edit" subtitle="{!IF(action=='edit',featureRequestedCancelled.name, 'Feature Request Cancelled')}" /> -->
+    <apex:sectionHeader title="Feature Request Cancelled Manage" subtitle="Feature Request Cancelled" />
+    <apex:pageBlock mode="edit" title="Feature Request Cancelled Manage" >
+      
+      <apex:pageMessages />
+
+      <apex:pageBlockButtons location="both" >
+        <apex:commandButton value="Save" action="{!Save}" />
+        <!-- <apex:commandButton value="Delete" action="{!checkDelete}" rendered="{!IF(manageAll=='1','true','false')}" /> -->
+        <apex:commandButton value="Cancel" action="{!Cancel}"/>
+      </apex:pageBlockButtons>
+
+      <apex:pageBlockSection columns="1" collapsible="false" title="Information">
+        <!-- <apex:outputField value="{!Feature_Requested_Cancelled__c.Name}" rendered="{!IF(action=='edit','true','false')}" /> -->
+        <apex:outputField value="{!Feature_Requested_Cancelled__c.Case__c}" rendered="true" />
+      </apex:pageBlockSection>
+
+      <apex:pageBlockSection columns="1" collapsible="false" title="Subscription Product Charge">
+        <apex:pageBlockTable value="{!subsPCWrappers}" var="wrapper">
+
+          <apex:column >
+            <apex:facet name="header">
+                <apex:inputCheckbox onclick="selectAllCheckboxes(this)"/>
+            </apex:facet>
+
+            <apex:inputCheckbox value="{!wrapper.isAdded}" id="inputId"/>
+          </apex:column>
+
+          <apex:column headerValue="Status">
+            <apex:selectList value="{!wrapper.fRC.Status__c}" size="1" onchange="changeStatus(this)">
+              <apex:selectOptions value="{!FRCStatus}"/>
+            </apex:selectList> 
+
+          </apex:column>
+
+          <apex:column headerValue="Subscription Charge Name">
+            <apex:outputLink target="_blank" value="/{!wrapper.subsPC.Id}">{!wrapper.subsPC.name}</apex:outputLink>
+          </apex:column>
+          <apex:column headerValue="Product">
+            <apex:outputLink target="_blank" value="/{!wrapper.subsPC.Zuora__Product__c}">{!wrapper.subsPC.Zuora__Product__r.Name}</apex:outputLink>
+          </apex:column>
+          <apex:column headerValue="Rate Plan Name">
+            <apex:outputText value="{!wrapper.subsPC.Zuora__RatePlanName__c}"/>
+          </apex:column>
+          <apex:column headerValue="LDE Launch Date">
+            <apex:outputText value="{0, date, MM/dd/yyyy}"> 
+              <apex:param value="{!wrapper.subsPC.LDE_Email_Launch_Date__c}" />
+            </apex:outputText>
+          </apex:column>
+          <apex:column headerValue="Account Name">
+            <apex:outputLink target="_blank" value="/{!wrapper.subsPC.Zuora__Account__c}">{!wrapper.subsPC.Zuora__Account__r.Name}</apex:outputLink>
+          </apex:column>
+          <apex:column headerValue="Subscription Name">
+            <apex:outputLink target="_blank" value="/{!wrapper.subsPC.Zuora__Subscription__c}">{!wrapper.subsPC.Zuora__Subscription__r.Name}</apex:outputLink>
+          </apex:column>
+          <!-- csp-2589 Add Subscription End Date to Features Request Cancelled Edit Page -->
+          <apex:column headerValue="Subscription End Date">
+            <apex:outputText value="{0, date, MM/dd/yyyy}"> 
+              <apex:param value="{!wrapper.subsPC.Zuora__Subscription__r.Zuora__SubscriptionEndDate__c}" />
+            </apex:outputText>
+          </apex:column>
+          <apex:column headerValue="Location Id">
+            <apex:outputText value="{!wrapper.subsPC.LocationVendorDynamicsAccountID__c}"/>
+          </apex:column>
+          <apex:column headerValue="List Price">
+            <apex:outputText value="{!wrapper.subsPC.List_Price__c}"/>
+          </apex:column>
+          <apex:column headerValue="Price">
+            <apex:outputText value="{!wrapper.subsPC.Zuora__Price__c}"/>
+          </apex:column>
+          <apex:column headerValue="Period">
+            <apex:outputText value="{!wrapper.subsPC.Zuora__BillingPeriod__c}"/>
+          </apex:column>
+          
+
+        </apex:pageBlockTable>
+
+        <div style="display: {!if(!haveSubsPC, '', 'none')};">
+          There is no Subscription Product Charge on the Account.
+        </div>
+
+      </apex:pageBlockSection>
+
+
+    </apex:pageBlock>
+  </apex:form>
+
+</apex:page>

@@ -1,0 +1,2 @@
+<apex:page StandardController="zqu__Quote__c" extensions="zqu.QuoteWizardTemplateController,ZuoraQuotePMRController" title="{!pageName}" action="{!updateDiscountsRunLocalProductRulesAndRedirect}">
+</apex:page>

@@ -1,0 +1,571 @@
+<apex:page Controller="RenewalDashboardController" showHeader="true" sidebar="false" id="renewalDashboardPage">
+    <script language="JavaScript1.2 " src="/js/functions.js"></script>
+    <script src="/soap/ajax/40.0/connection.js" type="text/javascript"></script>
+    <script src="/support/console/40.0/integration.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+
+     <style>
+        .dateStyle{
+            text-align: center;
+        }
+        #removeSection{
+            text-align: center;
+        }
+        .lostReasonPicklist{
+            display: none;
+            text-align: center;
+            margin: 10px auto;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background-color: white;
+            display: none;
+            z-index: 9900000;
+            outline: none;
+            padding: 5px;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 5px;
+            -moz-border-radius: 5px 5px 5px 5px;
+            -webkit-border-radius: 5px 5px 5px 5px;
+            border-radius: 5px 5px 5px 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = setFocus();
+        ///this method used for setting no focus when load the page.
+        function setFocus()
+        {
+            //document.getElementById("renewalDashboardForm").focus();
+        }
+
+        function showLoadingMessage(){
+            document.getElementById('loadingSpan').style.display = 'inline';
+            document.getElementById('dataDiv').style.display = 'none';
+        }
+        
+        function hideLoadingMessage(){
+            document.getElementById('loadingSpan').style.display = 'none';
+            document.getElementById('dataDiv').style.display = 'block';
+        }
+
+
+        function ObjStory(pname,name,locationId,marketName,categoryName,termLessThan12,date1,date2,price) //
+        {
+            this.pname = pname;
+            this.name = name;
+            this.marketName = marketName;
+            this.categoryName = categoryName;
+            this.termLessThan12 = termLessThan12;
+            this.date1 = date1;
+            this.date2 = date2;
+            this.price = price;
+            this.locationId = locationId;
+        }
+        
+        function show(t,e,StringID){
+            sforce.connection.sessionId = '{!$Api.Session_ID}';
+            var query = 'SELECT '
+                                        + 'Id, '
+                                        + 'Name, '
+                                        + 'Market_ID__c, '
+                                        + 'Category_Taxonomy_ID__c, '
+                                        + 'Zuora__Product__r.Name, '
+                                        + 'Zuora__RatePlanName__c, '
+                                        + 'Zuora__EffectiveEndDate__c, '
+                                        + 'Zuora__EffectiveStartDate__c, '
+                                        + 'Zuora__Price__c, '
+                                        + 'TermLessThan12__c, '
+                                        + 'LocationVendorDynamicsAccountID__c '
+                                    +'FROM '
+                                        +'Zuora__SubscriptionProductCharge__c '
+                                    + 'WHERE '
+                                        + 'Zuora__Subscription__c = \''+StringID+'\'';
+
+            var records = sforce.connection.query(query); 
+            
+            var i = 0;
+            var j = 0;
+            var tooltipHtml = "<div id='tooltip' class='tooltip' >"; 
+            tooltipHtml += "<table id='tooltable'>"; 
+            tooltipHtml += "<thead>";
+            tooltipHtml += "<tr>";
+            tooltipHtml += "<th style='font-weight:bold; background-color: #FFFFFF;'>Product Name</th>";
+            tooltipHtml += "<th style='font-weight:bold; background-color: #FFFFFF;'>Market</th>";
+            tooltipHtml += "<th style='font-weight:bold; background-color: #FFFFFF;'>Category</th>";
+            tooltipHtml += "<th style='font-weight:bold; background-color: #FFFFFF;'>Term Start Date</th>";
+            tooltipHtml += "<th style='font-weight:bold; background-color: #FFFFFF;'>Term End Date</th>";
+            tooltipHtml += "<th style='font-weight:bold; background-color: #FFFFFF;'>Total Amount</th>";
+            tooltipHtml += "</tr>";
+            tooltipHtml += "</thead>"; 
+            
+            tooltipHtml += "<tbody>";
+            
+            var records1 = records.getArray('records');
+            var recordlist = new Array();
+            for(i =0 ; i<records1.length; i++){
+                var repeat = false;
+                var recordlistl = recordlist.length;
+
+                var pname = records1[i].Zuora__Product__r.Name;
+
+                // get the market name by the Market_ID__C
+                var marketMap = JSON.parse('{!marketMapString}');
+                var marketName = '';
+                if (marketMap[records1[i].Market_ID__c] == undefined) {
+                    marketName = '';
+                } else {
+                    marketName = marketMap[records1[i].Market_ID__c];
+                }
+                // get the category name by the Category_Taxonomy_ID__c
+                var categoryMap = JSON.parse('{!categoryMapString}');
+                var categoryName = '';
+                if (categoryMap[records1[i].Category_Taxonomy_ID__c] == undefined) {
+                    categoryName = '';
+                } else {
+                    categoryName = categoryMap[records1[i].Category_Taxonomy_ID__c];
+                }
+
+                var name = records1[i].Zuora__RatePlanName__c;
+                var termLessThan12 = records1[i].TermLessThan12__c;
+
+
+                var date1 = records1[i].Zuora__EffectiveStartDate__c;
+                var date2 = records1[i].Zuora__EffectiveEndDate__c;
+                var price = parseFloat(records1[i].Zuora__Price__c);
+                var locationId = records1[i].LocationVendorDynamicsAccountID__c;
+                var writer = new ObjStory(pname,name,locationId,marketName,categoryName,termLessThan12,date1,date2,price);
+
+                if(i==0){
+                    recordlist[0] = writer;
+                    repeat = true;
+                }else{
+                    for (j =0 ; j<recordlist.length; j++) {
+                        if(records1[i].Zuora__RatePlanName__c == recordlist[j].name && records1[i].LocationVendorDynamicsAccountID__c == recordlist[j].locationId){
+                            recordlist[j].price = recordlist[j].price + parseFloat(records1[i].Zuora__Price__c);
+                            repeat = true;
+                        }
+                    }
+                }
+                if (repeat == false) {
+                    recordlist[recordlist.length] = writer;
+                }
+            }
+            for(i =0 ; i<recordlist.length; i++){
+                tooltipHtml += "<tr>";
+                
+                tooltipHtml += "<td";
+                if (recordlist[i].termLessThan12 == "true") {
+                    tooltipHtml += " style='background-color: #FFFFFF; color: #FF0000;'>";
+                }else{
+                    tooltipHtml += " style='background-color: #FFFFFF;'>";
+                }
+                tooltipHtml += recordlist[i].pname;
+                tooltipHtml += "</td>"; 
+
+                tooltipHtml += "<td";
+                if (recordlist[i].termLessThan12 == "true") {
+                    tooltipHtml += " style='background-color: #FFFFFF; color: #FF0000;'>";
+                }else{
+                    tooltipHtml += " style='background-color: #FFFFFF;'>";
+                }
+                tooltipHtml += recordlist[i].marketName;
+                tooltipHtml += "</td>"; 
+
+
+                tooltipHtml += "<td";
+                if (recordlist[i].termLessThan12 == "true") {
+                    tooltipHtml += " style='background-color: #FFFFFF; color: #FF0000;'>";
+                }else{
+                    tooltipHtml += " style='background-color: #FFFFFF;'>";
+                }
+                tooltipHtml += recordlist[i].categoryName;
+                tooltipHtml += "</td>"; 
+
+                
+
+                tooltipHtml += "<td";
+                if (recordlist[i].termLessThan12 == "true") {
+                    tooltipHtml += " style='background-color: #FFFFFF; color: #FF0000;'>";
+                }else{
+                    tooltipHtml += " style='background-color: #FFFFFF;'>";
+                }
+                tooltipHtml += recordlist[i].date1;
+                tooltipHtml += "</td>";
+
+                tooltipHtml += "<td";
+                if (recordlist[i].termLessThan12 == "true") {
+                    tooltipHtml += " style='background-color: #FFFFFF; color: #FF0000;'>";
+                }else{
+                    tooltipHtml += " style='background-color: #FFFFFF;'>";
+                }
+                tooltipHtml += recordlist[i].date2;
+                tooltipHtml += "</td>";
+
+                tooltipHtml += "<td";
+                if (recordlist[i].termLessThan12 == "true") {
+                    tooltipHtml += " style='background-color: #FFFFFF; color: #FF0000;'>";
+                }else{
+                    tooltipHtml += " style='background-color: #FFFFFF;'>";
+                }
+                tooltipHtml += '$'+recordlist[i].price.toFixed(2);
+                tooltipHtml += "</td>";
+                
+                tooltipHtml += "</tr>";
+            }
+            
+            tooltipHtml += "</tbody>"
+            tooltipHtml += "</table>";
+            tooltipHtml += "</div>";
+
+            $(t).append(tooltipHtml);
+
+            $("#tooltip").css({
+                "top": (e.pageY - 110 ) + "px",
+                "left": (e.pageX) + "px"
+            }).show("fast");
+            
+        }
+
+        function dis(){
+            $("#tooltip").remove();
+        }
+        
+        
+
+        function findAncestorByType(element, strType) {
+            while((element = element.parentElement) && element.tagName.toLowerCase().indexOf(strType) < 0);
+            return element;
+        }
+
+
+        function displayRemoveSection(buttonId){
+            // insert "remove" section below the row
+            var target = findAncestorByType(document.getElementById(buttonId), 'tr');
+            var newRow = document.createElement('tr');
+            target.parentNode.insertBefore(newRow, target.nextSibling);
+            var newCell = newRow.insertCell(0);
+            newCell.setAttribute('colspan', 12);
+            newCell.setAttribute('id', 'removeSection');
+            newCell.innerHTML = '<h1>Please select a reason that you do not wish to pursue this renewal opportunity. Removing an expiring subscription removes it permanently from your Renewal Dashboard.</h1>';
+
+            // hide all remove buttons
+            var buttonList = document.getElementsByClassName('btn');
+            for (var i = 0; i < buttonList.length; i++) {
+                if (buttonList[i].value === 'Remove') {
+                    buttonList[i].style.display = 'none';
+                }
+            }
+
+            // display the lost reason picklist
+            var lostReasonPicklist = document.getElementsByClassName("lostReasonPicklist")[0];
+            lostReasonPicklist.style.display = 'block';
+            newCell.appendChild(lostReasonPicklist);
+
+            // display the remove opportunity button
+            var removeOpportunityButton = document.getElementsByClassName("btn lostReasonPicklist")[0];
+            removeOpportunityButton.style.display = 'inline';
+            newCell.appendChild(removeOpportunityButton);
+
+            // display the cancel button
+            var cancelButton = document.getElementsByClassName("btn lostReasonPicklist")[0];
+            cancelButton.style.display = 'inline';
+            newCell.appendChild(cancelButton);
+        }
+
+        // CSP-2471 Link from Renewal Dashboard for Console Users Doesn't Open in New Tab
+        // Utilizing Salesforce standard function rather than browser extension
+        function openConsoleTab(event,idUrl) {
+            sforce.connection.sessionId = '{!$Api.Session_ID}';
+
+            if(idUrl === null){
+                return;
+            }
+
+            // check if working in console mode
+            if(sforce.console.isInConsole()){
+                var openResult = sforce.console.openPrimaryTab(null,idUrl,true,'', function getOpenTabResult(result){
+                    
+                    // When the tab existed, openPrimaryTab function cannot redirect to it, 
+                    // we have to srcUp as workaround to redirect to existing tab.
+                    console.log(result);
+                    if(!result.success){
+                        srcUp(idUrl+"?isdtp=vw","_blank"); 
+                    }
+                });
+            }
+            else {
+                window.open(navigationUrl, '_blank');
+            }
+        }
+
+    </script>
+
+    <apex:Form id="renewalDashboardForm">
+    <apex:pageMessages />
+        <apex:inputField styleClass="lostReasonPicklist" value="{!opportunityInfos.Lost_Reason__c}"/>
+        <apex:outputPanel onclick="removeMethod()" styleClass="btn lostReasonPicklist"> 
+            Remove Opportunity 
+        </apex:outputPanel>
+        <apex:outputPanel onclick="cancelAndRefresh()" styleClass="btn lostReasonPicklist"> 
+            Cancel 
+        </apex:outputPanel>
+        <apex:outputPanel id="filterPanel">
+            <apex:pageblock id="myPageBlock">
+                <apex:pageBlockSection id="filterSection">
+
+                    <apex:selectList value="{!OwnershipScope}" multiselect="false" size="1" id="ownFilter" label="Owner Ship" >
+                        <apex:selectOptions value="{!OwnershipScopeList}" />
+                    </apex:selectList>
+
+                    <apex:pageBlockSectionItem id="startDateItem" >
+                        <apex:outputLabel value="Expiring Start Date" />
+                        <apex:inputfield id="expiringStartDate" value="{!expiringDateQuote.zqu__StartDate__c}" required="true" />
+                        <!-- <input id="expiringStartDate" value="{!expiringStartDate}" required="true" type="Date" /> -->
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="Renewal Rep" id="Renewal_Rep"/>
+                        <apex:inputField value="{!expiringDateQuote.RenewalRepLookup__c}"/> 
+                    </apex:pageBlockSectionItem>
+
+                    
+                    <apex:pageBlockSectionItem id="endDateItem">
+                        <apex:outputLabel value="Expiring End Date" for="expiringEndDate"/>
+                        <apex:inputfield id="expiringEndDate" value="{!expiringDateQuote.zqu__TermStartDate__c}" required="true"/>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:selectList value="{!SubscriptionStatus}" multiselect="false" size="1" id="expireFilter" label="Subscription Status:" >
+                        <apex:selectOptions value="{!SubscriptionStatusList}" />
+                    </apex:selectList>
+                    
+                    <apex:selectList value="{!SubscriptionTermStatus}" multiselect="false" size="1" id="expireTermFilter" label="Subscription Term Status:" >
+                        <apex:selectOptions value="{!SubscriptionTermStatusList}" />
+                    </apex:selectList>
+
+                    <apex:selectList value="{!subscriptionProductLine}" multiselect="false" size="1" id="subscriptionProductLineFilter" label="Subscription Product Line:" >
+                        <apex:selectOptions value="{!subscriptionProductLineList}" />
+                    </apex:selectList>
+                    
+                    <!-- Siva Vankadaru 05/21/2018 added below 2 lines for 2690  -->
+                    <apex:selectList value="{!vipCheckStatus}" multiselect="false" size="1" id="vipFilter" label="VIP Status:" >
+                        <apex:selectOptions value="{!vipCheckStatusList}" />
+                    </apex:selectList>
+                    <!-- <apex:inputCheckbox id="my_chk_bx" value="{!vipCheckStatus}" label="VIP Accounts Only:" > </apex:InputCheckBox> -->
+                    <!-- Siva Vankadaru 05/21/2018 added above 2 lines for 2690 -->
+
+
+                    <!-- CSP-2022 | EMPTY TD TAG USED TO FORCE THE SEARCH BUTTON TO ANOTHER TABLE ROW -->
+                    <!-- Siva Vankadaru 05/21/2018 commented belllow 1 line for 2690  -->
+                    <!-- <td></td> -->
+
+                    <apex:pageBlockSectionItem >
+                        <apex:commandbutton value="Search" action="{!goSearch}" onclick="showLoadingMessage();" oncomplete="hideLoadingMessage();" reRender="dataPanel,messagePanel,myPageBlock,TooManyDatamessagePanel,StartDateCanNotGreaterThanEndDate" style="margin-left: 99%"/>
+                        <!-- <span id="loadingSpan" style="display: none; color: red">
+                            Loading......Please Wait
+                        </span> -->
+                    </apex:pageBlockSectionItem>
+
+                 </apex:pageBlockSection>
+            </apex:pageblock>
+        </apex:outputPanel>
+        
+        <apex:outputPanel id="loadingMessagePanel" >
+            <span id="loadingSpan" style="display: none; color: red; margin-left: 49%">
+                Loading......Please Wait
+            </span>
+        </apex:outputPanel>
+        <div id="dataDiv">
+        <apex:outputPanel id="messagePanel">
+            <apex:pageMessage strength="1" severity="info" summary="No results" rendered="{!noResults}"/>
+        </apex:outputPanel>
+        <apex:outputPanel id="TooManyDatamessagePanel">
+            <apex:pageMessage strength="1" severity="info" summary="There is too much data to show at a single time, please reduce the date range and search again." rendered="{!tooManyData}"/>
+        </apex:outputPanel>
+        <apex:outputPanel id="StartDateCanNotGreaterThanEndDate">
+            <apex:pageMessage strength="1" severity="info" summary="Expiring Start Date Can not greater than Expiring End Date" rendered="{!dateValidation}"/>
+        </apex:outputPanel>
+        
+            <apex:outputPanel id="dataPanel">
+                <apex:repeat value="{!SubsMap}" var="RenewalRep">
+                    <apex:variable value="{!SubsMap[RenewalRep]}" var="SubscriptionVariable"/>
+                    <apex:variable value="{!SubsTotalMap[RenewalRep]}" var="SubscriptionTotalVariable"/>
+                    <apex:variable value="{!sortMap[RenewalRep]}" var="SordData"/>
+                    <!--<div id="{!RenewalRep} ">-->
+                    <apex:pageBlock >
+                        <apex:pageBlockTable value="{!SubscriptionVariable}" var="Subscription">
+                            <apex:column headerValue="Subscription Name" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+                                
+                                <apex:facet name="footer">{!RenewalRep} ({!SubscriptionTotalVariable.recordNum} Records)Total:</apex:facet>
+                                <apex:facet name="header">
+                                    <apex:commandLink value="{!IF(SordData.ColumnName != 'SubscriptionName','Subscription Name', If(SordData.ASCORDESC = 'ASC','Subscription Name ▲','Subscription Name ▼'))}" action="{!dosort}" rerender="dataPanel">
+                                        <apex:param name="SubscriptionName" value="SubscriptionName" assignTo="{!ColumnName}"/>
+                                        <apex:param name="{!RenewalRep}" value="{!RenewalRep}" assignTo="{!RenewalRepName}"/>
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <!--<apex:outputLink target="_blank" value="/{!Subscription.Zsub.id}">{!Subscription.Zsub.Name}</apex:outputLink>-->
+                                <a href="/{!Subscription.Zsub.Id}" id="{!Subscription.Zsub.Id}" 
+                                            onmouseout="dis();"
+                                            onmouseover="show(this,event,this.id);" onclick="openConsoleTab(event, '/{!Subscription.Zsub.Id}');return false;">
+                                {!Subscription.Zsub.Name}</a>
+                            </apex:column>
+                            
+                            <apex:column headerValue="Account" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="header">
+                                    <apex:commandLink value="{!IF(SordData.ColumnName != 'Account','Account', If(SordData.ASCORDESC = 'ASC','Account ▲','Account ▼ '))}" action="{!dosort}" rerender="dataPanel">
+                                        <apex:param name="Account" value="Account" assignTo="{!ColumnName}"/>
+                                        <apex:param name="{!RenewalRep}" value="{!RenewalRep}" assignTo="{!RenewalRepName}"/>
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <a href="/{!Subscription.Zsub.Zuora__Account__c}" id="{!Subscription.Zsub.Zuora__Account__c}" onclick="openConsoleTab(event, '/{!Subscription.Zsub.Zuora__Account__c}');return false;">
+                                {!Subscription.Zsub.Zuora__Account__r.Name}</a>
+                            </apex:column>
+                            
+                            <apex:column headerValue="Term Start Date" styleClass="dateStyle" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="header">
+                                    <apex:commandLink value="{!IF(SordData.ColumnName != 'TermStartDate','Term Start Date', If(SordData.ASCORDESC = 'ASC','Term Start Date ▲','Term Start Date ▼'))}" action="{!dosort}" rerender="dataPanel">
+                                        <apex:param name="TermStartDate" value="TermStartDate" assignTo="{!ColumnName}"/>
+                                        <apex:param name="{!RenewalRep}" value="{!RenewalRep}" assignTo="{!RenewalRepName}"/>
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <apex:outputField value="{!Subscription.Zsub.Zuora__TermStartDate__c}"/>
+                            </apex:column>
+                            
+                            <apex:column headerValue="Term End Date" styleClass="dateStyle" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="header">
+                                    <apex:commandLink value="{!IF(SordData.ColumnName != 'TermEndDate','Term End Date', If(SordData.ASCORDESC = 'ASC','Term End Date ▲','Term End Date ▼'))}" action="{!dosort}" rerender="dataPanel">
+                                        <apex:param name="TermEndDate" value="TermEndDate" assignTo="{!ColumnName}"/>
+                                        <apex:param name="{!RenewalRep}" value="{!RenewalRep}" assignTo="{!RenewalRepName}"/>
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <apex:outputField value="{!Subscription.Zsub.Zuora__TermEndDate__c}"/>
+                            </apex:column>
+                            
+                            <!-- <apex:column headerValue="Reporting Rep" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="header">
+                                    <apex:commandLink value="{!IF(SordData.ColumnName != 'ReportingRep','Reporting Rep', If(SordData.ASCORDESC = 'ASC','Reporting Rep ▲','Reporting Rep ▼'))}" action="{!dosort}" rerender="DataPanel">
+                                        <apex:param name="ReportingRep" value="ReportingRep" assignTo="{!ColumnName}"/>
+                                        <apex:param name="{!RenewalRep}" value="{!RenewalRep}" assignTo="{!RenewalRepName}"/>
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <apex:outputField value="{!Subscription.Zsub.Reporting_Rep__c}"/>
+                            </apex:column> -->
+                            
+                            <apex:column headerValue="Renewal Rep" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="header">
+                                    <apex:commandLink value="{!IF(SordData.ColumnName != 'RenewalRep','Renewal Rep', If(SordData.ASCORDESC = 'ASC','Renewal Rep ▲','Renewal Rep ▼'))}" action="{!dosort}" rerender="dataPanel">
+                                        <apex:param name="RenewalRep" value="RenewalRep" assignTo="{!ColumnName}"/>
+                                        <apex:param name="{!RenewalRep}" value="{!RenewalRep}" assignTo="{!RenewalRepName}"/>
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <!-- <apex:outputField value="{!Subscription.Zsub.Renewal_Rep__c}" /> -->
+                                <a href="/{!Subscription.Zsub.Renewal_Rep__c}" id="{!Subscription.Zsub.Renewal_Rep__c}" onclick="openConsoleTab(event, '/{!Subscription.Zsub.Renewal_Rep__c}');return false;">{!Subscription.Zsub.Renewal_Rep__r.Name}</a>
+                            </apex:column>
+                            
+                            <apex:column headerValue="Total" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="footer">${!SubscriptionTotalVariable.totalrenewal}</apex:facet>
+                                <apex:facet name="header">
+                                    <apex:commandLink value="{!IF(SordData.ColumnName != 'Total','Total', If(SordData.ASCORDESC = 'ASC','Total ▲','Total ▼'))}" action="{!dosort}" rerender="dataPanel">
+                                        <apex:param name="Total" value="Total" assignTo="{!ColumnName}"/>
+                                        <apex:param name="{!RenewalRep}" value="{!RenewalRep}" assignTo="{!RenewalRepName}"/>
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <apex:outputField value="{!Subscription.Zsub.Zuora__TCV__c}"/>
+                            </apex:column>
+                            
+                            <apex:column headerValue="Monthly Rate" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="header">
+                                    <apex:commandLink value="{!IF(SordData.ColumnName != 'MonthlyRate','Monthly Rate', If(SordData.ASCORDESC = 'ASC','Monthly Rate ▲','Monthly Rate ▼'))}" action="{!dosort}" rerender="dataPanel">
+                                        <apex:param name="MonthlyRate" value="MonthlyRate" assignTo="{!ColumnName}"/>
+                                        <apex:param name="{!RenewalRep}" value="{!RenewalRep}" assignTo="{!RenewalRepName}"/>
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <apex:outputField value="{!Subscription.Zsub.Zuora__MRR__c}"/>
+                            </apex:column>
+                            
+                            <apex:column headerValue="Auto Renew" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="header">
+                                    <apex:commandLink value="{!IF(SordData.ColumnName != 'AutoRenew','Auto Renew', If(SordData.ASCORDESC = 'ASC','Auto Renew ▲','Auto Renew ▼'))}" action="{!dosort}" rerender="dataPanel">
+                                        <apex:param name="AutoRenew" value="AutoRenew" assignTo="{!ColumnName}"/>
+                                        <apex:param name="{!RenewalRep}" value="{!RenewalRep}" assignTo="{!RenewalRepName}"/>
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <!-- <apex:outputField value="{!Subscription.Zsub.Zuora__AutoRenew__c}"/> -->
+                                <apex:outputField value="{!Subscription.Zsub.AutoRenewal__c}"/> 
+                            </apex:column>
+                            
+                            <!-- <apex:column headerValue="Opportunity Name" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="header">
+                                    <apex:commandLink value="{!IF(SordData.ColumnName != 'OpportunityName','Opportunity Name', If(SordData.ASCORDESC = 'ASC','Opportunity Name ▲','Opportunity Name ▼'))}" action="{!dosort}" rerender="dataPanel">
+                                        <apex:param name="OpportunityName" value="OpportunityName" assignTo="{!ColumnName}"/>
+                                        <apex:param name="{!RenewalRep}" value="{!RenewalRep}" assignTo="{!RenewalRepName}"/>
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <apex:outputLink target="_blank" value="/{!Subscription.OppId}">{!Subscription.OppName}</apex:outputLink>
+                            </apex:column> -->
+                            <apex:column headerValue="Account Credit Hold Status" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="header">
+                                    <apex:commandLink value="{!IF(SordData.ColumnName != 'AccountCreditHoldStatus','Account Credit Hold Status', If(SordData.ASCORDESC = 'ASC','Account Credit Hold Status ▲','Account Credit Hold Status ▼'))}" action="{!dosort}" rerender="dataPanel">
+                                        <apex:param name="AccountCreditHoldStatus" value="AccountCreditHoldStatus" assignTo="{!ColumnName}"/>
+                                        <apex:param name="{!RenewalRep}" value="{!RenewalRep}" assignTo="{!RenewalRepName}"/>
+                                    </apex:commandLink>
+                                </apex:facet>
+                                {!if(Subscription.Zsub.Zuora__Account__r.Credit_Hold__c,'Y','N')}
+                            </apex:column>
+                            
+                            <apex:column headerValue="Opportunity Stage" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="header">
+                                    <apex:commandLink value="{!IF(SordData.ColumnName != 'OpportunityStage','Opportunity Stage', If(SordData.ASCORDESC = 'ASC','Opportunity Stage ▲','Opportunity Stage ▼'))}" action="{!dosort}" rerender="dataPanel">
+                                        <apex:param name="OpportunityStage" value="OpportunityStage" assignTo="{!ColumnName}"/>
+                                        <apex:param name="{!RenewalRep}" value="{!RenewalRep}" assignTo="{!RenewalRepName}"/>
+                                    </apex:commandLink>
+                                </apex:facet>
+                                <a href="/{!Subscription.oppId}" id="{!Subscription.oppId}" onclick="openConsoleTab(event, '/{!Subscription.oppId}');return false;">
+                                {!Subscription.OppstageName}</a>
+                            </apex:column>
+
+                            <!-- Siva Vankadaru 06/07/2018 added below lines for 2690 to add VIP column in the grid  -->
+                            <apex:column headerValue="VIP" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="header">
+                                    <apex:commandLink value="{!IF(SordData.ColumnName != 'VIP','VIP', If(SordData.ASCORDESC = 'ASC','VIP ▲','VIP ▼'))}" action="{!dosort}" rerender="dataPanel">
+                                        <apex:param name="VIP" value="VIP" assignTo="{!ColumnName}"/>
+                                        <apex:param name="{!RenewalRep}" value="{!RenewalRep}" assignTo="{!RenewalRepName}"/>
+                                    </apex:commandLink>
+                                </apex:facet>
+                                {!if(Subscription.Zsub.Zuora__Account__r.VIP_Program__c,'YES','NO')}
+                            </apex:column>
+                            <!-- Siva Vankadaru 06/07/2018 added above lines for 2690 to add VIP column in the grid  -->
+                            
+                            <apex:column headerValue="Action" style="{!IF(Subscription.Zsub.Renewal_Rep__c = null, 'background-color: #B3DEBC;', '')}">
+
+                                <apex:commandbutton value="Renew" onclick="showLoadingMessage();" oncomplete="hideLoadingMessage();" action="{!goRenew}" disabled="{!Subscription.ShowRenewalButton}" reRender="renewalDashboardForm">
+                                    <apex:param name="subscriptionId"
+                                        value="{!Subscription.Zsub.id}"
+                                        assignTo="{!subscriptionId}"/>
+                                </apex:commandbutton>
+            
+                                <apex:commandbutton value="Remove" onclick="displayRemoveSection(this.id)" disabled="{!Subscription.ShowRemoveButton}" reRender="null">
+                                    <apex:param name="subscriptionId"
+                                        value="{!Subscription.Zsub.id}"
+                                        assignTo="{!subscriptionId}"/>
+                                </apex:commandbutton>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                    </apex:pageBlock>
+                </apex:repeat>
+                <center>
+                    <apex:commandButton action="{!Beginning}"  title="Beginning" value="<<" disabled="{!disablePrevious}"/>
+                    <apex:commandButton action="{!Previous}" title="Previous" value="<" disabled="{!disablePrevious}"/>
+                    <apex:commandButton action="{!Next}" title="Next" value=">" disabled="{!disableNext}"/>
+                    <apex:commandButton action="{!End}" title="End" value=">>" disabled="{!disableNext}"/>
+                    <apex:outputtext id="PageNumberMessage">&nbsp;&nbsp;&nbsp; Showing Page {!PageNumber} of {!totalPage}</apex:outputText>
+                </center> 
+            </apex:outputPanel>
+        </div>
+        <apex:actionFunction action="{!goRemove}" name="removeMethod" >
+        </apex:actionFunction>
+        <apex:actionFunction action="{!cancelAndRefresh}" name="cancelAndRefresh" rerender="renewalDashboardForm">
+        </apex:actionFunction>
+    </apex:Form>
+</apex:page>

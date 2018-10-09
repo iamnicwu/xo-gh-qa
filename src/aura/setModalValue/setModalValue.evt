@@ -1,0 +1,4 @@
+<aura:event type="APPLICATION" description="setModalValue">
+    <aura:attribute name="item" type="Object" />
+    <aura:attribute name="objectType" type="String" />
+</aura:event>

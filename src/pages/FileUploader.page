@@ -1,0 +1,14 @@
+<apex:page sidebar="false" controller="FileUploader" showHeader="false">
+   <apex:form >
+      <apex:sectionHeader title="Delete Account records from CSV file"/>
+      <apex:pagemessages />
+      <apex:pageBlock >
+             <!--  Component to allow user to upload file from local machine -->
+             <center>
+              <apex:inputFile value="{!contentFile}" filename="{!nameFile}" /> 
+              <apex:commandButton action="{!ReadFile}" value="Upload File" id="theButton" style="width:70px;"/>
+            </center>
+      
+      </apex:pageBlock>       
+   </apex:form>   
+</apex:page>

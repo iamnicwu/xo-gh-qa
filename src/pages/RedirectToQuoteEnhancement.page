@@ -1,0 +1,47 @@
+<apex:page StandardController="zqu__Quote__c" sidebar="false">
+
+    <style>
+        .popupMessageCls {
+            text-align: center;
+            font-size: 14px;
+            padding: 15px;
+        }
+    </style>
+    
+    <script>
+        var totalNumberOfSeconds = 6;
+        var opportunityId = getURLParameter('oppId');
+        var redirect = "/apex/zqu__quoteEnhancement?oppId=" + opportunityId + "&quoteType=Subscription&stepNumber=1";
+
+        // this function recursively calls itself until the total number of seconds are down to zero after which the page 
+        // is redirected to quoteEnhancement page
+        function countDown(){
+            var timer = document.getElementById("timer");
+            if(totalNumberOfSeconds > 0){
+                totalNumberOfSeconds--;
+                timer.innerHTML = "This page will redirect in "+totalNumberOfSeconds+" seconds.";
+                setTimeout("countDown()", 1000);
+            }else{
+                window.location.href = redirect;
+            }
+        }
+
+        function getURLParameter(name) {
+            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+        }
+    </script>
+    
+    <!-- QuoteWizardTemplate -->
+    <apex:composition template="zqu__QuoteWizardTemplateNoForm" >
+         <apex:define name="PageBody">
+            <apex:form id="theForm"> 
+                <br/>
+                <span id="timer">
+                    <script type="text/javascript">countDown();</script>
+                </span>
+                <br/>
+                <p class="popupMessageCls">{!$Label.DisableRenewFunctionalityMessage}</p>
+            </apex:form>
+         </apex:define>
+    </apex:composition> 
+</apex:page>

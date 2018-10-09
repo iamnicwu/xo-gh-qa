@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Sending the Calendar link to client CSP-2674</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>Blank_LetterHead</letterhead>
+    <name>Send Calendar Link</name>
+    <style>freeForm</style>
+    <subject>Schedule your call with The Knot! [{!Case.Thread_Id}]</subject>
+    <textOnly>Hi {!Contact.FirstName},
+
+
+I wanted to follow up regarding your new online storefront. I’d like to set up a quick call to help get your Storefront up and running and go through the tools and resources you can now use to manage your leads.
+
+To easily schedule a call at your convenience, I&apos;ve included my personal calendar link: a link to my calendar. Please pick the date/time that works best for you.
+
+Talk soon!
+
+
+Tell me how I’m doing!</textOnly>
+    <type>html</type>
+</EmailTemplate>

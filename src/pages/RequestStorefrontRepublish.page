@@ -1,0 +1,126 @@
+<apex:page showHeader="true" sidebar="true" controller="RequestStorefrontRepublishController" tabStyle="Account" title="Request Storefront Republish for {!acct.Name}">
+    <apex:stylesheet value="/resource/slds100/assets/styles/salesforce-lightning-design-system.css" />
+    <apex:form >
+        <apex:outputPanel id="blockId" >
+        <div class="slds">
+        
+            <!-- PAGE HEADER -->
+            <div class="slds-page-header" role="banner">
+                <div class="slds-grid">
+                    <div class="slds-col slds-has-flexi-truncate">
+                        <!-- Small Header -->
+                        <p class="slds-text-heading--label">Account {!accountAction}</p>
+                        <!-- Title -->
+                        <div class="slds-grid">
+                            <h1 class="slds-page-header__title slds-truncate" title="Sales Pipeline">{!acct.Name}</h1>
+                        </div>
+                    </div>
+                    <div class="account-details">
+                        <div class="slds-form-element">
+                            <apex:outputField value="{!acct.Fulfilled__c}" id="fulfilledId"/>
+                            <apex:outputLabel value="Fulfilled" for="fulfilledId"/>
+                        </div>
+                        <div class="slds-media__body">
+                            <p class="slds-text-body--small page-header__info">{!acct.DynamicsAccID__c}</p>
+            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+            <div class="slds-panel slds-grid slds-grid--vertical slds-nowrap">
+            <table style="table-layout:fixed;">
+          
+                <tr>            
+                    <td style="padding-top: 20px;">
+                        <div class="slds-col slds-has-flexi-truncate">
+                            <apex:actionStatus id="saveStatus" startText="{!acct.Name} currently {!accountAction}ing..."/>
+                            <div class="slds-truncate">
+                                <div id ="msgId">
+                                <div id="requestSectionId" class="no-results-container" style="display: {!IF(requestProcessed=false, '', 'none')};">
+                                    {!acct.Name} will be {!accountAction}ed in <span id="timecount"></span> second(s)...
+                                </div>
+                                </div>
+                                <div id="pageMessagesId" class="no-results-container" style="white-space:pre-line; color : red; font-style: bold; display: {!IF(pageMessages='', 'none', '')};">
+                                
+                                    {!pageMessages}
+                                
+                                </div>
+                                
+                            </div>
+                        </div>
+                        </td>
+                        <td style="padding-top: 15px;">
+                        <div class="slds-float--right">
+                        <div class="slds-button slds-button--brand" onclick="cancelProcess();" id="cancelButtonId" 
+                            style="color:White; cursor: pointer; cursor: hand; display: {!IF(enableCancelButton=true, '', 'none')};" >
+                                {!returnBack}
+                        </div>
+                        <div class="slds-button slds-button--brand" onclick="clearMsg();" id="actionButtonId" 
+                            style="color:White; cursor: pointer; cursor: hand; display: {!IF(enableActionButton=true, '', 'none')};">
+                                {!accountAction} Now
+                        </div></div>
+                    </td>
+                </tr>
+           
+            </table>
+            </div>
+        
+        </apex:outputPanel>
+        
+        <apex:actionFunction name="initiateProcess" action="{!initiateProcess}" reRender="blockId" status="saveStatus" oncomplete="{updateAccount();}"/>
+        <apex:actionFunction name="updateAccount" action="{!updateAccount}" rerender="blockId" status="saveStatus" oncomplete="if({!isAccountUpdated}){fulfillStorefront();}"/>
+        <apex:actionFunction name="fulfillStorefront" action="{!fulfillStorefront}" reRender="blockId" status="saveStatus"/>
+        <apex:actionFunction name="cancelProcessCall" action="{!cancelProcess}"/>
+    </apex:form>
+    <script type="text/javascript">
+        var time = 10; // Time coutdown
+        function cancelProcess(){
+            setTimeout(cancelProcessCall(), 500);
+        }
+        function clearMsg(){
+            time = 0;
+            document.getElementById("msgId").style.visibility="hidden";
+            document.getElementById("cancelButtonId").style.visibility="hidden";
+            document.getElementById("actionButtonId").style.visibility="hidden";
+            setTimeout(updateAccount(), 500);
+            
+            //window.document.getElementsByName("commandLinkId").style.display = 'none';
+            
+        }
+        function countDown(){
+        
+            if(time > 1){
+                time--;
+            }
+            gett("timecount").innerHTML = time;
+            if(time == 1){
+                document.getElementById("msgId").style.visibility="hidden";
+                document.getElementById("cancelButtonId").style.visibility="hidden";
+                document.getElementById("actionButtonId").style.visibility="hidden";
+                setTimeout(initiateProcess(), 500);
+                time = 0;
+            }
+        }
+        
+        function gett(id){
+            if(document.getElementById) return document.getElementById(id);
+            if(document.all) return document.all.id;
+            if(document.layers) return document.layers.id;
+            if(window.opera) return window.opera.id;
+        }
+        
+        function init(){
+            if(gett('timecount')){
+                setInterval(countDown, 1000);
+                gett("timecount").innerHTML = time;
+            }else{
+                setTimeout(init, 50);
+            }
+        }
+        document.onload = init();
+        
+        
+    </script>
+</apex:page>

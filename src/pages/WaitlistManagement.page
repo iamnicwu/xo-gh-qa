@@ -1,0 +1,71 @@
+<apex:page tabstyle="Waitlist__tab" controller="WaitlistManagementController" showHeader="true" sidebar="true">
+	<apex:form id="form">
+        <script type="text/javascript">
+            // csp-1572. Making the rate plan name clickable 
+            var redirectToRatePlanPage = function(productRatePlanId) {
+                var baseURL = location.href.substring(0, location.href.indexOf('/', 14));
+                window.open(baseURL + '/' + productRatePlanId);
+            }
+        </script>
+        <apex:sectionHeader title="Inventory"/>
+        
+        <c:WaitlistModal id="wlModal" pageController="{!this}"/>
+        
+        <apex:pageblock id="myPageBlock">
+            <apex:pageBlockButtons id="myButtons" location="both">
+				<apex:commandButton action="{!Beginning}" title="Beginning" value="<<" disabled="{!disablePrevious}"/>
+	       		<apex:commandButton action="{!Previous}" title="Previous" value="<" disabled="{!disablePrevious}"/>        
+	        	<apex:commandButton action="{!Next}" title="Next" value=">" disabled="{!disableNext}"/>
+	        	<apex:commandButton action="{!End}" title="End" value=">>" disabled="{!disableNext}"/>        
+			</apex:pageBlockButtons>
+           	<apex:facet name="footer"><center>Showing Page {!pageNumber} of {!totalPages}</center></apex:facet>
+
+            <apex:pageBlockSection title="Search Filter (results are limited to {!maximumQueryOrOffsetSize} records)" collapsible="false" columns="2" id="SearchFilterId">
+       			<apex:selectList value="{!FilterProduct}" multiselect="false" size="1" id="prodFilter" label="Product">
+        			<apex:selectOptions value="{!SearchableProducts}" />
+        			<apex:actionSupport event="onchange" />
+     			</apex:selectList>
+       			
+       			<apex:selectList value="{!FilterAvailable}" multiselect="false" size="1" id="availableFilter" label="Available?">
+					<apex:selectoption itemvalue="" itemlabel="--None--"/>
+					<apex:selectoption itemvalue="true" itemlabel="Yes"/>
+					<apex:selectoption itemvalue="false" itemlabel="No"/>
+        			<apex:actionSupport event="onchange"/>
+       			</apex:selectList>
+       			
+     			<apex:selectList value="{!FilterCategory}" multiselect="false" size="1" id="categoryFilter" label="Category">
+        			<apex:selectOptions value="{!Categories}" />
+        			<apex:actionSupport event="onchange" />
+       			</apex:selectList>
+     			
+     			<apex:selectList value="{!FilterMarket}" multiselect="false" size="1" id="marketFilter" label="Market">
+        			<apex:selectOptions value="{!Markets}" />
+        			<apex:actionSupport event="onchange" />
+     			</apex:selectList>
+            </apex:pageBlockSection>
+ 
+            <apex:pageBlockTable value="{!productRatePlans}"  var="prp" id="ratePlanList">
+                	<apex:column value="{!prp.zqu__Product__c}" style="background-color:{!IF(prp.Number_Available__c < 1, '#D3D3D3','')};" headerValue="Product" />
+                	<apex:column value="{!prp.Name}" onclick="redirectToRatePlanPage('{!prp.id}');" style="background-color:{!IF(prp.Number_Available__c < 1, '#D3D3D3','')}; cursor:pointer; text-decoration: underline;"/>
+                	<apex:column value="{!prp.Category__c}" style="background-color:{!IF(prp.Number_Available__c < 1, '#D3D3D3','')}"/>
+                	<apex:column value="{!prp.Market__c}" style="background-color:{!IF(prp.Number_Available__c < 1, '#D3D3D3','')}"/>
+                	<apex:column value="{!prp.Available__c}" style="background-color:{!IF(prp.Number_Available__c < 1, '#D3D3D3','')}"/>
+                	<apex:column value="{!prp.Capacity__c}" style="background-color:{!IF(prp.Number_Available__c < 1, '#D3D3D3','')}"/>
+                	<apex:column value="{!prp.Inventory_Held__c}" style="background-color:{!IF(prp.Number_Available__c < 1, '#D3D3D3','')}"/>
+                	<apex:column value="{!prp.Number_Available__c}" style="background-color:{!IF(prp.Number_Available__c < 1, '#D3D3D3','')}"/>
+                	<apex:column value="{!prp.Waitlist_Count__c}" style="background-color:{!IF(prp.Number_Available__c < 1, '#D3D3D3','')}"/>
+                	<apex:column value="{!prp.Next_Inventory_Available__c}" style="background-color:{!IF(prp.Number_Available__c < 1, '#D3D3D3','')}"/>
+                	<apex:column rendered="{!IF(AND(NOT(ISBLANK(prp.Number_Available__c)),prp.Number_Available__c > 0), true, false)}">
+                        <apex:commandbutton value="View Waitlist" action="{!viewWaitlist}" rendered="{!IF(prp.Number_Available__c > 0, true, false)}" rerender="wlModal">
+                            <apex:param name="viewWaitlistRatePlanId" value="{!prp.Id}" assignto="{!SelectedRatePlanIdForWaitlistModal}" />
+                        </apex:commandbutton>
+                    </apex:column>
+                    <apex:column rendered="{!IF(AND(NOT(ISBLANK(prp.Number_Available__c)),prp.Number_Available__c < 1), true, false)}" style="background-color:{!IF(prp.Number_Available__c < 1, '#D3D3D3','')}">
+                        <apex:commandbutton value="View Waitlist" action="{!viewWaitlist}" rendered="{!IF(prp.Number_Available__c < 1, true, false)}" rerender="wlModal">
+                            <apex:param name="viewWaitlistRatePlanId" value="{!prp.Id}" assignto="{!SelectedRatePlanIdForWaitlistModal}" />
+                        </apex:commandbutton>
+                    </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageblock>
+	</apex:form>
+</apex:page>

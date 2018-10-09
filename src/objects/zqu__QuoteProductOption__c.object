@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>zqu__ChildProduct__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Product that the Quote Product Option includes as part of the bundle or product group.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Product that the Quote Product Option includes as part of the bundle or product group.</inlineHelpText>
+        <label>Product</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Value does not exist or does not match filter criteria.
+Note:
+* A Bundle typed Product cannot set to Child Product field</errorMessage>
+            <filterItems>
+                <field>Product2.zqu__Type__c</field>
+                <operation>notEqual</operation>
+                <value>Bundle</value>
+            </filterItems>
+            <filterItems>
+                <field>Product2.zqu__Deleted__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Quote Product Options (Product)</relationshipLabel>
+        <relationshipName>Quote_Product_Options1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__OptionType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of the Quote Product Option.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The type of the Quote Product Option.</inlineHelpText>
+        <label>Option Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Optional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Included</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recommended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>zqu__ParentProduct__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The product which contains this Quote Product Option.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The product which contains this Quote Product Option.</inlineHelpText>
+        <label>Parent Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Quote Product Options</relationshipLabel>
+        <relationshipName>Quote_Product_Options</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductOption__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>A lookup to the original Product Option in the Product Catalog.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A lookup to the original Product Option in the Product Catalog.</inlineHelpText>
+        <label>Product Option</label>
+        <referenceTo>zqu__ProductOption__c</referenceTo>
+        <relationshipLabel>Quote Product Options</relationshipLabel>
+        <relationshipName>Quote_Product_Options</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__QuoteProductOptionGroup__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Quote Product Option Group which contains this Quote Product Option.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Quote Product Option Group which contains this Quote Product Option.</inlineHelpText>
+        <label>Quote Product Option Group</label>
+        <referenceTo>zqu__QuoteProductOptionGroup__c</referenceTo>
+        <relationshipLabel>Quote Product Options</relationshipLabel>
+        <relationshipName>Quote_Product_Options</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Quote__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The quote that contains this Quote Product Option.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The quote that contains this Quote Product Option.</inlineHelpText>
+        <label>Quote</label>
+        <referenceTo>zqu__Quote__c</referenceTo>
+        <relationshipLabel>Quote Product Options</relationshipLabel>
+        <relationshipName>Quote_Product_Options</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>zqu__RootProduct__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>A reference to the root product in the bundle.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A reference to the root product in the bundle.</inlineHelpText>
+        <label>Root Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Quote Product Options (Root Product)</relationshipLabel>
+        <relationshipName>Quote_Product_Options2</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__RootQrpId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Id of the top level Quote Rate Plan in the bundle.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Id of the top level Quote Rate Plan in the bundle.</inlineHelpText>
+        <label>Root Quote Rate Plan Id</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Quote Product Option</label>
+    <nameField>
+        <label>Quote Product Option Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Quote Product Options</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>zqu__Child_Product_Cannot_Be_Bundle</fullName>
+        <active>true</active>
+        <description>Child Product type cannot be Bundle</description>
+        <errorConditionFormula>ISPICKVAL(zqu__ChildProduct__r.zqu__Type__c,&apos;Bundle&apos;)</errorConditionFormula>
+        <errorDisplayField>zqu__ChildProduct__c</errorDisplayField>
+        <errorMessage>Child Product type cannot be Bundle</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>zqu__Child_Product_Not_Blank</fullName>
+        <active>true</active>
+        <description>Child Product cannot be null</description>
+        <errorConditionFormula>ISBLANK( zqu__ChildProduct__c )</errorConditionFormula>
+        <errorDisplayField>zqu__ChildProduct__c</errorDisplayField>
+        <errorMessage>Child Product cannot be null</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>zqu__Parent_Not_Same_As_Child</fullName>
+        <active>true</active>
+        <description>The parent product cannot be the same as the child product.</description>
+        <errorConditionFormula>zqu__ChildProduct__c  =  zqu__ParentProduct__c &amp;&amp; NOT(ISBLANK( zqu__ChildProduct__c )) &amp;&amp; NOT(ISBLANK(  zqu__ParentProduct__c  ))</errorConditionFormula>
+        <errorMessage>The parent product cannot be the same as the child product.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>zqu__Should_have_one_parent</fullName>
+        <active>true</active>
+        <description>A Product Option should belong to either a Parent Product or a Product Option Group</description>
+        <errorConditionFormula>AND( 
+  ISBLANK( zqu__ParentProduct__c ),
+  ISBLANK( zqu__QuoteProductOptionGroup__c ) 
+)</errorConditionFormula>
+        <errorMessage>A Product Option should belong to either a Parent Product or a Product Option Group</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>zqu__Standalone_Prod_Cannot_Have_Included_PO</fullName>
+        <active>true</active>
+        <description>A Standalone typed Product cannot have an &quot;IncludedTyped&quot; Product Option</description>
+        <errorConditionFormula>ISPICKVAL( zqu__ParentProduct__r.zqu__Type__c ,&apos;Standalone&apos;) &amp;&amp;  ISPICKVAL( zqu__OptionType__c , &apos;Included&apos;)</errorConditionFormula>
+        <errorMessage>A Standalone typed Product cannot have an &quot;IncludedTyped&quot; Product Option</errorMessage>
+    </validationRules>
+</CustomObject>

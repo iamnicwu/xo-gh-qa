@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Action_Performed__c</fullName>
+        <description>This field will be used to determine what action was performed to create this record.</description>
+        <externalId>false</externalId>
+        <label>Action Performed</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Page Load</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Search</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Record Update(s)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Record Insert(s)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Record Delete(s)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Information__c</fullName>
+        <description>This field will be used to show an additional information about the action - such as what records updated, deleted, inserted, search filters used, etc</description>
+        <externalId>false</externalId>
+        <label>Additional Information</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Initiated_From__c</fullName>
+        <description>This field is used to determine what the Usage record is being initiated from - this will generally be the &quot;method&quot; or &quot;function&quot; that is creating this record.</description>
+        <externalId>false</externalId>
+        <label>Initiated From</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <description>This field is used to determine the Source or Origination of the Usage - generally this will be the Page or Component that spawn the record.</description>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>XO Usage</label>
+    <listViews>
+        <fullName>All_2</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>Action_Performed__c</columns>
+        <columns>Additional_Information__c</columns>
+        <columns>Initiated_From__c</columns>
+        <columns>Source__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All 2</label>
+    </listViews>
+    <nameField>
+        <label>XO Usage Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>XO Usages</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

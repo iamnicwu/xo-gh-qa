@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Rate plans represent a price or a collection of prices for a service you sell.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Zuora__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Subscription Rate Plans</relationshipLabel>
+        <relationshipName>Subscription_Rate_Plans</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__AmendmentId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The ID of the amendment associated with the rate plan. This field only applies to amendment rate plans.</description>
+        <externalId>false</externalId>
+        <label>Amendment Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__AmendmentSubscriptionRatePlanId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The ID of the subscription rate plan modified by the amendment. This field only applies to amendment rate plans.</description>
+        <externalId>false</externalId>
+        <label>Amendment Subscription Rate Plan Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__AmendmentType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of amendment associated with the rate plan. This field only applies to amendment rate plans.</description>
+        <externalId>false</externalId>
+        <label>Amendment Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__External_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__OriginalProductRatePlanId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The ID of the original product rate plan.</description>
+        <externalId>false</externalId>
+        <label>Original Product Rate Plan Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__OriginalSubscriptionRatePlanId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Original Subscription Rate Plan Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__ProductRatePlanId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product Rate Plan Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__SubscriptionRatePlanName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Full rate plan name.</description>
+        <externalId>false</externalId>
+        <label>Subscription Rate Plan Name (Long Name)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__Subscription__c</fullName>
+        <deleteConstraint>Cascade</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Subscription</label>
+        <referenceTo>Zuora__Subscription__c</referenceTo>
+        <relationshipLabel>Subscription Rate Plans</relationshipLabel>
+        <relationshipName>Subscription_Rate_Plans</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Subscription Rate Plan</label>
+    <nameField>
+        <label>Subscription Rate Plan Name (Short Name)</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Subscription Rate Plans</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,126 @@
+<apex:page StandardController="zqu__Quote__c" extensions="zqu.QuoteWizardTemplateController,ZuoraQuoteCreateCancellationController" title="{!pageName}" sidebar="false" action="{!initializeQuote}">
+
+    <!--zqu:ProgressBar /-->
+    <zqu:StatusModal />
+
+    <style>
+        .fieldLabel {
+            width: 70px;
+            text-align:right;
+        }
+        .fieldValue {
+            width: 250px;
+            text-align:left;
+        }
+        .productTable {
+            background-color: #E1EBE7;
+            border: 1px solid #7BC143;
+            margin-bottom: 20px;
+            padding: 8px 7px;
+            position: relative;
+            margin:12px;
+            width:90%;  
+        }
+        body .pbBody table.list tr.headerRow td, body .pbBody table.list tr.headerRow th {
+            height: 23px;
+            line-height: 16px;
+            border: 1px solid #CCC;
+            padding-left: 4px;
+            padding-right: 4px;
+            background-color: #D4EFF8;
+        }
+        label, legend {
+            font-size: 10px;
+        }
+        td {
+            padding-bottom: 5px;
+        }
+        .bEditBlock input {
+            vertical-align: -10%;
+        }
+        .bPageBlock .detailList .dataCol {
+            width: 50%;
+        }
+        .editPage .pbSubsection {
+            margin-top: 5px;
+            padding: 0px 12px;
+        }
+        body .bEditBlock .pbBottomButtons {
+            margin-top: 4px;
+        }
+        .apexp .bPageBlock .detailList {
+            width: 80%;
+        }
+        .requiredLegend {
+        	display: none;
+        }    
+    </style>
+
+
+    <!-- QuoteWizardTemplate -->
+    <apex:composition template="zqu__QuoteWizardTemplateNoForm" >
+        <!-- Define the page body, including form and button bar -->
+        <apex:define name="PageBody" >
+            <apex:form id="theForm">
+                <div class="bPageTitle">
+                    <div class="ptBody secondaryPalette brandSecondaryBrd">
+                        <div class="content">
+                            <img src="{!ImgUrl}" height="32" width="32" class="pageTitleIcon userDefinedImage" title="Quote" alt="Quote" />
+                            <h1 class="pageType">New Quote</h1>
+                            <span class="titleSeparatingColon">:</span>
+                            <h2 class="pageDescription">Create Cancellation Quote</h2><div class="blank"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <apex:pageBlock mode="edit">
+                    <apex:pageBlockSection title="Quote Details">
+                        <apex:inputField value="{!theQuote.Name}" label="Quote Name" id="quoteName"/>
+                        <apex:inputField value="{!theQuote.zqu__ValidUntil__c}" label="Valid Until" />
+                        <apex:outputText value="{!oppLink}" label="Opportunity" escape="False"/>
+                        <apex:outputText value="{!accountLink}" label="Account" escape="False"/>
+                        <apex:outputText value="New" label="Status" />
+                    </apex:pageBlockSection>
+
+                    <apex:pageBlockSection title="Cancellation Details" id="cancellationDetails">
+                        <!--<apex:inputField value="{!theQuote.zqu__StartDate__c}" label="Start Date" required="True"/> -->
+                        <!--<apex:inputField value="{!theQuote.zqu__CancellationEffectiveDate__c}" label="Cancellation Effective Date" />-->
+                        <apex:selectList value="{!cancellationEffectiveDate}" multiselect="false" size="1" label="Cancellation Effective Date">
+            				<apex:actionSupport event="onchange" action="{!updateCancellationEffectiveDate}" reRender="cancellationDetails"/>
+            				<apex:selectOptions value="{!cancellationEffectiveDateOptions}"/>
+        				</apex:selectList>
+                        <apex:inputField value="{!theQuote.zqu__CancellationDate__c}" label="Cancellation Date" required="True"/>
+                        <!-- added the generate invoice field in cancelled quote  page for Tonia and Shannon-->
+                        <apex:inputField value="{!theQuote.zqu__GenerateInvoice__c}" label="Generate Invoice" required="false" rendered="{!isGenerateInvoice}"/>
+                        <apex:inputField value="{!theQuote.zqu__ProcessPayment__c}" label="Process Payment" required="false" rendered="{!isGenerateInvoice}"/>
+                        <!--<apex:inputField value="{!theQuote.zqu__SubscriptionTermEndDate__c}" label="Subscription Term End Date" />-->
+                        <apex:outputText value="{!theCustomerAccount.Zuora__BillCycleDay__c}" label="Billing Day" />
+                    </apex:pageBlockSection>
+
+                    <apex:pageBlockButtons >
+                        <apex:commandButton action="{!goNavigateBack}" value="Back" immediate="true" html-formnovalidate="formnovalidate" />
+                        <apex:commandButton action="{!goNavigateNext}" value="Next" />
+                        <apex:commandButton action="{!cancel}" value="Cancel" immediate="true"
+                              html-formnovalidate="formnovalidate" />
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>
+
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+
+    <script>
+    	// the purpose of this script is to set the size of the "quoteName" input box to 45
+    	var cells = document.getElementsByTagName("input");
+		for (var i = 0; i < cells.length; i++) { 
+		    var idString = cells[i].getAttribute("id");
+		    // two things going on here: if idString is null, it evaluates to a falsey value,
+		    // and if "quoteName" is a substring of the id attribute, it evaluates to a truthy value
+		    if (idString && ~idString.indexOf("quoteName")) { 
+		        cells[i].setAttribute("size", "45");
+		        break;
+		    }
+		}
+    </script>
+
+</apex:page>

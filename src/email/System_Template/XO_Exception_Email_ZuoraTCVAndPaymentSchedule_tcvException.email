@@ -1,0 +1,7 @@
+We have had an exception created by the ZuoraTCVAndPaymentSchedule Apex Class. 
+
+You can see the Exception Error here 
+https://xogrp.my.salesforce.com/{!XO_Exception__c.Id}
+
+The Exception is happening because of 
+{!XO_Exception__c.Message__c}

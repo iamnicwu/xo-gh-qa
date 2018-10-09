@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>CSP-1851 | this object is used to track the history of how Lead/Account assignment rules are assigning records to users</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>CSP-1851</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Assignment History</relationshipLabel>
+        <relationshipName>Assignment_History</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Distribution_Queue_Id__c</fullName>
+        <description>The Queue Id which was used to assign a Lead to the specified Queue in the system.</description>
+        <externalId>false</externalId>
+        <label>Lead Distribution Queue Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Is_Converted__c</fullName>
+        <description>CSP-1851</description>
+        <externalId>false</externalId>
+        <formula>Lead__r.IsConverted</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead Is Converted</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>CSP-1851</description>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Assignment History</relationshipLabel>
+        <relationshipName>Assignment_History</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Local_Sales_Rep_Assignment__c</fullName>
+        <description>CSP-1851</description>
+        <externalId>false</externalId>
+        <label>Local Sales Rep Assignment</label>
+        <referenceTo>Local_Sales_Rep_Assignment__c</referenceTo>
+        <relationshipLabel>Assignment History</relationshipLabel>
+        <relationshipName>Assignment_History</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>CSP-1851</description>
+        <externalId>false</externalId>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Assignment_History</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Assignment History</label>
+    <nameField>
+        <displayFormat>AH-{0000000000}</displayFormat>
+        <label>Assignment History Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Assignment History</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

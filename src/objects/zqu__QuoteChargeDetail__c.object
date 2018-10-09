@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This object is used to store the details (including billing metrics) for charges on a quote.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Exist_Subscription_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>zqu__Quote__r.zqu__ExistSubscriptionID__c</formula>
+        <label>Exist Subscription Id</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inventory_Freed_By_Cancellation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>CSP-1543 | during Cancellation Quote creation, this checkbox is checked if the cancellation will free an Inventory slot</description>
+        <externalId>false</externalId>
+        <inlineHelpText>CSP-1543 | during Cancellation Quote creation, this checkbox is checked if the cancellation will free an Inventory slot</inlineHelpText>
+        <label>Inventory Freed By Cancellation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sent_to_ZBilling__c</fullName>
+        <externalId>false</externalId>
+        <formula>ISPICKVAL(zqu__Quote__r.zqu__Status__c, &apos;Sent to Z-Billing&apos;)</formula>
+        <label>Sent to Z-Billing</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Subscription_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(zqu__Quote__r.zqu__SubscriptionType__c)</formula>
+        <label>Subscription Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__BillingDiscount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Discount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__BillingSubtotal__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Subtotal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__BillingTax__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__BillingTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__ChargeNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A unique number that identifies the charge</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A unique number that identifies the charge</inlineHelpText>
+        <label>Charge Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__DeltaDiscountMRR__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Contracted Delta Discount MRR value returned by previewing the Quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Contracted Delta Discount MRR value returned by previewing the Quote in Zuora</inlineHelpText>
+        <label>Delta Discount MRR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__DeltaDiscountTCBTax__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Tax on the Delta Discount TCB retrieved from previewing the Quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Tax on the Delta Discount TCB retrieved from previewing the Quote in Zuora</inlineHelpText>
+        <label>Delta Discount TCB Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__DeltaDiscountTCB__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Delta Discount TCB value retrieved from previewing the Quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Delta Discount TCB value retrieved from previewing the Quote in Zuora</inlineHelpText>
+        <label>Delta Discount TCB</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__DeltaDiscountTCV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Delta Discount TCV value retrieved from previewing the Quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Delta Discount TCV value retrieved from previewing the Quote in Zuora</inlineHelpText>
+        <label>Delta Discount TCV</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__DeltaMRR__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Contracted Delta MRR value returned by previewing the quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Delta MRR value calculated by previewing the quote from Zuora</inlineHelpText>
+        <label>Delta MRR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__DeltaTCBTax__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Tax on the Delta TCB retrieved from previewing the Quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Tax on the Delta TCB retrieved from previewing the Quote in Zuora</inlineHelpText>
+        <label>Delta TCB Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__DeltaTCB__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Delta TCB value retrieved from previewing the Quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Delta TCB value retrieved from previewing the Quote in Zuora</inlineHelpText>
+        <label>Delta TCB</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__DeltaTCV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Delta TCV value calculated by previewing the quote from Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Delta TCV value calculated by previewing the quote from Zuora</inlineHelpText>
+        <label>Delta TCV</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__DiscountMRR__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Discount CMRR value returned by previewing the Quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Discount CMRR value returned by previewing the Quote in Zuora</inlineHelpText>
+        <label>Discount MRR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__DiscountTCBTax__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Tax on the Discount TCB retrieved from previewing the Quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Tax on the Discount TCB retrieved from previewing the Quote in Zuora</inlineHelpText>
+        <label>Discount TCB Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__DiscountTCB__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Discount TCB value retrieved from previewing the Quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Discount TCB value retrieved from previewing the Quote in Zuora</inlineHelpText>
+        <label>Discount TCB</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__DiscountTCV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Discount TCV value retrieved from previewing the Quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Discount TCV value retrieved from previewing the Quote in Zuora</inlineHelpText>
+        <label>Discount TCV</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__MRR__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Contracted MRR value returned by previewing the quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>MRR value calculated by previewing the quote from Zuora</inlineHelpText>
+        <label>MRR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__OriginalId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Zuora Id of the original Rate Plan Charge this charge corresponds to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Zuora Id of the original Rate Plan Charge this charge corresponds to.</inlineHelpText>
+        <label>Original Id</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__OriginalRatePlanId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Zuora Id of the original Rate Plan this charge belongs to</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Zuora Id of the original Rate Plan this charge belongs to</inlineHelpText>
+        <label>Original Rate Plan Id</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductRatePlanCharge__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Product Rate Plan Charge this charge came from.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Product Rate Plan Charge this charge came from.</inlineHelpText>
+        <label>Product Rate Plan Charge</label>
+        <referenceTo>zqu__ProductRatePlanCharge__c</referenceTo>
+        <relationshipLabel>Quote Charge Details</relationshipLabel>
+        <relationshipName>QuoteChargeDetails</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductRatePlan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Product Rate Plan this charge comes from.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Product Rate Plan this charge comes from.</inlineHelpText>
+        <label>Product Rate Plan</label>
+        <referenceTo>zqu__ProductRatePlan__c</referenceTo>
+        <relationshipLabel>Quote Charge Details</relationshipLabel>
+        <relationshipName>QuoteChargeDetails</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Quote__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The quote object this charge record belongs to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The quote object this charge record belongs to.</inlineHelpText>
+        <label>Quote</label>
+        <referenceTo>zqu__Quote__c</referenceTo>
+        <relationshipLabel>Quote Charge Details</relationshipLabel>
+        <relationshipName>QuoteChargeDetails</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>zqu__TCBTax__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Tax on the Total Contracted Billing calculated by previewing the Quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Tax on the TCB calculated by previewing the quote from Zuora</inlineHelpText>
+        <label>TCB Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__TCB__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total Contracted Billing value calculated by previewing the Quote in Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>TCB value calculated by previewing the quote from Zuora</inlineHelpText>
+        <label>TCB</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__TCV__c</fullName>
+        <deprecated>false</deprecated>
+        <description>TCV value calculated by previewing the quote from Zuora</description>
+        <externalId>false</externalId>
+        <inlineHelpText>TCV value calculated by previewing the quote from Zuora</inlineHelpText>
+        <label>TCV</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Quote Charge Detail</label>
+    <nameField>
+        <label>Quote Charge Detail Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Quote Charge Details</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

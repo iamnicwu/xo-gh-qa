@@ -1,0 +1,55 @@
+<apex:page showHeader="true" sidebar="true" controller="ExpiredOpenOpportunitiesController" title="Expired Open Opportunities">
+	<apex:form >
+		<apex:actionFunction name="filterResult" action="{!fillAction}" reRender="blockId" status="statusMessage"/>
+		<apex:pageBlock id="blockId" title="Expired Opportunities with {!viewSelected}">
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!saveCampaignDates}" value="Save RFP Campaign Date Changes" status="statusMessage" reRender="blockId" rendered="{!viewSelected = 'RFP'}"/>
+			</apex:pageBlockButtons>
+			View only my Opportunities:&nbsp;<apex:inputCheckbox value="{!myOppOnly}" onchange="filterResult();"/>
+			<apex:selectList value="{!viewSelected}" size="1" onchange="filterResult();">
+                <apex:selectOptions value="{!viewList}"/>
+            </apex:selectList>
+			&nbsp;
+			<apex:actionStatus startText="Updating..." id="statusMessage"/>
+			<apex:pageMessages />
+			<apex:pageMessage strength="1" severity="info" summary="{!opportunityRFPList.size} results"/>
+			<apex:pageBlockTable value="{!opportunityRFPList}" var="opp" rendered="{!viewSelected = 'RFP'}">
+				<apex:column headerValue="Opportunity Name">
+					<apex:outputLink value="/{!opp.Id}">{!opp.Name}</apex:outputLink>
+				</apex:column>
+				<apex:column value="{!opp.StageName}"/>
+				<apex:column value="{!opp.Amount}"/>
+				<apex:column value="{!opp.Owner.Name}"/>
+				<apex:column value="{!opp.CampaignStartDate__c}"/>
+				<apex:column value="{!opp.CampaignEndDate__c}"/>
+				<apex:column headerValue="RFP Name">
+					<apex:outputLink value="/{!opp.ThoughtStarters_RFPs__r[0].Id}" rendered="{!opp.ThoughtStarters_RFPs__r.size > 0}">{!opp.ThoughtStarters_RFPs__r[0].Name}</apex:outputLink>
+				</apex:column>
+				<apex:column headerValue="RFP Campaign Start Date">
+					<apex:inputField value="{!opp.ThoughtStarters_RFPs__r[0].Campaign_Start_Date__c}" rendered="{!opp.ThoughtStarters_RFPs__r.size > 0}"/>
+				</apex:column>
+				<apex:column headerValue="RFP Campaign End Date">
+					<apex:inputField value="{!opp.ThoughtStarters_RFPs__r[0].Campaign_End_Date__c}" rendered="{!opp.ThoughtStarters_RFPs__r.size > 0}"/>
+				</apex:column>
+			</apex:pageBlockTable>
+
+			<apex:pageBlockTable value="{!opportunityRFPList}" var="opp" rendered="{!viewSelected = 'ThoughtStarter'}">
+				<apex:column headerValue="Opportunity Name">
+					<apex:outputLink value="/{!opp.Id}">{!opp.Name}</apex:outputLink>
+				</apex:column>
+				<apex:column value="{!opp.StageName}"/>
+				<apex:column value="{!opp.Amount}"/>
+				<apex:column value="{!opp.Owner.Name}"/>
+				<apex:column headerValue="ThoughtStarter Name">
+					<apex:outputLink value="/{!opp.ThoughtStarters_RFPs__r[0].Id}" rendered="{!opp.ThoughtStarters_RFPs__r.size > 0}">{!opp.ThoughtStarters_RFPs__r[0].Name}</apex:outputLink>
+				</apex:column>
+				<apex:column headerValue="Internal Due Date">
+					<apex:outputField value="{!opp.ThoughtStarters_RFPs__r[0].Internal_Due_Date__c}" rendered="{!opp.ThoughtStarters_RFPs__r.size > 0}"/>
+				</apex:column>
+				<apex:column headerValue="Desired Due Date">
+					<apex:outputField value="{!opp.ThoughtStarters_RFPs__r[0].Desired_Due_Date__c}" rendered="{!opp.ThoughtStarters_RFPs__r.size > 0}"/>
+				</apex:column>
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+		</apex:form>
+</apex:page>

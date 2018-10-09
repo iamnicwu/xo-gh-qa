@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>From Salesforce to Zuora Product Catalog Sync History.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>zqu__Error_Message__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Error Message for the Catalog Sync</description>
+        <externalId>false</externalId>
+        <label>Error Message</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>zqu__Number_of_Errors__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Number of Product Catalog Sync Errors</description>
+        <externalId>false</externalId>
+        <label>Number of Errors</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Number_of_Objects_Requested__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Number of Objects Requested for the Sync</description>
+        <externalId>false</externalId>
+        <label>Number of Objects Requested</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Number_of_Objects_Synced__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Number of Objects Synced</description>
+        <externalId>false</externalId>
+        <label>Number of Objects Synced</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Syncing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Failed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Sync_seconds__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Seconds it took to complete the sync job</description>
+        <externalId>false</externalId>
+        <label>Sync Seconds</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Catalog Sync History</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>zqu__Number_of_Errors__c</columns>
+        <columns>zqu__Number_of_Objects_Requested__c</columns>
+        <columns>zqu__Number_of_Objects_Synced__c</columns>
+        <columns>zqu__Status__c</columns>
+        <columns>zqu__Sync_seconds__c</columns>
+        <columns>zqu__Error_Message__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Catalog Sync History Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Catalog Sync Histories</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

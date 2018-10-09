@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>The email template to send when there is a closed case that is older then 5 days</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Closed_Case_Old</name>
+    <style>none</style>
+    <subject>Closed Case is 5 days old without being closed</subject>
+    <type>text</type>
+</EmailTemplate>

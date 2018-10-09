@@ -1,0 +1,44 @@
+<messaging:emailTemplate subject="Inbound Hot Prospect {!relatedTo.Campaign.Type} ({!relatedTo.Campaign.Name}) {!relatedTo.Status}"
+    recipientType="User" 
+    relatedToType="CampaignMember" 
+    replyTo="no-reply@theknot.com">
+       
+
+        <messaging:plainTextEmailBody >
+            {!relatedTo.Template_Appellation__c}, 
+
+            {!relatedTo.Campaign_Introduction__c}
+
+            Name: 
+            {!relatedTo.FirstName} {!relatedTo.LastName} 
+
+            Company:
+            {!relatedTo.CompanyOrAccount}
+
+            Website:
+            {!relatedTo.Prospect_Website__c}
+
+            Email:
+            {!relatedTo.Email}
+
+            Phone: 
+            {!relatedTo.Phone} 
+
+            Postal Code: 
+            {!relatedTo.PostalCode} 
+
+            Local Sales Market:
+            {!relatedTo.Prospect_Local_Sales_Market__c}
+
+            Primary Category: 
+            {!relatedTo.Prospect_Primary_Category__c} 
+
+            Created Date/Time: 
+            {!relatedTo.CreatedDate}
+
+            Link: 
+            {!relatedTo.Prospect_Link__c}
+        </messaging:plainTextEmailBody>
+
+
+</messaging:emailTemplate>

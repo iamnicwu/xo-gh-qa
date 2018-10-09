@@ -1,0 +1,12 @@
+.THIS {
+    color: #1990b8;
+}
+
+.THIS.slds-border_bottom {
+    border-color: #1990b8;
+    border-bottom-width: 2px;
+}
+
+.THIS .slds-text-heading_medium {
+    font-weight: bold;
+}

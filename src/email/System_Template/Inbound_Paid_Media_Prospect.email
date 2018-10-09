@@ -1,0 +1,11 @@
+{!Account.OwnerFullName}, 
+
+Below is the contact information from an inbound paid media prospect. This is an extremely hot prospect, you should reach out to this prospect ASAP. As a reminder, prospects can be leads or accounts. Please check this record in salesforce to see the current paid status of this record.
+
+Name: {!Account.Name} 
+
+Phone: {!Account.Phone} 
+ 
+Primary Category: {!Account.Primary_Category__c} 
+
+Account Link: {!Account.Link}

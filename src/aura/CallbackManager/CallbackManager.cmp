@@ -1,0 +1,445 @@
+<aura:component access="GLOBAL" controller="CallbackManagerController" implements="force:appHostable">
+	<ltng:require scripts="/support/console/26.0/integration.js" />
+	<ltng:require styles="/resource/animate" />
+	
+	<aura:attribute name="callbacks" type="Callback__c[]"/>
+	<aura:attribute name="recordCount" type="Integer"/>
+	<aura:attribute name="page" type="Integer"/>
+	<aura:attribute name="pages" type="Integer"/>
+	<aura:attribute name="statusPicklistValues" type="String[]"/>
+	<aura:attribute name="ownerPicklistValues" type="User[]"/>
+	<aura:attribute name="orderStatement" type="String"/>
+	
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+	
+	<div class="slds">
+		<!-- top banner -->
+		<div class="slds-page-header" role="banner">
+			<h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="Callback Manager">Callback Manager</h1>
+		</div>
+
+		<!-- Filter Options -->
+		<div class="slds-grid slds-wrap">
+			<!-- Record Owner Option -->
+			<div class="slds-col slds-form-element slds-small-size--1-of-6 slds-medium-size--1-of-6 select-padding animated fadeIn">
+				<label class="slds-form-element__label" for="owner-select">Ownership</label>
+				<div class="slds-form-element__control">
+					<div class="slds-select_container">
+						<select id="owner-select" class="slds-select" onchange="{!c.callbackSearch}">
+							<option value="Mine">My Callbacks</option>
+							<option value="All">All Callbacks</option>
+							<!-- DYNAMICALLY POPULATED SMART FILTERS -->
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<!-- Product Line Option -->
+			<div class="slds-col slds-form-element slds-small-size--1-of-6 slds-medium-size--1-of-6 select-padding animated fadeIn">
+				<label class="slds-form-element__label" for="type-select">Type</label>
+				<div class="slds-form-element__control">
+					<div class="slds-select_container">
+						<select id="type-select" class="slds-select" onchange="{!c.callbackSearch}">
+							<option value="All">All</option>
+							<option value="Direct Mail">Direct Mail</option>
+							<option value="Internet">Internet</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<!-- Status Option -->
+			<div class="slds-col slds-form-element slds-small-size--1-of-6 slds-medium-size--1-of-6 select-padding animated fadeIn">
+				<label class="slds-form-element__label" for="status-select">Status</label>
+				<div class="slds-form-element__control">
+					<div class="slds-select_container">
+						<select id="status-select" class="slds-select" onchange="{!c.callbackSearch}">
+							<option value="All Open">All Open</option>
+							<option value="All">All</option>
+							<!-- DYNAMICALLY POPULATED SMART FILTERS -->
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<!-- Market Option -->
+			<div class="slds-col slds-form-element slds-small-size--1-of-6 slds-medium-size--1-of-6 select-padding animated fadeIn">
+				<label class="slds-form-element__label" for="market-select">Market</label>
+				<div class="slds-form-element__control">
+					<div class="slds-select_container">
+						<select id="market-select" class="slds-select" onchange="{!c.callbackSearch}">
+							<option value="All">All</option>
+							<!-- DYNAMICALLY POPULATED SMART FILTERS -->
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<!-- Category Option -->
+			<div class="slds-col slds-form-element slds-small-size--1-of-6 slds-medium-size--1-of-6 select-padding animated fadeIn">
+				<label class="slds-form-element__label" for="category-select">Category</label>
+				<div class="slds-form-element__control">
+					<div class="slds-select_container">
+						<select id="category-select" class="slds-select" onchange="{!c.callbackSearch}">
+							<option value="All">All</option>
+							<!-- DYNAMICALLY POPULATED SMART FILTERS -->
+						</select>
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+
+
+		<div class="slds-grid slds-wrap">
+
+			<!-- Account VIP Status Option -->
+			<div class="slds-col slds-form-element slds-small-size--1-of-6 slds-medium-size--1-of-6 select-padding animated fadeIn">
+				<label class="slds-form-element__label" for="account-vip-status-select">Account VIP Status</label>
+				<div class="slds-form-element__control">
+					<div class="slds-select_container">
+						<select id="account-vip-status-select" class="slds-select" onchange="{!c.callbackSearch}">
+							<option value="All">All</option>
+							<option value="Not VIP">Not VIP</option>
+							<option value="VIP">VIP</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<!-- Possible Renewal Option -->
+			<div class="slds-col slds-form-element slds-small-size--1-of-6 slds-medium-size--1-of-6 select-padding animated fadeIn">
+				<label class="slds-form-element__label" for="possible-renewal-select">Possible Renewal?</label>
+				<div class="slds-form-element__control">
+					<div class="slds-select_container">
+						<select id="possible-renewal-select" class="slds-select" onchange="{!c.callbackSearch}">
+							<option value="All">All</option>
+							<option value="Yes">Yes</option>
+							<option value="No">No</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<!-- Subscription Number Search -->
+			<div class="slds-col slds-form-element slds-small-size--1-of-6 slds-medium-size--1-of-6 select-padding animated fadeIn">
+				<label class="slds-form-element__label" for="account-vip-status-select">Subscription Number Search</label>
+				<div class="slds-form-element__control slds-select" onchange="{!c.callbackSearch}">
+					<input id="subscription-number-search" class="slds-input" type="text" placeholder="Enter Subscription Number (ex: A-S00076172)..." />
+				</div>
+			</div>
+
+			<!-- Callback Date Range: Starting Date -->
+			<div class="slds-col slds-form-element slds-small-size--1-of-6 slds-medium-size--1-of-6 select-padding animated fadeIn">
+				<label class="slds-form-element__label" for="account-vip-status-select">Callback Date Range: Starting Date</label>
+				<div class="slds-form-element__control slds-select" onchange="{!c.callbackSearch}">
+					<input id="callback-date-range-starting-date" class="date-range-search" type="date"/>
+				</div>
+			</div>
+
+			<!-- Callback Date Range: Ending Date -->
+			<div class="slds-col slds-form-element slds-small-size--1-of-6 slds-medium-size--1-of-6 select-padding animated fadeIn" onchange="alert('fu');">
+				<label class="slds-form-element__label" for="account-vip-status-select">Callback Date Range: Ending Date</label>
+				<div class="slds-form-element__control slds-select" onchange="{!c.callbackSearch}">
+					<input id="callback-date-range-ending-date" class="date-range-search" type="date"/>
+				</div>
+			</div>
+		</div>
+
+		<div class="slds-grid slds-wrap">
+			<!-- Account Name Search -->
+			<div class="slds-col slds-form-element slds-small-size--1-of-6 slds-medium-size--1-of-6 select-padding animated fadeIn">
+				<label class="slds-form-element__label" for="account-vip-status-select">Account Name Search</label>
+				<div class="slds-form-element__control slds-select" onchange="{!c.callbackSearch}">
+					<input id="account-name-search" class="slds-input" type="text" placeholder="Enter Account Name..."/>
+				</div>
+			</div>
+		</div>
+
+		<div class="paginator-container-top">
+			<div class="left">
+				<aura:renderIf isTrue="{!v.page > 1}">
+					<button onclick="{!c.pageChangePrevious}">Previous</button>
+				</aura:renderIf>
+			</div>
+
+			<div class="center">
+				{!v.recordCount} records • page {!v.page} / {!v.pages}
+			</div>
+
+			<div class="right">
+				<aura:renderIf isTrue="{!v.page &lt; v.pages}">
+					<button onclick="{!c.pageChangeNext}">Next</button>
+				</aura:renderIf>
+			</div>
+		</div>
+		
+		<div class="callback-table-wrapper">
+
+			<!-- data table -->
+			<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-max-medium-table--stacked-horizontal">
+				<thead>
+					<tr class="slds-text-title--caps">
+						<th scope="col">
+							<div class="slds-truncate col-header" title="Callback Date">Callback Date</div>
+						</th>												
+						<th scope="col">
+							<div class="slds-truncate col-header" title="Callback">Callback</div>
+						</th>				
+						<th class="slds-is-sortable slds-truncate desc" id="Account__r.Name" scope="col" onclick="{!c.sortCallbacks}">
+							<div class="slds-truncate col-header slds-th__action" title="Account">Account
+								<button class="slds-button slds-button--icon-bare" >
+									<span class="slds-assistive-text">Sort</span>
+								</button>
+							</div>
+						</th>
+						<th scope="col">
+							<div class="slds-truncate col-header" title="Contact">Contact</div>
+						</th>
+						<th scope="col">
+							<div class="slds-truncate col-header" title="Subscription">Subscription</div>
+						</th>
+						<th scope="col">
+							<div class="slds-truncate col-header" title="Possible Renewal">Possible Renewal?</div>
+						</th>
+						<th class="slds-is-sortable slds-truncate desc" id="Subscription_Product_Charge__r.Product_Type__c" scope="col" onclick="{!c.sortCallbacks}">
+							<div class="slds-truncate col-header slds-th__action" title="Type">Type
+								<button class="slds-button slds-button--icon-bare" >
+									<span class="slds-assistive-text">Sort</span>
+								</button>
+							</div>
+						</th>					
+						<th class="slds-is-sortable slds-truncate desc" id="Subscription_Product_Charge__r.Zuora__Subscription__r.Zuora__TermStartDate__c" scope="col" onclick="{!c.sortCallbacks}">
+							<div class="slds-truncate col-header slds-th__action" title="Service Start Date">Service Start Date
+								<button class="slds-button slds-button--icon-bare" >
+									<span class="slds-assistive-text">Sort</span>
+								</button>
+							</div>
+						</th>
+						<th class="slds-is-sortable slds-truncate desc" id="Subscription_Product_Charge__r.LDE_Email_Launch_Date__c" scope="col" onclick="{!c.sortCallbacks}">
+							<div class="slds-truncate col-header slds-th__action" title="LDE Launch Date">LDE Launch Date
+								<button class="slds-button slds-button--icon-bare" >
+									<span class="slds-assistive-text">Sort</span>
+								</button>
+							</div>
+						</th>					
+						<th class="slds-is-sortable slds-truncate desc" id="Owner.Name" scope="col" onclick="{!c.sortCallbacks}">
+							<div class="slds-truncate col-header slds-th__action" title="Owner">Owner
+								<button class="slds-button slds-button--icon-bare" >
+									<span class="slds-assistive-text">Sort</span>
+								</button>
+							</div>
+						</th>
+						<th class="slds-is-sortable slds-truncate desc" id="Status__c" scope="col" onclick="{!c.sortCallbacks}">
+							<div class="slds-truncate col-header slds-th__action" title="Status">Status
+								<button class="slds-button slds-button--icon-bare" >
+									<span class="slds-assistive-text">Sort</span>
+								</button>
+							</div>
+						</th>						
+						<th scope="col">
+							<div class="slds-truncate col-header" title="Notes">Notes</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<aura:iteration items="{!v.callbacks}" var="callback">
+						<tr class="slds-hint-parent">
+							<td class="slds-truncate" data-label="Callback Date" onchange="{!c.callbackDateUpdate}">
+				                <input id="{!'callback-date-' + callback.Id}" type="date" value="{!callback.Callback_Date__c}" onchange="{!c.callbackDateUpdate}"/>
+				            </td>
+							<td class="slds-truncate" data-label="Callback">
+								<a href="javascript:void(0);" data-url="{!'/' + callback.Id}" onclick="{!c.clickNavigate}">{!callback.Name}</a>
+							</td>								
+							<td class="slds-truncate" data-label="Account">
+								<a href="javascript:void(0);" data-url="{!'/' + callback.Account__c}" onclick="{!c.clickNavigate}">{!callback.Account__r.Name}</a>
+								<aura:if isTrue="{!callback.VIP_Account__c}">
+									<lightning:icon iconName="custom:custom11" size="x-small"/>
+								</aura:if>
+							</td>
+							<td class="slds-truncate" data-label="Contact">
+								<a class="sub-details" id="{!'contact-details-' + callback.Id}" onclick="{!c.viewOrHideContactDetailsClick}">+</a>
+								<a href="javascript:void(0);" data-url="{!'/' + callback.Vendor_Contact__c}" onclick="{!c.clickNavigate}">{!callback.Vendor_Contact__r.Name}</a>
+							</td>
+							<td class="slds-truncate" data-label="Subscription">
+								<a class="sub-details" id="{!'sub-details-' + callback.Id}" onclick="{!c.viewOrHideSubscriptionDetailsClick}">+</a>
+								<a href="javascript:void(0);" data-url="{!'/' + callback.Subscription_Product_Charge__r.Zuora__Subscription__c}" onclick="{!c.clickNavigate}">{!callback.Subscription_Name__c}</a>
+							</td>
+
+							<!-- CSP-1869 -->
+							<td class="slds-truncate" data-label="Possible Renewal">
+								{!callback.Is_Possible_Renewal__c}
+							</td>
+
+							<td class="slds-truncate" data-label="Type">
+								{!callback.Subscription_Product_Charge__r.Product_Type__c}
+							</td>
+							<td class="slds-truncate" data-label="Service Start Date">
+								{!callback.Subscription_Product_Charge__r.Zuora__Subscription__r.Zuora__TermStartDate__c}
+							</td>
+							<td class="slds-truncate" data-label="LDE Launch Date">
+								{!callback.Subscription_Product_Charge__r.LDE_Email_Launch_Date__c}
+							</td>
+							<td class="slds-truncate" data-label="Owner">
+								<select id="{!'callback-owner-' + callback.Id}" onchange="{!c.callbackOwnerUpdate}">
+									<aura:iteration items="{!v.ownerPicklistValues}" var="owner">
+										<aura:if isTrue="{!owner.Id == callback.OwnerId}">
+											<option value="{!owner.Id}" selected="selected">{!owner.Name}</option>
+										<aura:set attribute="else">
+											<option value="{!owner.Id}">{!owner.Name}</option>
+										</aura:set>
+										</aura:if>
+									</aura:iteration>
+								</select>							
+							</td>
+							<td class="slds-truncate" data-label="Status">
+								<select id="{!'callback-status-' + callback.Id}" onchange="{!c.callbackStatusUpdate}">
+									<aura:iteration items="{!v.statusPicklistValues}" var="statusPicklistValue">
+										<aura:if isTrue="{!statusPicklistValue == callback.Status__c}">
+											<option selected="selected">{!statusPicklistValue}</option>
+										<aura:set attribute="else">
+											<option>{!statusPicklistValue}</option>
+										</aura:set>
+										</aura:if>
+									</aura:iteration>
+								</select>
+							</td>
+							<td class="slds-truncate" data-label="Notes">
+								<a id="{!'view-notes-link-' + callback.Id}" onclick="{!c.viewOrHideNotesClick}">View/Edit Notes</a>
+							</td>
+						</tr>
+
+
+						<tr class="sub-details-section" id="{!'contact-details-section-' + callback.Id}">
+							<td colspan="10">
+								<div class="sub-details-table-wrapper">
+									<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-max-medium-table--stacked-horizontal sub-details-table" id="{!'contact-details-table-' + callback.Id}">
+										<thead>
+											<tr class="slds-text-title--caps">
+												<th scope="col">
+													<div class="slds-truncate col-header" title="Vendor Phone">Vendor Phone</div>
+												</th>				
+												<th scope="col">
+													<div class="slds-truncate col-header" title="Vendor Email">Vendor Email</div>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="slds-hint-parent">
+												<td class="slds-truncate" data-label="Vendor Phone">
+													{!callback.Vendor_Phone__c}
+												</td>
+												<td class="slds-truncate" data-label="Vendor Email">
+													{!callback.Vendor_Email__c}
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</td>
+						</tr>					
+
+
+						<tr class="sub-details-section" id="{!'sub-details-section-' + callback.Id}">
+							<td colspan="10">
+								<div class="sub-details-table-wrapper">
+									<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-max-medium-table--stacked-horizontal sub-details-table" id="{!'sub-details-table-' + callback.Id}">
+										<thead>
+											<tr class="slds-text-title--caps">
+												<th scope="col">
+													<div class="slds-truncate col-header" title="Product Rate Plan Name">Product Rate Plan Name</div>
+												</th>				
+												<th scope="col">
+													<div class="slds-truncate col-header" title="Term Start Date">Term Start Date</div>
+												</th>
+												<th scope="col">
+													<div class="slds-truncate col-header" title="Term End Date">Term End Date</div>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="slds-hint-parent">
+												<!-- DYNAMICALLY POPULATE TABLE ROWS WITH SUBSCRIPTION DATA -->
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</td>
+						</tr>
+
+
+						<tr class="callback-notes" id="{!'callback-notes-section-' + callback.Id}">
+							<td colspan="10">
+								<div class="callback-notes-table-wrapper">
+									<!-- TODO: check this table class of sub-details-table -->
+									<table class="slds-table slds-table--bordered slds-table--cell-buffer slds-max-medium-table--stacked-horizontal callback-notes-table" id="{!'callback-notes-table-' + callback.Id}">
+										<thead>
+											<tr class="slds-text-title--caps">			
+												<th scope="col">
+													<div class="slds-truncate col-header" title="Callback Note">Callback Note</div>
+												</th>
+												<th scope="col">
+													<div class="slds-truncate col-header" title="Created By">Created By</div>
+												</th>
+												<th scope="col">
+													<div class="slds-truncate col-header" title="Created Date">Created Date</div>
+												</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr class="slds-hint-parent">
+												<!-- DYNAMICALLY POPULATE TABLE ROWS WITH CALLBACK NOTES DATA -->
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<textarea class="callback-notes-textarea" id="{!'callback-notes-textarea-' + callback.Id}"></textarea>
+								<button class="callback-notes-button" id="{!'callback-notes-button-' + callback.Id}" type="button" onclick="{!c.callbackNotesUpdate}">Add Callback Note</button>
+							</td>
+						</tr>	
+
+
+						<tr class="update-notification" id="{!'update-notification-' + callback.Id}">
+							<td class="loading" align="center" colspan="10">
+								<div class="slds-spinner_container">
+									<div>Updating Callback Record...</div>
+									<div class="slds-spinner--brand slds-spinner slds-spinner--medium" role="alert">
+										<span class="slds-assistive-text">Loading</span>
+										<div class="slds-spinner__dot-a"></div>
+										<div class="slds-spinner__dot-b"></div>
+									</div>
+									<div class="update-success">SUCCESS!</div>
+									<div class="update-failure">FAILURE</div>
+								</div>
+							</td>
+						</tr>
+
+					</aura:iteration>
+				</tbody>
+			</table>
+
+		</div>
+
+
+		<div class="paginator-container-bottom">
+			<div class="left">
+				<aura:renderIf isTrue="{!v.page > 1}">
+					<button onclick="{!c.pageChangePrevious}">Previous</button>
+				</aura:renderIf>
+			</div>
+
+			<div class="center">
+				{!v.recordCount} records • page {!v.page} / {!v.pages}
+			</div>
+
+			<div class="right">
+				<aura:renderIf isTrue="{!v.page &lt; v.pages}">
+					<button onclick="{!c.pageChangeNext}">Next</button>
+				</aura:renderIf>
+			</div>
+		</div>
+		
+	</div>
+</aura:component>

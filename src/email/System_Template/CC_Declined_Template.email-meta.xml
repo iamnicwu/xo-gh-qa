@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>36.0</apiVersion>
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>CC Declined Template</name>
+    <packageVersions>
+        <majorNumber>2</majorNumber>
+        <minorNumber>111</minorNumber>
+        <namespace>Zuora</namespace>
+    </packageVersions>
+    <style>none</style>
+    <subject>Electronic Payment Method Decline for The Knot Services – Prompt Attention Appreciated (, )</subject>
+    <type>visualforce</type>
+</EmailTemplate>

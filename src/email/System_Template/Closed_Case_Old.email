@@ -1,0 +1,6 @@
+Hello,
+You have a closed case that is five days old.  Please resolve.
+
+Case Id: {!Case.Id}
+Account: {!Case.Account}
+Thank you.

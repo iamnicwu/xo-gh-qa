@@ -1,0 +1,2738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Close</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>DeleteSeries</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewTask</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fieldSets>
+        <fullName>nvmchangedfields</fullName>
+        <description>nvmchangedfields</description>
+        <displayedFields>
+            <field>AccountId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Account__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AccountLongestPastDueDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>AccountPastDueAmount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>NVMContactWorld__ACD__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Id</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IsArchived</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Assigned_Title__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OwnerId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CallDurationInSeconds</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CallDurationInHours__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CallDurationInMinutes__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CallObject</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Call_Purpose__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CallDisposition</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>NVMContactWorld__CallRingTimeInSeconds__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>NVMContactWorld__CallTalkTimeInSeconds__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CallType</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>NVMContactWorld__Was_Call_Recorded__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CBP_In_House__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CBSS_Disposition_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Claiming_Task_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IsClosed</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Description</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>NVMContactWorld__ContactWorld_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Created_Date_Time__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IsRecurrence</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>NVMContactWorld__Customer_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>NVMContactWorld__CW_Call_End_Time__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>NVMContactWorld__CW_Call_Start_Time__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Delete_After_Due_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IsDeleted</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Dispostition_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ActivityDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Event_Purpose__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Hidden_NVM_Recording_GUID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IsHighPriority</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Inbound_Disposition__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>NVMContactWorld__InteractionQuality__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Local_AE_Disposition_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Marked_for_Deletion__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Meeting_Category__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Mobile_Phone__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>WhoId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>NVMStatsSF__NVM_Agent__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>NVM_Notes__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>NVM_Voicemail_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Onboard_Automation__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Onboarding_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Onboarding_Task_Outcome__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Opportunity_Stage__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Priority</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>QuickviewText__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ConnectionReceivedId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecurrenceActivityId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecurrenceDayOfMonth</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecurrenceDayOfWeekMask</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecurrenceEndDateOnly</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecurrenceInstance</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecurrenceInterval</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecurrenceMonthOfYear</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecurrenceStartDateOnly</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecurrenceTimeZoneSidKey</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecurrenceType</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Reference_ID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>WhatId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ReminderDateTime</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IsReminderSet</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecurrenceRegeneratedType</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ConnectionSentId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Strategy_Specialist_Disposition_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>NVMContactWorld__Service_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Status</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Subject</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SystemModstamp</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Task_Category__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Task_Completion_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Purpose__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecordTypeId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TaskResourceType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>TaskSubtype</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Actions_Taken__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Campaign__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Campaign_Details__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Clicked__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Details__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Events_Tracked__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Last_Event_At__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Presentation_Viewed__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Replied__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Replied_At__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Sent_By__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Template__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Template_Details__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ToutApp__Tout_Viewed__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Type</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Type_Mirror_of_Standard_field__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Type_of_Call__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Voicemail_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>nvmchangedfields</label>
+    </fieldSets>
+    <fields>
+        <fullName>ActivityDate</fullName>
+    </fields>
+    <fields>
+        <fullName>CallDisposition</fullName>
+    </fields>
+    <fields>
+        <fullName>CallDurationInSeconds</fullName>
+    </fields>
+    <fields>
+        <fullName>CallObject</fullName>
+    </fields>
+    <fields>
+        <fullName>CallType</fullName>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>IsRecurrence</fullName>
+    </fields>
+    <fields>
+        <fullName>IsReminderSet</fullName>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+                <highPriority>true</highPriority>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Normal</fullName>
+                <default>true</default>
+                <highPriority>false</highPriority>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+                <highPriority>false</highPriority>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RecurrenceInterval</fullName>
+    </fields>
+    <fields>
+        <fullName>RecurrenceRegeneratedType</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <closed>true</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Show</fullName>
+                <default>false</default>
+                <closed>false</closed>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <closed>true</closed>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Subject</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Voicemail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pitch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TaskSubtype</fullName>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Voicemail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reminder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reply</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Badge Verified</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>WhatId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>WhoId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <recordTypes>
+        <fullName>Local_SS_Task</fullName>
+        <active>true</active>
+        <label>Local SS Task</label>
+        <picklistValues>
+            <picklist>CBP_In_House__c</picklist>
+            <values>
+                <fullName>Good Faith Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Commitment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promised Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refusal to Pay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CBSSResult__c</picklist>
+            <values>
+                <fullName>Internal Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Vendor Related</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Information Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Took Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferred to Escalation Team</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CBSS_Disposition_Code__c</picklist>
+            <values>
+                <fullName>Disputing Bill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Answer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Information Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promise to Pay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested Manager%2FSupervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested to Cancel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set up Payment Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spoke to Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Took Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferred to Escalation Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Number</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Purpose__c</picklist>
+            <values>
+                <fullName>Cold Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Courtesy Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opportunity F%2FU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warm Call</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Claiming_Task_Type__c</picklist>
+            <values>
+                <fullName>Claiming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claiming Assigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disposition__c</picklist>
+            <values>
+                <fullName>Busy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Live Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Voicemail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Answer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong%2FBad Number</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dispostition_Type__c</picklist>
+            <values>
+                <fullName>CBSS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local AE</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>SS%3A AS Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS%3A Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS%3A Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS%3A TK Pro</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Purpose__c</picklist>
+            <values>
+                <fullName>First Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow Up Meeting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Inbound_Disposition__c</picklist>
+            <values>
+                <fullName>Inbound Working</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to BDR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to TKPro</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LocalAEResult__c</picklist>
+            <values>
+                <fullName>Customer Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Sales Related</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not-Interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pitch Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pitch Scheduled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Local_AE_Disposition_Code__c</picklist>
+            <values>
+                <fullName>Busy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect - Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect - Not Interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect - Pitch Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect - Pitch Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect-Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Live Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Voicemail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Answer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Sales Related</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong%2FBad Number</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Meeting_Category__c</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regular Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Task_Outcome__c</picklist>
+            <values>
+                <fullName>Aged Out of Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled Onboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed Onboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined Onboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Immediate Onboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Answer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rescheduled Onboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled Onboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Calendar Link</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Purpose__c</picklist>
+            <values>
+                <fullName>Cancel Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalated to Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pitching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working on Contract</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ResultType__c</picklist>
+            <values>
+                <fullName>AS Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK Pro</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ServiceResult__c</picklist>
+            <values>
+                <fullName>45 Day Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Month Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM Touchpoint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Collection Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOW%2FHOF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bride%2FGroom assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancel Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim%2FCreate Freemium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Log in assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing %2F Events</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Voicemail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Vendor Related</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding Scheduling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other - non-TK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Information Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print Ad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFDC%2FSubscription Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storefront Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK %E2%80%93 Registry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK - Memb%2FOther</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK - WWS %2F GLM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TKP Pro%2FOnline Ad Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TKPro Shop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Bump - All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update Contact Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIP Proactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Booked</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rescheduled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strategy_Specialist_Disposition_Code__c</picklist>
+            <values>
+                <fullName>AM Touchpoint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Collection Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BDR Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOW%2FHOF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bride%2FGroom assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancel Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim Freemium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create Freemium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Log in assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing %2F Events</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Voicemail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding Scheduling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other - non-TK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Information Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print Ad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFDC%2FSubscription Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storefront Re-design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storefront Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Issue - Internal Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TB %E2%80%93 Baby Registry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TB %E2%80%93 Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TB %E2%80%93 Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK %E2%80%93 Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK %E2%80%93 Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK %E2%80%93 Payment Information Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK %E2%80%93 Registry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK - WWS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TKP Pro%2FOnline Ad Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TKPro Shop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TKWS - product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update Contact Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIP Proactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Number</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pitch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voicemail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TaskResourceType__c</picklist>
+            <values>
+                <fullName>Call Recording</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VoiceMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Category__c</picklist>
+            <values>
+                <fullName>Client Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ops Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Badge Verified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reminder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voicemail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Call__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Voicemail_Type__c</picklist>
+            <values>
+                <fullName>CBSS Rotating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RBSS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviews</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategy Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK Pro</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Standard_Task</fullName>
+        <active>true</active>
+        <label>Standard Task</label>
+        <picklistValues>
+            <picklist>CBP_In_House__c</picklist>
+            <values>
+                <fullName>Good Faith Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Commitment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promised Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refusal to Pay</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CBSSResult__c</picklist>
+            <values>
+                <fullName>Internal Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Vendor Related</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Information Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Took Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferred to Escalation Team</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CBSS_Disposition_Code__c</picklist>
+            <values>
+                <fullName>Disputing Bill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Answer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Information Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Promise to Pay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested Manager%2FSupervisor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested to Cancel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Set up Payment Plan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spoke to Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spoke with Representative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Took Payment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferred to Escalation Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting on AE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Number</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Purpose__c</picklist>
+            <values>
+                <fullName>Cold Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Courtesy Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Opportunity F%2FU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warm Call</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Claiming_Task_Type__c</picklist>
+            <values>
+                <fullName>Claiming</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claiming Assigned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Disposition__c</picklist>
+            <values>
+                <fullName>Busy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Live Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Voicemail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Answer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong%2FBad Number</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Dispostition_Type__c</picklist>
+            <values>
+                <fullName>CBSS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Local AE</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>SS%3A AS Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS%3A Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS%3A Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SS%3A TK Pro</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Purpose__c</picklist>
+            <values>
+                <fullName>First Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow Up Meeting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Inbound_Disposition__c</picklist>
+            <values>
+                <fullName>Inbound Working</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to BDR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to Field</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transfer to TKPro</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LocalAEResult__c</picklist>
+            <values>
+                <fullName>Customer Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Follow-Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Sales Related</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not-Interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pitch Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pitch Scheduled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Local_AE_Disposition_Code__c</picklist>
+            <values>
+                <fullName>Busy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect - Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect - Not Interested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect - Pitch Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect - Pitch Scheduled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connect-Close</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Live Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Voicemail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Answer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Sales Related</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong%2FBad Number</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Meeting_Category__c</picklist>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Regular Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Onboarding_Task_Outcome__c</picklist>
+            <values>
+                <fullName>Aged Out of Test</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled Onboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed Onboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined Onboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Immediate Onboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Left Message</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Answer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rescheduled Onboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scheduled Onboard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Send Calendar Link</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Purpose__c</picklist>
+            <values>
+                <fullName>Closing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>First Contact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Conversation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pitching</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Working on Contract</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ResultType__c</picklist>
+            <values>
+                <fullName>AS Core</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK Pro</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ServiceResult__c</picklist>
+            <values>
+                <fullName>45 Day Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6 Month Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AM Touchpoint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Collection Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOW%2FHOF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bride%2FGroom assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancel Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim%2FCreate Freemium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Log in assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing %2F Events</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Voicemail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Vendor Related</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding Scheduling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other - non-TK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Information Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print Ad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFDC%2FSubscription Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storefront Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK %E2%80%93 Registry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK - Memb%2FOther</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK - WWS %2F GLM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TKP Pro%2FOnline Ad Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TKPro Shop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>The Bump - All</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update Contact Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIP Proactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Booked</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rescheduled</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Strategy_Specialist_Disposition_Code__c</picklist>
+            <values>
+                <fullName>AM Touchpoint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Collection Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BDR Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOW%2FHOF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Billing Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bride%2FGroom assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancel Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Claim Freemium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create Freemium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Internal Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Log in assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manager Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marketing %2F Events</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting Schedule</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Voicemail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onboarding Scheduling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other - non-TK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payment Information Provided</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print Ad</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Review Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SFDC%2FSubscription Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spoke with Representative</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storefront Re-design</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Storefront Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Issue - Internal Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TB %E2%80%93 Baby Registry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TB %E2%80%93 Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TB %E2%80%93 Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK %E2%80%93 Membership</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK %E2%80%93 Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK %E2%80%93 Payment Information Pro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK %E2%80%93 Registry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK - WWS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TKP Pro%2FOnline Ad Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TKPro Shop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TKWS - product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update Contact Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upsell Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VIP Proactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wrong Number</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pitch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voicemail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>TaskResourceType__c</picklist>
+            <values>
+                <fullName>Call Recording</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VoiceMail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Task_Category__c</picklist>
+            <values>
+                <fullName>Client Billing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Client Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Data Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ops Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reminder</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Voicemail</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Call__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Event%2FConference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Voicemail_Type__c</picklist>
+            <values>
+                <fullName>CBSS Rotating</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Personal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RBSS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviews</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategy Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TK Pro</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>NVMContactWorld__Interac_Quality_Must_Be_Between_1_and_10</fullName>
+        <active>true</active>
+        <errorConditionFormula>NVMContactWorld__InteractionQuality__c &lt; 1  ||  NVMContactWorld__InteractionQuality__c &gt; 10</errorConditionFormula>
+        <errorMessage>Interaction Quality must be a number between 1 and 10</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Onboarding_Follow_Up_Restriction</fullName>
+        <active>true</active>
+        <description>Non No Show/Left Message/Cancelled Task cannot select Reschedule Onboard options.</description>
+        <errorConditionFormula>AND( 
+RecordType.DeveloperName=&apos;Standard_Task&apos;, 
+ISCHANGED(Onboarding_Task_Outcome__c), 
+CONTAINS(Subject, &apos;Onboarding Follow-up&apos;), 
+ISPICKVAL(Onboarding_Task_Outcome__c, &apos;Rescheduled Onboard&apos;), 
+ISPICKVAL(ServiceResult__c, &apos;Onboarding Scheduling&apos;) 
+)</errorConditionFormula>
+        <errorMessage>Please select the Scheduled Onboard as outcome option.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Onboarding_No_Show_Restriction</fullName>
+        <active>true</active>
+        <description>&quot;Scheduled Onboard&quot; outcome cannot be selected once the Onboard has already been scheduled once.  Please update to &quot;Rescheduled Onboard&quot;</description>
+        <errorConditionFormula>AND(
+RecordType.DeveloperName=&apos;Standard_Task&apos;,
+ISCHANGED(Onboarding_Task_Outcome__c),
+OR(
+CONTAINS(Subject, &apos;No-Show&apos;),
+CONTAINS(Subject, &apos;Cancel Follow-up&apos;)
+),
+ISPICKVAL(Onboarding_Task_Outcome__c, &apos;Scheduled Onboard&apos;),
+ISPICKVAL(Strategy_Specialist_Disposition_Code__c, &apos;Onboarding Scheduling&apos;)
+)</errorConditionFormula>
+        <errorMessage>&quot;Scheduled Onboard&quot; outcome cannot be selected once the Onboard has already been scheduled once.  Please update to &quot;Rescheduled Onboard&quot;</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_In_House_Collections_Task</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New In-House Collections Task</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/00T/e?who_id={!Case.ContactId}&amp;what_id={!Case.Id}&amp;retURL=%2F{!Case.Id}&amp;RecordType=0123F0000005JUJ&amp;ent=Task</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Test</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Test</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>https://xogrp--devzuora.cs18.my.salesforce.com/0011100000xNWKm</url>
+    </webLinks>
+</CustomObject>

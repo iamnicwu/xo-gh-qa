@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <attachedDocuments>SharedDocuments/TheKnot_CC_ACH_Authorization_Form.pdf</attachedDocuments>
+    <available>true</available>
+    <description>Email Template used to send Past Due Warnings for less than 60 days.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Past Due Warning</name>
+    <style>none</style>
+    <subject>Payments Past Due for The Knot Services – Prompt Attention Appreciated {!Account.Name}</subject>
+    <textOnly>Hello {!Contact.FirstName},
+
+Thank you for your partnership with The Knot. I am reaching out to notify you that our records show you are currently {!Account.Days_Since_Past_Due__c} days past due, leaving an outstanding balance of {!Account.Past_Due_Balance__c}. Often times we find this may be an oversight and are happy to help remedy this right away.
+
+If you would like to discuss payment plan options or have any questions, please contact me at your earliest convenience so we can get this remedied right away. I am available from 8:15am-5:00pm CST, Monday-Friday.
+
+If you are paying by Credit Card or ACH, I have attached a payment authorization form that you can complete and fax back to me if you prefer. For your security do not email this form.
+
+Please contact me and I’m happy to get this resolved right away!
+
+Very Truly,
+{!Account.CBBS__c}
+{!Account.CBSS_Email__c}
+XO Group Inc. (NYSE: XOXO)
+P {!Account.CBSS_Phone__c}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

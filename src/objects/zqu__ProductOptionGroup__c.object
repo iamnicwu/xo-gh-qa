@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>zqu__EditProductOptionGroup</fullName>
+        <description>Edit Product Option Group</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Product__c</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__RootProduct__c</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Min_Option__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Max_Option__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Edit Product Option Group</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>zqu__NewProductOptionGroup</fullName>
+        <description>New Product Option Group</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Product__c</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__RootProduct__c</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Min_Option__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Max_Option__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>New Product Option Group</label>
+    </fieldSets>
+    <fields>
+        <fullName>zqu__Max_Option__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Max Option</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Min_Option__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Min Option</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Origin__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field should be auto populate when generating a snapshot. It&apos;s link to the original object.</description>
+        <externalId>false</externalId>
+        <label>Original Option</label>
+        <referenceTo>zqu__ProductOptionGroup__c</referenceTo>
+        <relationshipLabel>Product Option Groups</relationshipLabel>
+        <relationshipName>ProductOptionGroups</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Parent Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Product Option Groups</relationshipLabel>
+        <relationshipName>ProductOptionGroups</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__RootProduct__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The field identifies the top level product containing this product option group.</description>
+        <externalId>false</externalId>
+        <label>Root Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Product Option Groups (Root Product)</relationshipLabel>
+        <relationshipName>RootProductOptionGroups</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__RootQrpId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The unique ID corresponding to the root bundle that a snapshotted product option group belongs to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The unique ID corresponding to the root bundle that a snapshotted product option group belongs to.</inlineHelpText>
+        <label>Root Quote Rate Plan ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__RootQuote__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The unique ID determining which quote a snapshotted Product Option Group belongs to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The unique ID determining which quote a snapshotted Product Option Group belongs to.</inlineHelpText>
+        <label>Quote</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Product Option Group</label>
+    <nameField>
+        <label>Product Option Group Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product Option Groups</pluralLabel>
+    <recordTypes>
+        <fullName>zqu__Default</fullName>
+        <active>true</active>
+        <label>Default</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>zqu__Snapshot</fullName>
+        <active>true</active>
+        <label>Snapshot</label>
+    </recordTypes>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>zqu__Product__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>zqu__Max_Option_Rule</fullName>
+        <active>true</active>
+        <description>Max Option cannot be less than 0</description>
+        <errorConditionFormula>AND( NOT( ISNULL(zqu__Max_Option__c) ) ,
+      zqu__Max_Option__c &lt; 0)</errorConditionFormula>
+        <errorDisplayField>zqu__Max_Option__c</errorDisplayField>
+        <errorMessage>Max Option cannot be less than 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>zqu__Min_Option_Less_Than_Max</fullName>
+        <active>true</active>
+        <description>Min Option should be less than Max Option</description>
+        <errorConditionFormula>AND( NOT( ISNULL( zqu__Min_Option__c ) ) ,
+     NOT( ISNULL( zqu__Max_Option__c ) ) ,
+     zqu__Min_Option__c  &gt; zqu__Max_Option__c )</errorConditionFormula>
+        <errorDisplayField>zqu__Min_Option__c</errorDisplayField>
+        <errorMessage>Min Option should be equal or less  than Max Option</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>zqu__Min_Option_Rule</fullName>
+        <active>true</active>
+        <description>Min Option cannot be less than 0</description>
+        <errorConditionFormula>AND( NOT( ISNULL( zqu__Min_Option__c ) ) ,
+      zqu__Min_Option__c  &lt; 0)</errorConditionFormula>
+        <errorDisplayField>zqu__Min_Option__c</errorDisplayField>
+        <errorMessage>Min Option cannot be less than 0</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The Charges that are related to a Quote.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>zqu__DisplayChargeFields</fullName>
+        <availableFields>
+            <field>zqu__Currency__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>zqu__IncludedUnits__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>zqu__ListTotal__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>zqu__MRR__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>zqu__Model__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>zqu__Quantity__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>zqu__RatePlanCharge_ZuoraID__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>zqu__TCV__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>zqu__UOM__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
+            <field>zqu__Upto_How_Many_Periods__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>Fields in this field set will be displayed in rate plan charge list on select products page</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__ChargeType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Period__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__ListPrice__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Discount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__EffectivePrice__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Total__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Display Charge Fields</label>
+    </fieldSets>
+    <fields>
+        <fullName>ActivationTime__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(ServiceActivationDate__c), 99999 ,ServiceActivationDate__c - zqu__Quote__r.zqu__StartDate__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Activation Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CategoryTier__c</fullName>
+        <externalId>false</externalId>
+        <label>Category Tier</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Tier 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tier 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tier 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tier 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tier 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(zqu__ProductRatePlanCharge__r.zqu__ProductRatePlan__r.Category__c)</formula>
+        <label>Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DiscountPrice__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount Price</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ListPrice__c</fullName>
+        <externalId>false</externalId>
+        <label>List Price</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Market__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( zqu__ProductRatePlanCharge__r.zqu__ProductRatePlan__r.Market__c )</formula>
+        <label>Market</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PaymentPlan__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Plan</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quarter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Semi-Annual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Annual</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ProductCategory__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Storefront</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Addon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ProductType__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Storefront</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Additional Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RSD_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>RSD Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RenewalRepID__c</fullName>
+        <externalId>false</externalId>
+        <label>RenewalRepID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SalesRepID__c</fullName>
+        <externalId>false</externalId>
+        <label>SalesRepID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SellingCutoffDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>VALUE( zqu__ProductRatePlanCharge__r.SellingCutoffDate__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Selling Cutoff Date</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ServiceActivationDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Activation Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Apply_Discount_To_One_Time_Charges__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Apply Discount To One Time Charges</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Apply_Discount_To_Recurring_Charges__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Apply Discount To Recurring Charges</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Apply_Discount_To_Usage_Charges__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Apply Discount To Usage Charges</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zqu__BillCycleDay__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Bill Cycle Day of RatePlan Charge</description>
+        <externalId>false</externalId>
+        <label>Bill Cycle Day</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__BillingPeriodAlignment__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Billing Period Alignment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AlignToCharge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AlignToSubscriptionStart</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AlignToTermStart</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>zqu__ChargeType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Type from ProductRatePlanCharge</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Type from ProductRatePlanCharge</inlineHelpText>
+        <label>Charge Type</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Currency__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Currency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>zqu__ProductRatePlanCharge__r.zqu__Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Discount_Level__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Discount Level</label>
+        <picklist>
+            <picklistValues>
+                <fullName>RatePlan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Subscription</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Account</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Discount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Discount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>zqu__EffectivePrice__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Effective Price of the Charge.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Effective Price of the Charge.</inlineHelpText>
+        <label>Effective Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>7</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>zqu__FeeType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Fee Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Flat Fee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>n/a</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>zqu__FirstPeriodCharge__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(zqu__ChargeType__c,
+  &apos;Usage&apos;,0,
+  &apos;One-Time&apos;,CASE(zqu__FeeType__c,
+                    &apos;n/a&apos;, zqu__Total__c,
+                    zqu__TCVForRollup__c),
+  &apos;Recurring&apos;,IF(BEGINS( zqu__Model__c , &apos;Flat Fee&apos;) , 
+                    zqu__EffectivePrice__c , 
+                    CASE(zqu__FeeType__c,
+                    &apos;Flat Fee&apos;, zqu__EffectivePrice__c,
+                    &apos;n/a&apos;, zqu__Total__c,
+                    zqu__Quantity__c * zqu__EffectivePrice__c
+                  )
+              ),
+0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>First Period Charge</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>zqu__IncludedUnits__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Included Units</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>9</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__ListPriceDisplay__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>List Price Display</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>7</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>zqu__ListPrice__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(zqu__ListPriceDisplay__c  == 0, zqu__ProductRatePlanCharge__r.zqu__ListPrice__c, zqu__ListPriceDisplay__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>List Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>7</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>zqu__ListTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>List Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__MRRForRollup__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>MRR For Rollup</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__MRR__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF ( OR ( zqu__Model__c == &apos;Discount-Fixed Amount&apos; , zqu__Model__c == &apos;Discount-Percentage&apos; ),
+0,
+
+IF(zqu__ChargeType__c == &apos;One-Time&apos;, 0,
+  IF( AND(zqu__ChargeType__c == &apos;Recurring&apos;,zqu__PeriodNumeric__c != 0, NOT( ISNULL(zqu__PeriodNumeric__c )) ),
+    IF(BEGINS(zqu__Model__c, &apos;Flat Fee&apos;),
+      zqu__EffectivePrice__c / zqu__PeriodNumeric__c,
+      CASE(zqu__FeeType__c,
+        &apos;Flat Fee&apos;, zqu__EffectivePrice__c / zqu__PeriodNumeric__c,
+        IF(zqu__Model__c == &apos;Tiered Pricing&apos; &amp;&amp; zqu__ChargeType__c != &apos;Usage&apos;,
+            zqu__Total__c,
+            zqu__EffectivePrice__c * zqu__Quantity__c
+        ) / zqu__PeriodNumeric__c
+      )
+    ),
+  0) 
+)
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>MRR</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Model__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Model</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__PeriodNumeric__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>numerical mapping of &lt;Period&gt; field</description>
+        <externalId>false</externalId>
+        <label>Period Numeric</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Period__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Period</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Prepay__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Prepay</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__PrepaymentPeriods__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The number of Periods that will be Prepayed.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of Periods that will be Prepayed.</inlineHelpText>
+        <label>Prepayment Periods</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>QuoteCharge refered ProductName</description>
+        <externalId>false</externalId>
+        <inlineHelpText>QuoteCharge refered ProductName</inlineHelpText>
+        <label>Product Name</label>
+        <length>120</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductRatePlanCharge__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Rate Plan Charge associated with this Quote.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Rate Plan Charge associated with this Quote.</inlineHelpText>
+        <label>Rate Plan Charge</label>
+        <referenceTo>zqu__ProductRatePlanCharge__c</referenceTo>
+        <relationshipLabel>Quote Charges</relationshipLabel>
+        <relationshipName>R00N40000001mFW5EAM</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductRatePlanName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>QuoteCharge refered Product RatePlan Name</description>
+        <externalId>false</externalId>
+        <inlineHelpText>QuoteCharge refered Product RatePlan Name</inlineHelpText>
+        <label>RatePlan Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Quantity of the Charge.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Quantity of the Charge.</inlineHelpText>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>5</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Quote__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Quote related to the Charges.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Quote related to the Charges.</inlineHelpText>
+        <label>Quote</label>
+        <referenceTo>zqu__Quote__c</referenceTo>
+        <relationshipLabel>Quote Charges</relationshipLabel>
+        <relationshipName>QuoteCharge</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>zqu__RatePlanCharge_ZuoraID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The related Rate Plan Charge&apos;s Zuora Id</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The related Rate Plan Charge&apos;s Zuora Id</inlineHelpText>
+        <label>RatePlanCharge_ZuoraID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__SpecificBillingPeriod__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Customizes the number of month for the charges billing period. This field is required if you set the value of the BillingPeriod field to Specific Months.</description>
+        <externalId>false</externalId>
+        <label>Specific Billing Period</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__TCVForRollup__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>TCV For Rollup</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__TCV__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF ( OR ( zqu__Model__c == &apos;Discount-Fixed Amount&apos; , zqu__Model__c == &apos;Discount-Percentage&apos;, ISPICKVAL(zqu__Quote__r.zqu__Subscription_Term_Type__c, &apos;Evergreen&apos;)),
+       0,
+       IF(zqu__ChargeType__c ==&apos;Usage&apos;, 
+            0, 
+            IF(zqu__ChargeType__c ==&apos;One-Time&apos;, 
+  
+                IF(BEGINS(zqu__Model__c , &apos;Flat Fee&apos;) , 
+                     zqu__EffectivePrice__c , 
+                     CASE(zqu__FeeType__c,
+                                 &apos;Flat Fee&apos;, zqu__EffectivePrice__c,
+                                 IF(zqu__Model__c == &apos;Tiered Pricing&apos;, zqu__Total__c, zqu__EffectivePrice__c * zqu__Quantity__c))
+                ),
+      
+               IF(zqu__ChargeType__c ==&apos;Recurring&apos;,
+                    zqu__MRR__c * zqu__Quote__r.zqu__InitialTerm__c ,
+                    0)
+            )
+       )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>TCV</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>zqu__TimeProductAdded__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Time Product Added</label>
+        <length>24</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Total_Discount_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(zqu__ChargeType__c ,
+    	&apos;Usage&apos;, 0, zqu__ListTotal__c - zqu__Total__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Discount Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Total__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Total</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__TriggerDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date when the charge becomes effective, and billing begins. This field is required if the TriggerEvent field value is SpecificDate.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date when the charge becomes effective, and billing begins.</inlineHelpText>
+        <label>Trigger Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>zqu__TriggerEvent__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Trigger Event</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ContractEffective</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ServiceActivation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CustomerAcceptance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SpecificDate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(zqu__ProductRatePlanCharge__r.zqu__Type__c,&quot;One-Time&quot;,&quot;One-Time&quot;,&quot;Recurring&quot;,&quot;Recurring&quot;,&quot;Usage&quot;,&quot;Usage&quot;,&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__UOM__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>UOM</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Upto_How_Many_Periods__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Up To How Many Periods</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__isMigrated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>isMigrated</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Quote Charge</label>
+    <listViews>
+        <fullName>zqu__All</fullName>
+        <columns>NAME</columns>
+        <columns>zqu__TimeProductAdded__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>zqu__All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Quote Charge Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Quote Charges</pluralLabel>
+    <recordTypes>
+        <fullName>zqu__Default</fullName>
+        <active>true</active>
+        <label>Default</label>
+        <picklistValues>
+            <picklist>zqu__BillingPeriodAlignment__c</picklist>
+            <values>
+                <fullName>AlignToCharge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AlignToSubscriptionStart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AlignToTermStart</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>zqu__Discount_Level__c</picklist>
+            <values>
+                <fullName>Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RatePlan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subscription</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>zqu__FeeType__c</picklist>
+            <values>
+                <fullName>Flat Fee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>zqu__TriggerEvent__c</picklist>
+            <values>
+                <fullName>ContractEffective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CustomerAcceptance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ServiceActivation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SpecificDate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>zqu__ReadOnly</fullName>
+        <active>true</active>
+        <label>ReadOnly</label>
+        <picklistValues>
+            <picklist>zqu__BillingPeriodAlignment__c</picklist>
+            <values>
+                <fullName>AlignToCharge</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AlignToSubscriptionStart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AlignToTermStart</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>zqu__Discount_Level__c</picklist>
+            <values>
+                <fullName>Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RatePlan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subscription</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>zqu__FeeType__c</picklist>
+            <values>
+                <fullName>Flat Fee</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>zqu__TriggerEvent__c</picklist>
+            <values>
+                <fullName>ContractEffective</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CustomerAcceptance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ServiceActivation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SpecificDate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Concierge_Usage_Price</fullName>
+        <active>true</active>
+        <description>The user should not be able to change the price for the Concierge usage charge from $1.00. This field will be sent a dollar amount as a usage charge.</description>
+        <errorConditionFormula>AND( zqu__EffectivePrice__c  &lt;&gt; 1 ,
+zqu__ChargeType__c = &quot;Usage&quot;
+)</errorConditionFormula>
+        <errorMessage>The Effective Price of Concierge Usage Charges must be equal to $1.00.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>NO_PAYMENT_PLAN_FOR_NON_RECURRING_CHARGE</fullName>
+        <active>false</active>
+        <errorConditionFormula>( (zqu__ChargeType__c != &apos;Recurring&apos;) &amp;&amp; NOT(ISPICKVAL(PaymentPlan__c, &apos;&apos;)) ) || ( (zqu__ChargeType__c = &apos;Recurring&apos;) &amp;&amp; ISPICKVAL(PaymentPlan__c, &apos;&apos;) )</errorConditionFormula>
+        <errorMessage>A recurring charge without a payment plan OR a non-recurring charge with a payment plan has been selected.  ALL recurring charges must have a payment plan and NO non-recurring charge may have a payment plan.</errorMessage>
+    </validationRules>
+</CustomObject>

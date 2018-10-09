@@ -1,0 +1,13 @@
+<div style="padding-top:5px"><b><span style="color: #5B9BD5;">{!Receiving_User.FirstName}&nbsp;{!Receiving_User.LastName}</span></b></div> <div style="padding-top:5px">{!Receiving_User.Title}</div> 
+<div style="padding-top:5px">The Knot Pro</div> 
+<div style="padding-top:5px">
+<span style="font-weight:bold;color: #5B9BD5">P.</span>
+<span style="color: #1155CC; text-decoration: underline">(866) 879-3888</span>
+<span style="font-weight:bold;color: #5B9BD5">/&nbsp;F.</span>
+<span style="color: #1155CC; text-decoration: underline">(877)753-1044</span></div>
+<div style="padding-top:5px"><span style="color: #1155CC;text-decoration: underline">billingsupport@theknot.com</span></div>
+<br> <a href="https://www.theknot.com/" target="_blank"><img alt="TheKnot.png" src="https://xogrp--c.na55.content.force.com/servlet/servlet.ImageServer?id=015f1000002bE9w&oid=00Dj0000000KVB8" style="height: 34px; width: 62px;"></img></a>
+<a href="https://www.thenest.com/" target="_blank"><img alt="TheNest.png" src="https://xogrp--c.na55.content.force.com/servlet/servlet.ImageServer?id=015f1000002bEA6&oid=00Dj0000000KVB8" style="height: 34px; width: 76px;"></img></a> 
+<a href="https://www.thebump.com/" target="_blank"><img alt="TheBump.png" src="https://xogrp--c.na55.content.force.com/servlet/servlet.ImageServer?id=015f1000002bEAB&oid=00Dj0000000KVB8" style="height: 34px; width: 68px;"></img></a> 
+<a href="https://howheasked.com/" target="_blank"><img alt="HowHeAsked.png"  src="https://xogrp--c.na55.content.force.com/servlet/servlet.ImageServer?id=015f1000002bEAG&oid=00Dj0000000KVB8" style="height: 34px; width: 89px;"></img></a> 
+<a href="https://www.gigmasters.com/" target="_blank"><img alt="Gigmasters.png" src="https://xogrp--c.na55.content.force.com/servlet/servlet.ImageServer?id=015f1000002bEAL&oid=00Dj0000000KVB8" style="height: 34px; width: 100px;"></img></a>

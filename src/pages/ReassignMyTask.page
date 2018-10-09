@@ -1,0 +1,39 @@
+<apex:page controller="ReassignMyTaskController" showHeader="true" sidebar="true" >
+
+    <apex:form >
+        <apex:sectionHeader title="Reassign My Tasks"/>
+        <apex:pageBlock >
+            <apex:pageMessages />
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Process Selected Record(s)" action="{!processSelected}"/>    
+            </apex:pageBlockButtons>
+            <table>
+                <tr>
+                    <td Style="Font:Bold">
+                        <strong>Reassign Task To &nbsp;</strong>
+                    </td>
+                    <td>            
+                        <apex:inputField value="{!tskRecord.ownerId}"/>
+                    </td>
+                </tr>
+            </table><br/>
+            <!-- In our table we are displaying the tTask records -->
+            <apex:pageBlockTable value="{!Tasks}" var="t" id="table">
+                <apex:column headerValue="Select">
+                    <!-- This is our selected Boolean property in our wrapper class -->
+                    <apex:inputCheckbox value="{!t.selected}"/>
+                </apex:column>
+                <!-- This is how we access the task values within our tTask container/wrapper -->
+                <apex:column value="{!t.tsk.WhatId}" headerValue="Related To"/>
+                <apex:column value="{!t.tsk.OwnerId}" headerValue="Assigned To" />
+                <apex:column value="{!t.tsk.Subject}" headerValue="Subject"/>
+                <apex:column value="{!t.tsk.Type}" headerValue="Type"/>
+                <apex:column value="{!t.tsk.ActivityDate}" headerValue="ActivityDate"/>                
+                <apex:column value="{!t.tsk.Status}" headerValue="Status"/>
+                <apex:column value="{!t.tsk.Priority}" headerValue="Priority"/>
+
+            </apex:pageBlockTable>
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

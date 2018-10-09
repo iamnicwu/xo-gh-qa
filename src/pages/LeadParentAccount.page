@@ -1,0 +1,18 @@
+<apex:page controller="LeadParentAccountController" tabStyle="Lead" title="Convert Lead">
+	<apex:form >
+		<apex:sectionHeader title="Convert Lead" subtitle="{!leadRecord.Name}"/>
+		<apex:pageBlock title="Select Parent Account, if applicable">
+			<apex:pageMessages />
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Continue Conversion" action="{!saveParent}" rendered="{!displayContinueConversionButton}"/>
+				<apex:commandButton value="Cancel" action="{!cancelConvert}" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection >
+				<apex:inputField value="{!parentAccount.ParentId}"/>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection rendered="{!displayFulfillmentOption}">
+				<apex:inputCheckbox value="{!fulfillUnclaimedStorefront}" label="Fulfill Unclaimed Storefront" style="margin: 0px 0px 0px 0px;" />
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

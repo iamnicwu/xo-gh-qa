@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>CSP-2866 |  Outdated Information: Locals Sales Admin</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Role_Name__c</fullName>
+        <description>CSP-2866 | Outdated Information: Locals Sales Admin</description>
+        <externalId>false</externalId>
+        <label>Role Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Local Sales Admin Role Mapping</label>
+    <visibility>Public</visibility>
+</CustomObject>

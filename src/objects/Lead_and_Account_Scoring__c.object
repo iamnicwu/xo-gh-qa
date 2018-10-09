@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>CSP-2061 | used to &quot;score&quot; Leads and Accounts.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Apply_to_Account_Score__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Apply to Account Score</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Apply_to_Lead_Score__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Apply to Lead Score</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Comparison_Type__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Picklists aren&apos;t allowed in custom settings; valid values are &quot;Not Blank&quot;, &quot;Regex&quot;, &quot;Contains&quot;, &quot;Does Not Contain&quot;, &quot;Does Not Equal&quot;, and &quot;Equals&quot; (without quotation marks).</inlineHelpText>
+        <label>Comparison Type</label>
+        <length>64</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Comparison_Value__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Either the regex or string value the field will be evaluated against. Not required if the Comparison Type is &quot;Not Blank&quot;.</inlineHelpText>
+        <label>Comparison Value</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_API_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The API name of the Lead/Account field to run the scoring rule against. Multiple rules can apply to a single field.</inlineHelpText>
+        <label>Field API Name</label>
+        <length>64</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Points__c</fullName>
+        <externalId>false</externalId>
+        <label>Points</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Lead and Account Scoring</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Apply_to_Account_Score__c</columns>
+        <columns>Apply_to_Lead_Score__c</columns>
+        <columns>Comparison_Type__c</columns>
+        <columns>Comparison_Value__c</columns>
+        <columns>Field_API_Name__c</columns>
+        <columns>Points__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Lead</fullName>
+        <columns>NAME</columns>
+        <columns>Apply_to_Account_Score__c</columns>
+        <columns>Apply_to_Lead_Score__c</columns>
+        <columns>Comparison_Type__c</columns>
+        <columns>Comparison_Value__c</columns>
+        <columns>Field_API_Name__c</columns>
+        <columns>Points__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Apply_to_Lead_Score__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Lead</label>
+    </listViews>
+    <visibility>Public</visibility>
+</CustomObject>

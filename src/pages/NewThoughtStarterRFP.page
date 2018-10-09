@@ -1,0 +1,16 @@
+<apex:page controller="NewThoughtStarterRFPController">
+	<script>
+		setTimeout(
+			function(){ 
+				createThoughtStarterRFP(); 
+			}, 1000
+		);
+	</script>
+
+	<apex:form id="formId">
+		<apex:outputLink value="/{!$CurrentPage.parameters.OpportunityId}" rendered="{!!showInfo}">Go back to the Opportunity!</apex:outputLink>
+		<apex:pageMessages />
+		<apex:pageMessage summary="Creating {!$CurrentPage.parameters.RecordType} form template!" severity="info" strength="3" rendered="{!showInfo}"/>
+		<apex:actionFunction name="createThoughtStarterRFP" action="{!createThoughtStarterRFP}" rerender="formId"/>
+	</apex:form>
+</apex:page>

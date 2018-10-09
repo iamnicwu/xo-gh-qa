@@ -1,0 +1,74 @@
+<apex:page standardController="ThoughtStarter_RFP__c" extensions="SalesDevAssignmentController" tabStyle="Sales_Dev_Assignment__tab" title="Sales Developer Assignment">
+    <style>
+        .filterFieldClass{
+            margin: 0 5px;
+            padding: 2px 5px;
+            width: 225px;
+        }
+    </style>
+    <script>
+        var keyUpTimeOut;
+    </script>
+    <apex:form >
+        <apex:actionFunction name="filterResults" action="{!filterResults}" reRender="dataSection" status="actionStatus"/>
+        <apex:sectionHeader title="TS/RFPs" subtitle="Sales Developer Assignments" />
+        <apex:pageBlock >
+        	<apex:pageBlockButtons >
+                <apex:commandButton action="{!saveSalesDeveloper}" value="Save" reRender="dataSection"/>
+                <apex:commandButton value="Cancel" action="{!URLFOR('/')}" />
+            </apex:pageBlockButtons>
+
+            <apex:outputPanel id="filterPanel" layout="block" style="text-align: center; padding: 10px 0; background-color: #6aacd8; margin-bottom: 5px;">
+                FILTER BY:&nbsp;
+                <apex:inputText styleClass="filterFieldClass" value="{!filterObject.recordType}" onkeyup="clearTimeout(keyUpTimeOut);keyUpTimeOut = setTimeout(function(){ filterResults(); }, 500);" html-placeholder="Record Type"/>
+                <apex:inputText styleClass="filterFieldClass" value="{!filterObject.nameValues}" onkeyup="clearTimeout(keyUpTimeOut);keyUpTimeOut = setTimeout(function(){ filterResults(); }, 500);" html-placeholder="TS/RFP Name, Opportunity or Account"/>
+                <apex:inputText styleClass="filterFieldClass" value="{!filterObject.repStrat}" onkeyup="clearTimeout(keyUpTimeOut);keyUpTimeOut = setTimeout(function(){ filterResults(); }, 500);" html-placeholder="Account Executive or Account Strategist"/>
+                <apex:inputText styleClass="filterFieldClass" value="{!filterObject.salesDev}" onkeyup="clearTimeout(keyUpTimeOut);keyUpTimeOut = setTimeout(function(){ filterResults(); }, 500);" html-placeholder="Sales Developer"/>
+            </apex:outputPanel>
+            &nbsp;&nbsp;View only TS/RFPs with Open Sales Dev Tasks: <apex:inputCheckbox value="{!onlyOpenTasks}" onchange="filterResults(); "/>
+
+            <apex:selectList value="{!sortBy}" size="1" onchange="filterResults();">
+                <apex:selectOptions value="{!sortByList}"/>
+            </apex:selectList>
+
+            <apex:actionStatus startText=" updating...." id="actionStatus" />
+
+            <apex:outputPanel id="dataSection">
+            	<apex:pageMessages />
+            	<apex:pageMessage strength="1" severity="info" summary="No results" rendered="{!UnassignedTSRFP.size = 0}"/>
+                <apex:pageBlockTable value="{!UnassignedTSRFP}" var="unassigned" rendered="{!UnassignedTSRFP.size > 0}">
+                    <apex:column headerValue="Status" style="{!IF(unassigned.Tasks.size != 0, 'background-color: #FFE4E1', 'background-color: #F0FFF0')}">
+                        {!IF(unassigned.Tasks.size != 0, 'Open Sales Dev tasks require attention!', 'All Sales Dev tasks completed for current stage!')}
+                    </apex:column>
+                    <apex:column value="{!unassigned.RecordTypeId}"/>
+                    <apex:column headerValue="{!$ObjectType.ThoughtStarter_RFP__c.Fields.Name.Label}">
+                        <apex:outputLink value="/{!unassigned.Id}">{!unassigned.Name}</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{!unassigned.Internal_Due_Date__c}"/>
+                    <apex:column value="{!unassigned.CreatedDate}"/>
+                    <apex:column value="{!unassigned.Opportunity__r.AccountId}"/>
+                    <apex:column value="{!unassigned.Opportunity__c}"/>
+                    <apex:column value="{!unassigned.Opportunity__r.OwnerId}"/>
+                    <apex:column value="{!unassigned.Account_Strategist__c}"/>
+                    <apex:column value="{!unassigned.Opportunity__r.StageName}"/>
+                    <apex:column headerValue="{!$ObjectType.ThoughtStarter_RFP__c.Fields.Sales_Developer__c.Label}">
+                        <apex:inputField value="{!unassigned.Sales_Developer__c}"/>
+                    </apex:column>
+                </apex:pageBlockTable>
+                <center>
+                    <apex:panelGrid columns="7">
+                        <apex:commandButton status="fetchStatus" reRender="dataSection" value="|<" action="{!first}" disabled="{!!hasPrevious}" title="First Page" oncomplete="checkboxEvaluation();"/>
+                        <apex:commandButton status="fetchStatus" reRender="dataSection" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page" oncomplete="checkboxEvaluation();"/>
+                        <apex:outputText >{!(pageNumber * size)+1-size}-{!IF((pageNumber * size)>noOfRecords, noOfRecords,(pageNumber * size))} of {!noOfRecords}</apex:outputText>
+                        <apex:commandButton status="fetchStatus" reRender="dataSection" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page" oncomplete="checkboxEvaluation();"/>
+                        <apex:commandButton status="fetchStatus" reRender="dataSection" value=">|" action="{!last}" disabled="{!!hasNext}" title="Last Page" oncomplete="checkboxEvaluation();"/>
+                        <apex:commandButton status="fetchStatus" reRender="dataSection, filterPanel" value="Refresh" action="{!refresh}" title="Refresh Page" oncomplete="selectedIdList = [];"/>
+                        <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                            <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                        </apex:outputPanel>
+                    </apex:panelGrid>
+                </center>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

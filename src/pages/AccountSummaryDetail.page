@@ -1,0 +1,14 @@
+<apex:page standardController="Account" showHeader="false" standardStylesheets="false">
+	<style type="text/css">
+		iframe {
+			width: 98.5%;
+			height: 395px;
+			border: 1px solid lightgrey;
+			-webkit-border-radius: 5px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+		}
+	</style>
+
+	<iframe src="/apex/AccountSummary?accountId={!Account.Id}" />
+</apex:page>

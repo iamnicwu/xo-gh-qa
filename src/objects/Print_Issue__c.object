@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Allow_Custom_Name__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>When checked, allows user to enter any name they choose.  When unchecked, the system will name the object</inlineHelpText>
+        <label>Allow Custom Name</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>As_Seen_On_Pages_Icon_Appear_Online__c</fullName>
+        <externalId>false</externalId>
+        <label>As Seen On Pages &amp; Icon Appear Online</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Available_for_Sale__c</fullName>
+        <externalId>false</externalId>
+        <formula>AND(TODAY() &gt;= Selling_Start_Date__c, TODAY() &lt;= Selling_End_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Available for Sale</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Edition__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Edition</label>
+        <referenceTo>Edition__c</referenceTo>
+        <relationshipLabel>Print Issues</relationshipLabel>
+        <relationshipName>Print_Issues</relationshipName>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Gross_Circulation__c</fullName>
+        <description>Add new field “Gross Circulation” to Salesforce Print Issue to capture ces.Publication.GrossCirc values. For existing records, populate values from CIS. Ref. SF-1811</description>
+        <externalId>false</externalId>
+        <label>Gross Circulation</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Next_Issue__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Next Issue</label>
+        <referenceTo>Print_Issue__c</referenceTo>
+        <relationshipLabel>Print Issues (Next Issue)</relationshipLabel>
+        <relationshipName>Print_Issues2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Previous_Issue__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Previous Issue</label>
+        <referenceTo>Print_Issue__c</referenceTo>
+        <relationshipLabel>Print Issues</relationshipLabel>
+        <relationshipName>Print_Issues</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Previous_Years_Issue__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Previous Year&apos;s Issue</label>
+        <referenceTo>Print_Issue__c</referenceTo>
+        <relationshipLabel>Print Issues (Previous Year&apos;s Issue)</relationshipLabel>
+        <relationshipName>Print_Issues1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Print_Market__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Print Market</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>You may only select Active Markets</errorMessage>
+            <filterItems>
+                <field>Market__c.Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Market__c</referenceTo>
+        <relationshipLabel>Print Issues</relationshipLabel>
+        <relationshipName>Print_Issues</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Publication_ID_Number__c</fullName>
+        <description>Auto Number to fill in the Publication external Id for Existing CES publication Id&apos;s. Ref. SF-2076</description>
+        <displayFormat>{0000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Publication ID Number</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Publication_Id_External_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Publication Id for Existing CES publication Id&apos;s. Ref. SF-2076</description>
+        <externalId>true</externalId>
+        <label>Publication Id External ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Publish_1st_Cover_Ship__c</fullName>
+        <externalId>false</externalId>
+        <label>Publish/1st Cover Ship</label>
+        <required>true</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Reference_ID__c</fullName>
+        <displayFormat>PRNT-{000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>Reference ID</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Selling_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Leave blank to have the system automatically calculate an end date</inlineHelpText>
+        <label>Selling End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Selling_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Leave blank to have the system automatically calculate a start date</inlineHelpText>
+        <label>Selling Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Short_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Short Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Step_1__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Leave blank to have the system automatically calculate</inlineHelpText>
+        <label>Step 1</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Step_2__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Leave blank to have the system automatically calculate</inlineHelpText>
+        <label>Step 2 Contracts/Non-CR Ads</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Step_3__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Leave blank to have the system automatically calculate</inlineHelpText>
+        <label>Step 3 Contracts/CR Ads</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Step_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Step 4 Dummy Book</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Step_5__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Leave blank to have the system automatically calculate</inlineHelpText>
+        <label>Step 5 Book to Printer</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X1st_Cover_Display_Until__c</fullName>
+        <externalId>false</externalId>
+        <label>1st Cover Display Until</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X1st_Cover_On_Sale__c</fullName>
+        <externalId>false</externalId>
+        <label>1st Cover On-Sale</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X2nd_Cover_Display_Until__c</fullName>
+        <externalId>false</externalId>
+        <label>2nd Cover Display Until</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X2nd_Cover_On_Sale__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Leave blank to have the system automatically calculate</inlineHelpText>
+        <label>2nd Cover On-Sale</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X2nd_Cover_Ship__c</fullName>
+        <externalId>false</externalId>
+        <label>2nd Cover Ship</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X3rd_Cover_Display_Until__c</fullName>
+        <externalId>false</externalId>
+        <label>3rd Cover Display Until</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X3rd_Cover_On_Sale__c</fullName>
+        <externalId>false</externalId>
+        <label>3rd Cover On-Sale</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>X3rd_Cover_Ship__c</fullName>
+        <externalId>false</externalId>
+        <label>3rd Cover Ship</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Print Issue</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Short_Name__c</columns>
+        <columns>Edition__c</columns>
+        <columns>Print_Market__c</columns>
+        <columns>X1st_Cover_On_Sale__c</columns>
+        <columns>Publish_1st_Cover_Ship__c</columns>
+        <columns>Selling_Start_Date__c</columns>
+        <columns>Selling_End_Date__c</columns>
+        <columns>Available_for_Sale__c</columns>
+        <columns>Previous_Issue__c</columns>
+        <columns>Previous_Years_Issue__c</columns>
+        <columns>Next_Issue__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>Gross_Circulation__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Print Issues</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

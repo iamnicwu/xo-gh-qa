@@ -1,0 +1,7 @@
+Hello {!Opportunity.OwnerFullName},
+            
+An Opportunity has been DECLINED for account {!Opportunity.Account}.
+Click on the link to view the Opportunity: {!Opportunity.Link}
+
+{!IF(ApprovalRequest.Comments="","", "Notes: " & ApprovalRequest.Comments)} 
+Thank you!

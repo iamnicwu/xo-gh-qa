@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>SF-1511. By default Approval Processes only support email notifications, so when a Local Approval Process needs AR approval, the OpportunityTrigger generates a notification task and assigns it to appropriate AR representative (currently Shannon Davis as of 10/10/2015). The OpportunityTrigger uses the Full Name + Email specified in this custom setting to query for the User ID record.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>100</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Local Opp Approval Process - AR Approver</label>
+    <visibility>Public</visibility>
+</CustomObject>

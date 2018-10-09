@@ -1,0 +1,21 @@
+{!Lead.OwnerFullName}, 
+
+Below is the contact information from an inbound paid media lead. This is an extremely hot lead, you should reach out to this lead ASAP. 
+
+Name: 
+{!Lead.Name} 
+
+Email:
+{!Lead.Email}
+
+Phone: 
+{!Lead.Phone} 
+
+Postal Code: 
+{!Lead.PostalCode} 
+
+Primary Category: 
+{!Lead.Primary_Category__c} 
+
+Lead Link: 
+{!Lead.Link}

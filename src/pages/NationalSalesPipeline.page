@@ -1,0 +1,386 @@
+<apex:page controller="NationalSalesPipelineController" sidebar="false" title="National Sales Pipeline">
+    <style>
+        .list .headerRow th {
+            white-space: normal;
+            text-align: center;
+        }
+
+        .numberStyle{
+            text-align: right;
+        }
+
+        .dateStyle{
+            text-align: center;
+        }
+
+        .apexp .totalRow {
+            text-align: right;
+        }
+
+        .pipeline-select {
+            margin: 10px 2px;
+        }
+
+        table.grand-total {
+            border-collapse: collapse;
+        }
+
+        table.grand-total tr td {
+            padding: 3px 5px;
+        }
+
+        table tr td.order-total {
+            text-align: right;
+            font-weight: bold;
+        }
+
+        table tr td.quarter-total {
+            border-left: 1px solid black;
+        }
+
+        table tr td span.period-text {
+            display: inline-block;
+            font-weight: 600;
+        }
+    </style>
+
+    <!--CSP-2972 SIVA VANKADARu 08/07/2018 BEGIN-->
+    <script>
+        var viewType = function(){
+            document.getElementById('loadingSpan').style.display = 'inline';
+            window.location.href = "/apex/NationalSalesPipeline?viewType="+getSelectedText('viewType')+'&selectedProdFamily='+getSelectedText('selectedProdFamily')+'&selectYear='+getSelectedText('selectYear')+'&selectCampaign='+getSelectedText('selectCampaign');
+        }
+
+        function getSelectedText(elementId) {
+            var elt = document.getElementById(elementId);
+            if (elt.selectedIndex == -1)
+                return null;
+            return elt.options[elt.selectedIndex].value;
+        }
+    </script>
+    <!--CSP-2972 SIVA VANKADARu 08/07/2018 END-->
+
+    <select onchange="viewType();" id="selectYear" class="pipeline-select">
+        <apex:repeat value="{!SelectYears}" var="view" >
+            <apex:outputPanel layout="none" rendered="{!view == selectYear}">
+                <option value="{!view}" selected="selected">{!SelectYears[view]}</option>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!view != selectYear}">
+                <option value="{!view}">{!SelectYears[view]}</option>
+            </apex:outputPanel>
+        </apex:repeat>
+    </select>
+
+    <select onchange="viewType();" id="viewType" class="pipeline-select">
+        <apex:repeat value="{!ViewTypes}" var="view" >
+            <apex:outputPanel layout="none" rendered="{!view == viewType}">
+                <option value="{!view}" selected="selected">{!ViewTypes[view]}</option>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!view != viewType}">
+                <option value="{!view}">{!ViewTypes[view]}</option>
+            </apex:outputPanel>
+        </apex:repeat>
+    </select>
+
+    <select onchange="viewType();" id="selectedProdFamily" style="{!IF(viewType != 'product', 'display : none;', '')}" class="pipeline-select">
+        <apex:repeat value="{!ProductFamilyTypes}" var="view" >
+            <apex:outputPanel layout="none" rendered="{!view == selectedProdFamily}">
+                <option value="{!view}" selected="selected">{!ProductFamilyTypes[view]}</option>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!view != selectedProdFamily}">
+                <option value="{!view}">{!ProductFamilyTypes[view]}</option>
+            </apex:outputPanel>
+        </apex:repeat>
+    </select>
+
+    <!--CSP-2972 SIVA VANKADARu 08/07/2018 BEGIN-->
+
+    <select onchange="viewType();" id="selectCampaign" class="pipeline-select">
+        <apex:repeat value="{!selectCampaigns}" var="view" >
+            <apex:outputPanel layout="none" rendered="{!view == selectCampaign}">
+                <option value="{!view}" selected="selected">{!selectCampaigns[view]}</option>
+            </apex:outputPanel>
+            <apex:outputPanel layout="none" rendered="{!view != selectCampaign}">
+                <option value="{!view}">{!selectCampaigns[view]}</option>
+            </apex:outputPanel>
+        </apex:repeat>
+    </select>
+
+    <!--CSP-2972 SIVA VANKADARu 08/07/2018 END-->
+
+    <span id="loadingSpan" style="display : none;">
+        Loading....
+    </span>
+    <br/>
+
+    <apex:outputPanel id="messagePanel">
+        <apex:pageMessage strength="1" severity="info" summary="No results" rendered="{!noResults}"/>
+    </apex:outputPanel>
+
+    <apex:outputPanel id="pipelinePanel">
+        <apex:outputPanel rendered="{!!noResults}">
+            <apex:pageMessages />
+
+            <apex:pageBlock title="Grand Total">
+                <table class="grand-total">
+                    <tr>
+                        <td class="order-total">
+                            Total Order Value:
+                        </td>
+                        <td class="year-total">
+                            <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                <apex:param value="{!grandTotal.opportunityInfo.Amount}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="order-total">
+                            Total {!selectedYear} Value:
+                        </td>
+                        <td class="year-total">
+                            <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                <apex:param value="{!grandTotal.totalCYRev}"/>
+                            </apex:outputText>
+                        </td>
+                        <td class="quarter-total">
+                            <span class="period-text">Q1 {!selectedYear}:</span>
+                            <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                <apex:param value="{!grandTotal.q1CYRev}"/>
+                            </apex:outputText>
+                        </td>
+                        <td class="quarter-total">
+                            <span class="period-text">Q2 {!selectedYear}:</span>
+                            <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                <apex:param value="{!grandTotal.q2CYRev}"/>
+                            </apex:outputText>
+                        </td>
+                        <td class="quarter-total">
+                            <span class="period-text">Q3 {!selectedYear}:</span>
+                            <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                <apex:param value="{!grandTotal.q3CYRev}"/>
+                            </apex:outputText>
+                        </td>
+                        <td class="quarter-total">
+                            <span class="period-text">Q4 {!selectedYear}:</span>
+                            <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                <apex:param value="{!grandTotal.q4CYRev}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="order-total">
+                            Total {!selectedYear + 1} Value: 
+                        </td>
+                        <td class="year-total">
+                            <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                <apex:param value="{!grandTotal.totalNYRev}"/>
+                            </apex:outputText>
+                        </td>
+                        <td class="quarter-total">
+                            <span class="period-text">Q1 {!selectedYear + 1}:</span>
+                            <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                <apex:param value="{!grandTotal.q1NYRev}"/>
+                            </apex:outputText>
+                        </td>
+                        <td class="quarter-total">
+                            <span class="period-text">Q2 {!selectedYear + 1}:</span>
+                            <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                <apex:param value="{!grandTotal.q2NYRev}"/>
+                            </apex:outputText>
+                        </td>
+                        <td class="quarter-total">
+                            <span class="period-text">Q3 {!selectedYear + 1}:</span>
+                            <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                <apex:param value="{!grandTotal.q3NYRev}"/>
+                            </apex:outputText>
+                        </td>
+                        <td class="quarter-total">
+                            <span class="period-text">Q4 {!selectedYear + 1}:</span>
+                            <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                <apex:param value="{!grandTotal.q4NYRev}"/>
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                </table>
+            </apex:pageBlock>
+
+            <apex:repeat value="{!salesRepPipelineMap}" var="salesRep">
+                <apex:variable value="{!salesRepPipelineMap[salesRep]}" var="pipelineVariable"/>
+                <apex:variable value="{!salesRepTotalMap[salesRep]}" var="salesRepTotalVariable"/>
+                <apex:pageBlock title="{!salesRep} ({!selectedYear} - {!selectedYear + 1})">
+
+                        <apex:pageBlockTable value="{!pipelineVariable}" var="pipeline">
+                            <apex:column headerValue="Stage Name" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="footer">{!salesRep} Total:</apex:facet>
+                                {!pipeline.opportunityInfo.StageName}
+                            </apex:column>
+                            <apex:column headerValue="Stage Percent" styleClass="numberStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:outputField value="{!pipeline.opportunityInfo.Probability}"/>
+                            </apex:column>
+                            <apex:column headerValue="Advertiser" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:outputLink target="_blank" value="/{!pipeline.opportunityInfo.AccountId}">{!pipeline.opportunityInfo.Account.Name}</apex:outputLink>
+                            </apex:column>
+                            <!-- AGENCY - Only shows for STAGE viewtype -->
+                            <apex:column headerValue="Agency" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}" rendered="{!viewType == 'stage'}">
+                                <apex:outputLink target="_blank" value="/{!pipeline.opportunityInfo.Agency__c}">{!pipeline.opportunityInfo.Agency__r.Name}</apex:outputLink>
+                            </apex:column>
+                            <apex:column headerValue="Sales Order" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:outputLink target="_blank" value="/{!pipeline.opportunityInfo.Id}">{!pipeline.opportunityInfo.Name}</apex:outputLink>
+                            </apex:column>
+                            <apex:column headerValue="Order Number" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                {!pipeline.opportunityInfo.OrderNumber__c}
+                            </apex:column>
+                            <apex:column rendered="{!viewType == 'stage'}" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="header">
+                                    Opportunity Owner
+                                </apex:facet>
+                                {!pipeline.opportunityInfo.Owner.Name}
+                            </apex:column>
+                            <!-- SPLIT REP - Only shows for STAGE viewtype -->
+                            <apex:column headerValue="Split Rep" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}" rendered="{!viewType == 'stage'}">
+                                {!pipeline.opportunityInfo.SplitRep__r.Name}
+                            </apex:column>
+                            <apex:column headerValue="Campaign Start Date" styleClass="dateStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:outputField value="{!pipeline.opportunityInfo.CampaignStartDate__c}"/>
+                            </apex:column>
+                            <apex:column headerValue="Campaign End Date" styleClass="dateStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:outputField value="{!pipeline.opportunityInfo.CampaignEndDate__c}"/>
+                            </apex:column>
+                            <apex:column headerValue="Total Order Value"  styleClass="numberStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="footer">
+                                    <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                        <apex:param value="{!salesRepTotalVariable.opportunityInfo.Amount}"/>
+                                    </apex:outputText>
+                                </apex:facet>
+                                <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                    <apex:param value="{!pipeline.opportunityInfo.Amount}"/>
+                                </apex:outputText>
+                            </apex:column>
+
+                            <!-- OPPORTUNTIY AGE -->
+                            <apex:column headerValue="Age" styleClass="numberStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')} text-align: center; padding: 0px 10px;">
+                                <apex:outputText value="{0, number, ###,##0}">
+                                    <apex:param value="{!(NOW() - pipeline.opportunityInfo.CreatedDate)}" />
+                                </apex:outputText>
+                            </apex:column>
+
+                            <!-- CURRENT YEAR -->
+                            <apex:column headerValue="Q1 {!selectedYear}" styleClass="numberStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="footer">
+                                    <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                        <apex:param value="{!salesRepTotalVariable.q1CYRev}"/>
+                                    </apex:outputText>
+                                </apex:facet>
+                                <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                    <apex:param value="{!pipeline.q1CYRev}"/>
+                                </apex:outputText>
+                            </apex:column>
+
+                            <apex:column headerValue="Q2 {!selectedYear}" styleClass="numberStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="footer">
+                                    <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                        <apex:param value="{!salesRepTotalVariable.q2CYRev}"/>
+                                    </apex:outputText>
+                                </apex:facet>
+                                <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                    <apex:param value="{!pipeline.q2CYRev}"/>
+                                </apex:outputText>
+                            </apex:column>
+
+                            <apex:column headerValue="Q3 {!selectedYear}" styleClass="numberStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="footer">
+                                    <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                        <apex:param value="{!salesRepTotalVariable.q3CYRev}"/>
+                                    </apex:outputText>
+                                </apex:facet>
+                                <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                    <apex:param value="{!pipeline.q3CYRev}"/>
+                                </apex:outputText>
+                            </apex:column>
+
+                            <apex:column headerValue="Q4 {!selectedYear}" styleClass="numberStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="footer">
+                                    <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                        <apex:param value="{!salesRepTotalVariable.q4CYRev}"/>
+                                    </apex:outputText>
+                                </apex:facet>
+                                <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                    <apex:param value="{!pipeline.q4CYRev}"/>
+                                </apex:outputText>
+                            </apex:column>
+
+                            <apex:column headerValue="Total {!selectedYear} Value" styleClass="numberStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="footer">
+                                    <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                        <apex:param value="{!salesRepTotalVariable.totalCYRev}"/>
+                                    </apex:outputText>
+                                </apex:facet>
+                                <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                    <apex:param value="{!pipeline.totalCYRev}"/>
+                                </apex:outputText>
+                            </apex:column>
+
+                            <!-- NEXT YEAR -->
+                            <apex:column headerValue="Q1 {!selectedYear + 1}" styleClass="numberStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="footer">
+                                    <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                        <apex:param value="{!salesRepTotalVariable.q1NYRev}"/>
+                                    </apex:outputText>
+                                </apex:facet>
+                                <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                    <apex:param value="{!pipeline.q1NYRev}"/>
+                                </apex:outputText>
+                            </apex:column>
+
+                            <apex:column headerValue="Q2 {!selectedYear + 1}" styleClass="numberStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="footer">
+                                    <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                        <apex:param value="{!salesRepTotalVariable.q2NYRev}"/>
+                                    </apex:outputText>
+                                </apex:facet>
+                                <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                    <apex:param value="{!pipeline.q2NYRev}"/>
+                                </apex:outputText>
+                            </apex:column>
+
+                            <apex:column headerValue="Q3 {!selectedYear + 1}" styleClass="numberStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="footer">
+                                    <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                        <apex:param value="{!salesRepTotalVariable.q3NYRev}"/>
+                                    </apex:outputText>
+                                </apex:facet>
+                                <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                    <apex:param value="{!pipeline.q3NYRev}"/>
+                                </apex:outputText>
+                            </apex:column>
+
+                            <apex:column headerValue="Q4 {!selectedYear + 1}" styleClass="numberStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="footer">
+                                    <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                        <apex:param value="{!salesRepTotalVariable.q4NYRev}"/>
+                                    </apex:outputText>
+                                </apex:facet>
+                                <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                    <apex:param value="{!pipeline.q4NYRev}"/>
+                                </apex:outputText>
+                            </apex:column>
+
+                            <apex:column headerValue="Total {!selectedYear + 1} Value" styleClass="numberStyle" style="{!IF(pipeline.opportunityInfo.AccountId = null, 'background-color: #B3DEBC;', '')}">
+                                <apex:facet name="footer">
+                                    <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                        <apex:param value="{!salesRepTotalVariable.totalNYRev}"/>
+                                    </apex:outputText>
+                                </apex:facet>
+                                <apex:outputText value="{0, number, $###,###,###,###,##0}">
+                                    <apex:param value="{!pipeline.totalNYRev}"/>
+                                </apex:outputText>
+                            </apex:column>
+
+                            <!--apex:facet name="header">{!salesRep}</apex:facet-->
+                        </apex:pageBlockTable>
+                    
+                </apex:pageBlock>
+            </apex:repeat>
+        </apex:outputPanel>
+    </apex:outputPanel>
+</apex:page>

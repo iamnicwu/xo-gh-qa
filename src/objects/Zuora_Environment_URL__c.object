@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>(CSP-1181) Used to dynamically set which Zuora endpoint should be used depending on the Salesforce environment in use</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Zuora_Base_URL__c</fullName>
+        <description>The base URL of the Zuora environment tied to the designated Salesforce environment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The base URL of the Zuora environment tied to the designated Salesforce environment</inlineHelpText>
+        <label>Zuora Base URL</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora_REST_API_Path__c</fullName>
+        <description>CSP-1181 | The path of the Zuora REST endpoint. As of 9/7/16 the Zuora REST API Path for their production and apisandbox environments is &quot;/rest&quot; while for their services421 environment it is &quot;/apps&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>CSP-1181 | The path of the Zuora REST endpoint. As of 9/7/16 the Zuora REST API Path for their production and apisandbox environments is &quot;/rest&quot; while for their services421 environment it is &quot;/apps&quot;</inlineHelpText>
+        <label>Zuora REST API Path</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Zuora Environment URL</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>SETUP_TYPE</columns>
+        <columns>SETUP_OWNER_NAME</columns>
+        <columns>Zuora_Base_URL__c</columns>
+        <columns>Zuora_REST_API_Path__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,141 @@
+<apex:page controller="PaymentSchBreakdownController" renderAs="pdf" action="{!parseJSONPaymentBreakdownString}" showHeader="false" sidebar="true" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+    <html>
+	    <head>
+		    <style type="text/css" media="print">
+		    	@page {
+						size: A4;
+						margin: 10mm;
+						@top-center {
+						  content: "{!$Label.Payment_Schedule_Header}";
+						  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+						}
+						@bottom-center {
+						  content: "Page " counter(page) " of " counter(pages);
+						  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+						}
+					}
+
+					body {
+					    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+					    font-size: 11px;
+					    padding:0;
+					}
+
+					.header-warning {
+						padding: 15px 0 0 0;
+					}
+
+					.nowrap {
+						white-space: nowrap;
+					}
+
+					table {
+						margin:	25px 0 0 0;
+						border-collapse: collapse;
+						page-break-inside: avoid;
+					}
+
+					table tr th {
+						padding: 2px 0 4px 10px;
+						text-align: left;
+						font-weight: bold;
+						border-bottom: 3px solid black;
+					}
+
+					table tr th.due-date {
+						width: 12%;
+					}
+
+					table tr th.product-name {
+						width: 46%;
+					}
+
+					table tr th.service-period {
+						width: 20%;
+					}
+
+					table tr th.billing-term {
+						width: 12%;
+					}
+
+					table tr td {
+						padding: 4px 0 4px 10px;
+						text-align: left;
+					}
+
+					table tr th.price, table tr td.price {
+						text-align: right;
+						padding-right: 10px;
+						width: 10%;
+					}
+
+					table tr.grand-total-row {
+						font-weight: bold;
+					}
+
+					table tr.grand-total-row td {
+						border-top: 1px solid black;
+					}
+
+					table tr.grand-total-row td.label {
+						text-align: right;
+					}
+			  </style>  
+	    </head>
+    	<body>
+    		<div class="header-warning">
+    			{!$Label.Prorated_Charge_Warning}
+    		</div>
+    		<apex:repeat value="{!breakdownWrapperList}" var="breakdown">
+    			<table width="100%">
+    				<tr>
+    					<th class="due-date">Due Date</th>
+    					<th class="product-name">Product Name</th>
+    					<th class="service-period">Service Period</th>
+    					<th class="billing-term">Billing Term</th>
+    					<th class="price">Price</th>
+    				</tr>
+    				<apex:repeat value="{!breakdown.invoiceItems}" var="invoiceItem">
+    					<tr>
+	    					<td>
+	    						<apex:outputText value="{0, date, MM/dd/yyyy}">
+	    							<apex:param value="{!breakdown.dueDate}" />
+	    						</apex:outputText>
+	    					</td>
+	    					<td>
+	    						{!invoiceItem.productRatePlanName}
+	    					</td>
+	    					<td class="nowrap">
+	    						<apex:outputText value="{0, date, MM/dd/yyyy}">
+	    							<apex:param value="{!invoiceItem.serviceStartDate}" />
+	    						</apex:outputText> 
+	    						<!-- CSP-2355 -->
+	    						<apex:outputText value="-" rendered="{!invoiceItem.serviceStartDate != null}" />
+	    						<apex:outputText value="{0, date, MM/dd/yyyy}">
+	    							<apex:param value="{!invoiceItem.serviceEndDate}" />
+	    						</apex:outputText>
+	    					</td>
+	    					<td>
+	    						{!breakdown.billingTerm}
+	    					</td>
+	    					<td class="price nowrap">
+	    						<apex:outputText value="{0, number, ###,##0.00}">
+	    							<apex:param value="{!invoiceItem.chargeAmount}" />
+	    						</apex:outputText>
+	    					</td>
+    					</tr>
+    				</apex:repeat>
+
+    				<tr class="grand-total-row">
+    					<td colspan="4" class="label">Total</td>
+    					<td class="price">
+    						<apex:outputText value="{0, number, ###,##0.00}">
+    							<apex:param value="{!breakdown.total}" />
+    						</apex:outputText>
+    					</td>
+    				</tr>
+    			</table>
+    		</apex:repeat>
+    </body>
+ </html>
+</apex:page>

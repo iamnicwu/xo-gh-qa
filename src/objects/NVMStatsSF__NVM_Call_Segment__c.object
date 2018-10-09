@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>ACW_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__ACW_Time__c  / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ACW Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACW_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__ACW_Time__c  / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ACW Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agent_Hold_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Agent_Held_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agent Hold Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agent_Hold_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Agent_Held_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agent Hold Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agent_Talk_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__AgentTalk_TIme__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agent Talk Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agent_Talk_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__AgentTalk_TIme__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agent Talk Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__ACW_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>ACW Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__AgentTalk_TIme__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>AgentTalk TIme</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent_Held_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Agent Hold Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Agent ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Agent</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>NVM_Call_Segments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Contributing_Events__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Contributing Events</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Day_of_Week__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(MOD( NVMStatsSF__Date__c - DATE(1900, 1, 7), 7), 
+1, &apos;1-Monday&apos;, 
+2, &apos;2-Tuesday&apos;, 
+3, &apos;3-Wednesday&apos;, 
+4, &apos;4-Thursday&apos;, 
+5, &apos;5-Friday&apos;, 
+6, &apos;6-Saturday&apos;, 
+7, &apos;7-Sunday&apos;, &apos; &apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Day of Week</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Fiscal_Quarter__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(MONTH( NVMStatsSF__Date__c ) , 
+1, &quot;Q1-&quot;+ TEXT(year( NVMStatsSF__Date__c )), 
+2, &quot;Q1-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+3, &quot;Q1-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+4, &quot;Q2-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+5, &quot;Q2-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+6, &quot;Q2-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+7, &quot;Q3-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+8, &quot;Q3-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+9, &quot;Q3-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+10, &quot;Q4-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+11, &quot;Q4-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+12, &quot;Q4-&quot;+ TEXT(year(NVMStatsSF__Date__c)), &quot; &quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Fiscal Quarter</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Month_of_Year__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(MONTH( NVMStatsSF__Date__c ) , 
+1, &quot;(1) Jan&quot;, 
+2, &quot;(2) Feb&quot;, 
+3, &quot;(3) Mar&quot;, 
+4, &quot;(4) Apr&quot;, 
+5, &quot;(5) May&quot;, 
+6, &quot;(6) Jun&quot;, 
+7, &quot;(7) Jul&quot;, 
+8, &quot;(8) Aug&quot;, 
+9, &quot;(9) Sep&quot;, 
+10, &quot;(10) Oct&quot;, 
+11, &quot;(11) Nov&quot;, 
+12, &quot;(12) Dec&quot;, &quot; &quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Month of Year</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__NVM_Call_Summary__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>NVM Call Summary</label>
+        <referenceTo>NVMStatsSF__NVM_Call_Summary__c</referenceTo>
+        <relationshipLabel>NVM Call Segments</relationshipLabel>
+        <relationshipName>NVM_Call_Segments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Numeric_Week_of_Year__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>VALUE( NVMStatsSF__Week_of_Year__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Numeric Week of Year</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Queue_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Queue Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Queue_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Queue Name</label>
+        <length>70</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Seg_Transition_Reason__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Seg Transition Reason</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Segment_End_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Segment End Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Segment_Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Segment Sequence</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Segment_Start_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Segment Start Time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Week_of_Year__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(MOD(FLOOR( ( NVMStatsSF__Date__c  - DATE(2006,01,01))/7),52)+1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Week of Year</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>NVM Call Segment</label>
+    <listViews>
+        <fullName>NVMStatsSF__All</fullName>
+        <columns>NAME</columns>
+        <columns>NVMStatsSF__Segment_Start_Time__c</columns>
+        <columns>NVMStatsSF__Queue_Duration__c</columns>
+        <columns>NVMStatsSF__Queue_Name__c</columns>
+        <columns>NVMStatsSF__Segment_End_Time__c</columns>
+        <columns>NVMStatsSF__Segment_Sequence__c</columns>
+        <columns>NVMStatsSF__Seg_Transition_Reason__c</columns>
+        <columns>NVMStatsSF__Contributing_Events__c</columns>
+        <columns>NVMStatsSF__Agent__c</columns>
+        <columns>NVMStatsSF__AgentTalk_TIme__c</columns>
+        <columns>NVMStatsSF__Agent_Held_Time__c</columns>
+        <columns>NVMStatsSF__ACW_Time__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CS-{0000000000}</displayFormat>
+        <label>NVM Call Segment Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>NVM Call Segments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

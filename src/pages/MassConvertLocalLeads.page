@@ -1,0 +1,14 @@
+<apex:page controller="MassConvertLocalLeadsController" title="Mass Convert Local Leads">
+	<apex:form >
+		<apex:pageBlock id="pageBlockId">
+			<apex:pageMessages />
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!executeBatchConvert}" value="Execute Convert" reRender="pageBlockId"/>
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection >
+				<apex:inputTextArea value="{!queryString}" label="Lead Query String for Convert"/>
+				<apex:inputCheckbox value="{!createOpportunity}" label="Create Opportunities on Convert?"/>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

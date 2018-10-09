@@ -1,0 +1,35 @@
+{!Lead.OwnerFullName}, 
+
+Below is contact information received from an inbound partner signup request.  This is an extremely hot lead that you should call within 1 hour of receiving this email during business hours.  
+
+Note: this lead has indicated interest in more information about the Knot Pro Network.  Please prioritize calling this lead after reaching out to all Featured Profile, Standard Profile and Limited Profile signup leads. 
+
+Name: 
+{!Lead.Name} 
+
+Company: 
+{!Lead.Company} 
+
+Website: 
+{!Lead.Website} 
+
+Phone: 
+{!Lead.Phone} 
+
+Postal Code: 
+{!Lead.PostalCode} 
+
+Local Sales Market: 
+{!Lead.Local_Sales_Market__c}
+
+Primary Category: 
+{!Lead.Primary_Category__c} 
+
+Interest in Advertising in Multiple Categories: 
+{!Lead.Interest_in_Adv_in_Multiple_Categories__c} 
+
+Lead Created Date/Time: 
+{!Lead.CreatedDate} 
+
+Lead Link: 
+{!Lead.Link}

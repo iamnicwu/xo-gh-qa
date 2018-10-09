@@ -1,0 +1,96 @@
+<apex:page StandardController="zqu__Quote__c" extensions="zqu.QuoteWizardTemplateController,ZuoraQuoteChooseNextActionController" title="{!pageName}" sidebar="false" action="{!runLocalProductRulesAndUpdateTCV}">
+
+    <!--zqu:ProgressBar /-->
+    <zqu:StatusModal />
+
+    <style>
+        .fieldLabel {
+            width: 70px;
+            text-align:right;
+        }
+        .fieldValue {
+            width: 250px;
+            text-align:left;
+        }
+        .productTable {
+            background-color: #E1EBE7;
+            border: 1px solid #7BC143;
+            margin-bottom: 20px;
+            padding: 8px 7px;
+            position: relative;
+            margin:12px;
+            width:90%;  
+        }
+        body .pbBody table.list tr.headerRow td, body .pbBody table.list tr.headerRow th {
+            height: 23px;
+            line-height: 16px;
+            border: 1px solid #CCC;
+            padding-left: 4px;
+            padding-right: 4px;
+            background-color: #D4EFF8;
+        }
+        label, legend {
+            font-size: 10px;
+        }
+        td {
+            padding-bottom: 5px;
+        }
+        .bEditBlock input {
+            vertical-align: -10%;
+        }
+        .bPageBlock .detailList .dataCol {
+            width: 50%;
+        }
+        .editPage .pbSubsection {
+            margin-top: 5px;
+            padding: 0px 12px;
+        }
+        body .bEditBlock .pbBottomButtons {
+            margin-top: 4px;
+        }  
+    </style>
+
+
+    <!-- QuoteWizardTemplate -->
+    <apex:composition template="zqu__QuoteWizardTemplateNoForm" >
+ 
+        <!-- Define the page body, including form and button bar -->
+        <apex:define name="PageBody" >
+            <apex:form id="theForm">
+                <div class="bPageTitle">
+                    <div class="ptBody secondaryPalette brandSecondaryBrd">
+                        <div class="content">
+                            <img src="{!ImgUrl}" height="32" width="32" class="pageTitleIcon userDefinedImage" title="Quote" alt="Quote" />
+                            <h1 class="pageType">New Quote</h1>
+                            <span class="titleSeparatingColon">:</span>
+                            <h2 class="pageDescription">Choose Next Action</h2><div class="blank"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <apex:pageBlock mode="edit">
+                	<apex:pageMessages />
+                    <apex:pageBlockSection title="Select which action to perform next:">
+                        <apex:selectRadio value="{!nextAction}" layout="pageDirection">
+                            <!-- 
+                                    CSP-2045 Non-Owners sending opps for approval
+                                    Adding rendered logic to hide the submit for approval button to AE non-owner
+                             -->
+                            <apex:selectOption itemValue="Submit for Internal Approvals" itemLabel="Submit for Internal Approvals" rendered="{!IF($User.Id != theQuote.zqu__Opportunity__r.OwnerId && $Profile.Name == 'Local Core Account Executive',FALSE,TRUE)}" />
+
+                            <apex:selectOption itemValue="Enter an Additional Quote" itemLabel="Enter an Additional Quote" itemEscaped="false"/>
+                            <apex:selectOption itemValue="View Quote Details" itemLabel="View Quote Details"/>
+                        </apex:selectRadio>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockButtons >
+                        <apex:commandButton action="{!goNavigateBack}" value="Back" immediate="true" html-formnovalidate="formnovalidate" />
+                        <apex:commandButton action="{!goNavigateNext}" value="Next" />
+                        <apex:commandButton action="{!cancel}" value="Cancel" immediate="true"
+                              html-formnovalidate="formnovalidate" />
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>
+
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+</apex:page>

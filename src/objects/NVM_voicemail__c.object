@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object will get filled in when a vendor calls and leaves a voicemail through New Voice Media</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_ID__c</fullName>
+        <description>Will fill in the related Account ID to the NVM Voicemail</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Will fill in the related Account ID to the NVM Voicemail</inlineHelpText>
+        <label>Account ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CBSS__c</fullName>
+        <description>CBSS User ID filled in by NVM Voicemail</description>
+        <externalId>false</externalId>
+        <inlineHelpText>CBSS User ID filled in by NVM Voicemail</inlineHelpText>
+        <label>CBSS</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_ID__c</fullName>
+        <description>ID of the Contact related to the NVM Voicemail</description>
+        <externalId>false</externalId>
+        <inlineHelpText>ID of the Contact related to the NVM Voicemail</inlineHelpText>
+        <label>Contact ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVM_Guid__c</fullName>
+        <description>This is the GUID of the call that came into NVM that created the NVM Voicemail</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the GUID of the call that came into NVM that created the NVM Voicemail</inlineHelpText>
+        <label>NVM Guid</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>voicemail__c</fullName>
+        <externalId>false</externalId>
+        <label>voicemail</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>NVM voicemail</label>
+    <nameField>
+        <label>NVM voicemail Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>NVM voicemails</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

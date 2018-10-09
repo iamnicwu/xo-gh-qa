@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Activate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChangeStatus</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Terminate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AccountId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ActivatedById</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ActivatedDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>BillingAddress</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CompanySignedBy__c</fullName>
+        <description>Phase 1</description>
+        <externalId>false</externalId>
+        <label>Company Sign By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CompanySignedDate</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CompanySignedDateTime__c</fullName>
+        <description>Phase 1</description>
+        <externalId>false</externalId>
+        <label>Company Signed Date/Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CompanySignedId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CompanySignedTitle__c</fullName>
+        <description>Phase 1</description>
+        <externalId>false</externalId>
+        <label>Company Sign Title</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Phase 1</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Contracts</relationshipLabel>
+        <relationshipName>Contracts</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContractFee__c</fullName>
+        <description>Phase 1</description>
+        <externalId>false</externalId>
+        <label>Contract Fee</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ContractStartDate__c</fullName>
+        <externalId>false</externalId>
+        <formula>CompanySignedDateTime__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contract Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ContractSummaryInternal__c</fullName>
+        <description>Phase 1</description>
+        <externalId>false</externalId>
+        <label>Contract Summary (Internal)</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ContractTerm</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ContractType__c</fullName>
+        <description>Phase 1</description>
+        <externalId>false</externalId>
+        <label>Contract Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Concierge Venue</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contract__c</fullName>
+        <description>Phase 1</description>
+        <externalId>false</externalId>
+        <label>Contract %</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>CustomerSignedBy__c</fullName>
+        <description>Phase 1</description>
+        <externalId>false</externalId>
+        <label>Customer Sign By</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CustomerSignedDate</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CustomerSignedDateTime__c</fullName>
+        <description>Phase 1</description>
+        <externalId>false</externalId>
+        <label>Customer Signed Date/Time</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CustomerSignedId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CustomerSignedTitle</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Days_Contract_Open__c</fullName>
+        <description>This field displays the days it took for the contract to get signed from date it created. It is updated by a Workflow</description>
+        <externalId>false</externalId>
+        <label>Days Contract Open</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Days_Out_For_Signature__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF((ISPICKVAL(Status, &apos;Signed&apos;)),(ABS( CompanySignedDateTime__c - CustomerSignedDateTime__c )),NULL)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Days Out For Signature</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>EndDate</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Record_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.RecordType.DeveloperName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Record Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Phase 1</description>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Contracts</relationshipLabel>
+        <relationshipName>Contracts</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OwnerExpirationNotice</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PaymentTerm__c</fullName>
+        <description>Phase 1</description>
+        <externalId>false</externalId>
+        <label>Payment Terms</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Flat Fee $</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Percentage</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Preferred_Payment_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Preferred Payment Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ACH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Credit Card</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Check</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Pricebook2Id</fullName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reference_ID__c</fullName>
+        <displayFormat>CNTR-{000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>Reference ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>ShippingAddress</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SpecialTerms</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>StartDate</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>In Approval Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Activated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Signed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Signed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <listViews>
+        <fullName>AllActivatedContracts</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTRACT.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>A</value>
+        </filters>
+        <label>All Activated Contracts</label>
+    </listViews>
+    <listViews>
+        <fullName>AllContracts</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Contracts</label>
+    </listViews>
+    <listViews>
+        <fullName>AllDraftContracts</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTRACT.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>D</value>
+        </filters>
+        <label>All Draft Contracts</label>
+    </listViews>
+    <listViews>
+        <fullName>AllInApprovalContracts</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CONTRACT.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>P</value>
+        </filters>
+        <label>All In Approval Contracts</label>
+    </listViews>
+    <listViews>
+        <fullName>MyActivatedContracts</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CONTRACT.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>A</value>
+        </filters>
+        <label>My Activated Contracts</label>
+    </listViews>
+    <listViews>
+        <fullName>MyDraftContracts</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CONTRACT.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>D</value>
+        </filters>
+        <label>My Draft Contracts</label>
+    </listViews>
+    <listViews>
+        <fullName>MyInApprovalContracts</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CONTRACT.STATUS_CODE</field>
+            <operation>equals</operation>
+            <value>P</value>
+        </filters>
+        <label>My In Approval Contracts</label>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>CONTRACT.CONTRACT_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ContractType__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CustomerSignedDateTime__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Contract__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ContractFee__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CONTRACT.STATUS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CORE.USERS.FIRST_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CORE.USERS.LAST_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SALES.ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Opportunity__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTRACT.CONTRACT_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ContractType__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CustomerSignedDateTime__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Contract__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ContractFee__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CONTRACT.STATUS</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CORE.USERS.FIRST_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CORE.USERS.LAST_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>SALES.ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Opportunity__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTRACT.CONTRACT_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ContractType__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CustomerSignedDateTime__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Contract__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ContractFee__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CONTRACT.STATUS</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.FIRST_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CORE.USERS.LAST_NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>SALES.ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Opportunity__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>CONTRACT.CONTRACT_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ContractType__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CustomerSignedDateTime__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contract__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ContractFee__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CONTRACT.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.FIRST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.LAST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>SALES.ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Opportunity__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Can_Not_Edit_Concierge_Contract</fullName>
+        <active>false</active>
+        <description>Lock Concierge Opp Contract</description>
+        <errorConditionFormula>And( 
+Opportunity__r.RecordType.Name = &apos;Opp Concierge&apos;
+/*,$Profile.Name &lt;&gt; &quot;System Administrator&quot; */
+)</errorConditionFormula>
+        <errorDisplayField>AccountId</errorDisplayField>
+        <errorMessage>You can not create or edit the Concierge Contract</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_company_signed_by</fullName>
+        <active>true</active>
+        <description>When the contract is signed, require the company signed by</description>
+        <errorConditionFormula>AND(
+    OR(ISNEW(),ISCHANGED(Status)),
+    ISPICKVAL(Status, &apos;Signed&apos;),
+    ISBLANK( CompanySignedBy__c )
+   )</errorConditionFormula>
+        <errorDisplayField>CompanySignedBy__c</errorDisplayField>
+        <errorMessage>Company Signed By is required when marking a contract Signed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_company_signed_datetime</fullName>
+        <active>true</active>
+        <description>When the contract is signed, require the company signed datetime</description>
+        <errorConditionFormula>AND(
+    OR(ISNEW(),ISCHANGED(Status)),
+    ISPICKVAL(Status, &apos;Signed&apos;),
+    ISBLANK( CompanySignedDateTime__c )
+   )</errorConditionFormula>
+        <errorDisplayField>CompanySignedDateTime__c</errorDisplayField>
+        <errorMessage>Company Signed Date/Time is required when marking a contract Signed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_customer_signed_by</fullName>
+        <active>true</active>
+        <description>When the contract is signed, require the customer sign date</description>
+        <errorConditionFormula>AND(
+    OR(ISNEW(),ISCHANGED(Status)),
+    ISPICKVAL(Status, &apos;Signed&apos;),
+    ISBLANK(CustomerSignedBy__c)
+   )</errorConditionFormula>
+        <errorDisplayField>CustomerSignedBy__c</errorDisplayField>
+        <errorMessage>Customer Signed By is required when marking a contract Signed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_customer_signed_datetime</fullName>
+        <active>true</active>
+        <description>When the contract is signed, require the customer sign date</description>
+        <errorConditionFormula>AND(
+    OR(ISNEW(),ISCHANGED(Status)),
+    ISPICKVAL(Status, &apos;Signed&apos;),
+    ISBLANK( CustomerSignedDateTime__c)
+   )</errorConditionFormula>
+        <errorDisplayField>CustomerSignedDateTime__c</errorDisplayField>
+        <errorMessage>Customer Signed Date/Time is required when marking a contract Signed</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Require_payment_method_by_Statu</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( ISPICKVAL(Preferred_Payment_Method__c , &apos;&apos;) , ISPICKVAL( Status , &apos;Signed&apos;) )</errorConditionFormula>
+        <errorDisplayField>Preferred_Payment_Method__c</errorDisplayField>
+        <errorMessage>Preferred Payment Method field is required when the [Status] value on a Contract record is set to &quot;Signed&quot;.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VR_ContractFeePerReq</fullName>
+        <active>true</active>
+        <description>Phase 1 - either Contract % or Contract Fee is required.</description>
+        <errorConditionFormula>AND( ISNULL( Contract__c ),  ISNULL( ContractFee__c ) )</errorConditionFormula>
+        <errorMessage>Please capture either Contract % or Contract Fee.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VR_FlatFeePer</fullName>
+        <active>true</active>
+        <description>Phase 1 - If Payment Terms is Flat Fee, Contract % field must be Null.</description>
+        <errorConditionFormula>AND ( (ISPICKVAL( PaymentTerm__c , &apos;Flat Fee $&apos;)),  NOT(ISNULL(  Contract__c )))</errorConditionFormula>
+        <errorMessage>Payment Terms is Flat Fee $, please capture Contract Fee.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>VR_PercContFee</fullName>
+        <active>true</active>
+        <description>Phase 1 - If Payment Terms is Percentage, Contract Fee field must be Null.</description>
+        <errorConditionFormula>AND ( (ISPICKVAL( PaymentTerm__c , &apos;Percentage&apos;)),  NOT(ISNULL(  ContractFee__c )))</errorConditionFormula>
+        <errorMessage>Payment Terms is Percentage, please capture Contract %.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>New_Contract</fullName>
+        <availability>online</availability>
+        <description>Replaces the New Contract button on the Opportunity layout to include the Account in the link.</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Contract</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/800/e?CF00Nj0000008b5Y5={!Opportunity.Name}&amp;CF00Nj0000008b5Y5_lkid={!Opportunity.Id}&amp;retURL=%2F{!Opportunity.Id}&amp;accid={!Opportunity.AccountId}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SendEchosign</fullName>
+        <availability>online</availability>
+        <description>Phase 1</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Send to Echosign</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/echosign_dev1__AgreementTemplateProcess?masterId={!Contract.Id}&amp;templateId={!IF(ISPICKVAL(Contract.PaymentTerm__c,&apos;Flat Fee $&apos;), &quot;a03j000000L7maC&quot;,&quot;a03j000000L7fKn&quot;)}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>echosign_dev1__Send_to_EchoSign</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Send for Signature</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/echosign_dev1__AgreementTemplateProcess?masterId={!Contract.Id}</url>
+    </webLinks>
+</CustomObject>

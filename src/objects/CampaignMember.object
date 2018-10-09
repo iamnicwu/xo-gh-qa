@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddCampaign</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ConvertLead</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CreateOpportunity</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CampaignId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Introduction__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign.Introductory_Verbiage_Formula__c</formula>
+        <label>Campaign Introduction</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Campaign_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Name</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Campaign_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Campaign.Type)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Campaign Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City</fullName>
+    </fields>
+    <fields>
+        <fullName>CompanyOrAccount</fullName>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Country</fullName>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+    </fields>
+    <fields>
+        <fullName>DoNotCall</fullName>
+    </fields>
+    <fields>
+        <fullName>Email</fullName>
+    </fields>
+    <fields>
+        <fullName>Email_Sent_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Email Sent Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Fax</fullName>
+    </fields>
+    <fields>
+        <fullName>FirstName</fullName>
+    </fields>
+    <fields>
+        <fullName>FirstRespondedDate</fullName>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfEmail</fullName>
+    </fields>
+    <fields>
+        <fullName>HasOptedOutOfFax</fullName>
+    </fields>
+    <fields>
+        <fullName>HasResponded</fullName>
+    </fields>
+    <fields>
+        <fullName>LastModifiedDateTest__c</fullName>
+        <externalId>false</externalId>
+        <formula>LastModifiedDate</formula>
+        <label>Last Modified Date Test</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>LastName</fullName>
+    </fields>
+    <fields>
+        <fullName>LeadId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inbound Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inbound Phone</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internal Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>List Purchase/Rental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paid Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partnership</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reviews</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Screen Scraping</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Self Prospecting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Website</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MobilePhone</fullName>
+    </fields>
+    <fields>
+        <fullName>Notify_Sales_Team__c</fullName>
+        <externalId>false</externalId>
+        <formula>Campaign.Notify_Sales_Team__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Notify Sales Team</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Phone</fullName>
+    </fields>
+    <fields>
+        <fullName>PostalCode</fullName>
+    </fields>
+    <fields>
+        <fullName>Prospect_Console_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT($Api.Partner_Server_URL_400, FIND( &apos;/services&apos;, $Api.Partner_Server_URL_400)) + &apos;console#%2F&apos; + (IF(ContactId == null, Lead.Id, Contact.Id))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prospect Console Link</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prospect_Link__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEFT($Api.Partner_Server_URL_400, FIND(&apos;/services&apos;, $Api.Partner_Server_URL_400)) + (IF(ContactId == null, Lead.Id, Contact.Id))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prospect Link</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prospect_Local_Sales_Market__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ContactId = null, Lead.Local_Sales_Market__r.Name, Contact.Account.Local_Sales_Market__r.Name)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prospect Local Sales Market</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prospect_Multiple_Categories__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ContactId == null, IF(Lead.Interest_in_Adv_in_Multiple_Categories__c,&apos;Yes&apos;, &apos;No&apos;), IF(Contact.Account.Interest_in_Adv_in_Multiple_Categories__c, &apos;Yes&apos;, &apos;No&apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prospect Multiple Categories</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prospect_Primary_Category__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ContactId == null, Lead.Primary_Category__r.Name, Contact.Account.Primary_Category__r.Name)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prospect Primary Category</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prospect_Website__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ContactId == null, Lead.Website, Contact.Account.Website)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Prospect Website</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Salutation</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Mr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ms.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mrs.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dr.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prof.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>State</fullName>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Opened</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Responded</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>text(Status)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status Text</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street</fullName>
+    </fields>
+    <fields>
+        <fullName>Template_Appellation__c</fullName>
+        <externalId>false</externalId>
+        <formula>case (MID(Lead.OwnerId, 1, 3),
+&quot;00G&quot;,&quot;Queue: &quot; &amp; Lead.Owner:Queue.QueueName,
+&quot;005&quot;,Lead.Owner:User.FirstName&amp;&quot; &quot;&amp;Lead.Owner:User.LastName,
+Contact.Account.Owner.FirstName &amp; &quot; &quot; &amp; Contact.Account.Owner.LastName)</formula>
+        <label>Template Appellation</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Title</fullName>
+    </fields>
+    <sharingModel>ControlledByCampaign</sharingModel>
+</CustomObject>

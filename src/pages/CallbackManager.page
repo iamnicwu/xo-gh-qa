@@ -1,0 +1,43 @@
+<apex:page showHeader="true" standardStylesheets="false" sidebar="false" title="Callback Manager">
+    <style>
+        /* SALESFORCE DEFAULT STYLING OVERRIDES */
+        body { margin: 0; }
+        @media (max-width: 48em) {
+            .slds-scope .slds-max-medium-table--stacked-horizontal tr.update-notification {
+                display: none;
+            }
+            .slds-scope .slds-max-medium-table--stacked-horizontal tr.callback-notes {
+                display: none;
+            }
+            .slds-scope .slds-max-medium-table--stacked-horizontal tr.sub-details-section {
+                display: none;
+            }
+            .slds-scope .slds-max-medium-table--stacked-horizontal td.loading {
+                display: table-cell;
+            }
+        }
+        
+        .noSidebarCell {
+          padding: 0 0 5px 0!important;
+        }
+    
+        .hasMotif {
+          margin: 0!important;
+        }
+    </style>
+
+    <apex:includeScript value="/lightning/lightning.out.js" />
+
+    <div id="lightning" />
+
+    <script>
+      $Lightning.use("c:CallbackManagerApp", function() {
+        $Lightning.createComponent("c:CallbackManager",
+            null,
+            "lightning",
+            function(cmp) {
+              // do some stuff
+          });
+      });
+    </script>
+</apex:page>

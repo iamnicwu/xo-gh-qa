@@ -1,0 +1,41 @@
+<apex:page showHeader="false" sidebar="false" standardController="Task" extensions="NVM_Embedded_Player_Controller">
+	<apex:outputPanel styleClass="admin-panel" rendered="{!systemAdmin}">
+		Currently Viewing as System Admin
+	</apex:outputPanel>
+
+	<apex:outputPanel id="theFrame" rendered="{!allowedToViewRecordings}">
+	<!--    <apex:iframe src="https://cloud17.contact-world.net/callcentre/callAnalytics/playaudiomatch.aspx?guid={!Task.CallObject}&start=0&matched=" scrolling="true" id="theIframe"/>   -->
+	    <apex:iframe src="https://cloud17.contact-world.net/callcentre/callAnalytics/CallRecordingComments.aspx?guid={!Task.CallObject}" scrolling="true" id="theIframe"/>
+	</apex:outputPanel>
+
+	<apex:outputPanel styleClass="no-permission-panel" rendered="{!!allowedToViewRecordings}" layout="block">
+		<span>You do not have permission to view the recordings on this Task</span>
+	</apex:outputPanel>
+  
+  <style type="text/css">
+  	.no-permission-panel {
+  		text-align: center;
+  		margin: 20px 0;
+  	}
+
+  	.no-permission-panel > span {
+  		padding: 10px 20px;
+  		display: inline-block;
+  		font-size: 20px;
+  		background-color: #f1f1f1;
+  		border-radius: 5px;
+  	}
+
+  	.admin-panel {
+  		position: absolute;
+	    right: 0;
+	    background: black;
+	    color: white;
+	    font-size: 10px;
+	    padding: 2px 5px 3px 5px;
+	    border-radius: 7px;
+			letter-spacing: 2px;
+    	text-transform: uppercase;
+  	}
+  </style>            
+</apex:page>

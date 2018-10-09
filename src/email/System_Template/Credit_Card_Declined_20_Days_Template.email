@@ -1,0 +1,23 @@
+<messaging:emailTemplate subject="Credit Card Decline for The Knot Services – Prompt Attention Appreciated ({!relatedTo.Zuora__BillingAccount__r.Name}, {!relatedTo.Zuora__BillingAccount__r.Zuora__AccountNumber__c})" recipientType="Contact" relatedToType="Zuora__PaymentMethod__c" replyTo="no-reply@theknot.com">
+    <messaging:htmlEmailBody >
+        <html>
+            <body>
+            Hello {!recipient.FirstName},
+            
+            <p>Thank you so much for your partnership with The Knot.  We have been unsuccessful in reaching you to discuss the credit card on your account ({!relatedTo.Zuora__CreditCardMaskNumber__c} exp {!relatedTo.Zuora__CreditCardExpirationMonth__c}/{!relatedTo.Zuora__CreditCardExpirationYear__c}) that has not gone through.  Currently your card has not been processing, leaving a balance of (${!relatedTo.Zuora__BillingAccount__r.Zuora__Balance__c}) currently due.</p>
+            
+            <p>We need to get this remedied right away, so please contact me at your earliest convenience to pay the balance or discuss payment plan options. For your convenience I am available from (8:00am-5:00pm) CST, Monday-Friday.  I have also attached a payment authorization form that you can complete and fax back to me if you prefer.  For security, please do not email your credit card information.</p>
+            
+            <p>If we can reach a resolution on this matter within 15 days of receipt of this email your services with us will remain active.  Otherwise services unfortunately will be cancelled and your account will be turned over to our third party collection agency.</p>
+            
+            <p>Please contact me and I’m happy to help you get this resolved right away!</p>
+            
+            Very Truly,<br/>
+            {!relatedTo.Zuora__BillingAccount__r.Zuora__Account__r.CBSS_Name__c}<br/>
+            {!relatedTo.Zuora__BillingAccount__r.Zuora__Account__r.CBSS_Email__c}<br/>
+            {!relatedTo.Zuora__BillingAccount__r.Zuora__Account__r.CBSS_Phone__c}
+            </body>
+
+        </html>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

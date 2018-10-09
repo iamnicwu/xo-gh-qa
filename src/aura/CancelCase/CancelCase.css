@@ -1,0 +1,84 @@
+.THIS .bold-text {
+    font-weight: bold;
+}
+
+.THIS .select-input {
+    display: inline-block;
+    width: 200px;
+}
+
+.THIS .date-input {
+    display: inline-block;
+    width: 200px;
+}
+
+.THIS .change-button:focus {
+    box-shadow: none;
+}
+
+.THIS .slds-button_brand[disabled] {
+    background-color: rgb(0, 112, 210);
+    border-color: rgb(0, 112, 210);
+    opacity: 0.6;
+}
+
+.THIS .cancel-flexbox {
+    display: flex;
+}
+
+.THIS .cancel-flexbox.flex-center {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.THIS .cancel-flexbox .textarea-container {
+    flex: 1
+}
+
+.THIS .cancel-case-selected-files {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.THIS .file-uploaded {
+    background-color: #04844b;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes blinker {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.THIS .file-uploading {
+    background-color: #54698d;
+    width: 10px;
+    height: 10px;
+    margin-left: .25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: blinker 0.9s cubic-bezier(.5, 0, 1, 1) infinite alternate;
+}
+
+.THIS .file-uploaded .slds-icon_xx-small,
+.THIS .file-uploading .slds-icon_xx-small {
+    width: 10px;
+    height: 10px;
+}
+
+.THIS .btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.THIS .action-btn {
+    margin-top: 5px;
+}

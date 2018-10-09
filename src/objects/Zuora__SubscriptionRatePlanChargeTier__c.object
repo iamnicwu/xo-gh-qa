@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>A product rate plan charge tier holds the prices for a product rate plan charge. Each product rate plan charge has at least one tier associated with it.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Zuora__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Subscription Rate Plan Charge Tiers</relationshipLabel>
+        <relationshipName>Subscription_Rate_Plan_Charge_Tiers</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__EndingUnit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The end number of a range of units for the tier.</description>
+        <externalId>false</externalId>
+        <label>Ending Unit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__External_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__IsOveragePrice__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the price is an overage price. An overage occurs when usage surpasses the last defined tier. This field is applicable only to tier pricing and volume pricing models.</description>
+        <externalId>false</externalId>
+        <label>Is Overage Price</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__PriceFormat__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the price is a flat fee or is per unit.</description>
+        <externalId>false</externalId>
+        <label>Price Format</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__Price__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The price of the tier if the charge is a flat fee, or the price of each unit in the tier if the change model is tiered pricing.</description>
+        <externalId>false</externalId>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__StartingUnit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The start number of a range of units for the tier.</description>
+        <externalId>false</externalId>
+        <label>Starting Unit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__SubscriptionProductCharge__c</fullName>
+        <deleteConstraint>Cascade</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Subscription Product &amp; Charge</label>
+        <referenceTo>Zuora__SubscriptionProductCharge__c</referenceTo>
+        <relationshipLabel>Subscription Rate Plan Charge Tiers</relationshipLabel>
+        <relationshipName>Subscription_Rate_Plan_Charge_Tiers</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__Tier__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A unique number that identifies the tier that the price applies to.</description>
+        <externalId>false</externalId>
+        <label>Tier</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Subscription Rate Plan Charge Tier</label>
+    <nameField>
+        <label>Subscription Rate Plan Charge Tier Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Subscription Rate Plan Charge Tiers</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

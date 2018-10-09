@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalPicklist xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Lead and Campaign Sub Sources</description>
+    <globalPicklistValues>
+        <fullName>Apple Brides</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Best Bridal St Louis</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Black Hills Bride</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Borrowed &amp; Blue</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>BOW</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Bridal Show</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Bride Canada</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Bride Wants</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Canada Bride</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Canada Weds</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Category Blitz</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Concierge</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Contact Us</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Designer</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Editorial</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Eventective</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>EventSource</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Facebook</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Featured</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Freemium</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Google</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Here Comes the Guide</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Hitched</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Hubspot_Paid Advertising-A</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Hubspot_Paid Advertising-B</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Instagram</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>LinkedIn</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Mailer Promo</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Market Party</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>My Account</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>MyWedding</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Networking Event</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Offbeat Bride</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Organic</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Other</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Paid Search Page</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Paid SEM Ad</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Partner</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Party Slate</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>PartySpace</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Pinterest</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>realweddings CAN</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Rustic Wedding Guide</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Sash and Satin</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Standard</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Style Me Pretty</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>The List</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>TKR</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Tradeshow</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Twitter</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Two Bright Lights</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Unveil</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Vendor Workshop</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Wedding Bells</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Wedding Spot</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Wedding Website</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>WeddingWire</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Zagat</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Webinar</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <globalPicklistValues>
+        <fullName>Zola</fullName>
+        <default>false</default>
+    </globalPicklistValues>
+    <masterLabel>Lead Sub Source</masterLabel>
+    <sorted>false</sorted>
+</GlobalPicklist>

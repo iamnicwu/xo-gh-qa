@@ -1,0 +1,59 @@
+<p>Hello {!Contact.FirstName},</p>
+
+<p>
+Thank you for your partnership with The Knot. I am reaching out to notify you that our records show you are currently {!Account.Days_Since_Past_Due__c} days past due, leaving an outstanding balance of {!Account.Past_Due_Balance__c}. Often times we find this may be an oversight and are happy to help remedy this right away.
+</p>
+
+<p>
+If you would like to discuss payment plan options or have any questions, please contact me at your earliest convenience so we can get this remedied right away.  I am available from 8:15am-5:00pm CST, Monday-Friday.
+</p>
+
+<p>
+If you are paying by Credit Card or ACH, I have attached a payment authorization form that you can complete and fax back to me if you prefer.  For your security do not email this form.
+</p>
+
+<p>
+Please contact me and I’m happy to get this resolved right away!
+</p>
+
+Very Truly,</br>
+<div style="color: rgb(145, 198, 122); font-weight: bold;">
+{!Account.CBBS__c}
+</div>
+<div>
+<a href="mailto:{!Account.CBSS_Email__c}?subject=Payment Past Due Notice">
+  {!Account.CBSS_Email__c}
+</a>
+</div>
+XO Group Inc. (NYSE: XOXO)<br/>
+P {!Account.CBSS_Phone__c}<br/>
+<p>
+<a href="http://xogroupinc.com/" target="_blank" style="display: inline-block;">
+  <img src="https://i.imgbox.com/xMoe5mYc.png" alt="" />
+</a><br>
+<a href="https://www.theknot.com/" target="_blank" style="display: inline-block;">
+  <img src="https://i.imgbox.com/ygoLigrQ.png" alt="" />
+</a>
+<a href="https://www.thenest.com/" target="_blank" style="display: inline-block;">
+  <img src="https://i.imgbox.com/WscDDJnE.png" alt="" />
+</a>
+<a href="https://www.thebump.com/" target="_blank" style="display: inline-block;">
+  <img src="https://i.imgbox.com/C7XBBFxR.png" alt="" />
+</a>
+<a href="https://howheasked.com/" target="_blank" style="display: inline-block;">
+  <img src="https://i.imgbox.com/D5lE09WE.png" alt="" />
+</a>
+<a href="https://www.gigmasters.com/" target="_blank" style="display: inline-block;">
+  <img src="https://i.imgbox.com/GpDfadY0.png" alt="" />
+</a>
+<br/>
+<a href="https://www.facebook.com/XOGroupInc" target="_blank" style="display: inline-block;">
+  <img src="http://i.imgbox.com/snxEua1K.png" alt="" />
+</a>
+<a href="https://twitter.com/xogroupinc" target="_blank" style="display: inline-block;">
+  <img src="http://i.imgbox.com/KgZ5rq0u.png" alt="" />
+</a>
+<a href="https://instagram.com/xogroupinc/" target="_blank" style="display: inline-block;">
+  <img src="http://i.imgbox.com/W77ScQ6h.png" alt="" />
+</a>
+</p>

@@ -1,0 +1,14 @@
+{
+    "folders": [
+        {
+            "folder_exclude_patterns": [
+                ".templates"
+            ], 
+            "file_exclude_patterns": [
+                "*.*-meta.xml", 
+                "*.sublime-project"
+            ], 
+            "path": "D:/sfdc/xo-beCreate-uat"
+        }
+    ]
+}

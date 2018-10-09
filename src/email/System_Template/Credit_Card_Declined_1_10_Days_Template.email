@@ -1,0 +1,20 @@
+<messaging:emailTemplate subject="Credit Card Decline for The Knot Services – Prompt Attention Appreciated ({!relatedTo.Zuora__BillingAccount__r.Name}, {!relatedTo.Zuora__BillingAccount__r.Zuora__AccountNumber__c})" recipientType="Contact" relatedToType="Zuora__PaymentMethod__c" replyTo="no-reply@theknot.com">
+    <messaging:htmlEmailBody >
+        <html>
+            <body>
+            Hello {!recipient.FirstName},
+            
+            <p>Thank you for your continued partnership with The Knot! Our records show the credit card we have on file ({!relatedTo.Zuora__CreditCardMaskNumber__c} exp {!relatedTo.Zuora__CreditCardExpirationMonth__c}/{!relatedTo.Zuora__CreditCardExpirationYear__c}) for your advertising did not go through, leaving a balance of (${!relatedTo.Zuora__BillingAccount__r.Zuora__Balance__c}) currently due.</p>
+            
+            <p>Please contact us at your earliest convenience to get this remedied or discuss payment plan options. For your convenience I am available from (8:00 am - 5:00 pm) CST, Monday-Friday.  I have also attached a payment authorization form that you can complete and fax back to me if you prefer.  For security, please do not email your credit card information.</p>
+            
+            <p>Please contact me and I’m happy to help you get this resolved right away!</p>
+            
+            Very Truly,<br/>
+            {!relatedTo.Zuora__BillingAccount__r.Zuora__Account__r.CBSS_Name__c}<br/>
+            {!relatedTo.Zuora__BillingAccount__r.Zuora__Account__r.CBSS_Email__c}<br/>
+            {!relatedTo.Zuora__BillingAccount__r.Zuora__Account__r.CBSS_Phone__c}
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

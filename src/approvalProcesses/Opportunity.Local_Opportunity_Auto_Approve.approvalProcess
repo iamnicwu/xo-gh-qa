@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <type>userHierarchyField</type>
+            </approver>
+        </assignedApprover>
+        <description>Auto-approve the Opportunity.</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Opportunity.RecordType</field>
+                <operation>notEqual</operation>
+                <value>Local</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>1</label>
+        <name>X1</name>
+    </approvalStep>
+    <description>Ticket 1498- AC # 2</description>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <formula>RecordType.Name = &quot;Local&quot; &amp;&amp; Approval_Process_Flag_Autoreject__c = False &amp;&amp; Account.Credit_Hold__c = False &amp;&amp;  Approval_Process_Flag_Manager_Approval__c = False &amp;&amp;  Approval_Process_Flag_Cancel_Approval__c = False</formula>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Opp_Stage_Ready_for_Echosign</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Unsetting_Record_Locked</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Unsetting_Record_Locked</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Lock_Quotes</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Setting_Record_locked_field</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Local Opportunity - Auto Approve</label>
+    <nextAutomatedApprover>
+        <useApproverFieldOfRecordOwner>false</useApproverFieldOfRecordOwner>
+        <userHierarchyField>Manager</userHierarchyField>
+    </nextAutomatedApprover>
+    <recallActions>
+        <action>
+            <name>Unsetting_Record_Locked</name>
+            <type>FieldUpdate</type>
+        </action>
+    </recallActions>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

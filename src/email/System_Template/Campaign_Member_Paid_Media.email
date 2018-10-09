@@ -1,0 +1,33 @@
+{!CampaignMember.Template_Appellation__c}, 
+
+{!CampaignMember.Campaign_Introduction__c}
+
+Name: 
+{!CampaignMember.FirstName} {!CampaignMember.LastName} 
+
+Company:
+{!CampaignMember.CompanyOrAccount}
+
+Website:
+{!CampaignMember.Prospect_Website__c}
+
+Email:
+{!CampaignMember.Email}
+
+Phone: 
+{!CampaignMember.Phone} 
+
+Postal Code: 
+{!CampaignMember.PostalCode} 
+
+Local Sales Market:
+{!CampaignMember.Prospect_Local_Sales_Market__c}
+
+Primary Category: 
+{!CampaignMember.Prospect_Primary_Category__c} 
+
+Created Date/Time: 
+{!CampaignMember.CreatedDate}
+
+Link: 
+{!CampaignMember.Prospect_Link__c}

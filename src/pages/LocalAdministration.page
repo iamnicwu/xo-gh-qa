@@ -1,0 +1,126 @@
+<apex:page showHeader="true" sidebar="false" title="Local Administration" controller="LocalAdministrationController" tabStyle="Local_Sales_Administration__tab">
+	<apex:stylesheet value="/resource/slds100/assets/styles/salesforce-lightning-design-system.css" />
+	<apex:stylesheet value="/resource/animate" />
+
+	<style>
+		.box{
+			padding: 50px 0;
+			margin: 10px;
+			width: 300px;
+			text-align: center;
+	    word-wrap: break-word;
+	    font-size: 14px;
+	    display: inline-block;
+		}
+
+		html, body {
+			height: 100%;
+      overflow-x: hidden;
+		}
+
+    iframe {
+      border-width: 0;
+      height: 76vh;
+    }
+
+    .noSidebarCell {
+      padding: 0 0 5px 0!important;
+    }
+
+    .hasMotif {
+      margin: 0!important;
+    }
+
+    body {
+    	font-size: small;
+    }
+
+    li {
+    	margin-left: 0!important;
+    }
+
+    .slds-tabs--scoped__nav {
+      background-color: white;
+    }
+
+    .slds-active .slds-tabs--scoped__link {
+      background-color: #f4f6f9;
+      border-bottom-width: 0;
+    }
+
+    .slds-tabs--scoped__link {
+      background-color: white;
+      border-bottom: 1px solid #D8DDE4;
+    }
+	</style>
+
+	<div class="slds">
+		<!-- Page Tabs -->
+		<div class="slds-tabs--scoped">
+			<!-- Tabs List -->
+	    <ul class="slds-tabs--scoped__nav" role="tablist">
+	    	<!-- Record Reassignment -->
+        <!-- <li class="slds-tabs--scoped__item slds-text-heading--label" title="Record Reassignment" role="presentation">
+        <a class="slds-tabs--scoped__link recordassignment" href="#recordassignment" role="tab" tabindex="0" aria-selected="false" aria-controls="tab-scoped-1" id="tab-scoped-1__item" onclick="iframeSwitch(this, '{!$Page.RecordReassignment}');">
+            <span class="tab-text">Record Reassignment</span>
+          </a>
+        </li> -->
+
+        <!-- Record Assignment Rules -->
+	      <!-- <li class="slds-tabs--scoped__item slds-text-heading--label" title="Assignment Rules" role="presentation">
+	      	<a class="slds-tabs--scoped__link assignmentrules" href="#assignmentrules" role="tab" tabindex="1" aria-selected="false" aria-controls="tab-scoped-2" id="tab-scoped-2__item" onclick="iframeSwitch(this, '{!$Page.RepresentativeAssignmentRules}');">
+	      		<span class="tab-text">Assignment Rules</span>
+	      	</a>
+	      </li> -->
+
+	      <!-- User Support Deprecated -->
+	      <!-- <li class="slds-tabs--scoped__item slds-text-heading--label" title="Billing Accounts" role="presentation">
+	      	<a class="slds-tabs--scoped__link teamassignment" href="#teamassignment" role="tab" tabindex="2" aria-selected="false" aria-controls="tab-scoped-3" id="tab-scoped-3__item" onclick="iframeSwitch(this, '{!$Page.LocalSalesRepTeamAssignment}');">
+	      		<span class="tab-text">User Support Setup</span>
+	      	</a>
+	      </li> -->
+
+        <!-- User Setup -->
+        <li class="slds-tabs--scoped__item slds-text-heading--label" title="Billing Accounts" role="presentation">
+          <a class="slds-tabs--scoped__link usersetup" href="#usersetup" role="tab" tabindex="2" aria-selected="false" aria-controls="tab-scoped-3" id="tab-scoped-3__item" onclick="iframeSwitch(this, '{!$Page.UserSetup}');">
+            <span class="tab-text">User Setup</span>
+          </a>
+        </li>
+	    </ul>
+	   </div>
+	</div>
+
+	<iframe src=""  width="100%" style="display: block;" />
+
+  <script type="text/javascript">
+    window.onload = function() {
+      var anchorClassName = 'usersetup';
+      if(window.location.hash) {
+        anchorClassName = window.location.hash.substring(1);
+      }
+
+      var anchorElement = document.querySelector('.' + anchorClassName);
+      anchorElement.click();
+    }
+
+
+    var iframeSwitch = function(element, url) {
+      if(element.className.indexOf('slds-active') > -1) {
+        return;
+      }
+
+      var activeTab = document.querySelector('.slds-active');
+      if(activeTab) {
+        activeTab.className = activeTab.className.replace(' slds-active', '');
+        activeTab.setAttribute('aria-selected', false);
+      }
+
+      element.parentElement.className += ' slds-active';
+      element.parentElement.setAttribute('aria-selected', true);
+
+      var iframeElement = document.querySelector('iframe');
+      iframeElement.src = url;
+    }
+  </script>
+	
+</apex:page>

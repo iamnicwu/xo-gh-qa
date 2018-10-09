@@ -1,0 +1,36 @@
+<apex:page showHeader="true" sidebar="true" controller="LeadAccountAutoAssignController" title="Admin Auto Assign Tool">
+	<apex:form >
+		<apex:pageBlock title="Auto Assignment" id="blockId">
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!executeBatchAssign}" value="Execute Batch" reRender="blockId"/>
+			</apex:pageBlockButtons>
+			<apex:actionFunction name="reRenderPanel" action="{!reRenderPanel}" reRender="userPanel" status="fetchStatus"/>
+
+			<apex:pageMessages />
+
+			<apex:selectList value="{!aType}" multiselect="false" size="1" onchange="reRenderPanel();">
+				<apex:selectOptions value="{!AssignType}" />
+			</apex:selectList>
+			<hr/>
+			<apex:outputPanel id="userPanel" >
+				<apex:pageMessage summary="Please select a user who you want to automatically re-assign their records based on the auto assignment rules!" severity="info" strength="1" rendered="{!aType != 'accountMetro'}"/>
+
+				<apex:pageMessage summary="All Accounts without a value on the Zip__c field will be auto assigned!" severity="info" strength="1" rendered="{!aType == 'accountMetro'}"/>
+
+				<apex:selectList value="{!ownerActiveFilter}" multiselect="false" size="1" onchange="reRenderPanel();" rendered="{!aType != 'accountMetro'}">
+					<apex:selectOptions value="{!ActiveType}" />
+				</apex:selectList>
+				<apex:selectList value="{!selectedProfile}" multiselect="false" size="1" onchange="reRenderPanel();" rendered="{!aType != 'accountMetro'}">
+					<apex:selectOptions value="{!ProfileList}" />
+				</apex:selectList>
+				<apex:selectList value="{!selectedRecordOwner}" multiselect="false" size="1" rendered="{!aType != 'accountMetro'}">
+					<apex:selectOptions value="{!UserList}" />
+				</apex:selectList>
+			</apex:outputPanel>
+
+			<apex:outputPanel style="color: black;font-weight:bold">
+	            <apex:actionStatus id="fetchStatus" startText=" Fetching..." stopText=""/>
+	        </apex:outputPanel>
+        </apex:pageBlock>
+	</apex:form>
+</apex:page>

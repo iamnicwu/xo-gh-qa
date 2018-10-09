@@ -1,0 +1,92 @@
+.THIS .select-padding {
+  padding: 10px;
+}
+
+.THIS .center-align {
+	text-align: center;
+}
+
+.THIS .desc button {
+  background-image: url("/resource/slds100/assets/icons/utility/arrowdown_60.png");
+  background-size: 10px;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  margin-top: 2px;
+}
+
+.THIS .asc button {
+  background-image: url("/resource/slds100/assets/icons/utility/arrowup_60.png");
+  background-size: 10px;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
+  margin-top: 2px;
+}
+
+.THIS .account-details {
+	text-align: right;
+}
+
+.THIS .account-details > .info {
+	display: block;
+}
+
+.THIS .account-details > .Paid > .coded {
+	color: green;
+}
+
+.THIS .account-details > .Unpaid > .coded {
+	background-color: yellow;
+	padding: 0px 2px;
+}
+
+.THIS .account-details > .Hold > .coded {
+	color: red;
+}
+
+.THIS .account-details > .Hold > .uiOutputCurrency {
+	color: red;
+}
+
+.THIS .tab-text {
+	display: inline-block;
+}
+
+.THIS .tab-count-container {
+	display: inline-block;
+	min-width: 25px;
+	margin-left: 10px;
+}
+
+.THIS .tab-count-container > .tab-count {
+	display: inline-block;
+  border-radius: 15%;
+  padding: 5px 8px;
+  background-color: white;
+  text-align: center;
+  line-height: normal;
+}
+
+.THIS .slds-active .tab-count-container > .tab-count {
+	background-color: #f4f6f9;
+}
+
+.THIS .slds-tabs--scoped__content {
+	padding: 0px;
+	overflow-y: auto;
+}
+
+.THIS table.billing-table tr.invoice-row > td{
+	padding: 0px 0px 0px 15px;
+	border-top: none;
+	background-color: #0070d2;
+}
+
+.THIS table.billing-table tr.invoice-row > td:hover {
+	background-color: #0070d2;
+}
+
+.THIS table.invoice-table > thead > tr:hover > td {
+	background-color: white;
+}

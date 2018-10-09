@@ -1,0 +1,35 @@
+<apex:component controller="AutoRenewalNotificationEmailController" access="global">
+
+	<apex:attribute name="zuoraQuoteId" type="Id" description="Id of the quote" assignTo="{!quoteId}"/>
+	<apex:outputText >Hi <b style="font-weight: bold">{!zQuote.zqu__Account__r.Name}</b>,<br/><br/>
+		<!-- Thank you for choosing to partner with The Knot. As a friendly reminder, your contract will automatically renew on &nbsp;</apex:outputText><b><apex:outputText value="{0,date,MM'/'dd'/'yyyy}"> <apex:param value="{!zQuote.zqu__Opportunity__r.Renew_Subscription__r.Zuora__NextRenewalDate__c}" /></apex:outputText></b><apex:outputText >. Below are the details for your contract renewal: -->
+		{!$Label.AutoRenewalNotificationEmail2}<br/>
+		<li>Get discovered everywhere couples are planning with the <a href="https://www.theknot.com/planner-app/">#1 wedding planning app</a></li>
+		<li>Connect with and close your ideal couples faster and easier with our new <a href="http://videos.theknotpro.com/watch/UmfZ2CjshWncy3e3hac24A?">Wedding Vision Card</a></li>
+		<li>Be recognized by the wedding community with exclusive access to monthly webinars, VIP events and more with <a href="https://partners.theknotpro.com/theknotpromembershipperks">The Knot Pro Perks</a></li>
+		<br/>
+		{!$Label.AutoRenewalNotificationEmail3}
+		<br/><br/>
+		<b>Date Billed:</b> {!zQuote.zqu__BillCycleDay__c} <br/>
+		<!-- <b>Total amount to be billed {!totalAmountToBilled}:</b> ${!totalAmount} <br/> -->
+		<b>Rate:</b> ${!totalAmount} <br/>
+		<b>{!IF(ratePlanNameList.size > 1, "Services", "Service" )}: </b> <br/>
+		<div style="padding-left: 20px;">
+			<apex:repeat value="{!ratePlanNameList}" var="ratePlanName">
+				<apex:outputText >{!ratePlanName}</apex:outputText><br/>
+			</apex:repeat>
+		</div>
+		<br/>
+
+		{!$Label.AutoRenewalNotificationEmail1} {!zQuote.zqu__Account__r.Strategy_Specialist__r.FirstName} {!zQuote.zqu__Account__r.Strategy_Specialist__r.LastName}, at <a href="{!'mailto:'+ zQuote.zqu__Account__r.Strategy_Specialist__r.Email}">{!zQuote.zqu__Account__r.Strategy_Specialist__r.Email}</a> {!if(zQuote.zqu__Account__r.Strategy_Specialist__r.Phone != null, 'or ' + zQuote.zqu__Account__r.Strategy_Specialist__r.Phone, '')}.<br/>
+		<br/>
+		<img src="{!signatureDucomentId}" alt="banner" width="100" height="25"/><br/><br/>
+		{!$Label.AutoRenewalNotificationEmail6}<br/>
+		{!$Label.AutoRenewalNotificationEmail7}<br/><br/>
+<!-- 
+		PS - Don’t forget to check out our <a href="{!$Label.AutoRenewalNotificationEmail8}">terms &amp; conditions!</a> <br/><br/>
+
+		<p style="color: #858585; font-size:11px">{!$Label.AutoRenewalNotificationEmail9}</p><br/>
+ -->
+	</apex:outputText>
+</apex:component>

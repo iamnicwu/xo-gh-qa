@@ -1,0 +1,107 @@
+<apex:page controller="VendorLookupController" standardStylesheets="false" showheader="false" title="Search" sideBar="false" id="pg">
+	<apex:stylesheet value="/resource/slds100/assets/styles/salesforce-lightning-design-system.css" />
+	
+	<script language="JavaScript" type="text/javascript">
+		var closeAndUpdate = function(element) {
+			top.window.opener.closeLookup(element);
+			self.close();
+		}
+
+		var sortColumn = function(element) {
+			var sorted = element.dataset.sorted;
+			var sortDirection = 'desc';
+			if(sorted === '1') {
+				sortDirection = element.className.split('slds-is-sortable ')[1];
+			}
+
+			serverSort(element.dataset.fieldname, sortDirection);
+		}
+        
+	</script>
+
+	<apex:form >
+		<apex:actionFunction name="serverSort" id="serverSort" action="{!serverSort}" reRender="tablePanel">
+			<apex:param name="fieldname" value="" />
+			<apex:param name="sortdirection" value="" />
+		</apex:actionFunction>
+	</apex:form>
+
+	<div class="slds">
+		<div class="slds-page-header" role="banner">
+  			<div class="slds-media__body">
+      			<p class="slds-page-header__title slds-truncate slds-align-middle" title="Select Location">Select Location</p>
+      			<p class="slds-text-body--small page-header__info">Search Results</p>
+    		</div>
+		</div>
+		<div id="no-results-found" class="no-results-container" style="display: {!if(!haveResult, '', 'none')};">
+      There is no fulfilled location within the hierarchy of the account on the quote.
+    </div>
+    <apex:outputPanel id="tablePanel">
+			<table class="slds-table slds-table--bordered slds-table--cell-buffer" style=" display:  {!if(haveResult, '', 'none')};">
+			  	<thead>
+			    	<tr class="slds-text-heading--label">
+			      
+		      		<th class="slds-is-sortable {!if('Name' == currentSortField, currentDirection, '')}" scope="col" data-fieldname="Name" data-sorted="{!if('Name' == currentSortField, '1', '0')}" title="Account Name" onclick="sortColumn(this);">
+		        		<div class="slds-truncate">Account Name</div>
+		      		</th>
+		      		<th class="slds-is-sortable {!if('Local_Sales_Market__r.Name' == currentSortField, currentDirection, '')}" scope="col" data-fieldname="Local_Sales_Market__r.Name" data-sorted="{!if('Local_Sales_Market__r.Name' == currentSortField, '1', '0')}" title="Local Sales Market" onclick="sortColumn(this);">
+		        		<div class="slds-truncate">Local Sales Market</div>
+		      		</th>
+		      		<th class="slds-is-sortable {!if('Primary_Category__r.Name' == currentSortField, currentDirection, '')}" scope="col" data-fieldname="Primary_Category__r.Name" data-sorted="{!if('Primary_Category__r.Name' == currentSortField, '1', '0')}" title="Primary Category" onclick="sortColumn(this);">
+		        		<div class="slds-truncate">Primary Category</div>
+		      		</th>
+		      		<th class="slds-is-sortable {!if('DynamicsAccID__c' == currentSortField, currentDirection, '')}" scope="col" data-fieldname="DynamicsAccID__c" data-sorted="{!if('DynamicsAccID__c' == currentSortField, '1', '0')}" title="Location ID" onclick="sortColumn(this);">
+		        		<div class="slds-truncate">Location ID</div>
+		      		</th>
+			    	</tr>
+			  	</thead>
+			  	<tbody>
+			  		<apex:repeat value="{!vendorList}" var="a" id="theRepeat">
+			  			<tr>
+				      		<td scope="row" data-label="Account Name">
+				        		<div class="slds-truncate">
+				        			<a href="javascript:void(0);" data-formTag="{!FormTag}" data-lkid="{!TextBox}_lkid" data-textBox ="{!TextBox}" data-id="{!a.id}" data-accname="{!a.Name}" onclick="closeAndUpdate(this);">{!a.Name}</a>
+				        		</div>
+				      		</td>
+				      		<td data-label="Local Sales Market">
+				       			<div class="slds-truncate">{!a.Local_Sales_Market__r.Name}</div>
+				      		</td>
+				      		<td data-label="Primary Category">
+				        		<div class="slds-truncate">{!a.Primary_Category__r.Name}</div>
+				      		</td>
+				      		<td data-label="Location ID">
+				        		<div class="slds-truncate">{!a.DynamicsAccID__c}</div>
+				      		</td>
+				      	</tr>
+			  		</apex:repeat>
+				</tbody>
+			</table>
+		</apex:outputPanel>
+	</div>
+
+	<style type="text/css">
+		/* On hover show CSS ASC arrow when NOT having desc class on element */
+		.slds-is-sortable:not(.desc):hover {
+		  background-image: url("/resource/slds100/assets/icons/utility/arrowup_60.png");
+		  background-repeat: no-repeat;
+		  background-size: 15px;
+		  background-position: 95% 8px;
+		}
+
+		/* Sorting Arrow CSS ASC*/
+		.asc {
+		  background-image: url("/resource/slds100/assets/icons/utility/arrowup_60.png");
+		  background-repeat: no-repeat;
+		  background-size: 15px;
+		  background-position: 95% 8px;
+		}
+
+		/* Sorting Arrow CSS DESC */
+		.desc {
+		  background-image: url("/resource/slds100/assets/icons/utility/arrowdown_60.png");
+		  background-repeat: no-repeat;
+		  background-size: 15px;
+		  background-position: 95% 8px;
+		}
+	</style>
+</apex:page>

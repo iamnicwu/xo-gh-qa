@@ -1,0 +1,20 @@
+<div style="text-align: center; background-color: grey; padding: 20px 0px;"> 
+<div style="display: inline-block; width: 70%; background-color: white; border-radius: 4px 4px 4px 4px; -moz-border-radius: 4px 4px 4px 4px; -webkit-border-radius: 4px 4px 4px 4px;"> 
+<div style="background-color: black; padding: 20px 10px 15px 20px; border-radius: 4px 4px 0px 0px; -moz-border-radius: 4px 4px 0px 0px; -webkit-border-radius: 4px 4px 0px 0px;"> 
+<div style="color: rgb(178,204,133); text-align: left; font-size: 24px; letter-spacing: 0.75px; font-family: arial, sans-serif;"> 
+Default Case Email
+</div> 
+</div> 
+<div style="text-align: left; padding: 20px; font-family: arial, sans-serif;"> 
+Thank you for your email. 
+
+<br> <br>
+There is a case created without recordType, refer to {!Case.Link}, please help to look into it.
+
+<br><br>
+Thanks
+<br>
+Salesforce Team 
+</div> 
+</div> 
+</div>

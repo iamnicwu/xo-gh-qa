@@ -1,0 +1,214 @@
+<aura:component access="GLOBAL" controller="UserSetupController" implements="force:appHostable" >
+  <ltng:require scripts="/resource/xojs" />
+  <ltng:require styles="/resource/animate" />
+
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+  <!-- Queried User List -->
+  <aura:attribute name="userList" type="Object[]" />
+
+  <!-- Error Object -->
+  <aura:attribute name="errorMessage" type="Object" />
+
+  <!-- js timeout timer variable -->
+  <aura:attribute name="timer" type="Object" />
+
+  <aura:attribute name="columnIndex" type="String[]" default="['none', 'RSD', 'ARR', 'RSR', 'Strategy Specialist', 'Print Specialist', 'SOR', 'none']" />
+  <aura:attribute name="columnFieldMap" type="Map" default="{'rsd' : 'ManagerId', 
+                                                              'arr' : 'ARR__c',
+                                                              'rsr' : 'RSR__c',
+                                                              'ss' : 'Strategy_Specialist__c',
+                                                              'ps' : 'Print_Specialist__c',
+                                                              'sor' : 'SOR__c'}" />
+
+
+  <!-- Hidden Picklists used for Deep Cloning -->
+    <div class="hidden-main-picklists">
+      <div class="slds-select_container arr-container" style="display: none;" >
+        <select data-index="1" class="slds-select arr-select animated fadeIn" >
+          <option value="none">-- None --</option>
+          <!-- DYNAMICALLY POPULATED FILTERS -->
+        </select>
+      </div>
+
+      <div class="slds-select_container rsr-rsd-container" style="display: none;" >
+        <select data-index="2" class="slds-select rsr-rsd-select animated fadeIn" >
+          <option value="none">-- None --</option>
+          <!-- DYNAMICALLY POPULATED FILTERS -->
+        </select>
+      </div>
+
+      <div class="slds-select_container ss-ps-container" style="display: none;" >
+        <select data-index="3" class="slds-select ss-ps-select animated fadeIn" >
+          <option value="none">-- None --</option>
+          <!-- DYNAMICALLY POPULATED FILTERS -->
+        </select>
+      </div>
+
+      <div class="slds-select_container sor-container" style="display: none;" >
+        <select data-index="4" class="slds-select sor-select animated fadeIn" >
+          <option value="none">-- None --</option>
+          <!-- DYNAMICALLY POPULATED FILTERS -->
+        </select>
+      </div>
+    </div>
+
+  <div class="slds">
+    <!-- ERROR -->
+    <div class="slds-notify_container animated fadeInDown" style="display: none;">
+      <div class="slds-notify slds-notify--toast custom-toast" role="alert">
+        <span class="slds-assistive-text">Error</span>
+        <button class="slds-button slds-button--icon-inverse slds-notify__close">
+          <img src="/resource/slds100/assets/icons/utility/close_60.png" onclick="{!c.closeError}" />
+          <span class="slds-assistive-text">Close</span>
+        </button>
+        <div class="slds-notify__content slds-grid">
+          <img src="/resource/slds100/assets/icons/utility/warning_60.png" />
+          <div class="slds-col slds-align-middle">
+            <aura:iteration items="{!v.errorMessage}" var="currentError">
+              <aura:iteration items="{!currentError.pageErrors}" var="currentPageError">
+                <h2 class="slds-text-heading--small">
+                  <aura:renderIf isTrue="{!currentPageError.id != null}">
+                    <a href="{!'/' + currentPageError.id}" target="_blank">{!currentPageError.statusCode}</a>
+                    <aura:set attribute="else">
+                      {!currentPageError.statusCode}
+                    </aura:set>
+                  </aura:renderIf>
+                </h2>
+                <p>{!currentPageError.message}</p>
+              </aura:iteration>
+              
+            </aura:iteration>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <div class="slds-page-header" role="banner">
+      <div class="slds-grid">
+        <div class="slds-col slds-has-flexi-truncate">
+          <!-- Small Header -->
+          <p class="slds-text-heading--label">Admin Tools</p>
+          <!-- Title -->
+          <div class="slds-grid">
+            <h1 class="slds-page-header__title slds-truncate" title="User Setup">User Setup</h1>
+          </div>
+        </div>
+
+        <div class="slds-col user-search">
+          <span class="input-container">
+            <div class="slds-select_container animated slideOutLeft" style="visibility: hidden;">
+              <select id="column-filter-select" class="slds-select column-filter-select" onchange="{!c.filterByColumn}">
+                
+              </select>
+            </div>
+            <input type="text" class="slds-input hidden" style="visibility: hidden;" onkeyup="{!c.filterByColumn}" />
+          </span>
+          <img class="search-icon animated fadeIn" src="/resource/slds100/assets/icons/utility/search_60.png" onclick="{!c.searchState}" />
+          <img class="close-icon animated fadeIn" src="/resource/slds100/assets/icons/utility/close_60.png" onclick="{!c.searchState}" style="display: none;" />
+        </div>
+      </div>
+    </div>
+
+    <!-- User Table -->
+    <table id="user-table" class="slds-table slds-table--bordered slds-max-medium-table--stacked-horizontal user-table" onkeyup="{!c.userInputSearch}">
+      <thead>
+        <tr class="slds-text-heading--label">
+          <th class="slds-truncate" scope="col" data-header-value="Name" data-row-desc="none">
+            <div class="slds-truncate">Name
+              <button class="slds-button slds-button--icon-bare" >
+                <span class="slds-assistive-text">Sort</span>
+              </button>
+            </div>
+          </th>
+
+          <th class="slds-truncate" scope="col" data-header-value="RSD">
+            <div class="slds-truncate">RSD
+              <button class="slds-button slds-button--icon-bare" >
+                <span class="slds-assistive-text">Sort</span>
+              </button>
+            </div>
+          </th>
+
+          <th class="slds-truncate" scope="col" data-header-value="ARR">
+            <div class="slds-truncate">ARR
+              <button class="slds-button slds-button--icon-bare" >
+                <span class="slds-assistive-text">Sort</span>
+              </button>
+            </div>
+          </th>
+
+          <th class="slds-truncate" scope="col" data-header-value="RSR">
+            <div class="slds-truncate">RSR
+              <button class="slds-button slds-button--icon-bare" >
+                <span class="slds-assistive-text">Sort</span>
+              </button>
+            </div>
+          </th>
+
+          <th class="slds-truncate" scope="col" data-header-value="Strategy Specialist">
+            <div class="slds-truncate">Strategy Specialist
+              <button class="slds-button slds-button--icon-bare" >
+                <span class="slds-assistive-text">Sort</span>
+              </button>
+            </div>
+          </th>
+
+          <th class="slds-truncate" scope="col" data-header-value="Print Specialist">
+            <div class="slds-truncate">Print Specialist
+              <button class="slds-button slds-button--icon-bare" >
+                <span class="slds-assistive-text">Sort</span>
+              </button>
+            </div>
+          </th>
+
+          <th class="slds-truncate" scope="col" data-header-value="SOR">
+            <div class="slds-truncate">SOR
+              <button class="slds-button slds-button--icon-bare" >
+                <span class="slds-assistive-text">Sort</span>
+              </button>
+            </div>
+          </th>
+
+          <!-- Actions Column -->
+          <th class="slds-truncate actions-header" scope="col" >
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <aura:iteration items="{!v.userList}" var="user">
+          <tr id="{!user.Id}" class="background-transition" data-recordid="{!user.Id}">
+            <td class="slds-truncate" data-label="Name" data-cell-desc="none">
+              {!user.Name}
+            </td>
+            <td class="slds-truncate" data-label="RSD" data-cell-desc="rsd" data-recordid="{!user.ManagerId}">
+              {!user.Manager.Name}
+            </td>
+            <td class="slds-truncate" data-label="ARR" data-cell-desc="arr" data-recordid="{!user.ARR__c}">
+              {!user.ARR__r.Name}
+            </td>
+            <td class="slds-truncate" data-label="RSR" data-cell-desc="rsr" data-recordid="{!user.RSR__c}">
+              {!user.RSR__r.Name}
+            </td>
+            <td class="slds-truncate" data-label="Strategy Specialist" data-cell-desc="ss" data-recordid="{!user.Strategy_Specialist__c}">
+              {!user.Strategy_Specialist__r.Name}
+            </td>
+            <td class="slds-truncate" data-label="Print Specialist" data-cell-desc="ps" data-recordid="{!user.Print_Specialist__c}">
+              {!user.Print_Specialist__r.Name}
+            </td>
+            <td class="slds-truncate" data-label="SOR" data-cell-desc="sor" data-recordid="{!user.SOR__c}">
+              {!user.SOR__r.Name}
+            </td>
+            <td class="slds-truncate action-cell" data-cell-desc="none">
+              <img class="edit-icon button-default" src="/resource/slds100/assets/icons/utility/edit_60.png" onclick="{!c.editSupport}" />
+              <img class="save-icon" src="/resource/slds100/assets/icons/utility/check_60.png" onclick="{!c.updateSupport}" style="display: none;" />
+              <img class="cancel-icon" src="/resource/slds100/assets/icons/utility/undo_60.png" onclick="{!c.cancelSupportEdit}" style="display: none;" />
+              <img src="/resource/slds100/assets/images/spinners/slds_spinner_brand.gif" id="button-pending" class="edit-spinner animated fadeIn" style="display: none;" />
+            </td>
+          </tr>
+        </aura:iteration>
+      </tbody>
+    </table>
+  </div>
+</aura:component>

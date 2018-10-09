@@ -1,0 +1,12 @@
+<apex:page showHeader="true" sidebar="false" StandardController="zqu__Quote__c" extensions="zQuoteFlowAddPaymentMethodController">
+
+  <!-- QuoteWizardTemplate -->
+  <apex:composition template="zqu__QuoteWizardTemplateNoForm" >
+  
+    <!-- Define the page body, including form and button bar -->
+    <apex:define name="PageBody" >
+    	<!-- Render the payment page component, using the url parameters as attribute values -->
+    	<zqu:PaymentPage zuoraPageId="{!pageId}" submitEnabled="false" style="inline" />
+    </apex:define>
+  </apex:composition>
+</apex:page>

@@ -1,0 +1,29 @@
+<apex:page showHeader="false" standardStylesheets="false" >
+	<apex:includeScript value="/lightning/lightning.out.js" />
+
+	<div id="lightning" />
+
+    <script>
+    	function getURLParameter(name) {
+			  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+			}
+
+  		var accountId = getURLParameter('accountId');
+  		console.log(accountId);
+
+      $Lightning.use("c:AccountSummaryApp", function() {
+        $Lightning.createComponent("c:AccountSummary",
+	        { "accountId" : accountId },
+	        "lightning",
+	        function(cmp) {
+	          // do some stuff
+	      });
+      });
+    </script>
+
+    <style type="text/css">
+      body {
+        margin: 0;
+      }
+    </style>
+</apex:page>

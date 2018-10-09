@@ -1,0 +1,22 @@
+<messaging:emailTemplate subject="Credit Card for The Knot Services Expiring Soon! – Prompt Attention Appreciated ({!relatedTo.Zuora__BillingAccount__r.Zuora__AccountNumber__c}, {!relatedTo.Zuora__BillingAccount__r.Name})" recipientType="Contact" relatedToType="Zuora__PaymentMethod__c" replyTo="no-reply@theknot.com">
+    <messaging:htmlEmailBody >
+        <html>
+            <body>
+            Hello {!recipient.FirstName},
+
+            <p>Thank you for your continued partnership with The Knot! Our records show the credit card we have on file for account ({!relatedTo.Zuora__CreditCardMaskNumber__c} exp. {!relatedTo.Zuora__CreditCardExpirationMonth__c}/{!relatedTo.Zuora__CreditCardExpirationYear__c}) is expiring soon.</p>
+
+            For your convenience you can click on the link provided&nbsp;<apex:outputLink value="https://accountsreceivables.theknot.com/payupdate.aspx?accid={!relatedTo.Zuora__BillingAccount__r.Zuora__Zuora_Id__c}&type=cc">here</apex:outputLink> and update your payment information immediately! 
+
+            <p>If you have any questions, please contact me at your earliest convenience so we can get this remedied right away. I am available from 8:00 am - 5:00 pm CST, Monday-Friday.</p>
+            
+            <p>Please do not reply to this email; you may email me at the address listed below or call me directly.</p>
+            
+            Very Truly,<br/>
+            {!relatedTo.Zuora__BillingAccount__r.Zuora__Account__r.CBSS_Name__c}<br/>
+            {!relatedTo.Zuora__BillingAccount__r.Zuora__Account__r.CBSS_Email__c}<br/>
+            {!relatedTo.Zuora__BillingAccount__r.Zuora__Account__r.CBSS_Phone__c}
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

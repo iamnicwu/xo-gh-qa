@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Create_ARR_Task__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Create ARR Task</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Notify_customer_after_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Notify customer after Day(s)</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Send_Email_To_Customer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Send Email To Customer</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Credit Card Declined Config</label>
+    <listViews>
+        <fullName>All_Settings</fullName>
+        <columns>NAME</columns>
+        <columns>Create_ARR_Task__c</columns>
+        <columns>Send_Email_To_Customer__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Settings</label>
+    </listViews>
+    <visibility>Public</visibility>
+</CustomObject>

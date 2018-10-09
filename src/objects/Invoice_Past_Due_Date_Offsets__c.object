@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Invoice_Past_Due_120_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Past Due 120 Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Past_Due_30_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Past Due 30 Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Past_Due_60_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Past Due 60 Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Invoice_Past_Due_90_Days__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Past Due 90 Days</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Invoice Past Due Date Offsets</label>
+    <visibility>Public</visibility>
+</CustomObject>

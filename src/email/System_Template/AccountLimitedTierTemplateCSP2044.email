@@ -1,0 +1,33 @@
+{!Account.OwnerFullName}, 
+
+Below is contact information received from an inbound partner signup request. This is an extremely hot lead that you should call within 1 hour of receiving this email during business hours. 
+
+Note: this lead has indicated interest in a Limited Profile. Please prioritize calling this lead after reaching out to any Standard Profile or Featured Profile signup leads you have received today. 
+
+
+Company: 
+{!Account.Name} 
+
+Website: 
+{!Account.Website} 
+
+Phone: 
+{!Account.Phone} 
+
+Postal Code: 
+{!Account.BillingPostalCode}
+
+Local Sales Market: 
+{!Account.Local_Sales_Market__c}
+
+Primary Category: 
+{!Account.Primary_Category__c} 
+
+Interest in Advertising in Multiple Categories: 
+{!Account.Interest_in_Adv_in_Multiple_Categories__c} 
+
+Account Created Date/Time: 
+{!Account.CreatedDate} 
+
+Account Link: 
+{!Account.Link}

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Event_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Event Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Subscription Expired</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Activation Date</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Subscription Created</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NewProduct</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RemoveProduct</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Add Transaction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancel Transaction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Term End Date</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Term Start Date</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Subscription Start Date</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TermsAndConditions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Object_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Object Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Account</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lead</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Response_JSON__c</fullName>
+        <externalId>false</externalId>
+        <label>Response JSON</label>
+        <length>100000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Storefront Fulfillment</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Account Update</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Partner Fulfillment Response</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Response_JSON__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PFR-{0000000}</displayFormat>
+        <label>Partner Fulfillment Response Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Partner Fulfillment Responses</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

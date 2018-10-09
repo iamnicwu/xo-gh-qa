@@ -1,0 +1,1648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>Required_RFP_Fields</fullName>
+        <description>Used for trigger validation that all required RFP fields have been filled in before it can be submitted</description>
+        <displayedFields>
+            <field>Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Account_Strategist__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Request_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Campaign_Category__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Internal_Due_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Due_to_Client__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Maximum_Budget__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Campaign_Start_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Campaign_End_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Spend_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Multiple_Spends__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Required RFP Fields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Required_ThoughtStarter_Fields</fullName>
+        <description>Used for trigger validation that all required ThoughtStarter fields have been filled in before it can be submitted</description>
+        <displayedFields>
+            <field>Account_Strategist__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Request_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Internal_Due_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Desired_Due_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Deliverable__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Target_Audience__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Campaign_Start_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Campaign_End_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Budget__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Required ThoughtStarter Fields</label>
+    </fieldSets>
+    <fields>
+        <fullName>Account_Strategist__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Manager</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>Account Strategist</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>ThoughtStarters_RFPs</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Action_Explanation__c</fullName>
+        <externalId>false</externalId>
+        <label>Action(s) Explanation:</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Advertiser_Goals__c</fullName>
+        <externalId>false</externalId>
+        <label>Advertiser Goals</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Brand_Exposure__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Brand Exposure</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Budget_Questionable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Budget Questionable</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Budget__c</fullName>
+        <externalId>false</externalId>
+        <label>Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>CTR__c</fullName>
+        <externalId>false</externalId>
+        <label>CTR (%)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Agency &gt; Agency &gt; Agency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Automotive &gt; Automotive &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion &gt; Accessories &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion &gt; Baby Fashion &gt; Baby Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion &gt; Bridal Fashion &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion &gt; Children&apos;s Clothing &gt; Baby Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion &gt; General Fashion &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion &gt; Jewelry &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion &gt; Maternity Fashion &gt; Baby Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion &gt; Shoes &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fashion &gt; Shoes &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finance and Insurance &gt; Finance and Insurance &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Floral &gt; Floral &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food and Beverage &gt; Baby Food &gt; Baby Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food and Beverage &gt; General Food &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food and Beverage &gt; Wine and Spirits &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health and Beauty &gt; Baby Health &gt; Baby Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health and Beauty &gt; Beauty &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health and Beauty &gt; General Health &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health and Beauty &gt; Hospital &gt; Baby Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health and Beauty &gt; Pharmaceutical &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home &gt; Baby Gear &gt; Baby Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home &gt; Electronics &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home &gt; Furnishings &gt; Home Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home &gt; General Home &gt; Home Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home &gt; Home Improvement &gt; Home Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home &gt; Real Estate &gt;</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home &gt; Registry &gt; Baby Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home &gt; Registry &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home &gt; Tabletop &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media and Entertainment &gt; Media and Entertainment &gt; Baby Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media and Entertainment &gt; Media and Entertainment &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Photography &gt; Photography &gt; Baby Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Photography &gt; Photography &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Remnant &gt; Ad Network &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Remnant &gt; Internal &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stationery and Favors &gt; Stationery and Favors &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel and Leisure &gt; Airlines &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel and Leisure &gt; Cruises &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel and Leisure &gt; Hotels and Resorts &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel and Leisure &gt; Restaurants and Venues &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel and Leisure &gt; Restaurants and Venues &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel and Leisure &gt; Tourism Bureau &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel and Leisure &gt; Travel Agency &gt; Bridal Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wireless and Telecom &gt; Wireless and Telecom &gt; Non-Endemic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign End Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Campaign_Timing_Flight__c</fullName>
+        <externalId>false</externalId>
+        <label>Campaign Timing/Flight</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Clicks__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Clicks</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Client_Objectives__c</fullName>
+        <externalId>false</externalId>
+        <label>Client Objectives</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Close_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Close Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Per_Action__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost Per Action</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Per_Click__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost Per Click</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Per_Lead__c</fullName>
+        <externalId>false</externalId>
+        <label>Cost Per Lead</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Custom_Content__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Custom Content</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Deliverable__c</fullName>
+        <externalId>false</externalId>
+        <label>Deliverable</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Word (.doc)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PowerPoint (.ppt)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Desired_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Desired Due Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Due_to_Client__c</fullName>
+        <externalId>false</externalId>
+        <label>Due to Client</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>End_Actions__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>End Actions</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Geo_Targeting_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Geo-Targeting Details</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Internal_Due_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Internal Due Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Leads__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Leads</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Marketing_Channel__c</fullName>
+        <externalId>false</externalId>
+        <label>Marketing Channel</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Print</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Online</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Maximum_Budget__c</fullName>
+        <externalId>false</externalId>
+        <label>Maximum Budget</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Multiple_Spends__c</fullName>
+        <externalId>false</externalId>
+        <label>Multiple Spends</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Next_Step__c</fullName>
+        <externalId>false</externalId>
+        <label>Next Step</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>No_of_Actions__c</fullName>
+        <externalId>false</externalId>
+        <label># of Actions</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_Op_ins__c</fullName>
+        <externalId>false</externalId>
+        <label># of Op-ins</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_Sales__c</fullName>
+        <externalId>false</externalId>
+        <label># of Sales</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>ThoughtStarters_RFPs</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Order_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Direct to Advertiser</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agency Buy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>House</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Remnant</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outside Sales Team</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Other__c</fullName>
+        <externalId>false</externalId>
+        <label>Other</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reference_ID__c</fullName>
+        <displayFormat>TSRP-{000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>Reference ID</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Related_ThoughtStarter__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Related ThoughtStarter</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>ThoughtStarter_RFP__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>ThoughtStarter</value>
+            </filterItems>
+            <filterItems>
+                <field>ThoughtStarter_RFP__c.Opportunity__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Opportunity__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>ThoughtStarter_RFP__c</referenceTo>
+        <relationshipLabel>ThoughtStarters / RFPs</relationshipLabel>
+        <relationshipName>RFPs</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Request_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Formal RFP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proactive RFP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ThoughtStarter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Dev_Needed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Sales Dev Needed</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Developer__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Developer</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>User.UserRole.Name</field>
+                <operation>equals</operation>
+                <value>Sales Development</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>User</referenceTo>
+        <relationshipName>ThoughtStarters_RFPs_SalesDev</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Planner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>CSP-2817</description>
+        <externalId>false</externalId>
+        <label>Sales Planner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>ThoughtStarters_RFPs1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Spend_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Spend Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incremental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Submitted_for_Production__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check this if you are ready to submit the ThoughtStarter/RFP for materials development</inlineHelpText>
+        <label>Submitted for Production</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Target_Audience__c</fullName>
+        <externalId>false</externalId>
+        <label>Target Audience</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Sales__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Sales</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>User_Targeting__c</fullName>
+        <externalId>false</externalId>
+        <label>User Targeting</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Geographic Targeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member Stage Targeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>ThoughtStarter / RFP</label>
+    <nameField>
+        <label>Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>ThoughtStarters / RFPs</pluralLabel>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>RFP</fullName>
+        <active>true</active>
+        <label>RFP</label>
+        <picklistValues>
+            <picklist>Campaign_Category__c</picklist>
+            <values>
+                <fullName>Agency %3E Agency %3E Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automotive %3E Automotive %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Accessories %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Baby Fashion %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Bridal Fashion %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Children%27s Clothing %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E General Fashion %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Jewelry %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Maternity Fashion %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Shoes %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Shoes %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finance and Insurance %3E Finance and Insurance %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Floral %3E Floral %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food and Beverage %3E Baby Food %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food and Beverage %3E General Food %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food and Beverage %3E Wine and Spirits %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Beauty %3E Baby Health %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Beauty %3E Beauty %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Beauty %3E General Health %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Beauty %3E Hospital %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Beauty %3E Pharmaceutical %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Baby Gear %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Electronics %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Furnishings %3E Home Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E General Home %3E Home Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Home Improvement %3E Home Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Real Estate %3E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Registry %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Registry %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Tabletop %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media and Entertainment %3E Media and Entertainment %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media and Entertainment %3E Media and Entertainment %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photography %3E Photography %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photography %3E Photography %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remnant %3E Ad Network %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remnant %3E Internal %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stationery and Favors %3E Stationery and Favors %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Airlines %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Cruises %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Hotels and Resorts %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Restaurants and Venues %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Restaurants and Venues %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Tourism Bureau %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Travel Agency %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wireless and Telecom %3E Wireless and Telecom %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Deliverable__c</picklist>
+            <values>
+                <fullName>PowerPoint %28%2Eppt%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word %28%2Edoc%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Marketing_Channel__c</picklist>
+            <values>
+                <fullName>Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Multiple_Spends__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Order_Type__c</picklist>
+            <values>
+                <fullName>Agency Buy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct to Advertiser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>House</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outside Sales Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remnant</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Type__c</picklist>
+            <values>
+                <fullName>Formal RFP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proactive RFP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Spend_Type__c</picklist>
+            <values>
+                <fullName>Incremental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>User_Targeting__c</picklist>
+            <values>
+                <fullName>Geographic Targeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Stage Targeting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>ThoughtStarter</fullName>
+        <active>true</active>
+        <label>ThoughtStarter</label>
+        <picklistValues>
+            <picklist>Campaign_Category__c</picklist>
+            <values>
+                <fullName>Agency %3E Agency %3E Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Automotive %3E Automotive %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Accessories %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Baby Fashion %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Bridal Fashion %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Children%27s Clothing %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E General Fashion %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Jewelry %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Maternity Fashion %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Shoes %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fashion %3E Shoes %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finance and Insurance %3E Finance and Insurance %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Floral %3E Floral %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food and Beverage %3E Baby Food %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food and Beverage %3E General Food %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Food and Beverage %3E Wine and Spirits %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Beauty %3E Baby Health %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Beauty %3E Beauty %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Beauty %3E General Health %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Beauty %3E Hospital %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Health and Beauty %3E Pharmaceutical %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Baby Gear %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Electronics %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Furnishings %3E Home Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E General Home %3E Home Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Home Improvement %3E Home Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Real Estate %3E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Registry %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Registry %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home %3E Tabletop %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media and Entertainment %3E Media and Entertainment %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media and Entertainment %3E Media and Entertainment %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photography %3E Photography %3E Baby Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photography %3E Photography %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remnant %3E Ad Network %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remnant %3E Internal %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stationery and Favors %3E Stationery and Favors %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Airlines %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Cruises %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Hotels and Resorts %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Restaurants and Venues %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Restaurants and Venues %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Tourism Bureau %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Travel and Leisure %3E Travel Agency %3E Bridal Endemic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wireless and Telecom %3E Wireless and Telecom %3E Non-Endemic</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Deliverable__c</picklist>
+            <values>
+                <fullName>PowerPoint %28%2Eppt%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word %28%2Edoc%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Marketing_Channel__c</picklist>
+            <values>
+                <fullName>Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Multiple_Spends__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Order_Type__c</picklist>
+            <values>
+                <fullName>Agency Buy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barter</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct to Advertiser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>House</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outside Sales Team</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Remnant</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Type__c</picklist>
+            <values>
+                <fullName>ThoughtStarter</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Spend_Type__c</picklist>
+            <values>
+                <fullName>Incremental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>User_Targeting__c</picklist>
+            <values>
+                <fullName>Geographic Targeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Stage Targeting</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Account_Strategist_Required_in_Opp</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK( Opportunity__r.AccStrategist__c )</errorConditionFormula>
+        <errorDisplayField>Opportunity__c</errorDisplayField>
+        <errorMessage>Related Opportunity must have an Account Strategist!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Campaign_Start_Date_and_End_Date</fullName>
+        <active>true</active>
+        <description>Campaign Start Date must be before Campaign End Date</description>
+        <errorConditionFormula>Campaign_Start_Date__c &gt; Campaign_End_Date__c</errorConditionFormula>
+        <errorDisplayField>Campaign_End_Date__c</errorDisplayField>
+        <errorMessage>Campaign Start Date can&apos;t be after Campaign End Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Internal_Due_Date_validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISCHANGED( Internal_Due_Date__c ) &amp;&amp; ( Internal_Due_Date__c &lt;= TODAY() + 1)</errorConditionFormula>
+        <errorDisplayField>Internal_Due_Date__c</errorDisplayField>
+        <errorMessage>Cannot choose a date within 24 hrs</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Opportunity_must_have_product</fullName>
+        <active>true</active>
+        <errorConditionFormula>RecordType.Name == &apos;RFP&apos; &amp;&amp; ISBLANK(Opportunity__r.Pricebook2Id)</errorConditionFormula>
+        <errorDisplayField>Opportunity__c</errorDisplayField>
+        <errorMessage>Related Opportunity must have a pricebook selected before an RFP can be created</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Please_fill_in_a_Success_Metric</fullName>
+        <active>true</active>
+        <description>Success Metric Detail Validation</description>
+        <errorConditionFormula>OR(
+AND(Clicks__c, ISBLANK( CTR__c ), ISBLANK(Cost_Per_Click__c)), 
+AND(End_Actions__c, ISBLANK(No_of_Sales__c), ISBLANK(Total_Sales__c), ISBLANK(No_of_Actions__c), ISBLANK(Cost_Per_Action__c), ISBLANK( Action_Explanation__c )),
+AND(Leads__c, ISBLANK(No_of_Op_ins__c), ISBLANK(Cost_Per_Lead__c)),
+AND(Brand_Exposure__c, ISBLANK(Other__c), ISBLANK(Marketing_Channel__c))
+)</errorConditionFormula>
+        <errorMessage>Please fill in the details for Clicks, End Actions, Leads or Brand Exposure Success Metric, if the relating checkbox is selected!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Sales_Dev_Needed_for_Custom_Content</fullName>
+        <active>true</active>
+        <errorConditionFormula>PRIORVALUE(Sales_Dev_Needed__c) &amp;&amp; NOT(Sales_Dev_Needed__c) &amp;&amp; Custom_Content__c</errorConditionFormula>
+        <errorDisplayField>Sales_Dev_Needed__c</errorDisplayField>
+        <errorMessage>Sales Dev Needed is required if an RFP needs Custom Content</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Success_Metric_Required</fullName>
+        <active>true</active>
+        <description>Must fill in one of the Success Metric section</description>
+        <errorConditionFormula>AND(NOT(Clicks__c), NOT(End_Actions__c), NOT(Leads__c), NOT(Brand_Exposure__c))</errorConditionFormula>
+        <errorMessage>Please fill in a Success Metric to give Account Strategist more details!</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Change_Request</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Change Request</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/RequestTSRFPChanges?whatId={!ThoughtStarter_RFP__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_RFP</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Create RFP</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/ThoughtStarterRFPEdit?Type=RFP&amp;OpportunityId={!ThoughtStarter_RFP__c.OpportunityId__c}&amp;retURL=%2F{!ThoughtStarter_RFP__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_for_Production</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit for Production</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>// Establish a connection to the API,
+// using the current session ID
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+sforce.connection.sessionId = &quot;{!$Api.Session_ID}&quot;;
+ 
+var ts = new sforce.SObject(&quot;ThoughtStarter_RFP__c&quot;);
+ts.Id = &quot;{!ThoughtStarter_RFP__c.Id}&quot;;
+ts.Submitted_for_Production__c = true;
+ 
+var results = sforce.connection.update([ts]);
+ 
+// Examine the results to see whether our update was successful.
+ 
+if (results[0].getBoolean(&quot;success&quot;)) {
+    location.reload();
+} else {
+    /*var errorMsgValue = &apos;{!ThoughtStarter_RFP__c.RecordType} could not be submitted!\nPlease review the following errors:\n&apos; + results[0].errors.message.replace(/&lt;br\s*\/?&gt;/mg,&quot;\n&quot;);*/
+    alert(results[0].errors.message.replace(/&lt;br\s*\/?&gt;/mg,&quot;\n&quot;));
+}</url>
+    </webLinks>
+</CustomObject>

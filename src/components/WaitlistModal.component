@@ -1,0 +1,134 @@
+<apex:component controller="WaitlistModalController" allowDML="true">
+	<apex:attribute name="pageController"
+      type="PageControllerBase"
+      assignTo="{!thePageController}"
+      required="true"
+      description="The controller for the page." />
+	
+	<style type="text/css">
+        .ModalForeground{
+            background-color: white;
+            border-width: 2px;
+            border-style: solid;
+            z-index: 9999;
+            left: 50%;
+            padding:10px;
+            position: absolute;
+            overflow:scroll;
+            height:100%;
+            /* These are the 3 css properties you will need to change so the popup 
+            displays in the center of the screen. First set the width. Then set 
+            margin-left to negative half of what the width is. You can add 
+            the height property for a fixed size pop up if you want.*/
+            width: 500px;
+            margin-left: -250px;
+            top:100px;
+        }
+        .ModalBackground{
+            background-color:black;
+            opacity: 0.30;
+            filter: alpha(opacity = 30);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 9998;
+        }
+        
+        .symbol {
+        	font-size:10pt;
+        	font-weight:bold;
+        	float:left;
+        	text-decoration:none;
+       	}
+       	
+       	.flip {
+       		-webkit-transform: rotate(-180deg);
+       	}
+
+    </style>
+	<apex:outputPanel id="ModalPopupPanel"  rendered="{!ModalVisible}">
+		<apex:outputPanel styleClass="ModalBackground" layout="block" />
+		<apex:outputPanel styleClass="ModalForeground" layout="block">
+			<apex:sectionheader title="{!ratePlan.zqu__Product__r.Name} - {!ratePlan.Name}" />
+			<apex:pageblock >
+				<apex:pageblockbuttons location="both">
+					<apex:CommandButton value="Close" action="{!CloseModal}" immediate="true">
+						<apex:actionSupport event="onclick" rerender="ModalPopupPanel" />
+					</apex:CommandButton>
+				</apex:pageblockbuttons>
+				
+				<apex:pageblocksection title="Accounts on Deck" collapsible="false" columns="1">
+					<apex:pageblocktable value="{!accountsOnDeck}" var="inv" id="accountsOnDeckTable">
+						<apex:column value="{!inv.Waitlist_Account__c}" />
+						<apex:column value="{!inv.Waitlist_Account__r.Owner.Name}" />
+						<apex:column value="{!inv.CreatedDate}" />
+						<apex:column value="{!inv.Inventory_Hold_Expiry_Date__c}" />
+						<apex:column rendered="{!CanReorderAnyWaitlist}">
+							<apex:commandlink action="{!HoldInventory}" title="Hold inventory" immediate="true" rendered="{!!inv.Held_Until_Extended__c}">
+								hold
+								<apex:param name="inventoryIdParam" value="{!inv.Id}" assignto="{!SelectedInventoryId}" />
+							</apex:commandlink>
+						</apex:column>
+						<apex:column rendered="{!inv.I_Am_the_Sales_Rep__c || CanDeleteAnyWaitlist}">
+							<apex:commandlink action="{!DeleteInventory}" title="Delete from the list" immediate="true">
+								<span class="symbol">&#x2717;</span>
+								<apex:param name="inventoryIdParam" value="{!inv.Id}" assignto="{!SelectedInventoryId}" />
+							</apex:commandlink>
+						</apex:column>
+					</apex:pageblocktable>
+				</apex:pageblocksection>
+
+				
+				<apex:pageblocksection title="Waitlisted Accounts"  collapsible="false" columns="1">
+					<apex:pageblocktable value="{!waitlists}" var="wl" id="waitlistTable">
+						<apex:column >
+							<apex:outputfield value="{!wl.Sort_Order_Override__c}" id="sortOrderOverride" />
+						</apex:column>
+						<apex:column value="{!wl.Account__c}" />
+						<apex:column value="{!wl.Account__r.Owner.Name}" />
+						<apex:column value="{!wl.CreatedDate}" />
+						
+						<apex:column rendered="{!CanReorderAnyWaitlist}">
+							<apex:commandlink action="{!MoveUp}" title="Move up one spot" immediate="true">
+								<span class="symbol">&#8593;</span>
+								<apex:param name="waitlistIdParam" value="{!wl.Id}" assignto="{!SelectedWaitlistId}" />
+							</apex:commandlink>
+						</apex:column>
+						
+						<apex:column rendered="{!CanReorderAnyWaitlist}">
+							<apex:commandlink action="{!MoveDown}" title="Move down one spot" immediate="true">
+								<span class="symbol">&#8595;</span>
+								<apex:param name="waitlistIdParam" value="{!wl.Id}" assignto="{!SelectedWaitlistId}" />
+							</apex:commandlink>
+						</apex:column>
+
+						<apex:column rendered="{!wl.I_Am_the_Sales_Rep__c || CanDeleteAnyWaitlist}">
+							<apex:commandlink action="{!MoveToBottom}" title="Move to the bottom of the list" immediate="true">
+								<span class="symbol flip">&#8631;</span>
+								<apex:param name="waitlistIdParam" value="{!wl.Id}" assignto="{!SelectedWaitlistId}" />
+							</apex:commandlink>
+						</apex:column>
+
+						<apex:column rendered="{!wl.I_Am_the_Sales_Rep__c || CanDeleteAnyWaitlist}">
+							<apex:commandlink action="{!DeleteWaitlist}" title="Delete from the list" immediate="true">
+								<span class="symbol">&#x2717;</span>
+								<apex:param name="waitlistIdParam" value="{!wl.Id}" assignto="{!SelectedWaitlistId}" />
+							</apex:commandlink>
+						</apex:column>
+					</apex:pageblocktable>
+					
+				</apex:pageblocksection>
+
+				<apex:pageblocksection title="Add an Account to the Waitlist" id="AddAccountPanel" columns="2" collapsible="false">
+					<apex:inputField value="{!NewWaitlist.Account__c}" required="true"/>
+					<apex:commandButton value="Save" action="{!SaveNewWaitlist}" />
+				</apex:pageblocksection>
+
+
+			</apex:pageblock>
+
+		</apex:outputPanel>
+	</apex:outputPanel>
+</apex:component>

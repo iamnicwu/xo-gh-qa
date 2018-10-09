@@ -1,0 +1,1737 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Standard</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The Rate Plan associated with a ZProduct.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>Guided_Selling_Rate_Plan_Mirror</fullName>
+        <description>Fields used on product rate plans in guided selling.</description>
+        <displayedFields>
+            <field>zqu__Product__r.Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Product__r.Description</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Price_Summary__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Available__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Guided Selling Rate Plan Mirror</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>zqu__EditProductRatePlan</fullName>
+        <description>Edit Product Rate Plan</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__ProductRatePlanFullName__c</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__EffectiveStartDate__c</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__EffectiveEndDate__c</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Product__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Default__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__ActiveCurrencies__c</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Capacity__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Edit Product Rate Plan</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>zqu__GuidedSellingRatePlanColumn</fullName>
+        <description>Fields displayed in Rate Plans column on guided selling.</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Price_Summary__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Guided Selling Rate Plan Column</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>zqu__GuidedSellingRatePlanFields</fullName>
+        <description>Fields used on product rate plans in guided selling.</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Price_Summary__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Available__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>C_A_W__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Guided Selling Rate Plan Fields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>zqu__Lookup_Popup_Window</fullName>
+        <description>For Lookup Popup Window on Rate Plan Selector page</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Lookup Popup Window</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>zqu__NewProductRatePlan</fullName>
+        <description>New Product Rate Plan</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__ProductRatePlanFullName__c</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__EffectiveStartDate__c</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__EffectiveEndDate__c</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Product__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Default__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__ActiveCurrencies__c</field>
+            <isFieldManaged>true</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>zqu__Description__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>New Product Rate Plan</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>zqu__RatePlan_Custom_Fields</fullName>
+        <description>Fields in this field set will be marked as custom fields for synchronizing to Zuora</description>
+        <label>Custom Fields</label>
+    </fieldSets>
+    <fields>
+        <fullName>Available__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (
+    Is_Inventory_Managed__c,
+    (VALUE(Capacity__c) &gt; Inventory_Held__c),
+    TRUE
+   )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Available</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>C_A_W__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Is_Inventory_Managed__c,
+   Capacity__c &amp; &quot;/&quot; &amp; TEXT(VALUE(Capacity__c) - Inventory_Held__c) &amp; &quot;/&quot; &amp; TEXT(Waitlist_Count__c),
+   &quot;&quot;
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>C/A/W</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Capacity__c</fullName>
+        <externalId>false</externalId>
+        <label>Capacity</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Capacity_in_num__c</fullName>
+        <description>csp-2669: Added to handle rate plans with capacity</description>
+        <externalId>false</externalId>
+        <formula>VALUE(Capacity__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Capacity in num</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alterations+Preservation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Announcements</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bachelor(ette)Parties</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bar Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beauty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Beauty-</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bed and Breakfasts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blue Pages</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Boudoir Photographers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bridal Open House</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bridal Salons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bridal Shows</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Calligraphers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Caribbean</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Caterers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Central &amp; South America</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ceremony Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ceremony Venues</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dance Lessons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Decor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desserts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DJs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ensembles+Soloists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Entertainment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Europe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Favors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Favors+Gifts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fine Jewelry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fitness</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Florists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Gay Weddings &amp; Commitment Ceremonies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Grand Openings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Green Wedding Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guest Accommodations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hawaii</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Honeymoons-Africa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Honeymoons-Asia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Honeymoons-Australia &amp; New Zealand</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Honeymoons-Caribbean</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Honeymoons-Europe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Honeymoons-Hawaii</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Honeymoons-Mexico &amp; The Americas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Honeymoons-South Pacific</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Honeymoons-US &amp; Canada</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hotel Room Blocks</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>House &amp; Home</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Invitations+Paper Goods</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lighting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Menswear</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mexico</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Newlywed Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Officiants+Premarital Counseling</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Unique Wedding Ideas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PARTYSPOT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Photo Booths</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prom Fashions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reception Venues</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registry Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rentals</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Staff</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Showcases</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shower+Party Venues</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>South Pacific</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transportation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Travel Specialists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vacation Homes+Villas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Variety Acts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Videographers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Antigua</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Aruba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Australia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Austria</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Bahamas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Barbados</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Bermuda</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Bridesmaid</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Fashion HP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Flower Girl</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-French Polynesia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Gown</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Italy</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Malaysia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Mother</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Portugal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Shoes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-St. Kitts and Nevis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Tuxedo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Veils, Headpeice</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wedding Bands</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wedding Cakes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wedding Designers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wedding Jewelry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wedding Photographers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wedding Planners</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wedding Resort</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Discount__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Applies to product types of Discount only.  Select the percentage discount that will be applied to all products in the invoice.</inlineHelpText>
+        <label>Discount %</label>
+        <length>3</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inventory_Held__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The count of the inventory that is in use</inlineHelpText>
+        <label>Inventory Held</label>
+        <summaryForeignKey>Inventory__c.Product_Rate_Plan__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Is_Expired__c</fullName>
+        <description>CSP-225</description>
+        <externalId>false</externalId>
+        <formula>zqu__EffectiveEndDate__c &lt; TODAY()</formula>
+        <label>Is Expired?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Inventory_Managed__c</fullName>
+        <externalId>false</externalId>
+        <formula>BLANKVALUE(VALUE(Capacity__c), 0) &gt; 0</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Inventory Managed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Market__c</fullName>
+        <externalId>false</externalId>
+        <label>Market</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AK-Alaska</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AL-Alabama</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AR-Arkansas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZ-Phoenix</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AZ-Tucson</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Best of Weddings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA-Central CA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA-Los Angeles</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA-Orange County</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA-Palm Springs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA-Sacramento/Tahoe/Reno</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA-San Diego</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA-San Fran/Bay Area</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA-Santa Barbara/Ventura</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CALIFORNIA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAN-Canada</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CO-Colorado</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CT-Connecticut</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DC-DC/MD/Northern VA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dest Weddings</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FL-Central</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FL-Northern</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FL-South</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FL-West Coast</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GA-Georgia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GA-Savannah/Coastal Area</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HI-Hawaii</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Honeymoons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IA-Iowa</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ID-Idaho</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IL-Central Illinois</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IL-Chicago</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IL-Chicago Suburbs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN-Indiana</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KY-Kentucky</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LA-All Other Areas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LA-New Orleans</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MA-Boston</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MA-Cape Cod</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MD-Baltimore</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ME-Maine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MI-Detroit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MI-Grand Rpds/Northern</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MI-Lansing/Tri-Cities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Misc. Markets(Outside WP Mkts)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MN-Minnesota</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MO-Kansas City</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MO-St. Louis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MS-Mississippi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MT-Montana</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NC-North Carolina</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ND-North Dakota</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NE-Nebraska</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NH-New Hampshire</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NJ-North/Central</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NJ-South</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NM-New Mexico</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NV-Las Vegas/Southern NV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NY-Hudson Valley</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NY-Long Island</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NY-Manhattan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NY-Outer Boroughs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NY-Wstrn/Cent/Upstate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OH-Cincinnati</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OH-Cleveland/NE Ohio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OH-Columbus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OH-Toledo</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OK-Oklahoma</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OR-Oregon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA-Central</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA-Lehigh Valley/Poconos</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA-Philadelphia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PA-Pittsburgh</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RI-Rhode Island</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SC-South Carolina</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SD-South Dakota</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TN-Tennessee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TX-Austin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TX-Dallas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TX-Denton/Plano/NE TX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TX-Ft Worth/Waco</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TX-Houston</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TX-San Antonio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TX-West Texas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UT-Utah</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VA-Virginia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VT-Vermont</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WA-Washington</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Washington DC / Maryland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WC-Fashion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wedding Designers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wedding Gowns, Party &amp; Accessories-Dir Mktg</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wedding Gowns-Internet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wedding Party &amp; Accessories-Internet</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weddings Magazine-NPP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WI-Wisconsin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WV-West Virginia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WY-Wyoming</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AB-Alberta</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BC-British Columbia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MB-Manitoba</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NB-New Brunswick</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NL-Newfoundland and Labrador</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NS-Nova Scotia</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NT-Northwest Territories/Nunavut</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ON-Northern Ontario</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ON-Ottawa/Gatineau</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ON-Toronto</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PE-Prince Edward Island</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QC-Montreal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QC-Northern Quebec</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QC-Quebec City</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SK-Saskatchewan</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>YT-Yukon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Next_Inventory_Available__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Don&apos;t rely on this field having a value, it&apos;s only used as a data placeholder while loading the Inventory visualforce report.</inlineHelpText>
+        <label>Next Inventory Available</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Number_Available__c</fullName>
+        <description>If the value of Capacity__c is blank/null, set the return value of the formula to 1,000,000 so that the logic in the InventoryUtilities.IsInventoryAvailable method always determines that inventory is available. Otherwise, return the value of Capacity__c - Inventory_Held__c.</description>
+        <externalId>false</externalId>
+        <formula>IF(Value(BlankValue(Capacity__c,&quot;0&quot;)) = 0,1000000,VALUE(Capacity__c) - Inventory_Held__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Number Available</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductCategory__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Storefront</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Addon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ProductType__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Storefront</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Addon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Discount</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product_Line__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(zqu__Product__r.ProductType__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Line</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_SKU_Rate_Plan_Name__c</fullName>
+        <description>This field is used to retrieve the product rate plan for a given SPC</description>
+        <externalId>false</externalId>
+        <formula>zqu__Product__r.zqu__SKU__c  &amp; &apos;-&apos; &amp;  Name</formula>
+        <label>Product SKU - Rate Plan Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SellingCutoffDate__c</fullName>
+        <externalId>false</externalId>
+        <label>Selling Cutoff Date</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TestJ__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEN(zqu__ProductRatePlanFullName__c)</formula>
+        <label>Test J</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Waitlist_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Waitlist Count</label>
+        <summaryFilterItems>
+            <field>Waitlist__c.Is_Active__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Waitlist__c.Product_Rate_Plan__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>zqu__ActiveCurrencies__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A comma-separated list of 3-letter currency codes representing active currencies for this rate plan, e.g., &quot;USD, EUR, CAD, GBP&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A comma-separated list of 3-letter currency codes representing active currencies for this rate plan, e.g., &quot;USD, EUR, CAD, GBP&quot;.</inlineHelpText>
+        <label>Active Currencies</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Catalog_Sync_History__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Product link to catalog sync history</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Product link to catalog sync history</inlineHelpText>
+        <label>Catalog Sync History</label>
+        <referenceTo>zqu__Catalog_Sync_History__c</referenceTo>
+        <relationshipLabel>Product Rate Plans</relationshipLabel>
+        <relationshipName>Product_Rate_Plans</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Default__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Default rate plan for the related product</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Default rate plan for the related product</inlineHelpText>
+        <label>Default</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Deleted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>flag for soft deletion</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Flag for soft deletion</inlineHelpText>
+        <label>Deleted</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Description of the Rate Plan.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Description of the Rate Plan.</inlineHelpText>
+        <label>Description</label>
+        <length>25535</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>zqu__EffectiveEndDateTEXT__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(YEAR( zqu__EffectiveEndDate__c ) ) &amp; &apos;-&apos; &amp; TEXT(MONTH(zqu__EffectiveEndDate__c)) &amp; &apos;-&apos; &amp; TEXT(DAY(zqu__EffectiveEndDate__c) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>EffectiveEndDateTEXT</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__EffectiveEndDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Effective End Date of the Rate Plan.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Effective End Date of the Rate Plan.</inlineHelpText>
+        <label>Effective End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>zqu__EffectiveStartDateTEXT__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(YEAR( zqu__EffectiveStartDate__c ) ) &amp; &apos;-&apos; &amp; TEXT(MONTH(zqu__EffectiveStartDate__c)) &amp; &apos;-&apos; &amp; TEXT(DAY(zqu__EffectiveStartDate__c) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>EffectiveStartDateTEXT</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__EffectiveStartDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Effective Start Date of the Rate Plan.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Effective Start Date of the Rate Plan.</inlineHelpText>
+        <label>Effective Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>zqu__EntityID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>zqu__Product__r.zqu__BillingEntity__r.zqu__EntityID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Entity ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Price_Summary__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field used in the QuickList component and populated at runtime to match the Quote&apos;s currency field.</description>
+        <externalId>false</externalId>
+        <label>Price Summary</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductRatePlanFullName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Full Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Product Rate Plans</relationshipLabel>
+        <relationshipName>Product_Rate_Plans</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__SyncMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Message for the Catalog Sync</description>
+        <externalId>false</externalId>
+        <label>Sync Message</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>zqu__SyncStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sync Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Synced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Updated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Syncing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Failed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>zqu__ZProduct__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The ZProduct associated with this Rate Plan.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The ZProduct associated with this Rate Plan.</inlineHelpText>
+        <label>ZProduct</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>zqu__ZProduct__c.zqu__Product__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.zqu__Product__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>zqu__ZProduct__c</referenceTo>
+        <relationshipLabel>Product Rate Plan</relationshipLabel>
+        <relationshipName>ProductRatePlan</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>zqu__ZuoraId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>The Zuora Id (external primary key) of this Rate Plan.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>The Zuora Id (external primary key) of this Rate Plan.</inlineHelpText>
+        <label>ZuoraId</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Product Rate Plan</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>zqu__ZProduct__c</columns>
+        <columns>NAME</columns>
+        <columns>zqu__EffectiveStartDate__c</columns>
+        <columns>zqu__EffectiveEndDate__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Main</fullName>
+        <columns>zqu__ZProduct__c</columns>
+        <columns>NAME</columns>
+        <columns>Available__c</columns>
+        <columns>zqu__Deleted__c</columns>
+        <columns>zqu__EffectiveStartDate__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>zqu__EffectiveStartDate__c</field>
+            <operation>greaterThan</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Main</label>
+    </listViews>
+    <nameField>
+        <label>Rate Plan Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product Rate Plans</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>OBJECT_ID</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_SKU_Rate_Plan_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ProductType__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>zqu__ZuoraId__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>zqu__ZProduct__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>OBJECT_ID</searchFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Product_SKU_Rate_Plan_Name__c</searchFilterFields>
+        <searchFilterFields>ProductCategory__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Do_not_allow_expired_rate_plans</fullName>
+        <active>false</active>
+        <description>Don&apos;t allow new rate plans to be created in an expired state</description>
+        <errorConditionFormula>AND(ISNEW(), 
+(zqu__EffectiveEndDate__c &lt; TODAY()) 
+)</errorConditionFormula>
+        <errorDisplayField>zqu__EffectiveEndDate__c</errorDisplayField>
+        <errorMessage>Product rate plan Effective End Date may not be in the past</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>zqu__StartDateMustBeforeEndDate</fullName>
+        <active>true</active>
+        <description>The Effective Start Date should be earlier than the Effective End Date.</description>
+        <errorConditionFormula>zqu__EffectiveStartDate__c  &gt;=  zqu__EffectiveEndDate__c</errorConditionFormula>
+        <errorMessage>The Effective Start Date should be earlier than the Effective End Date.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Zuora_Edit</fullName>
+        <availability>online</availability>
+        <description>On CSP-2832, need to recover the stand edit button, so move the page function here</description>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Zuora Edit</masterLabel>
+        <openType>newWindow</openType>
+        <page>zqu__EditProductRatePlan</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>zqu__Mark_for_Delete</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Mark for Delete</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)}
+            {!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)}
+
+            var namespaceRecords=sforce.connection.query(&quot;SELECT Name, NamespacePrefix FROM ApexClass where Name = &apos;ProductListViewSyncController&apos;&quot;);
+            var thisNamespace = namespaceRecords.records.NamespacePrefix;
+            var newRecords = [];
+            var objectId = window.sfdcPage.getEntityId();
+            var objectName = &apos;ProductRatePlan__c&apos;;
+            if (thisNamespace != undefined &amp;&amp; thisNamespace != &apos;&apos;)
+            objectName = thisNamespace + &apos;__&apos; + objectName;
+
+            var p = new sforce.SObject(objectName);
+            p.Id =objectId;
+            if (thisNamespace != undefined &amp;&amp; thisNamespace != &apos;&apos;)
+            p[thisNamespace + &apos;__Deleted__c&apos;]= true;
+            else
+            p[&apos;Deleted__c&apos;] = true;
+
+            newRecords.push(p);
+            var result = sforce.connection.update(newRecords);
+            if (result[0].success == &apos;true&apos;)
+                alert(&apos;Object successfully marked for deletion.&apos;);
+            else
+                alert(result);
+            window.location.reload();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>zqu__sync_to_zuora</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Sync to Zuora</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/zqu__ProductListViewSync?syncObjectId={!zqu__ProductRatePlan__c.Id}&amp;stype=ProductRatePlan__c</url>
+    </webLinks>
+</CustomObject>

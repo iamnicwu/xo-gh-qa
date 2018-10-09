@@ -1,0 +1,129 @@
+<apex:page controller="LocalSalesRepReAssignmentController" title="Local Sales Rep Re-Assignment" tabStyle="Local_Sales_Administration__tab">
+	<style>
+		.requiredBlock, .requiredInput{
+			display: inline;
+		}
+	</style>
+	<script>
+		selectAllCheck = function(element){
+			var allCheckBoxes = document.getElementsByClassName('selectBox');
+			for(i = 0; i < allCheckBoxes.length; i++){
+				allCheckBoxes[i].checked = element.checked;
+			}
+		}
+
+		var statusAction = function(){		
+              var btnElements = document.getElementsByClassName("pbButtonClass");		
+              for(i = 0; i < btnElements.length; i++){		
+                    //btnElements[i].style.display = "none";		
+                    btnElements[i].className = btnElements[i].className + " btnDisabled";		
+                    btnElements[i].setAttribute("disabled", "disabled");		
+              }		
+        }
+
+        var keyUpTimeOut;
+	</script>
+	<apex:form >
+		<apex:actionFunction name="reRenderPanel" action="{!reRenderPanel}" reRender="userPanel, extraFilterPanel" status="fetchStatus"/>
+		<apex:actionFunction name="filterResults" action="{!filterResults}" reRender="resultBlock" status="fetchStatus"/>
+		<apex:actionFunction name="objectChange" action="{!filterResults}" reRender="resultBlock, extraFilterPanel" status="fetchStatus"/>
+
+		<apex:sectionHeader title="Sales Rep Re-assignment!" subtitle="Mass re-asssign a sales rep's records to another sales rep"/>
+
+		<apex:outputPanel id="filterPanel" layout="block" style="text-align: center; padding: 10px 0; background-color: #6aacd8; margin-bottom: 5px;">
+			Result Size:&nbsp;
+			<apex:selectList value="{!resultSize}" multiselect="false" size="1" onchange="filterResults();">
+				<apex:selectOptions value="{!ResultSizeOptions}" />
+			</apex:selectList>
+			<apex:selectList value="{!selectedObjectType}" multiselect="false" size="1" onchange="objectChange();">
+				<apex:selectOptions value="{!ObjectTypes}" />
+			</apex:selectList>
+			<apex:selectList value="{!ownerActiveFilter}" multiselect="false" size="1" onchange="reRenderPanel();">
+				<apex:selectOptions value="{!ActiveType}" />
+			</apex:selectList>
+			<apex:selectList value="{!roleFilter}" multiselect="false" size="1" onchange="reRenderPanel();">
+				<apex:selectOptions value="{!LocalAEOnly}" />
+			</apex:selectList>
+			<apex:outputPanel id="userPanel">
+				<apex:selectList value="{!selectedRecordOwner}" multiselect="false" size="1" onchange="filterResults();">
+					<apex:selectOptions value="{!UserList}" />
+				</apex:selectList>
+			</apex:outputPanel>
+        </apex:outputPanel>
+
+        <apex:outputPanel id="extraFilterPanel" layout="block">
+	        <apex:outputPanel layout="block" style="text-align: center; padding: 10px 0; background-color: #A8D7F7; margin-bottom: 5px;" rendered="{!selectedObjectType == 'Account' || selectedObjectType == 'Lead' || selectedObjectType == 'Opportunity'}">
+				{!selectedObjectType} Filter:&nbsp;
+				<apex:selectList value="{!objectFilter.leadFilter.Status}" multiselect="false" size="1" onchange="filterResults();" rendered="{!selectedObjectType == 'Lead'}">
+					<apex:selectOptions value="{!LeadStatusValues}" />
+				</apex:selectList>
+
+				<apex:outputLabel value="Active" for="activeFilter" rendered="{!selectedObjectType == 'Account'}"/>
+				<apex:inputField id="activeFilter" value="{!objectFilter.accountFilter.Local_Active__c}" onchange="filterResults();" rendered="{!selectedObjectType == 'Account'}"/>
+
+				<apex:outputLabel value="View Closed Winbacks" for="closedFilter" rendered="{!selectedObjectType == 'Opportunity'}"/>
+				<apex:inputField id="closedFilter" value="{!objectFilter.opportunityFilter.Is_Record_Locked__c}" onchange="filterResults();" rendered="{!selectedObjectType == 'Opportunity'}"/>
+	        </apex:outputPanel>
+        </apex:outputPanel>
+
+		<apex:pageBlock id="resultBlock">
+			<apex:pageMessages />
+			<apex:outputPanel style="text-align: right; padding: 10px 0;" layout="block">
+				<apex:outputLabel value="Select New Owner to Assign: " for="newOwnerSelectList"/>
+				<apex:selectList id="newOwnerSelectList" value="{!salesRepToAssign}" multiselect="false" size="1" >
+					<apex:selectOptions value="{!LocalSalesRepActive}" />
+				</apex:selectList>
+				<apex:commandButton value="Assign New Owner" action="{!saveNewOwner}" reRender="resultBlock" styleClass="pbButtonClass" status="saveStatus"/>
+				<apex:actionStatus id="saveStatus" onstart="statusAction();" startText="Saving..." stopText=""/>
+			</apex:outputPanel>
+			<hr/>
+			<center>
+                <apex:panelGrid columns="7">
+                    <apex:commandButton status="fetchStatus" reRender="resultBlock" value="|<" action="{!first}" disabled="{!!hasPrevious}" title="First Page" />
+                    <apex:commandButton status="fetchStatus" reRender="resultBlock" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page" />
+                    <apex:outputText >{!(pageNumber * VALUE(resultSize))+1-VALUE(resultSize)}-{!IF((pageNumber * VALUE(resultSize))>noOfRecords, noOfRecords,(pageNumber * VALUE(resultSize)))} of {!noOfRecords}</apex:outputText>
+                    <apex:commandButton status="fetchStatus" reRender="resultBlock" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page" />
+                    <apex:commandButton status="fetchStatus" reRender="resultBlock" value=">|" action="{!last}" disabled="{!!hasNext}" title="Last Page" />
+                    <!--apex:commandButton status="fetchStatus" reRender="formId" value="Refresh" action="{!refresh}" title="Refresh Page" /-->
+                    <apex:outputPanel style="color: black;font-weight:bold">
+			            <apex:actionStatus id="fetchStatus" startText=" Fetching..." stopText=""/>
+			        </apex:outputPanel>
+                </apex:panelGrid>
+            </center>
+			<apex:pageBlockTable value="{!sobjectList}" var="record" rendered="{!sobjectList.size > 0}">
+				<apex:column >
+					<apex:facet name="header">
+						<input type="checkbox" id="selectAll" onchange="selectAllCheck(this);" />
+					</apex:facet>
+					<apex:inputCheckbox value="{!selectedRecordMap[record.Id]}" styleClass="selectBox"/>
+				</apex:column>
+				<apex:column value="{!record['Company']}" rendered="{!selectedObjectType == 'Lead'}"/>
+				<apex:column value="{!record['Name']}"/>
+				<apex:column value="{!record['Local_Active__c']}" rendered="{!selectedObjectType == 'Account'}"/>
+				<apex:column value="{!record['Status']}" rendered="{!selectedObjectType == 'Lead'}"/>
+				<apex:column value="{!record['StageName']}" rendered="{!selectedObjectType == 'Opportunity'}"/>
+				<apex:column value="{!record['Primary_Category__c']}" rendered="{!selectedObjectType == 'Account' || selectedObjectType == 'Lead' || selectedObjectType == 'Opportunity'}"/>
+				<apex:column value="{!record['Local_Sales_Market__c']}" rendered="{!selectedObjectType == 'Account' || selectedObjectType == 'Lead' || selectedObjectType == 'Opportunity'}"/>
+				<!-- CSP-1999 <apex:column value="{!record['Market__r.Primary_Brand__c']}" rendered="{!selectedObjectType == 'Local_Sales_Rep_Assignment__c'}" headerValue="Market's Primary Brand"/> -->
+				<apex:column value="{!record['Market__c']}" rendered="{!selectedObjectType == 'Local_Sales_Rep_Assignment__c'}"/>
+				<apex:column value="{!record['Category__c']}" rendered="{!selectedObjectType == 'Local_Sales_Rep_Assignment__c'}"/>
+				<apex:column value="{!record['Zip_Code__c']}" rendered="{!selectedObjectType == 'Local_Sales_Rep_Assignment__c'}"/>
+				<apex:column value="{!record[IF(selectedObjectType != 'Local_Sales_Rep_Assignment__c', 'OwnerId', 'Sales_Rep__c')]}"/>
+			</apex:pageBlockTable>
+			<apex:pageMessage strength="1" severity="info" summary="No results" rendered="{!sobjectList.size = 0}"/>
+			<center>
+                <apex:panelGrid columns="7">
+                    <apex:commandButton status="fetchStatus" reRender="resultBlock" value="|<" action="{!first}" disabled="{!!hasPrevious}" title="First Page" />
+                    <apex:commandButton status="fetchStatus" reRender="resultBlock" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page" />
+                    <apex:outputText >{!(pageNumber * VALUE(resultSize))+1-VALUE(resultSize)}-{!IF((pageNumber * VALUE(resultSize))>noOfRecords, noOfRecords,(pageNumber * VALUE(resultSize)))} of {!noOfRecords}</apex:outputText>
+                    <apex:commandButton status="fetchStatus" reRender="resultBlock" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page" />
+                    <apex:commandButton status="fetchStatus" reRender="resultBlock" value=">|" action="{!last}" disabled="{!!hasNext}" title="Last Page" />
+                    <!--apex:commandButton status="fetchStatus" reRender="formId" value="Refresh" action="{!refresh}" title="Refresh Page" /-->
+                    <!--apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                        <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                    </apex:outputPanel-->
+                </apex:panelGrid>
+            </center>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

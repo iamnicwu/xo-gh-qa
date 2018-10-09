@@ -1,0 +1,53 @@
+<messaging:emailTemplate subject="{!IF(relatedTo.n2de__Account__c != null, 'New Account! Immediate Action Required!', 'New Lead! Immediate Action Required!')}" recipientType="User" relatedToType="n2de__Distribution_log__c">
+    <messaging:htmlEmailBody >
+        <!-- LEAD MESSAGE -->
+        <apex:outputPanel rendered="{!relatedTo.n2de__Lead__c != null}">
+            Hi {!relatedTo.n2de__Lead__r.Owner.Name}, <br/><br/>
+            
+            You have a new hot lead waiting to be contacted and the best time to reach out is now!
+            <br/><br/>
+            Lead: <a href="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))}{!relatedTo.n2de__Lead__r.Id}">{!relatedTo.n2de__Lead__r.Name}</a>
+            <br/><br/>
+            Company: {!relatedTo.n2de__Lead__r.Company}
+            <br/><br/>
+            Name: {!relatedTo.n2de__Lead__r.Name}
+            <br/><br/>
+            Phone: {!relatedTo.n2de__Lead__r.Phone}
+            <br/><br/>
+            Website: {!relatedTo.n2de__Lead__r.Website}
+            <br/><br/>
+            Category: {!relatedTo.n2de__Lead__r.Primary_Category__r.Name}
+            <br/><br/>
+            Market: {!relatedTo.n2de__Lead__r.Local_Sales_Market__r.Name}
+            <br/><br/>
+            Good luck!
+            
+        </apex:outputPanel>
+        
+        <!-- ACCOUNT MESSAGE -->
+        <apex:outputLabel rendered="{!relatedTo.n2de__Account__c != null}">
+            Hi {!relatedTo.n2de__Account__r.Owner.Name}, <br/><br/>
+            
+            One of your prospects just claimed their free storefront, the best time to reach out to sell is now!
+            <br/><br/>
+            Account: <a href="{!LEFT($Api.Enterprise_Server_URL_300, FIND('/services',$Api.Enterprise_Server_URL_300))}{!relatedTo.n2de__Account__r.Id}">{!relatedTo.n2de__Account__r.Name}</a>
+            <br/><br/>
+            Name: {!relatedTo.n2de__Account__r.Name}
+            <br/><br/>
+            Phone: {!relatedTo.n2de__Account__r.Phone}
+            <br/><br/>
+            Website: {!relatedTo.n2de__Account__r.Website}
+            <br/><br/>
+            Category: {!relatedTo.n2de__Account__r.Primary_Category__r.Name}
+            <br/><br/>
+            Market: {!relatedTo.n2de__Account__r.Local_Sales_Market__r.Name}
+            <br/><br/>
+            Storefront Status: {!relatedTo.n2de__Account__r.Storefront_Status__c}
+            <br/><br/>
+            Good luck!
+        </apex:outputLabel>
+        
+        <!-- <c:EmailNotification LogId="{!relatedTo.Id}" /> -->
+        <!-- <c:EmailNotificationFooter /> -->
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

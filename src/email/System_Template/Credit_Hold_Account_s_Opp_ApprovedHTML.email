@@ -1,0 +1,17 @@
+<div style="text-align: center; background-color: grey; padding: 20px 0px;"> 
+<div style="display: inline-block; width: 70%; background-color: white; border-radius: 4px 4px 4px 4px; -moz-border-radius: 4px 4px 4px 4px; -webkit-border-radius: 4px 4px 4px 4px;"> 
+<div style="background-color: black; padding: 20px 10px 15px 20px; border-radius: 4px 4px 0px 0px; -moz-border-radius: 4px 4px 0px 0px; -webkit-border-radius: 4px 4px 0px 0px;"> 
+<div style="color: rgb(178,204,133); text-align: left; font-size: 24px; letter-spacing: 0.75px; font-family: arial, sans-serif;"> 
+Credit Hold Approval 
+</div> 
+</div> 
+<div style="text-align: left; padding: 20px; font-family: arial, sans-serif;"> 
+Hello {!Opportunity.OwnerFullName}, <br> <br> 
+An Opportunity has been APPROVED for following account. <br><br>
+Account Name{!Opportunity.Account}. <br> 
+Opportunity Link: {!Opportunity.Link} <br> 
+{!IF(ApprovalRequest.Comments="","", "Notes: " & ApprovalRequest.Comments)} <br> <br> 
+Thank you! 
+</div> 
+</div> 
+</div>

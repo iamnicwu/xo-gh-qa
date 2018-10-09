@@ -1,0 +1,306 @@
+<apex:page StandardController="zqu__Quote__c" extensions="ZuoraQuoteEditLineItemsController" sidebar="false">
+    
+    <apex:includeScript value="{!$Resource.zqu__jquery_1_9_1}" />
+    <!-- csp-2898 loading page -->
+    <div class="overlay" id="overlay"></div>
+    <div class="loadingDiv" id="loading">
+        <div class="loadingWrap">
+            <div class="loadingInner">
+                <img src="{!$Resource.zqu__loading}"></img>
+                <div id ="describe">
+                    <br />
+                    <h1 style="color:black; font-size: 11px;">
+                        Please wait while page loads...
+                    </h1>    
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <!--zqu:ProgressBar /-->
+    <zqu:StatusModal />
+    
+    <script>
+        var onNavigateBack = function() {
+            try { navigateBack(); }
+            catch(e) { defaultNavigateBack(); };
+        }
+        
+        var onNavigateNext = function() {
+            try { navigateNext(); }
+            catch(e) { defaultNavigateNext() };
+        }
+        
+        var onCancel = function() {
+            try { cancel(); }
+            catch(e) { defaultCancel(); }
+        }
+        
+        function openLookup(baseURL, width, modified, searchParam){
+            var originalbaseURL = baseURL;
+            var originalwidth = width;
+            var originalmodified = modified;
+            var originalsearchParam = searchParam;
+
+            var lookupType = baseURL.substr(baseURL.length-3, 3);
+            if (modified == '1') baseURL = baseURL + searchParam;
+
+            var isCustomLookup = false;
+            if(lookupType == "001"){
+                var urlArr = baseURL.split("&");
+                var txtId = '';
+                if(urlArr.length > 2) {
+                    urlArr = urlArr[1].split('=');
+                    txtId = urlArr[1];
+                }
+                baseURL = "/apex/VendorLookup?txt=" + txtId;
+                  
+                baseURL = baseURL + "&frm=" + escapeUTF("{!$Component.theForm}");
+                if (modified == '1') {
+                    baseURL = baseURL + "&lksearch=" + searchParam;
+                }
+                
+                var accId = '{!thisQuote.zqu__Opportunity__r.AccountId}';
+                var productLine = '{!thisQuote.Product_Line__c}';
+                baseURL = baseURL +"&accId=" +accId;
+                baseURL = baseURL +"&productLine=" +productLine;
+                if(txtId.indexOf('Vendor') > -1 ){
+                    isCustomLookup = true;
+                }
+            }
+          
+            if(isCustomLookup == true){
+                openPopup(baseURL, "lookup", 350, 480, "width=800,height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+            }else {
+                if (modified == '1') originalbaseURL = originalbaseURL + originalsearchParam;
+                    openPopup(originalbaseURL, "lookup", 350, 480, "width="+originalwidth+",height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no", true);
+            } 
+        }
+
+        //csp-2898 Enable Discounts for a Promotional Period (Switch Pitch)
+        //show laoding page when start action
+        function showLoading() {
+          var $overlay = $("[id*=overlay]"); 
+          var $loading = $("[id*=loading]"); 
+
+          $overlay.css("display","block");
+          $loading.css("display","block");
+        }
+        //hide loading page when complete action
+        function hideLoading() {
+          var $overlay = $("[id*=overlay]"); 
+          var $loading = $("[id*=loading]"); 
+
+          $overlay.css("display","none");
+          $loading.css("display","none");
+        }
+        
+        var closeLookup = function(element) {
+            var lkId = document.getElementById(element.dataset.lkid);
+            lkId.value = element.dataset.id;
+            var textInput = document.getElementById(element.dataset.textbox);
+            textInput.value = element.dataset.accname;
+            var modElement = document.getElementById(element.dataset.textbox + '_mod');
+            modElement.value = 1;
+
+            var lkOld = document.getElementById(element.dataset.textbox + '_lkold');
+            lkOld.value = textInput.value;
+        }
+    </script>
+
+    <style>
+        .fieldLabel {
+            width: 70px;
+            text-align:right;
+        }
+        .fieldValue {
+            width: 250px;
+            text-align:left;
+        }
+        .productTable {
+            background-color: #E1EBE7;
+            border: 1px solid #7BC143;
+            margin-bottom: 20px;
+            padding: 8px 7px;
+            position: relative;
+            margin:12px;
+            width:90%;  
+        }
+        body .pbBody table.list tr.headerRow td, body .pbBody table.list tr.headerRow th {
+            height: 23px;
+            line-height: 16px;
+            border: 1px solid #CCC;
+            padding-left: 4px;
+            padding-right: 4px;
+            background-color: #D4EFF8;
+        }
+        .loadingDiv, .overlay{
+            display: none;
+            width: 100%; 
+            height: 100%;
+            z-index: 1001;
+            position: fixed;
+            left: 0px; 
+            top: 0px
+        }
+        .overlay {
+            background-color: #000; 
+            opacity: 0.5;
+        }
+        .loadingWrap {
+            padding: 12px; 
+            position: fixed; 
+            z-index: 1002; 
+            height: 100px; 
+            width: 300px; 
+            margin:auto; 
+            left:0; 
+            right:0; top:0; 
+            bottom:0; 
+            background: #f7f2ef;
+        }
+        .loadingInner{
+            text-align: center; 
+            height: 100%; 
+            width: 100%; 
+            padding-top: 8px; 
+        }
+
+    </style>
+
+    <!-- QuoteWizardTemplate -->
+    <apex:composition template="zqu__QuoteWizardTemplateNoForm" >
+ 
+        <!-- Define the page body, including form and button bar -->
+        <apex:define name="PageBody" >
+            <apex:form id="theForm">
+                
+                <c:WaitlistModal id="wlModal" pageController="{!this}"/>
+                <apex:actionFunction name="checkInventory" action="{!checkInventory}" reRender="theForm"/> <!-- theForm -->
+
+                <div class="bPageTitle">
+                    <div class="ptBody secondaryPalette brandSecondaryBrd">
+                        <div class="content">
+                            <img src="{!ImgUrl}" height="32" width="32" class="pageTitleIcon userDefinedImage" title="Quote" alt="Quote" />
+                            <h1 class="pageType">New Quote</h1>
+                            <span class="titleSeparatingColon">:</span>
+                            <h2 class="pageDescription">Edit Line Items</h2><div class="blank"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <apex:pageBlock mode="edit" rendered="{!IF(loading=True, 'true', 'false')}">
+                    <p>Loading...</p>
+                </apex:pageBlock>
+                <apex:pageBlock mode="edit" rendered="{!IF(loading=false, 'true', 'false')}" id="infoBlock">
+                    <apex:pageBlockSection rendered="{!IF(someInventoryUnavailable=True, 'true', 'false')}">
+                        <table style="width:100%">
+                            <tr>
+                                <td align="right" valign="top"><img src="/img/msg_icons/warning16.png" /></td>
+                                <td width="100%" valign="top"> <b> Some inventory is not available and will need to be removed from the previous page before you can proceed.</b> </td>
+                            </tr>
+                        </table>
+                    </apex:pageBlockSection>
+                    <!-- CSP-1667 error message -->
+                    <apex:pageBlockSection rendered="{!hasInvalidLocationEmail}" columns="1">
+                        <apex:repeat value="{!invalidEmailList}" var="invalidEmails">
+                            <img src="/img/msg_icons/warning16.png" />
+                            <b>
+                            Email is required for fulfillment. Please add a valid email for <a href="{!invalidEmails.invalidLocationURL}" style="color:red;text-decoration: underline;" target="_blank"> {!invalidEmails.invalidLocationName} </a> 
+                            </b>
+                        </apex:repeat>
+                    </apex:pageBlockSection>
+                    <!-- CSP-2898 error message -->    
+                    <apex:pageMessages > </apex:pageMessages>
+
+                    <apex:pageBlockSection rendered="{!newDiscountReasonNeeded}" columns="1">
+                        <img src="/img/msg_icons/warning16.png" /> 
+                        <b>If Discount Override is higher than the Calculated Discount, please select a different Discount Reason.</b>
+                    </apex:pageBlockSection>
+                    
+                    <apex:pageBlockSection rendered="false" columns="1">
+                        The system has recommended at least one alternative Term Start Date for this Quote:
+                        <ul>
+                        <apex:repeat value="{!suggestedDateReasons}" var="reason">
+                            <li>{!reason}</li>
+                        </apex:repeat>
+                        </ul>
+                        You may change the date below, or leave the current value.
+                        <apex:inputField value="{!thisQuote.zqu__TermStartDate__c}" required="true" />
+                    </apex:pageBlockSection>
+                    
+                    <apex:repeat value="{!RatePlanList}" var="rp">
+                        <apex:pageBlockSection title="{!rp.RatePlan.zqu__QuoteProductName__c}">
+                            
+                            <apex:outputText value="{!rp.RatePlan.Name}" label="Rate Plan" />
+                            
+                            <apex:outputText label="Available">
+                                <apex:image url="/img/msg_icons/confirm16.png" rendered="{!rp.hasInventory}"/>
+                                <apex:image url="/img/msg_icons/error16.png" rendered="{!!rp.hasInventory}"/>
+                            </apex:outputText>
+                            
+                            <apex:outputtext label="Waitlist" rendered="{!!rp.hasInventory}">
+                                <apex:commandlink style="font-weight:bold" value="View Waitlist" action="{!viewWaitlist}" rerender="wlModal" rendered="{!!rp.hasInventory}">
+                                    <apex:param name="viewWaitlistRatePlanId" value="{!rp.RatePlan.zqu__ProductRatePlan__c}" assignto="{!SelectedRatePlanIdForWaitlistModal}" />                    
+                                </apex:commandlink>&nbsp;&nbsp;
+                                <apex:commandlink style="font-weight:bold" value="Add to Waitlist" action="{!addToWaitlist}" rendered="{!(!rp.hasInventory && rp.waitlistNumber == 0)}">
+                                    <apex:param name="viewWaitlistRatePlanId" value="{!rp.RatePlan.zqu__ProductRatePlan__c}" assignto="{!SelectedRatePlanIdForWaitlistModal}" />
+                                </apex:commandlink>
+                                <apex:outputtext value="(Waitlist account #{!rp.waitlistNumber})" rendered="{!(!rp.hasInventory && rp.waitlistNumber > 0)}" />
+                            </apex:outputtext>
+                            
+                            <apex:outputText value="{!rp.RatePlan.Steelbrick_Calculated_Discount__c}" label="Calculated Discount %" />
+
+                            <apex:repeat value="{!$ObjectType.zqu__QuoteRatePlan__c.FieldSets.QRP_Edit_Line_Item_Internet}" var="f">
+                                <apex:inputfield id="Vendor" value="{!rp.RatePlan[f]}" required="{!f.Required}" 
+                                rendered="{!IF(AND(rp.ProductType == 'Internet',OR(AND(rp.RatePlan.zqu__SubscriptionRatePlanZuoraId__c != null,f !='Location_Vendor__c')
+                                			,rp.RatePlan.zqu__SubscriptionRatePlanZuoraId__c == null)), TRUE, FALSE)}"/>
+                                			
+                               	<apex:outputfield id="Vendor1" value="{!rp.RatePlan[f]}" 
+                                rendered="{!IF(AND(rp.ProductType == 'Internet',rp.RatePlan.zqu__SubscriptionRatePlanZuoraId__c != null,
+                                		f == 'Location_Vendor__c'), TRUE, FALSE)}"/>
+                            </apex:repeat>
+
+                            <apex:repeat value="{!$ObjectType.zqu__QuoteRatePlan__c.FieldSets.QRP_Edit_Line_Item_Print}" var="f">
+                                <apex:inputfield value="{!rp.RatePlan[f]}" required="{!f.Required}" rendered="{!rp.ProductType == 'Print'}"/>
+                            </apex:repeat>
+
+                            <apex:repeat value="{!$ObjectType.zqu__QuoteRatePlan__c.FieldSets.QRP_Edit_Line_Item_Direct_Mail}" var="f">
+                                <apex:inputfield value="{!rp.RatePlan[f]}" required="{!f.Required}" rendered="{!rp.ProductType == 'Direct Mail'}"/>
+                            </apex:repeat>
+
+                            <apex:repeat value="{!$ObjectType.zqu__QuoteRatePlan__c.FieldSets.QRP_Edit_Line_Item_Discount}" var="f">
+                                <apex:inputfield value="{!rp.RatePlan[f]}" required="{!f.Required}" rendered="{!rp.ProductType == 'Discount'}"/>
+                            </apex:repeat>
+                           
+                        </apex:pageBlockSection>
+                    </apex:repeat>
+
+                
+                    <!-- Custom button bar -->
+                    <!-- buttons to display when within a wizard -->
+                    <apex:pageBlockButtons rendered="{!PageIsInWizard}">
+                      <apex:commandButton action="{!navigateBack}" value="{!BackButtonText}" immediate="true"
+                              html-formnovalidate="formnovalidate" />
+                      <apex:commandButton action="{!navigateNext}" value="{!NextButtonText}" rendered="{!!someInventoryUnavailable}" reRender="infoBlock"
+                                          onclick="showLoading()" oncomplete="hideLoading()" />
+                      <apex:commandButton action="{!cancel}" value="Cancel" immediate="true"
+                              html-formnovalidate="formnovalidate" />
+                    </apex:pageBlockButtons>
+                    
+                    <!-- buttons to display when stand alone -->
+                    <apex:pageBlockButtons rendered="{!!PageIsInWizard}">
+                      <apex:commandButton action="{!standaloneSave}" value="Save" />
+                      <apex:commandButton action="{!standaloneCancel}" value="Cancel" immediate="true"
+                              html-formnovalidate="formnovalidate" />
+                    </apex:pageBlockButtons>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:define>
+    </apex:composition>
+
+    <script>
+        window.onload = checkInventory();
+    </script>
+    
+</apex:page>

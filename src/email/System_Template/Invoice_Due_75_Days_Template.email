@@ -1,0 +1,22 @@
+<messaging:emailTemplate subject="Payments Past Due for The Knot Services – Prompt Attention Appreciated ({!relatedTo.Zuora__BillingAccount__r.Name}, {!relatedTo.Zuora__BillingAccount__r.Zuora__AccountNumber__c})" recipientType="Contact" relatedToType="Zuora__ZInvoice__c" replyTo="no-reply@theknot.com">
+    <messaging:htmlEmailBody >
+        <html>
+            <body>
+            Hello {!recipient.FirstName},
+            
+            <p>Thank you so much for your partnership with The Knot. I have been unsuccessful in reaching you to discuss your account that has become past due.  Our records show you are currently {!FLOOR(relatedTo.Past_Due__c)} days past due, leaving an outstanding balance of (${!relatedTo.Zuora__Balance2__c}).</p>
+                
+            <p>Please contact me to discuss a resolution on the account or I am happy to set up a payment plan option. For your convenience I am available from (8:15 am-5:00pm) Central Time, Monday-Friday, or if you are paying by Credit Card or ACH, I have attached a payment authorization form that you can complete and fax back to me.</p>
+                
+            <p>If we can reach a resolution on this matter within 15 days of receipt of this email, any live services with us will remain active.  Otherwise services unfortunately will be cancelled and your account will be turned over to our third party collection agency.</p>
+                
+            <p>Please contact me right away and I’m happy to get this resolved.</p>
+            
+            Very Truly,<br/>
+            {!relatedTo.Zuora__Account__r.CBSS_Name__c}<br/>
+            {!relatedTo.Zuora__Account__r.CBSS_Email__c}<br/>
+            {!relatedTo.Zuora__Account__r.CBSS_Phone__c}
+            </body>
+        </html>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

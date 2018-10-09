@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Create_ARR_Task__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check-box field that controls whether to create a task for ARR when the invoice is past due certain number of days.</description>
+        <externalId>false</externalId>
+        <label>Create ARR Task</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Number_Of_Days_Past_Due__c</fullName>
+        <externalId>false</externalId>
+        <label>Number Of Days Past Due</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Send_Email_To_Account_Owner__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is used to determine if an Email should also be sent to the Account Owner when an Account is past due.</description>
+        <externalId>false</externalId>
+        <label>Send Email To Account Owner</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Send_Email_To_Customer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check-box field that controls whether to send email communication to Customer or not when an invoice is past due certain days.</description>
+        <externalId>false</externalId>
+        <label>Send Email To Customer</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Invoice Past Due Config</label>
+    <listViews>
+        <fullName>All_with_Info</fullName>
+        <columns>NAME</columns>
+        <columns>Number_Of_Days_Past_Due__c</columns>
+        <columns>Create_ARR_Task__c</columns>
+        <columns>Send_Email_To_Customer__c</columns>
+        <columns>Send_Email_To_Account_Owner__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All with Info</label>
+    </listViews>
+    <visibility>Public</visibility>
+</CustomObject>

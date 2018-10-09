@@ -1,0 +1,5 @@
+<messaging:emailTemplate subject="Membership Renewal: We’ve got your back!" recipientType="Contact" relatedToType="zqu__Quote__c">
+    <messaging:htmlEmailBody >
+        <c:AutoRenewalNotificationEmailCMP zuoraQuoteId="{!relatedTo.Id}"/>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

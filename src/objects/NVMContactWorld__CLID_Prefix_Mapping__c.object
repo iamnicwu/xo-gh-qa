@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>NVMContactWorld__Call_Recording_Enabled__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Call Recording Enabled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__Prefix__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Dialled Number Prefix</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>NVMContactWorld__Presented_CLID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Presented Callback Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Callback Prefix Mapping</label>
+    <listViews>
+        <fullName>NVMContactWorld__Callback_Prefix_Mappings_View</fullName>
+        <columns>NAME</columns>
+        <columns>NVMContactWorld__Prefix__c</columns>
+        <columns>NVMContactWorld__Presented_CLID__c</columns>
+        <columns>NVMContactWorld__Call_Recording_Enabled__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Callback Prefix Mappings View</label>
+    </listViews>
+    <nameField>
+        <label>Description</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Callback Prefix Mappings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>NVMContactWorld__Prefix_must_only_contain_plus_or_digits</fullName>
+        <active>true</active>
+        <description>Prefix must only include plus or digits</description>
+        <errorConditionFormula>NOT(REGEX(NVMContactWorld__Prefix__c, &quot;^\\+?\\d*&quot;))</errorConditionFormula>
+        <errorDisplayField>NVMContactWorld__Prefix__c</errorDisplayField>
+        <errorMessage>Prefix must only contain digits, optionally preceeded by a &apos;+&apos; sign</errorMessage>
+    </validationRules>
+</CustomObject>

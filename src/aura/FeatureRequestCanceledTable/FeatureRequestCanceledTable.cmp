@@ -1,0 +1,193 @@
+<aura:component description="FeatureRequestCanceledTable" controller="FeatureRequestedCanceledAuraController">
+
+    <!-- Attributes -->
+    <!-- The Case id for looking up the FRCs -->
+    <aura:attribute name="caseId" type="Id"/>
+    <!-- List of FeatureRequestCanceled objects to be displayed in the table -->
+    <aura:attribute name="FRCs" type="Object" default="[]"/>
+    <!-- Are there any FRCs to be dispalyed -->
+    <aura:attribute name="hasFRCs" type="Boolean" default="true"/>
+    <!-- Status options for the FCR -->
+    <aura:attribute name="statusOpts" type="Object" default="[]"/>
+    <!-- Boolean to indicate the FRCs should be saved -->
+    <aura:attribute name="submitAndNext" type="Boolean" default="false"/>
+    <aura:attribute name="submitAndAccount" type="Boolean" default="false"/>
+
+    <!-- Events -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.submitAndNext}" action="{!c.persistFRCsNext}"/>
+    <aura:handler name="change" value="{!v.submitAndAccount}" action="{!c.persistFRCsAccount}"/>
+    <aura:registerEvent name="FeatureRequestCanceledEvent" type="c:FeatureRequestCanceledEvent"/>
+
+    <aura:if isTrue="{! v.hasFRCs}">
+        <div class=".slds-text-heading_medium slds-m-top--medium slds-m-bottom--large heading-text">
+            Select all items at risk and indicate if they have been saved or canceled.
+        </div>
+        <div class="slds-scrollable">
+
+            <table class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal slds-m-right--medium">
+                <thead>
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <label class="slds-checkbox">
+                            <ui:inputCheckbox
+                                    aura:id="allCheckbox"
+                                    click="{! c.updateAll }"
+                                    disabled="{! v.FRCs.length == 0 }"/>
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-assistive-text">Select All</span>
+                        </label>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Status">
+                            Status
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Subscription Charge Name">
+                            Subscription<br/> Charge Name
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Product">
+                            Product
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Rate Plan Name">
+                            Rate Plan<br/> Name
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="LDE Launch Date">
+                            LDE Launch<br/> Date
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Account Name">
+                            Account Name
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Subscription Name">
+                            Subscription<br/> Name
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Subscription End Date">
+                            Subscription<br/> End Date
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Location Id">
+                            Location Id
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="List Price">
+                            List Price
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Price">
+                            Price
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Period">
+                            Period
+                        </div>
+                    </th>
+                </tr>
+                </thead>
+                <aura:iteration items="{!v.FRCs}" var="frc" indexVar="frcIndex">
+
+                    <tr class="slds-hint-parent">
+                        <td class="slds-cell-shrink" data-label="Select Row">
+                            <label class="slds-checkbox">
+                                <ui:inputCheckbox value="{!frc.isAdded}" aura:id="frcCheckbox" name="{!frcIndex}"
+                                                  click="{! c.updateSelected }"/>
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-assistive-text">
+                                    Select Row
+                                </span>
+                            </label>
+                        </td>
+                        <td scope="row" class="select-cell" data-label="Status">
+                            <div class="slds-truncate" title="Status">
+                                <lightning:select class="select-input"
+                                                  name="selectStatus"
+                                                  label=""
+                                                  value="{!frc.Status}">
+                                    <aura:iteration items="{!v.statusOpts}" var="opt">
+                                        <option value="{!opt.value}"
+                                                selected="{!opt.value == frc.Status}">{!opt.label}</option>
+                                    </aura:iteration>
+                                </lightning:select>
+                            </div>
+                        </td>
+                        <td data-label="Subscription Charge Name">
+                            <div class="slds-truncate" title="{!frc.SubscriptionChargeName}">
+                                {!frc.SubscriptionChargeName}
+                            </div>
+                        </td>
+                        <td data-label="Product">
+                            <div class="slds-truncate" title="{!frc.ProductName}">
+                                {!frc.ProductName}
+                            </div>
+                        </td>
+                        <td data-label="Rate Plan Name">
+                            <div class="slds-truncate" title="{!frc.RatePlanName}">
+                                {!frc.RatePlanName}
+                            </div>
+                        </td>
+                        <td data-label="LDE Launch Date">
+                            <div class="slds-truncate" title="{!frc.LaunchDate}">
+                                {!frc.LaunchDate}
+                            </div>
+                        </td>
+                        <td data-label="Account Name">
+                            <div class="slds-truncate" title="{!frc.ZuoraAccountName}">
+                                {!frc.ZuoraAccountName}
+                            </div>
+                        </td>
+                        <td data-label="Subscription Name">
+                            <div class="slds-truncate" title="{!frc.SubscriptionChargeName}">
+                                {!frc.SubscriptionChargeName}
+                            </div>
+                        </td>
+                        <td data-label="Subscription End Date">
+                            <div class="slds-truncate" title="{!frc.SubscriptionName}">
+                                {!frc.SubscriptionName}
+                            </div>
+                        </td>
+                        <td data-label="Location Id">
+                            <div class="slds-truncate" title="{!frc.LocationId}">
+                                {!frc.LocationId}
+                            </div>
+                        </td>
+                        <td data-label="List Price">
+                            <div class="slds-truncate" title="{!frc.ListPrice}">
+                                {!frc.ListPrice}
+                            </div>
+                        </td>
+                        <td data-label="Price">
+                            <div class="slds-truncate" title="{!frc.Price}">
+                                {!frc.Price}
+                            </div>
+                        </td>
+                        <td data-label="Period">
+                            <div class="slds-truncate" title="{!frc.BillingPeriod}">
+                                {!frc.BillingPeriod}
+                            </div>
+                        </td>
+
+                    </tr>
+                </aura:iteration>
+            </table>
+        </div>
+        <aura:set attribute="else">
+            There is no Subscription Product Charge on the Account.
+        </aura:set>
+    </aura:if>
+</aura:component>

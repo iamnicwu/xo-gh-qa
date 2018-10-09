@@ -1,0 +1,152 @@
+<apex:page controller="ReassignOwnershipController">
+	<style>
+		.bold {font-weight:bold;}
+		.center {text-align:center;}
+	</style>
+	<apex:form id="UserSearchForm">
+        <apex:sectionHeader title="Find and Reassign Records"/>
+        <apex:pageBlock Id="pageBlockId">
+            <table cellpadding="4" cellspacing="4">
+           		<tr>
+           			<td style="text-align:right;vertical-align:middle">
+           				<b>Search by:</b>
+          				</td>
+          				<td style="text-align:left;vertical-align:middle">
+           				<apex:selectRadio id="searchByRadio" value="{!searchBy}" disabled="{!(ShowResults || ShowNoResults) && errParentQuery == ''}">
+           					<apex:selectOption itemvalue="User" itemLabel="User"/>
+           					<apex:selectOption itemvalue="Object" itemLabel="Object" />
+           					<apex:actionSupport event="onchange" reRender="wrapperPanel" />
+           				</apex:selectRadio>
+           			</td>
+         		</tr>
+        	</table>
+        	
+           			
+		<apex:outputPanel id="wrapperPanel" layout="none">
+   			<apex:outputPanel id="searchByUserPanel" rendered="{!searchBy=='User'}">
+	            <table cellpadding="4" cellspacing="4">
+	           		<tr>
+	            		<td>
+	            			<b>User: </b>
+	            			<apex:inputField value="{!ownerHolder.OwnerID}" id="ownerSearch" required="false" rendered="{!!ShowResults}" />
+	            			<apex:outputText value="{!ownerHolder.Owner.FirstName + ' ' + ownerHolder.Owner.LastName}" rendered="{!ShowResults}" />
+	            		</td>
+	           		</tr>
+           		</table>
+			</apex:outputPanel>
+			
+   			<apex:outputPanel id="searchByObjectPanel" rendered="{!searchBy=='Object'}">
+	            <table cellpadding="4" cellspacing="4">
+	           		<tr>
+	            		<td>
+		            		<apex:actionRegion >
+			            		<b>Object: </b>
+		            			<apex:selectList value="{!selectedObject}" multiselect="false" size="1" id="selObject"  disabled="{!(ShowResults || ShowNoResults) && errParentQuery == ''}">
+		            				<apex:selectOptions value="{!SearchableObjects}" />
+		            				<apex:actionSupport event="onchange" rerender="selField" />
+		            			</apex:selectList>
+		            			<apex:outputText value="{!errSelectedObject}" styleClass="error" rendered="{!errSelectedObject != ''}" />
+	            			</apex:actionRegion>
+	            		</td>
+	            		<td>
+		            		<apex:actionRegion >
+		            			<b>Where Field: </b>
+		            			<apex:selectList value="{!selectedField}" multiselect="false" size="1" id="selField" disabled="{!(ShowResults || ShowNoResults) && errParentQuery == ''}">
+		            				<apex:selectOptions value="{!SearchableFields}" />
+		            				<apex:actionSupport event="onchange" rerender="selOperator" />
+		            			</apex:selectList>
+		            			<apex:outputText value="{!errSelectedField}" styleClass="error" rendered="{!errSelectedField != ''}" />
+	            			</apex:actionRegion>
+	            		</td>
+	            		<td class="center">
+		            		<apex:actionRegion >
+		            			<apex:selectList value="{!selectedOperator}" multiselect="false" size="1" id="selOperator" disabled="{!(ShowResults || ShowNoResults) && errParentQuery == ''}">
+		            				<apex:selectOptions value="{!Operators}" />
+		            			</apex:selectList>
+		            			<apex:outputText value="{!errSelectedOperator}" styleClass="error" rendered="{!errSelectedOperator != ''}" />
+	            			</apex:actionRegion>
+	            		</td>
+	            		<td>
+	            			<apex:inputText value="{!selectedValue}" disabled="{!(ShowResults || ShowNoResults) && errParentQuery == ''}"/>
+	            			<apex:outputText value="{!errSelectedValue}" styleClass="error" rendered="{!errSelectedValue != ''}" />
+	            		</td>
+	           		</tr>
+            	</table>
+           	</apex:outputPanel>
+      	</apex:outputPanel>
+           	
+           <table cellpadding="4" cellspacing="4">
+          		<tr>
+           			<td>
+           				<b>Ownership Only Fields: </b>
+           				<apex:inputCheckbox id="OwnershipFieldsOnlyChk" value="{!SearchOnlyOwnershipFields}" disabled="{!(ShowResults || ShowNoResults) && errParentQuery == ''}" />
+         			</td>
+          			<td>
+          				<b>Include Closed Records: </b>
+          				<apex:inputCheckbox id="ClosedRecordsChk" value="{!SearchClosedRecords}" disabled="{!((ShowResults || ShowNoResults) && errParentQuery == '') || ($Profile.Name != 'System Administrator')}" />
+      				</td>
+          			<td>
+          				<b>Include Open Records: </b>
+	          			<apex:inputCheckbox id="OpenRecordsChk" value="{!SearchOpenRecords}" disabled="{!((ShowResults || ShowNoResults) && errParentQuery == '') || ($Profile.Name != 'System Administrator')}" />
+         			</td>
+        		</tr>
+          		<tr>
+           			<td colspan="3" align="center">
+           				<apex:commandButton action="{!searchRecords}" id="searchRecordsButton" value="Search Records" rendered="{!!(ShowResults || ShowNoResults) || errParentQuery != ''}"/>
+            			<apex:outputText value="{!errParentQuery}" styleClass="error" rendered="{!errParentQuery != ''}" />
+          			</td>
+          		</tr>
+        		<apex:outputPanel id="advancedSearchPanel" rendered="{!(ShowResults || ShowNoResults) && (searchBy=='Object')}">
+	          		<tr>
+	          			<td align="right">
+	          				<b>Parent Query:</b>
+	          			</td>
+	          			<td align="center">
+		        			<apex:inputTextarea rows="4" cols="30" value="{!parentQuery}" />
+		        		</td>
+		        		<td>
+		        			<apex:commandButton action="{!searchRecords}" id="searchParentButton" value="Rerun Parent Query" rendered="{!(ShowResults || ShowNoResults)}" />
+		        			<br/>
+		        			Note: Rerunning the parent query will remove any changes you made below
+		        		</td>
+	        		</tr>
+        		</apex:outputPanel>
+       		</table>
+            
+   			<hr noshade="true" />
+            
+            <apex:outputText rendered="{!ShowResults && (searchBy=='User')}" styleclass="bold" value="Records associated to {!ownerHolder.Owner.FirstName}"/>
+            <apex:outputText rendered="{!ShowResults && (searchBy=='Object')}" styleclass="bold" value="Records associated to {!selectedObject}"/>
+            <apex:pageBlockTable value="{!allObjects}" var="obj" id="tableId" rendered="{!ShowResults}">
+            	<apex:column headerValue="Object Type">
+            		<apex:outputText value="{!obj.objectName}" />
+            	</apex:column>
+            	<apex:column headerValue="Field">
+            		<apex:outputText value="{!obj.fieldLabel}" />
+            	</apex:column>
+            	<apex:column headerValue="New Value">
+            		<apex:inputField value="{!obj.selectedUserHolder.OwnerID}" rendered="{!!obj.textField}" required="false" />
+            		<apex:inputField value="{!obj.selectedUserHolder.Name}" rendered="{!obj.textField}" required="false"/>
+            	</apex:column>
+            	<apex:column headerValue="Number of Records">
+            		<apex:outputText value="{!obj.objectList.size}" />
+            	</apex:column>
+            	<apex:column headerValue="Query" rendered="{!($Profile.Name == 'System Administrator')}">
+            		<apex:inputTextarea rows="4" cols="30" value="{!obj.SOQLStatement}" />
+            	</apex:column>
+            	<apex:column headerValue="Message">
+            		<apex:outputText value="{!obj.alertMessage}" escape="false" />
+            	</apex:column>
+            </apex:pageBlockTable>
+            
+            <center>
+	            <apex:commandButton rendered="{!ShowResults && ($Profile.Name == 'System Administrator')}" action="{!requeryFillObjectMap}" id="requeryUserButton" value="Rerun Queries" />
+            	<apex:commandButton action="{!save}" id="saveButton" value="Update Records" rendered="{!ShowResults}" />
+        		<apex:commandButton onComplete="document.location.href='/apex/ReassignOwnership'" immediate="true" id="cancelButton" value="Cancel" rendered="{!ShowResults}" />
+            </center>
+            
+            <apex:outputText rendered="{!ShowNoResults}"><b>No records found.</b></apex:outputText>
+		</apex:pageBlock>
+	</apex:form>
+	
+</apex:page>

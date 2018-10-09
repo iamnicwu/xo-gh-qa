@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Account_Manager</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Account Manager</shortDescription>
+        <value>Account Manager</value>
+    </labels>
+    <labels>
+        <fullName>ActiveErrorMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ActiveErrorMsg</shortDescription>
+        <value>The Account Status cannot be manually adjusted while there is an active subscription.</value>
+    </labels>
+    <labels>
+        <fullName>AdditionalDetailErrorMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AdditionalDetailErrorMsg</shortDescription>
+        <value>Additional detail is required for selecting Other</value>
+    </labels>
+    <labels>
+        <fullName>AutoRenewalNotificationEmail1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoRenewalNotificationSS</shortDescription>
+        <value>If you have any questions, comments or suggestions, please feel free reach out to your Account Strategist</value>
+    </labels>
+    <labels>
+        <fullName>AutoRenewalNotificationEmail10</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoRenewalNotificationEmail10</shortDescription>
+        <value>As your partner and matchmaker, we look forward to continuing to connect with more of the most qualified couples, and help you nurture those relationships and seal the deal with more bookings.</value>
+    </labels>
+    <labels>
+        <fullName>AutoRenewalNotificationEmail2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoRenewalNotificationEmail2</shortDescription>
+        <value>Thanks for partnering with The Knot and helping millions of engaged couples make their dream wedding a reality. We hope you’ve enjoyed all the benefits of our recent investments, designed to help you:</value>
+    </labels>
+    <labels>
+        <fullName>AutoRenewalNotificationEmail3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoRenewalNotificationEmail3</shortDescription>
+        <value>I just wanted to remind you that your membership will automatically renew soon.</value>
+    </labels>
+    <labels>
+        <fullName>AutoRenewalNotificationEmail4</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoRenewalNotificationEmailSignature</shortDescription>
+        <value>Renewal_email_signature</value>
+    </labels>
+    <labels>
+        <fullName>AutoRenewalNotificationEmail5</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoRenewalNotificationEmail5</shortDescription>
+        <value>66 amazing events</value>
+    </labels>
+    <labels>
+        <fullName>AutoRenewalNotificationEmail6</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoRenewalNotificationEmail6</shortDescription>
+        <value>John Pike</value>
+    </labels>
+    <labels>
+        <fullName>AutoRenewalNotificationEmail7</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoRenewalNotificationEmail7</shortDescription>
+        <value>Group Vice President, Local Sales</value>
+    </labels>
+    <labels>
+        <fullName>AutoRenewalNotificationEmail8</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoRenewalNotificationEmail8</shortDescription>
+        <value>http://www.xoedge.com/myaccount/pdf/private/LAS-T-and-C-2016.html</value>
+    </labels>
+    <labels>
+        <fullName>AutoRenewalNotificationEmail9</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoRenewalNotificationEmail9</shortDescription>
+        <value>You may have already received an auto renewal notice for other services. This notice is ONLY for the services listed above, rates for services not listed here will not change. Questions about your program with The Knot? Call or email your Account Strategist.</value>
+    </labels>
+    <labels>
+        <fullName>BatchSendQuoteToZuora_Size</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BatchSendQuoteToZuora_Size</shortDescription>
+        <value>1</value>
+    </labels>
+    <labels>
+        <fullName>BatchTask_Settings</fullName>
+        <categories>Settings</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BatchTask_Settings</shortDescription>
+        <value>2016,01,01,10,500,true,2016,10,11</value>
+    </labels>
+    <labels>
+        <fullName>CanadaMarketId</fullName>
+        <categories>222</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CanadaMarketId</shortDescription>
+        <value>222</value>
+    </labels>
+    <labels>
+        <fullName>Cancel_Case_Close_Error_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel Case Close Error Message</shortDescription>
+        <value>Please click &quot;Manage Feature Requested Cancelled&quot; button to update the record version and ensure all FRC set as &quot;saved&quot; or &quot;canceled&quot; on the page.</value>
+    </labels>
+    <labels>
+        <fullName>Cancel_Case_Close_Status</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel Case Close Status</shortDescription>
+        <value>Closed</value>
+    </labels>
+    <labels>
+        <fullName>Cancel_Case_Outcome</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancel Case Outcome</shortDescription>
+        <value>Cancelled
+Saved
+Max Attempts - No Written Request
+Externally Resolved (Until bonus has fully changed over)
+Saved Hard Concessions
+Saved No Concessions
+Saved Soft Concessions</value>
+    </labels>
+    <labels>
+        <fullName>Cancelled_Case_Close_Status</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Cancelled Case Close Status</shortDescription>
+        <value>Closed
+Closed Duplicate
+Canceled - Waiting on Payment
+Saved - Waiting For Payment</value>
+    </labels>
+    <labels>
+        <fullName>CaseEmailFieldMapping</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CaseEmailFieldMapping</shortDescription>
+        <value>Review Details: -&gt; review_details__c 
+Review Id: -&gt;Review_ID__c 
+Storefront Id: -&gt;Storefront_ID__c 
+Display Id: -&gt;Display_ID__c 
+Date: -&gt;Date_of_Review__c 
+Reviewer: -&gt;Reviewer_String__c</value>
+    </labels>
+    <labels>
+        <fullName>CasePriorityRange</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CasePriorityRange</shortDescription>
+        <value>0;Medium;5000
+5000;High</value>
+    </labels>
+    <labels>
+        <fullName>Case_Close_Status</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Close Status</shortDescription>
+        <value>Closed</value>
+    </labels>
+    <labels>
+        <fullName>Case_Outcome_Email_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Case Outcome Email Address</shortDescription>
+        <value>escalations@theknot.com</value>
+    </labels>
+    <labels>
+        <fullName>Change_Invoice_Owner_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Change Invoice Owner Error</shortDescription>
+        <value>Please DO NOT fill in/update  the Invoice Owner</value>
+    </labels>
+    <labels>
+        <fullName>ClaimingTaskOwner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ClaimingTaskOwner</shortDescription>
+        <value>005j000000DU2IA</value>
+    </labels>
+    <labels>
+        <fullName>Claiming_error_duplicated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Claiming error duplicated</shortDescription>
+        <value>Lead Convertion error due to hit to duplication rule</value>
+    </labels>
+    <labels>
+        <fullName>ConciergeTaskAssignment</fullName>
+        <categories>Concierge Task</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Concierge Task Assignment Lindley Schneider</shortDescription>
+        <value>005j000000C0bh8</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Signer_for_Cancel_Opp</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Signer for Cancel Opp</shortDescription>
+        <value>003j000000yPnhO</value>
+    </labels>
+    <labels>
+        <fullName>CustomVenueSearchError01</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Venue Search Error 1</shortDescription>
+        <value>Please select atleast one search filter before clicking search button</value>
+    </labels>
+    <labels>
+        <fullName>CustomVenueSearchError02</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Venue Search Error 2</shortDescription>
+        <value>You have to select both Min and Max Price</value>
+    </labels>
+    <labels>
+        <fullName>CustomVenueSearchError03</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Venue Search Error 3</shortDescription>
+        <value>The minimum price cannot be greater than maximum price.</value>
+    </labels>
+    <labels>
+        <fullName>CustomVenueSearchError04</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Venue Search Error 4</shortDescription>
+        <value>You have to select both Min and Max Category</value>
+    </labels>
+    <labels>
+        <fullName>CustomVenueSearchError05</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Venue Search Error 5</shortDescription>
+        <value>The minimum category cannot be greater than maximum category.</value>
+    </labels>
+    <labels>
+        <fullName>CustomVenueSearchError06</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Venue Search Error 6</shortDescription>
+        <value>You have to select both Min and Max Catering.</value>
+    </labels>
+    <labels>
+        <fullName>CustomVenueSearchError07</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Venue Search Error 7</shortDescription>
+        <value>The minimum catering cannot be greater than maximum catering.</value>
+    </labels>
+    <labels>
+        <fullName>CustomVenueSearchError08</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Venue SearchError 8</shortDescription>
+        <value>Populate Concierge Program Qualification on Account before performing search</value>
+    </labels>
+    <labels>
+        <fullName>CustomVenueSearchError09</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CustomVenueSearchError09</shortDescription>
+        <value>There are no records with this search filters. Please change the search filters.</value>
+    </labels>
+    <labels>
+        <fullName>DataEnrichmentUserId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DataEnrichmentUserId</shortDescription>
+        <value>005j000000DU2IA</value>
+    </labels>
+    <labels>
+        <fullName>DeadUserId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DeadUserId</shortDescription>
+        <value>005j000000C0bXu</value>
+    </labels>
+    <labels>
+        <fullName>Default_CBSS_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>If CBSS is not Assigned to User, code will use this name.</shortDescription>
+        <value>Brandi Rojas</value>
+    </labels>
+    <labels>
+        <fullName>Delete_Attachments_Allowed_Profile_Names</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delete Attachments Allowed Profile Names</shortDescription>
+        <value>Local Core Finance - ARR
+System Administrator</value>
+    </labels>
+    <labels>
+        <fullName>Deleted_Converted_Waitlist</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Deleted Converted Waitlist</shortDescription>
+        <value>No</value>
+    </labels>
+    <labels>
+        <fullName>Different_Existing_Parent</fullName>
+        <categories>Claiming</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Different Existing Parent</shortDescription>
+        <value>Existing Account has a different parent</value>
+    </labels>
+    <labels>
+        <fullName>DisableRenewFunctionalityMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DisableRenewFunctionalityMessage</shortDescription>
+        <value>The renewal functionality has currently been disabled. Please move forward by Cancelling the current services and replacing with a new quote to renew the subscription(s).</value>
+    </labels>
+    <labels>
+        <fullName>DisallowAutoRenewalErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DisallowAutoRenewalErrorMessage</shortDescription>
+        <value>Print and Direct Mail services are not able to be Auto Renewed. Please choose NO for Auto Renewal to move forward.</value>
+    </labels>
+    <labels>
+        <fullName>DisallowAutoRenewalErrorMessageTerms</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DisallowAutoRenewalErrorMessageTerms</shortDescription>
+        <value>The services are not able to be Auto Renewed when Initial Term less than 12. Please choose NO for Auto Renewal to move forward.</value>
+    </labels>
+    <labels>
+        <fullName>DisallowRenewalRepOnQuotesErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DisallowRenewalRepOnQuotesErrorMessage</shortDescription>
+        <value>The Sales Rep and Renewal Rep fields cannot be a BDR or Sales Operations user. Please select a valid Local Sales AE.</value>
+    </labels>
+    <labels>
+        <fullName>DisallowSalesRepOnQuotesErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DisallowSalesRepOnQuotesErrorMessage</shortDescription>
+        <value>The Sales Rep and Renewal Rep fields cannot be a BDR or Sales Operations user. Please select a valid Local Sales AE.</value>
+    </labels>
+    <labels>
+        <fullName>Dummy_User_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dummy User Name</shortDescription>
+        <value>prosupport@theknot.com.uat</value>
+    </labels>
+    <labels>
+        <fullName>Echo_Sign_Expired_Body</fullName>
+        <categories>XO - Echo Sign Email</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Echo Sign Expired Body</shortDescription>
+        <value>Your Opportunity, located {OPPLINK}, has an agreement which has failed to be signed which has caused the stage to be moved to Quoting. If there is still five days remaining before this Opportunity expires a new agreement can be sent to the contract signer after being approved again.</value>
+    </labels>
+    <labels>
+        <fullName>Echo_Sign_Expired_Subject</fullName>
+        <categories>XO - Echo Sign Email</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Echo Sign Expired Subject</shortDescription>
+        <value>EchoSign Agreement Expired</value>
+    </labels>
+    <labels>
+        <fullName>Echo_Sign_Expired_Title</fullName>
+        <categories>XO - Echo Sign Email</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Echo Sign Expired Title</shortDescription>
+        <value>EchoSign Agreement Expired</value>
+    </labels>
+    <labels>
+        <fullName>Echo_Sign_Notification_Subtitle</fullName>
+        <categories>XO - Echo Sign Email</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Echo Sign Notification Subtitle</shortDescription>
+        <value>EchoSign Agreement Notification</value>
+    </labels>
+    <labels>
+        <fullName>Echo_Sign_Two_Day_Body</fullName>
+        <categories>XO - Echo Sign Email</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Echo Sign Two Day Body</shortDescription>
+        <value>Your Opportunity, located {OPPLINK}, has a pending agreement which only has two days left. If this agreement is not signed within the next two days the Opportunity will be moved back to Quoting and a new agreement will need to be sent to the contract signer. Please contact the contract signer at your earliest convenience to ensure that this contract gets signed.</value>
+    </labels>
+    <labels>
+        <fullName>Echo_Sign_Two_Day_Subject</fullName>
+        <categories>XO - Echo Sign Email</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Echo Sign Two Day Subject</shortDescription>
+        <value>EchoSign Agreement 48hrs Remaining</value>
+    </labels>
+    <labels>
+        <fullName>Echo_Sign_Two_Day_Title</fullName>
+        <categories>XO - Echo Sign Email</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Echo Sign Two Day Title</shortDescription>
+        <value>EchoSign Agreement 48hrs Remaining</value>
+    </labels>
+    <labels>
+        <fullName>ErrorMessageForPreventToDeleteQuote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorMessageForPreventToDeleteQuote</shortDescription>
+        <value>A Quote associated to an opportunity should NOT be able to be deleted directly once the opportunity stage has advanced passed Quoting. If you want to delete the quote, please click the Unlock button on the Opportunity.</value>
+    </labels>
+    <labels>
+        <fullName>ErrorMessageForPreventToDeleteQuoteClosedLost</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ErrorMessageForPreventToDeleteQuoteClosedLost</shortDescription>
+        <value>You can not delete a Quote which associated to a CLOSED Opportunity, thanks!</value>
+    </labels>
+    <labels>
+        <fullName>Ext_Validation_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Ext Validation Error</shortDescription>
+        <value>Phone Extension must be in numeric, and no more than 7 digits</value>
+    </labels>
+    <labels>
+        <fullName>FRC_Manage_Page_Delete_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FRC Manage Page Delete Error</shortDescription>
+        <value>Delete Feature Requested Cancelled Failed! Please contact Administrator!</value>
+    </labels>
+    <labels>
+        <fullName>FRC_Manage_Page_Upsert_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>FRC Manage Page Upsert Error</shortDescription>
+        <value>Upsert Feature Requested Cancelled Failed! Please contact Administrator!</value>
+    </labels>
+    <labels>
+        <fullName>Hot_Lead_Sources</fullName>
+        <categories>Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Hot Lead Sources</shortDescription>
+        <value>Paid Media
+Website
+Self Prospecting
+Inbound Phone
+Inbound Email</value>
+    </labels>
+    <labels>
+        <fullName>IgnoreParentMessage2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IgnoreParentMessage2</shortDescription>
+        <value>is already claimed by a different account</value>
+    </labels>
+    <labels>
+        <fullName>InOpportunityErrorMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>InOpportunityErrorMsg</shortDescription>
+        <value>The Account Status cannot be manually adjusted while there is an open opportunity.</value>
+    </labels>
+    <labels>
+        <fullName>Is_Validate_Overlap_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Is Validate Overlap Date</shortDescription>
+        <value>true</value>
+    </labels>
+    <labels>
+        <fullName>LeadOwnerIDForNotMappedAssignmentRule</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LeadOwnerIDForNotMappedAssignmentRule</shortDescription>
+        <value>005f100000HGxqj</value>
+    </labels>
+    <labels>
+        <fullName>Lead_First_Name_filters</fullName>
+        <categories>Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead First Name Filters</shortDescription>
+        <value>firstname
+first name
+(firstname)
+[not provided]
+(not provided)
+ae [not provided]
+ae {not provided}
+(ae not provided)
+aenotprovided
+((ae))
+?
+.
+-
+_
+do not use
+accounting
+accounts
+payable
+department
+no
+no contact
+no longer w/company
+null
+unknown
+update needed</value>
+    </labels>
+    <labels>
+        <fullName>Lead_Last_Name_Filters</fullName>
+        <categories>Lead</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead Last Name Filters</shortDescription>
+        <value>lastname
+lastname
+last name
+(lastname)
+[not provided]
+(not provided)
+ae [not provided]
+(ae not provided)
+ae {not provided}
+aenotprovided
+((ae))
+do not use
+?
+.
+accounting
+accounts
+payable
+department
+no
+no contact
+no longer w/company
+null
+unknown
+update needed</value>
+    </labels>
+    <labels>
+        <fullName>Lead_Source_toDistributable_queue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Lead Source toDistributable queue</shortDescription>
+        <value>Paid Media</value>
+    </labels>
+    <labels>
+        <fullName>LocalCoreAccountExecutive</fullName>
+        <categories>Local Core Profile</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocalCoreAccountExecutive</shortDescription>
+        <value>Local Core Account Executive</value>
+    </labels>
+    <labels>
+        <fullName>LocalTeamUserId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LocalTeamUserId</shortDescription>
+        <value>0053F000001WM6M</value>
+    </labels>
+    <labels>
+        <fullName>Local_Core_Finance_ARR</fullName>
+        <categories>Profile Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Local Core Finance - ARR</shortDescription>
+        <value>Local Core Finance - ARR</value>
+    </labels>
+    <labels>
+        <fullName>Local_Core_Sales_Operations</fullName>
+        <categories>Profile Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Local Core Sales Operations</shortDescription>
+        <value>Local Core Sales Operations</value>
+    </labels>
+    <labels>
+        <fullName>Local_Core_Strategy_Specialist_Reviews</fullName>
+        <categories>Profile Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Local Core Strategy Specialist Reviews</shortDescription>
+        <value>Local Core Strategy Specialist Reviews</value>
+    </labels>
+    <labels>
+        <fullName>Local_Sales_Data_Team</fullName>
+        <categories>Profile Names</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Local Sales Data Team</shortDescription>
+        <value>Local Sales Data Team</value>
+    </labels>
+    <labels>
+        <fullName>Manual_Enrolled_Profile_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manual Enrolled Profile Name</shortDescription>
+        <value>Local Core Strategy Specialist,System Administrator, Local Core Sales Operations</value>
+    </labels>
+    <labels>
+        <fullName>MessageWithoutLocationId</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MessageWithoutLocationId</shortDescription>
+        <value>Please filling Location Id,LocationVendorDynamicsAccountID in Quote Rate Plan or Quote Rate Plan Charge !</value>
+    </labels>
+    <labels>
+        <fullName>Months_To_Delete_Inactive_Waitlist</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Months To Delete Inactive Waitlist</shortDescription>
+        <value>-12</value>
+    </labels>
+    <labels>
+        <fullName>NUMBER_OF_CONSECUTIVE_FAILUERS</fullName>
+        <categories>Payment method new trigger handler</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NUMBER OF CONSECUTIVE FAILUERS</shortDescription>
+        <value>3</value>
+    </labels>
+    <labels>
+        <fullName>NationalOppRetrieveOrderTimeDuration</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NationalOppRetrieveOrderTimeDuration</shortDescription>
+        <value>120</value>
+    </labels>
+    <labels>
+        <fullName>NationalSalesPipelineAll</fullName>
+        <categories>NationalSalesPipeline</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NationalSalesPipelineAll</shortDescription>
+        <value>All Opportunities</value>
+    </labels>
+    <labels>
+        <fullName>NationalSalesPipelineStartDate</fullName>
+        <categories>NationalSalesPipeline</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NationalSalesPipelineStartDate</shortDescription>
+        <value>Opportunities with Campaign Start Date Only</value>
+    </labels>
+    <labels>
+        <fullName>NegativeDispositionReasonIsRequiredErrorMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NegativeDispositionReasonIsRequiredErrorMsg</shortDescription>
+        <value>Negative disposition reason is required</value>
+    </labels>
+    <labels>
+        <fullName>No_Opp_Contract_Signer</fullName>
+        <categories>XO - Echo Sign Signature Errors</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Opp Contract Signer</shortDescription>
+        <value>A contract signer is needed for this Opportunity, please choose one.</value>
+    </labels>
+    <labels>
+        <fullName>NonActiveErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NonActiveErrMsg</shortDescription>
+        <value>The Account Status cannot be manually adjusted to Active while there is no active subscription.</value>
+    </labels>
+    <labels>
+        <fullName>NonInOpportunityErrMsg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>NonInOpportunityErrMsg</shortDescription>
+        <value>The Account Status cannot be manually adjusted to In Opportunity while there is not an open opportunity.</value>
+    </labels>
+    <labels>
+        <fullName>OnboardingCaseProductName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OnboardingCaseProductName</shortDescription>
+        <value>Storefront
+Bridal Salon Referral Program-Bridal Party - Storefront
+Bridal Salon Referral Program-Gown - Storefront
+Jewelry Store Referral Program-Jewelry Search - Storefront</value>
+    </labels>
+    <labels>
+        <fullName>Onboarding_Email_From_Address</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Onboarding Email From Address</shortDescription>
+        <value>prosupport@theknot.com</value>
+    </labels>
+    <labels>
+        <fullName>OperativeOneEndPointURL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OperativeOneEndPointURL</shortDescription>
+        <value>/restapi/salesorders/</value>
+    </labels>
+    <labels>
+        <fullName>OppStageForDeleteQuote</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OppStageForDeleteQuote</shortDescription>
+        <value>Prospecting,Quoting,Qualifying,Developing,Generating Quote,Quote Generation Failed</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Auto_Closed_Offsets</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Auto Closed Offsets</shortDescription>
+        <value>-360</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Auto_Closed_permanent_Day</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Auto Closed permanent Day</shortDescription>
+        <value>30</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Closed_Lost_Reopen_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Closed Lost Reopen Error</shortDescription>
+        <value>The Opportunity is currently in a Closed Lost state and only the following field can be modified: Closed Lost Reason Code.</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Closed_Won_Reopen_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Closed Won Reopen Error</shortDescription>
+        <value>The Opportunity is currently in a Closed state and fields can not be modified.</value>
+    </labels>
+    <labels>
+        <fullName>Overlap_Date_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Overlap Date Error</shortDescription>
+        <value>Date ranges are overlapping, please double check start date or end date!</value>
+    </labels>
+    <labels>
+        <fullName>PAST_DUE_85_DAYS</fullName>
+        <categories>Past Due Notification</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PAST DUE 85 DAYS</shortDescription>
+        <value>The following Account is currently 70 days past due and will be submitted for cancellation in 5 days.</value>
+    </labels>
+    <labels>
+        <fullName>Param_Kill_Case_Reply_Loop</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Parameter of Cases Loop Breaker</shortDescription>
+        <value>60-&gt;9</value>
+    </labels>
+    <labels>
+        <fullName>Parent_Account_Does_Not_Exist</fullName>
+        <categories>Claiming</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Parent Account Does Not Exist</shortDescription>
+        <value>Parent Account does not exist in our System</value>
+    </labels>
+    <labels>
+        <fullName>Past_Due_Email_Exception</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Past Due Email Exception</shortDescription>
+        <value>Past Due Email Exception</value>
+    </labels>
+    <labels>
+        <fullName>Payment_Schedule_Header</fullName>
+        <categories>Payment Schedule</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Payment Schedule Header</shortDescription>
+        <value>Payment Schedule</value>
+    </labels>
+    <labels>
+        <fullName>Phone_Validation_Error</fullName>
+        <categories>Validation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Phone_Validation_Error</shortDescription>
+        <value>Phone should be in the format of (###) ###-####. Please correct before saving.</value>
+    </labels>
+    <labels>
+        <fullName>ProfileNamesExceptionDistubutionList</fullName>
+        <categories>Profile Names</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProfileNamesExceptionDistubutionList</shortDescription>
+        <value>Local Core Sales Operations
+Local Sales Data Team
+System Administrator</value>
+    </labels>
+    <labels>
+        <fullName>ProfileNamesRestrictedList</fullName>
+        <categories>Profile Names</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProfileNamesRestrictedList</shortDescription>
+        <value>Local Core Account Executive
+Local Core Finance ARR
+Local Core Strategy Specialist
+Local Core Strategy Specialist Reviews
+Local Core Sales Operations
+System Support</value>
+    </labels>
+    <labels>
+        <fullName>Profile_can_auto_fulfill_a_unclaim_lead</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Profile can auto fulfill a unclaim lead</shortDescription>
+        <value>System Administrator, Local Core Sales Operations, Local Core Account Executive</value>
+    </labels>
+    <labels>
+        <fullName>Promotion_Product_Limits</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Promotion Product Limits</shortDescription>
+        <value>Only apply the promotion to 1 standard storefront and 1 featured vendor!</value>
+    </labels>
+    <labels>
+        <fullName>Promotional_Featured_Vendor_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Promotional Featured Vendor Name</shortDescription>
+        <value>Featured Vendor</value>
+    </labels>
+    <labels>
+        <fullName>Promotional_Month</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Promotional Month</shortDescription>
+        <value>3</value>
+    </labels>
+    <labels>
+        <fullName>Promotional_Storefront_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Promotional Storefront Name</shortDescription>
+        <value>Storefront</value>
+    </labels>
+    <labels>
+        <fullName>Prorated_Charge_Warning</fullName>
+        <categories>Payment Schedule</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prorated Charge Warning</shortDescription>
+        <value>*Your first payment may include a prorated charge for your add on service.</value>
+    </labels>
+    <labels>
+        <fullName>Quote_PDF_Error</fullName>
+        <categories>XO - Echo Sign Signature Errors</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote PDF Error</shortDescription>
+        <value>Quote PDF has not been generated yet. Please wait a moment and try again.</value>
+    </labels>
+    <labels>
+        <fullName>Quote_Term_Start_Date_Less_Than_Today</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quote Term Start Date Less Than Today</shortDescription>
+        <value>Quotes cannot have a Term Start Date prior to today.</value>
+    </labels>
+    <labels>
+        <fullName>RFPPendingPitchTaskSubject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RFPPendingPitchTaskSubject</shortDescription>
+        <value>RFP has been approved and ready to be pitched to client!</value>
+    </labels>
+    <labels>
+        <fullName>RFPSubmittedTaskSubject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RFPSubmittedTaskSubject</shortDescription>
+        <value>RFP has been submitted</value>
+    </labels>
+    <labels>
+        <fullName>RecentOpenedCaseRecordType</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RecentOpenedCaseRecordType</shortDescription>
+        <value>Inbound
+Asset Collection</value>
+    </labels>
+    <labels>
+        <fullName>RemovedFromRenewalQueue</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Removed from Renewal Queue</shortDescription>
+        <value>Removed from Renewal Queue</value>
+    </labels>
+    <labels>
+        <fullName>Signature_Past_Due</fullName>
+        <categories>XO - Echo Sign Signature Errors</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Signature Past Due</shortDescription>
+        <value>You can not send the contract for signature as you have gone past the deadline to send it to the customer.</value>
+    </labels>
+    <labels>
+        <fullName>Stage_Invalid_For_Signature</fullName>
+        <categories>XO - Echo Sign Signature Errors</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Stage Invalid For Signature</shortDescription>
+        <value>You cannot send the contract to the customer because the Opportunity has not yet been approved.</value>
+    </labels>
+    <labels>
+        <fullName>String_Split_Sign</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>String_Split_Sign</shortDescription>
+        <value>&amp;</value>
+    </labels>
+    <labels>
+        <fullName>SubscriptionPCTerms</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SubscriptionPCTerms</shortDescription>
+        <value>12</value>
+    </labels>
+    <labels>
+        <fullName>SubscriptionTermStatus</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SubscriptionTermStatus</shortDescription>
+        <value>All service periods,Services less than 12 months,Without services less than 12 months</value>
+    </labels>
+    <labels>
+        <fullName>System_Support</fullName>
+        <categories>Profile Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>System Support</shortDescription>
+        <value>System Support</value>
+    </labels>
+    <labels>
+        <fullName>TheProductLineNotAllowAutoRenwal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TheProductLineNotAllowAutoRenwal</shortDescription>
+        <value>Print,Direct Mail</value>
+    </labels>
+    <labels>
+        <fullName>Time_Stamp_For_Cancel_Case</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Time Stamp For Cancel Case</shortDescription>
+        <value>-1</value>
+    </labels>
+    <labels>
+        <fullName>TradeShow_Campaign_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TradeShow Campaign Name</shortDescription>
+        <value>TS-WMBA-2018</value>
+    </labels>
+    <labels>
+        <fullName>Transactions_cancelled_initial</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Transactions cancelled initial</shortDescription>
+        <value>18,2090,12,31</value>
+    </labels>
+    <labels>
+        <fullName>Transactionshadbeenlocked</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>TransactionshadbeenlockedErrorMessage</shortDescription>
+        <value>The transactions is processing, you cannot modify the &quot;Enrolled in Transactions&quot; until the process finished.</value>
+    </labels>
+    <labels>
+        <fullName>UPCOMING_CANCELLATION</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UPCOMING CANCELLATION</shortDescription>
+        <value>UPCOMING CANCELLATION</value>
+    </labels>
+    <labels>
+        <fullName>UserCanAutoRenewalIncludeLess12Item</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserCanAutoRenewalIncludeLess12Item</shortDescription>
+        <value>Shannon Davis,Tonia Hass,Carigan Wiegand,Eamon Bourque,Anthony Su</value>
+    </labels>
+    <labels>
+        <fullName>UserCanNotAutoRenewalIncludeLess12ItemErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserCanNotAutoRenewalIncludeLess12ItemErrorMessage</shortDescription>
+        <value>Tonia Haas, Shannon Davis and Carigan Wiegand are the only users that have the ability to put a subscription that is LESS than 12 months ON auto renew.</value>
+    </labels>
+    <labels>
+        <fullName>UserNameExceptionSkipAssigmentRule</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>UserNameExceptionSkipAssigmentRule</shortDescription>
+        <value>Cassandra Ettman</value>
+    </labels>
+    <labels>
+        <fullName>VoiceMailTaskSubject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>VoiceMailTaskSubject</shortDescription>
+        <value>Voicemail from ContactWorld</value>
+    </labels>
+    <labels>
+        <fullName>Waitlist_Move_On_Deck_Notifications_Body</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Waitlist Move On Deck Notifications Body</shortDescription>
+        <value>{AccountName} has now moved to On Deck for {PRODUCTNAME}.</value>
+    </labels>
+    <labels>
+        <fullName>Waitlist_Move_On_Deck_Notifications_Subject</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Waitlist Move On Deck Notifications Subject</shortDescription>
+        <value>Waitlist Moves To &apos;On Deck&apos; Notification</value>
+    </labels>
+    <labels>
+        <fullName>Waitlist_Move_On_Deck_Notifications_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Waitlist Move On Deck Notifications Title</shortDescription>
+        <value>Waitlist Moves To &apos;On Deck&apos; Notification</value>
+    </labels>
+    <labels>
+        <fullName>Waitlist_Notifications_Subtitle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Waitlist Notifications Subtitle</shortDescription>
+        <value>Waitlist Notification</value>
+    </labels>
+    <labels>
+        <fullName>Website_Validation_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Website Validation Error</shortDescription>
+        <value>Website should be in the format of www.theknot.com. Please correct before saving.</value>
+    </labels>
+    <labels>
+        <fullName>ignoreparentmessage1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ignoreparentmessage1</shortDescription>
+        <value>claimed by Company Id</value>
+    </labels>
+    <labels>
+        <fullName>onboardingDateError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>onboardingDateError</shortDescription>
+        <value>please select Onboarding Date !</value>
+    </labels>
+    <labels>
+        <fullName>onboardingDateError2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>onboardingDateError2</shortDescription>
+        <value>Onboarding date is required for Rescheduled Onboard status.</value>
+    </labels>
+    <labels>
+        <fullName>partnersToken</fullName>
+        <categories>partners</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>partnersToken</shortDescription>
+        <value>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJVQVQgU2FsZXNmb3JjZSBBcHBsaWNhdGlvbiIsImlhdCI6MTQ5OTQxNzgwMSwiZXhwIjo0NjczMDg4MDAwLCJhdWQiOiJodHRwczovL3hvZ3JwLS11YXQuY3M5Mi5teS5zYWxlc2ZvcmNlLmNvbSIsInN1YiI6InYxIHNlY3VyaXR5IiwiYXBpa2V5IjoiYWQ5YWU5NzIzMmU3NDg0ZWE1ZjZmOTE1NzkyNTA1NDEiLCJjbGllbnRJZCI6IjgyNTEyNjMzLWE5MzYtNDc0OC05YWQ0LTBkMWZjMDBkODEwZCJ9.BFDQ5qlbTcuqiX6cKfFnt5czGeIIn1dk705ge70P2t8</value>
+    </labels>
+    <labels>
+        <fullName>quoteRatePlanSize</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>quoteRatePlanSize</shortDescription>
+        <value>30</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,1173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>NVMStatsSF__ASR_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>NVMStatsSF__ASR_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>NVMStatsSF__AgentID__c</fields>
+        <fields>NVMStatsSF__Agent__c</fields>
+        <fields>NVMStatsSF__Date__c</fields>
+        <fields>NVMStatsSF__Number_of_Inbound_Calls_FORMULA__c</fields>
+        <fields>NVMStatsSF__Number_of_Outbound_Calls__c</fields>
+        <label>ASR Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Away_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Away_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This shows Away Time in Hours</inlineHelpText>
+        <label>Away Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Away_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Away_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This shows the Away Time in Minutes</inlineHelpText>
+        <label>Away Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Extened_Away_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Extended_Away_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Extened Away Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Extened_Away_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Extended_Away_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Extened Away Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fault_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Fault_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Fault Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fault_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Fault_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Fault Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inbound_Call_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Inbound_Call_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Inbound Call Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inbound_Call_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Inbound_Call_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Inbound Call Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inbound_Transfer_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Inbound_Transfer_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Inbound Transfer Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inbound_Transfer_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Inbound_Transfer_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Inbound Transfer Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Line_Busy_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Line_Busy_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Line Busy Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Line_Busy_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Line_Busy_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Line Busy Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__AgentID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>AgentID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Agent</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>NVM_Agent_Summary</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Away_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Away Time in seconds</inlineHelpText>
+        <label>Away Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Away_Time_hh_mm_ss__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LPAD(TEXT(FLOOR(NVMStatsSF__Away_Time__c/3600)), 2, &quot;0&quot;) + &quot;:&quot; + 
+LPAD(TEXT(ROUND(MOD(NVMStatsSF__Away_Time__c, 3600)/60 , 0)), 2, &quot;0&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Away Time rounded to nearest minute</inlineHelpText>
+        <label>Away Time (hh:mm)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__ChkStr__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>ChkStr</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>UTC Date</inlineHelpText>
+        <label>UTC Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Day_of_Week__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISNULL( NVMStatsSF__Local_Date__c),
+CASE(MOD(NVMStatsSF__Date__c - DATE(1900, 1, 6), 7),
+2, &apos;1-Monday&apos;,
+3, &apos;2-Tuesday&apos;,
+4, &apos;3-Wednesday&apos;,
+5, &apos;4-Thursday&apos;,
+6, &apos;5-Friday&apos;,
+0, &apos;6-Saturday&apos;,
+1, &apos;7-Sunday&apos;, &apos; &apos;),
+CASE(MOD(NVMStatsSF__Local_Date__c - DATE(1900, 1, 6), 7),
+2, &apos;1-Monday&apos;,
+3, &apos;2-Tuesday&apos;,
+4, &apos;3-Wednesday&apos;,
+5, &apos;4-Thursday&apos;,
+6, &apos;5-Friday&apos;,
+0, &apos;6-Saturday&apos;,
+1, &apos;7-Sunday&apos;, &apos; &apos;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Day numbering from Monday=1, based on Local Date, defaulting to UTC Date if Local Date Absent</inlineHelpText>
+        <label>Day of Week</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Extended_Away_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Extended Away Time in seconds</inlineHelpText>
+        <label>Extended Away Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Extended_Away_Time_hh_mm_ss__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LPAD(TEXT(FLOOR(NVMStatsSF__Extended_Away_Time__c/3600)), 2, &quot;0&quot;) + &quot;:&quot; + 
+LPAD(TEXT(ROUND(MOD(NVMStatsSF__Extended_Away_Time__c, 3600)/60 , 0)), 2, &quot;0&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Extended Away Time rounded to nearest minute</inlineHelpText>
+        <label>Extended Away Time (hh:mm)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Fault_Time__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of times in Fault on Line and Network Congestion states in seconds</inlineHelpText>
+        <label>Fault Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__First_Login_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>First Activity DateTime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Fiscal_Quarter__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(MONTH( NVMStatsSF__Date__c ) , 
+1, &quot;Q1-&quot;+ TEXT(year( NVMStatsSF__Date__c )), 
+ 2, &quot;Q1-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+ 3, &quot;Q1-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+ 4, &quot;Q2-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+ 5, &quot;Q2-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+ 6, &quot;Q2-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+ 7, &quot;Q3-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+ 8, &quot;Q3-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+ 9, &quot;Q3-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+ 10, &quot;Q4-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+ 11, &quot;Q4-&quot;+ TEXT(year(NVMStatsSF__Date__c)), 
+ 12, &quot;Q4-&quot;+ TEXT(year(NVMStatsSF__Date__c)), &quot; &quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Fiscal Quarter</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Inbond_Xfer_Call_Time_hh_mm__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LPAD(TEXT(FLOOR(NVMStatsSF__Inbound_Transfer_Time__c/3600)), 2, &quot;0&quot;) + &quot;:&quot; + 
+LPAD(TEXT(ROUND(MOD(NVMStatsSF__Inbound_Transfer_Time__c, 3600)/60 , 0)), 2, &quot;0&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Inbound Transfer Time rounded to the nearest minute</inlineHelpText>
+        <label>Inbound Transfer Time (hh:mm)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Inbound_Call_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Inbound Call Time in seconds</inlineHelpText>
+        <label>Inbound Call Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Inbound_Call_Time_hh_mm_ss__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LPAD(TEXT(FLOOR(NVMStatsSF__Inbound_Call_Time__c/3600)), 2, &quot;0&quot;) + &quot;:&quot; + 
+LPAD(TEXT(ROUND(MOD(NVMStatsSF__Inbound_Call_Time__c, 3600)/60 , 0)), 2, &quot;0&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Inbound Call Time rounded to the nearest minute</inlineHelpText>
+        <label>Inbound Call Time (hh:mm)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Inbound_Transfer_Time__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Inbound Transfer Time in seconds</inlineHelpText>
+        <label>Inbound Transfer Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Key_Event_String__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reserved for System Use; field for tracking Agent State Event Stream</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reserved for System Use; field for tracking Agent State Event Stream</inlineHelpText>
+        <label>Key Event String</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Last_Logout_DateTime__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Activity DateTime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Line_Busy_Time__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Total amount of time in seconds spent in Line Busy</inlineHelpText>
+        <label>Line Busy Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Line_Busy_Time_hh_mm__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LPAD(TEXT(FLOOR(NVMStatsSF__Line_Busy_Time__c/3600)), 2, &quot;0&quot;) + &quot;:&quot; +
+LPAD(TEXT(ROUND(MOD(NVMStatsSF__Line_Busy_Time__c, 3600)/60 , 0)), 2, &quot;0&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Total Line Busy Time rounded to the nearest minute</inlineHelpText>
+        <label>Line Busy Time (hh:mm)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Local_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Date from the Agent&apos;s perspective, respecting local DST</inlineHelpText>
+        <label>Local Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Local_ISO8601_Week__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Week number in ISO8601 form of the Agent&apos;s local time</inlineHelpText>
+        <label>Local ISO8601 Week</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Logged_in_Time_hh_mm_ss__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LPAD(TEXT(FLOOR(NVMStatsSF__Time_Logged_In__c/3600)), 2, &quot;0&quot;) + &quot;:&quot; + 
+
+LPAD(TEXT(ROUND(MOD(NVMStatsSF__Time_Logged_In__c, 3600)/60 , 0)), 2, &quot;0&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Total State Time for this Agent Day rounded to the nearest minute</inlineHelpText>
+        <label>Total State Time (hh:mm)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Longest_State__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Longest time in seconds the agent spent in a single state</inlineHelpText>
+        <label>Longest State Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Month_of_Year__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(MONTH( NVMStatsSF__Date__c ) , 
+1, &quot;(1) Jan&quot;, 
+2, &quot;(2) Feb&quot;, 
+3, &quot;(3) Mar&quot;, 
+4, &quot;(4) Apr&quot;, 
+5, &quot;(5) May&quot;, 
+6, &quot;(6) Jun&quot;, 
+7, &quot;(7) Jul&quot;, 
+8, &quot;(8) Aug&quot;, 
+9, &quot;(9) Sep&quot;, 
+10, &quot;(10) Oct&quot;, 
+11, &quot;(11) Nov&quot;, 
+12, &quot;(12) Dec&quot;, &quot; &quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Month of Year</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__No_Answer_Time__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Total time in seconds that the Agent spent in No Answer state</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total time in seconds that the Agent spent in No Answer state</inlineHelpText>
+        <label>No Answer Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__No_Answers_to_Consult__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of times this Agent was invited to a Consultation but did not answer</inlineHelpText>
+        <label>No Answers to Consult</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Aways__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number of Aways</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Extended_Away__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number of Extended Aways</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Inbound_Calls_FORMULA__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Number_of_Inbound_Calls__c +  NVMStatsSF__Number_of_Inbound_Transfers__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>All calls inbound to this agent including ones delivered via ACD or transfer</inlineHelpText>
+        <label>Number of Inbound Calls</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Inbound_Calls__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number of Agent Selected</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Inbound_Transfers__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of Calls transferred to the agent directly from another Agent (not through a queue transfer)</inlineHelpText>
+        <label>Number of Inbound Transfers</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Line_Busy__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of times the agent went Line Busy</inlineHelpText>
+        <label>Number of Line Busy</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Logins__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number of Logins</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Logouts__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number of Logouts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_No_Answers__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number of No Answers</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Outbound_Calls__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number of Outbound Calls</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Times_Consulted__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of times this Agent was invited to a consultation on an Interaction</inlineHelpText>
+        <label>Number of Times Consulted</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Wrap_Phases__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Counts a series of consecutive wraps (e.g. Auto then Manual Wrap) as a single Wrap phase</inlineHelpText>
+        <label>Number of Wrap Phases</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Wraps__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number of Wraps</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Numeric_Week_of_Year__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>VALUE( NVMStatsSF__Week_of_Year__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Numeric Week of Year</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Outbound_Call_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Outbound Call Time in seconds</inlineHelpText>
+        <label>Outbound Call Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Outbound_Call_Time_hh_mm_ss__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LPAD(TEXT(FLOOR(NVMStatsSF__Outbound_Call_Time__c/3600)), 2, &quot;0&quot;) + &quot;:&quot; + 
+LPAD(TEXT(ROUND(MOD(NVMStatsSF__Outbound_Call_Time__c, 3600)/60 , 0)), 2, &quot;0&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Outbound Call Time rounded to the nearest minute</inlineHelpText>
+        <label>Outbound Call Time (hh:mm)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Ready_Outbound_Time_hh_mm_ss__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LPAD(TEXT(FLOOR(NVMStatsSF__Ready_for_Outbound_Time__c/3600)), 2, &quot;0&quot;) + &quot;:&quot; + 
+LPAD(TEXT(ROUND(MOD(NVMStatsSF__Ready_for_Outbound_Time__c, 3600)/60 , 0)), 2, &quot;0&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Ready For Outbound Time rounded to the nearest minute</inlineHelpText>
+        <label>Ready For Outbound Time (hh:mm)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Ready_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Ready Time in seconds</inlineHelpText>
+        <label>Ready Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Ready_Time_hh_mm_ss__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LPAD(TEXT(FLOOR(NVMStatsSF__Ready_Time__c/3600)), 2, &quot;0&quot;) + &quot;:&quot; + 
+LPAD(TEXT(ROUND(MOD(NVMStatsSF__Ready_Time__c, 3600)/60 , 0)), 2, &quot;0&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Ready Time rounded to the nearest minute</inlineHelpText>
+        <label>Ready Time (hh:mm)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Ready_for_Outbound_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Ready for Outbound Time in seconds</inlineHelpText>
+        <label>Ready For Outbound Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Role__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>User&apos;s role on the day this summary was created</inlineHelpText>
+        <label>Role</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__State_List__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Delimited list of re-labelled States and durations in the format [State]-[Duration(s)], [State]-[Duration(s)],...</inlineHelpText>
+        <label>State List</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Time_Logged_In__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Total State time for this Agent Day in seconds excluding Logged Out state</inlineHelpText>
+        <label>Total State Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Time_Zone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Time Zone of this Agent - inherited from the User Record carrying the same NVM Agent ID or defaulted to the Time Zone of the Channel transaction which fetched the data</inlineHelpText>
+        <label>Time Zone</label>
+        <length>64</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__UTC_ISO8601_Week__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Week number in ISO8601 form of the date in UTC</inlineHelpText>
+        <label>UTC ISO8601 Week</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Week_of_Year__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(IF( 
+CEILING(( NVMStatsSF__Date__c  - DATE(YEAR(NVMStatsSF__Date__c), 1, 1) + 1)/7) &gt; 52, 52, CEILING((NVMStatsSF__Date__c - DATE(YEAR(NVMStatsSF__Date__c), 1, 1) + 1)/7) 
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Week of Year</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Wrap_Time_hh_mm__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LPAD(TEXT(FLOOR(NVMStatsSF__Wrap_Up_Time__c /3600)), 2, &quot;0&quot;) + &quot;:&quot; + 
+LPAD(TEXT(ROUND(MOD(NVMStatsSF__Wrap_Up_Time__c , 3600)/60 , 0)), 2, &quot;0&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Wrap Time rounded to the nearest minute</inlineHelpText>
+        <label>Wrap Time (hh:mm)</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Wrap_Up_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Total Wrap Time in seconds</inlineHelpText>
+        <label>Wrap Up Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__dateAgentId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Used as unique and INDEXED key to find a summary of an agent&apos;s calls on a given day.  We may need to suffix this with Channel if any agents on different NVM clouds have matching Agent IDs.</description>
+        <externalId>true</externalId>
+        <label>dateAgentId</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>No_Answer_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__No_Answer_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>No Answer Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Answer_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__No_Answer_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>No Answer Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Outbound_Call_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Outbound_Call_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Outbound Call Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Outbound_Call_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Outbound_Call_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Outbound Call Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ready_For_Outbound_Call_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Ready_for_Outbound_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ready For Outbound Call Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ready_For_Outbound_Call_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Ready_for_Outbound_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ready For Outbound Call Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ready_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Ready_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ready Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ready_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Ready_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ready Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_State_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Time_Logged_In__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total State Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_State_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Time_Logged_In__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total State Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wrap_Up_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Wrap_Up_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Wrap Up Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Wrap_Up_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Wrap_Up_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Wrap Up Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>NVM Agent Summary</label>
+    <listViews>
+        <fullName>NVMStatsSF__All</fullName>
+        <columns>NAME</columns>
+        <columns>NVMStatsSF__AgentID__c</columns>
+        <columns>NVMStatsSF__Agent__c</columns>
+        <columns>NVMStatsSF__Date__c</columns>
+        <columns>NVMStatsSF__First_Login_Time__c</columns>
+        <columns>NVMStatsSF__Last_Logout_DateTime__c</columns>
+        <columns>NVMStatsSF__Logged_in_Time_hh_mm_ss__c</columns>
+        <columns>NVMStatsSF__Ready_Time_hh_mm_ss__c</columns>
+        <columns>NVMStatsSF__Inbound_Call_Time_hh_mm_ss__c</columns>
+        <columns>NVMStatsSF__Outbound_Call_Time_hh_mm_ss__c</columns>
+        <columns>NVMStatsSF__Wrap_Up_Time__c</columns>
+        <columns>NVMStatsSF__Number_of_No_Answers__c</columns>
+        <columns>NVMStatsSF__Number_of_Inbound_Calls__c</columns>
+        <columns>NVMStatsSF__Number_of_Aways__c</columns>
+        <columns>NVMStatsSF__Number_of_Extended_Away__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>NVMStatsSF__All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>ASR-{0000000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>NVM Agent Summaries</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

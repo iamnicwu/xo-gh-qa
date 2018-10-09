@@ -1,0 +1,249 @@
+<aura:component access="GLOBAL" controller="RecordAssignmentController" implements="force:appHostable">
+  <ltng:require styles="/resource/animate" />
+  <!-- TESTING -->
+    
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+  <!-- Object use to store setTimeout values -->
+  <aura:attribute name="timer" type="Object" />
+  <aura:attribute name="userTimer" type="Object" />
+
+  <!-- User Selections -->
+  <aura:attribute name="selectedObject" type="String" />
+  <aura:attribute name="selectedFilterValue" type="String" />
+
+  <!-- Selected User -->
+  <aura:attribute name="selectedUser" type="User" />
+
+  <!-- Object Additional Filters Object -->
+  <aura:attribute name="additionalFilters" type="Object" />
+
+  <!-- Result Size -->
+  <aura:attribute name="resultSize" type="String" />
+
+  <!-- Error Object -->
+  <aura:attribute name="errorMessage" type="Object" />
+
+  <!-- Error Id's -->
+  <aura:attribute name="errorIdArray" type="String[]" />
+
+  <!-- CHECKBOX USED FOR CLONING - NOT SHOWN -->
+  <div class="slds-form-element input-checkbox-container" style="display: none;">
+    <div class="slds-form-element__control">
+      <label class="slds-checkbox">
+        <input type="checkbox" name="options" class="input-checkbox" id="" />
+        <span class="slds-checkbox--faux"></span>
+        <span class="slds-form-element__label"></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="slds">
+    <!-- ERROR -->
+    <div class="slds-notify_container error-container animated fadeInDown" style="display: none;">
+      <div class="slds-notify slds-notify--toast custom-toast" role="alert">
+        <span class="slds-assistive-text">Error</span>
+        <button class="slds-button slds-button--icon-inverse slds-notify__close">
+          <img src="/resource/slds100/assets/icons/utility/close_60.png" onclick="{!c.closeError}" />
+          <span class="slds-assistive-text">Close</span>
+        </button>
+        <div class="slds-notify__content slds-grid">
+          <img src="/resource/slds100/assets/icons/utility/warning_60.png" />
+          <div class="slds-col slds-align-middle">
+            <aura:iteration items="{!v.errorMessage}" var="currentError">
+              <aura:iteration items="{!currentError.pageErrors}" var="currentPageError">
+                <h2 class="slds-text-heading--small">
+                  <aura:renderIf isTrue="{!currentPageError.id != null}">
+                    <a href="{!'/' + currentPageError.id}" target="_blank">{!currentPageError.statusCode}</a>
+                    <aura:set attribute="else">
+                      {!currentPageError.statusCode}
+                    </aura:set>
+                  </aura:renderIf>
+                </h2>
+                <p>{!currentPageError.message}</p>
+              </aura:iteration>
+              
+            </aura:iteration>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="slds-notify_container success-container animated fadeInDown" style="display: none;">
+      <div class="slds-notify slds-notify--toast slds-theme--success" role="alert">
+        <span class="slds-assistive-text">Success</span>
+        <div class="slds-notify__content slds-grid">
+          <div class="slds-col slds-align-middle">
+            <h2 class="slds-text-heading--small">28 Records have been successfully reassigned.</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE HEADER -->
+    <div class="slds-page-header" role="banner">
+      <div class="slds-grid">
+        <div class="slds-col slds-has-flexi-truncate">
+          <!-- Small Header -->
+          <p class="slds-text-heading--label">Admin Tools</p>
+          <!-- Title -->
+          <div class="slds-grid">
+            <h1 class="slds-page-header__title slds-truncate" title="Record Reassignment">Record Reassignment</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slds-grid slds-wrap">
+      <!-- Object Selection -->
+      <div class="slds-col slds-form-element slds-small-size--1-of-1 slds-medium-size--1-of-3 select-padding animated fadeIn">
+        <label class="slds-form-element__label" for="object-select">Object</label>
+        <div class="slds-form-element__control">
+          <div class="slds-select_container">
+            <select id="object-select" class="slds-select" onchange="{!c.objectSelection}" >
+              <option value="Lead">Lead</option>
+              <option value="Account">Account</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="slds-col slds-form-element slds-small-size--1-of-1 slds-medium-size--1-of-3 select-padding animated fadeIn">
+        <label class="slds-form-element__label" for="filter-select">Available Filters</label>
+        <div class="slds-form-element__control">
+          <div class="slds-select_container">
+            <select id="filter-select" data-index="3" class="slds-select" onchange="{!c.filterSelection}">
+              <option value="none">Choose a filter..</option>
+              <!-- DYNAMICALLY POPULATED FILTERS -->
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="slds-col slds-small-size--1-of-1 slds-medium-size--1-of-3 select-padding animated fadeInDown filterArea">
+        <div class="slds-grid slds-wrap">
+          <div class="slds-col slds-form-element slds-small-size--3-of-4 slds-medium-size--4-of-7 slds-large-size--9-of-12">
+            <label class="slds-form-element__label filter-label animated fadeInDown" for="current-filter" style="display: none;">Dynamic Label</label>
+            <div class="slds-form-element__control filter-input-area" style="display: none;">
+              <input type="text" class="slds-input animated fadeInDown" placeholder="" onkeyup="{!c.inputSearch}" style="display: none;" />
+              <div class="slds-small-size--1-of-1 search-input-results" onclick="{!c.addInputSearchFilter}" style="display: none;">
+                <div class="result">Floaty Box</div>
+              </div>
+
+              <!-- PICKLIST SECTION -->
+              <div class="slds-select_container overflow-hidden" style="display: none;" >
+                <select id="filter-select" data-index="3" class="slds-select animated fadeInDown" multiple="multiple">
+                  <!-- DYNAMICALLY POPULATED FILTERS -->
+                </select>
+              </div>
+                
+              <!-- DATE PICKER SECTION -->
+              <div class="slds-form-element__control slds-select" style="display: none;">
+                <input id="date-range-starting-date" class="date-range-search" type="date"/>
+              </div>
+                
+            </div>
+          </div>
+          <div class="slds-col slds-form-element slds-small-size--1-of-4 slds-medium-size--3-of-7 slds-large-size--3-of-12">
+            <button class="slds-button slds-button--brand add-filter animated fadeInDown" type="button" onclick="{!c.addFilter}" style="display: none;">
+              Add Filter
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FILTER SECTION -->
+    <div class="slds-grid slds-wrap" >
+      <div class="slds-col slds-small-size--1-of-1 slds-medium-size--5-of-8 slds-large-size--6-of-8" >
+        <div class="filter-section slds-grid slds-wrap" onclick="{!c.removeFilter}">
+          <div class="header-container slds-small-size--1-of-1">
+            <div class="header-text inline">Assignment Filters</div>
+            <button class="slds-button slds-button--brand inline header-button disabled" id="search-filter" onclick="{!c.initiateSearch}" disabled="true">Search</button>
+            <img src="/resource/slds100/assets/images/spinners/slds_spinner_brand.gif" id="search-loading" class="button-loading-icon" style="display: none;" />
+            <div class="result-size inline animated fadeIn">{!v.resultSize}</div>
+          </div>
+        </div>
+        
+        <div class="search-area">
+
+        </div>
+      </div>
+      <div class="slds-col slds-small-size--1-of-1 slds-medium-size--3-of-8 slds-large-size--2-of-8 user-assign">
+        <div class="user-selection-container">
+          <div class="user-input">
+            <div class="header-text">Assign User</div>
+            <input type="text" class="slds-input search" placeholder="" onkeyup="{!c.userInputSearch}" />
+            <div class="user-input-results" onclick="{!c.userSelected}" style="display: none;">
+
+            </div>
+          </div>
+          <div class="userInfoContainer" style="display: none;">
+            <div class="user-photo-container">
+              <img class="user-photo" src="{!v.selectedUser.FullPhotoUrl}" />
+            </div>
+            <div class="user-info">
+              <div class="user-name-container">
+                <span class="user-name">{!v.selectedUser.Name}</span>
+                <img class="reset-user" src="/resource/slds100/assets/icons/utility/close_60.png" onclick="{!c.resetUser}"/>
+              </div>
+              
+              <!-- Active -->
+              <!-- <div class="slds-form-element">
+                <label class="slds-form-element__label" for="isactive">Active User</label>
+                <div class="slds-form-element__control" >
+                  <div id="isactive" class="user-detail">{!if(v.selectedUser.Id != null &amp;&amp; v.selectedUser.IsActive == true, 'Active', 'Inactive')}</div>
+                </div>
+              </div> -->
+              
+              <!-- Last Login -->
+              <div class="slds-form-element">
+                <label class="slds-form-element__label" for="lastlogin">Last Login</label>
+                <div class="slds-form-element__control" >
+                  <div id="lastlogin" class="user-detail"><ui:outputDate value="{!v.selectedUser.LastLoginDate}" /></div>
+                </div>
+              </div>
+
+              <!-- User Role -->
+              <div class="slds-form-element">
+                <label class="slds-form-element__label" for="userrole">Role</label>
+                <div class="slds-form-element__control" >
+                  <div id="userrole" class="user-detail"><ui:outputDate value="{!v.selectedUser.UserRole.Name}" /></div>
+                </div>
+              </div>
+
+              <div class="slds-form-element assign-button-container">
+                <!-- Dynamically Populated -->
+                <span class="row-selected-text"></span>
+                <button id="assign-button" class="slds-button slds-button--brand disabled" disabled="true" onclick="{!c.assignClick}">Assign</button>
+                <img id="assign-loading" src="/resource/slds100/assets/images/spinners/slds_spinner_brand.gif" style="display: none;" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="no-results-found" class="no-results-container" style="display: none;">
+      No results found
+    </div>
+
+    <div id="progress-bar-container" class="progress-bar-container" style="display: none;">
+      <span id="progress-bar" class="progress-bar" />
+    </div>
+
+    <table id="billing-table" class="slds-table slds-table--cell-buffer slds-table--bordered slds-max-medium-table--stacked-horizontal record-table" onclick="{!c.tableAction}">
+      <thead>
+        <tr class="slds-text-heading--label header-row">
+
+        </tr>
+      </thead>
+      <tbody id="result-table-body" class="table-body">
+
+      </tbody>
+    </table>
+
+  </div>
+</aura:component>

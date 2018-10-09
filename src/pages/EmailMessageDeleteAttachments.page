@@ -1,0 +1,76 @@
+<apex:page controller="EmailMessageDeleteAttachmentsController">
+	
+	<apex:includeScript value="{!$Resource.zqu__jquery_1_9_1}" />
+	<!-- CSP-2976: Credit Card Update Forms Attaching to Cases -->
+	<script type="text/javascript">
+		function selectAllCheckboxes(obj){
+			var $inputCheckBox = $("input[id*='inputId']");
+      var isCheck = $(obj).prop("checked");
+      $inputCheckBox.each(function(index, Element){
+        $(Element).prop("checked",isCheck);
+      });
+		}
+	
+	</script>
+	 
+	<apex:form >
+	    <apex:pageBlock title="Delete Attachments" id="attachments_page_block">	 
+	       	
+	      <apex:pageBlockButtons location="both">
+	        <apex:commandButton action="{!deleteSelectedAttachments}" value="Delete Selected Attachments" rendered="{!IF(OR(totalAttachmentWrapperList.size == 0, Not(isAllowedToDeleteAttachments)), false, true)}" reRender="attachments_page_block" /> 	  			
+	  		</apex:pageBlockButtons>
+
+	      <apex:pageMessages id="page_message" />
+
+	      <apex:outputPanel layout="block">
+        	Total Records Found: {!totalAttachmentWrapperList.size}											
+        </apex:outputPanel>
+
+	      <apex:pageBlockSection id="page_block_section" columns="1" rendered="{!totalAttachmentWrapperList.size > 0}">
+	        <apex:pageBlockTable value="{!totalAttachmentWrapperList}" var="attWrapper">
+		        	<apex:column width="25px" rendered="{!isAllowedToDeleteAttachments}">
+		        		<apex:facet name="header">
+                	<apex:inputCheckbox id="control_all_checbox" selected="false" onclick="selectAllCheckboxes(this)"/>
+            		</apex:facet>
+								<apex:inputCheckbox id="inputId" value="{!attWrapper.isSelected}" />
+	           	</apex:column>
+	           
+           		<apex:column headerValue="File Name">
+								<apex:outputLink value="/{!attWrapper.attachment.Id}" target="_blank">
+									{!attWrapper.attachment.Name}
+								</apex:outputLink>
+           		</apex:column>
+
+           		<apex:column headerValue="Case Number">
+								<apex:outputLink value="/{!attWrapper.parentEmailMessage.ParentId}" target="_blank">
+									{!attWrapper.parentEmailMessage.Parent.CaseNumber}
+								</apex:outputLink>
+           		</apex:column>
+
+           		<apex:column headerValue="Case Record Type">
+								<apex:outputText value="{!attWrapper.parentEmailMessage.Parent.RecordType.Name}" />
+           		</apex:column>
+
+           		<apex:column headerValue="Account Name">
+								<apex:outputLink value="/{!attWrapper.parentEmailMessage.Parent.AccountId}" target="_blank">
+									{!attWrapper.parentEmailMessage.Parent.Account.Name}
+								</apex:outputLink>
+           		</apex:column>
+
+           		<apex:column headerValue="Size">
+								<apex:outputText value="{!attWrapper.attachmentSize}" />
+           		</apex:column>
+
+	           	<apex:column value="{!attWrapper.attachment.LastModifiedDate}" />
+
+	           	<apex:column value="{!attWrapper.attachment.CreatedById}" />
+
+	           	<apex:column value="{!attWrapper.attachment.OwnerId}" />
+	           	
+	      	</apex:pageBlockTable>
+      	</apex:pageBlockSection>
+      	
+    	</apex:pageBlock>    
+	</apex:form>
+	
+</apex:page>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>CaseSafeID__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASESAFEID(Id)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CaseSafeID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <referenceTo>Category__c</referenceTo>
+        <relationshipLabel>Local Sales Rep Assignments</relationshipLabel>
+        <relationshipName>Local_Sales_Rep_Assignments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Lead_Distribution_Queue_Id__c</fullName>
+        <description>The Queue Id which is related to the Distribution Queue Name which was added.</description>
+        <externalId>false</externalId>
+        <label>Lead Distribution Queue Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lead_Distribution_Queue_Name__c</fullName>
+        <description>This field is used to provide the name of the Lead queue which should be used to assign as the owner. The field &quot;Queue Name&quot; should be used - it generally has underscores for spaces and is sometimes called the &quot;Developer Name&quot;.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The filed on queue named &quot;Queue Name&quot; should be used to populate this field.</inlineHelpText>
+        <label>Lead Distribution Queue Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Market__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Market</label>
+        <referenceTo>Market__c</referenceTo>
+        <relationshipLabel>Local Sales Rep Assignments</relationshipLabel>
+        <relationshipName>Local_Sales_Rep_Assignments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Rep__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Rep</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Local_Sales_Rep_Assignments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Zip_Code__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Zip Code</label>
+        <referenceTo>Zip__c</referenceTo>
+        <relationshipLabel>Local Sales Rep Assignments</relationshipLabel>
+        <relationshipName>Local_Sales_Rep_Assignments</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Local Sales Rep Assignment</label>
+    <listViews>
+        <fullName>All1</fullName>
+        <columns>NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Sales_Rep__c</columns>
+        <columns>Category__c</columns>
+        <columns>Market__c</columns>
+        <columns>Zip_Code__c</columns>
+        <columns>Lead_Distribution_Queue_Name__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>OBJECT_ID</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>LOA_Sarah_Rucinski_Local_Sales_Rep_Assignment</fullName>
+        <columns>NAME</columns>
+        <columns>Market__c</columns>
+        <columns>Sales_Rep__c</columns>
+        <columns>Zip_Code__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Zip_Code__c</field>
+            <operation>equals</operation>
+            <value>99501</value>
+        </filters>
+        <label>LOA - Sarah Rucinski</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>X111</fullName>
+        <columns>NAME</columns>
+        <columns>Lead_Distribution_Queue_Id__c</columns>
+        <columns>Lead_Distribution_Queue_Name__c</columns>
+        <columns>Market__c</columns>
+        <columns>Sales_Rep__c</columns>
+        <columns>Zip_Code__c</columns>
+        <columns>Category__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Sales_Rep__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>111</label>
+    </listViews>
+    <listViews>
+        <fullName>X46301111</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>startsWith</operation>
+            <value>46301 - Boudoir Photographers</value>
+        </filters>
+        <label>46301</label>
+    </listViews>
+    <listViews>
+        <fullName>X99501</fullName>
+        <booleanFilter>(1 or 2 or 4) and 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Zip_Code__c</columns>
+        <columns>Market__c</columns>
+        <columns>Category__c</columns>
+        <columns>Sales_Rep__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Zip_Code__c</field>
+            <operation>equals</operation>
+            <value>99501</value>
+        </filters>
+        <filters>
+            <field>Zip_Code__c</field>
+            <operation>equals</operation>
+            <value>56467</value>
+        </filters>
+        <filters>
+            <field>CREATEDBY_USER</field>
+            <operation>equals</operation>
+            <value>Henry Huang</value>
+        </filters>
+        <filters>
+            <field>Market__c</field>
+            <operation>equals</operation>
+            <value>ON - Toronto - 222</value>
+        </filters>
+        <label>99501&amp;56467&amp;K9A</label>
+    </listViews>
+    <nameField>
+        <label>Local Sales Rep Assignment Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Local Sales Rep Assignments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Disallow_Rep_AND_Queue</fullName>
+        <active>true</active>
+        <description>This rule is used to reject records which have both a Rep AND Queue on the same rule,</description>
+        <errorConditionFormula>NOT(ISBLANK(Sales_Rep__c)) &amp;&amp; NOT(ISBLANK(Lead_Distribution_Queue_Id__c))</errorConditionFormula>
+        <errorMessage>Assignments rules cannot have both a Sales Rep and a Queue assigned at the same time.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Zip_and_Market_Validation</fullName>
+        <active>true</active>
+        <description>Do not allow a value in both Zip and Market fields</description>
+        <errorConditionFormula>NOT(ISBLANK( Market__c )) &amp;&amp; NOT(ISBLANK(Zip_Code__c))</errorConditionFormula>
+        <errorDisplayField>Market__c</errorDisplayField>
+        <errorMessage>You can not select both Local Market and Zip Code!</errorMessage>
+    </validationRules>
+</CustomObject>

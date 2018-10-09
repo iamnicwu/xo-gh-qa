@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The Price Summaries associated with a Product Rate Plan Charge (one for each currency activated).</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>zqu__EntityID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>zqu__ProductRatePlanCharge__r.zqu__EntityID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Entity ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__PriceSummary__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Price Summary</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductRatePlanCharge__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product Rate Plan Charge</label>
+        <referenceTo>zqu__ProductRatePlanCharge__c</referenceTo>
+        <relationshipLabel>Product Rate Plan Charge Price Summaries</relationshipLabel>
+        <relationshipName>ProductRatePlanChargePriceSummaries</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>zqu__ZuoraId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>The Zuora Id (external primary key) concatenated with the 3-digit currency code for this price summary.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>The Zuora Id (external primary key) concatenated with the 3-digit currency code for this price summary.</inlineHelpText>
+        <label>Zuora Id</label>
+        <length>36</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Product Rate Plan Charge Price Summary</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>zqu__PriceSummary__c</columns>
+        <columns>zqu__ProductRatePlanCharge__c</columns>
+        <columns>zqu__ZuoraId__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Currency</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product Rate Plan Charge Price Summaries</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

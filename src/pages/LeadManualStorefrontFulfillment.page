@@ -1,0 +1,94 @@
+<apex:page showHeader="true" sidebar="true" standardController="Lead" extensions="LeadManualStorefrontFulfillmentContr" title="Fulfill Storefront">
+	<script>        
+        var statusAction = function(){      
+        var btnElements = document.getElementsByClassName("pbButtonClass");       
+        for(i = 0; i < btnElements.length; i++){      
+                //btnElements[i].style.display = "none";        
+                btnElements[i].className = btnElements[i].className + " btnDisabled";       
+                btnElements[i].setAttribute("disabled", "disabled");        
+            }     
+        }       
+    </script>
+
+    <apex:outputPanel id="jsPanelId">
+    	<script>
+    		var fulfillSF = function(){
+    			if({!fulfillSF}){
+    				fulfillStorefront();
+    			}else{
+    				var btnElements = document.getElementsByClassName("pbButtonClass");       
+    				for(i = 0; i < btnElements.length; i++){      
+		                //btnElements[i].style.display = "none";        
+		                btnElements[i].className = btnElements[i].className.replace(" btnDisabled", '');       
+		                btnElements[i].removeAttribute("disabled");        
+		            }
+    			}
+    		}
+    	</script>
+    </apex:outputPanel>
+
+	<apex:sectionHeader title="Unclaimed Storefront" subtitle="Fulfillment"/>
+	<apex:form id="subFormId">
+		<apex:outputText value="{!Lead.DynamicsLeadID__c}" rendered="false"/>
+		<apex:actionFunction name="fulfillStorefront" action="{!fulfillStorefront}" reRender="subFormId"/>
+		<apex:pageBlock title="Review Fields Required">
+			<apex:outputPanel id="messagePanelId">
+				<apex:pageMessages />
+			</apex:outputPanel>
+			<apex:pageBlockButtons >
+				<apex:actionStatus id="saveStatus" onstart="statusAction();"/>
+				<apex:commandButton value="Fulfill Storefront" action="{!saveData}" oncomplete="fulfillSF();" reRender="messagePanelId, jsPanelId" status="saveStatus" styleClass="pbButtonClass"/>
+				<apex:commandButton value="Return to the Lead" action="{!recordPageRedirect}" immediate="true" styleClass="pbButtonClass"/>
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection columns="2" title="Required Fields for Partner Fulfillment" collapsible="false">
+				<apex:outputText value="Original Values" label=" "/>
+				<apex:outputText value="New Values" label=" "/>
+
+				<apex:outputField value="{!originalLead.Company}" />
+				<apex:outputField value="{!Lead.Company}" />
+
+				<apex:outputField value="{!originalLead.FirstName}" />
+				<apex:inputField value="{!Lead.FirstName}" required="true"/>
+
+				<apex:outputField value="{!originalLead.LastName}" />
+				<apex:inputField value="{!Lead.LastName}" required="true"/>
+
+				<apex:outputField value="{!originalLead.Phone}" />
+				<apex:inputField value="{!Lead.Phone}" />
+
+				<apex:outputField value="{!originalLead.Email}" />
+				<apex:inputField value="{!Lead.Email}" />
+
+				<apex:outputField value="{!originalLead.Website}" />
+				<apex:inputField value="{!Lead.Website}" />
+
+				<apex:outputField value="{!originalLead.Primary_Category__c}" />
+				<apex:inputField value="{!Lead.Primary_Category__c}" required="true"/>
+
+				<apex:outputField value="{!originalLead.Local_Sales_Market__c}" />
+				<apex:inputField value="{!Lead.Local_Sales_Market__c}" required="true"/>
+
+				<apex:outputField value="{!originalLead.Status}"/>
+				<apex:outputField value="{!Lead.Status}"/>
+
+				<apex:outputField value="{!originalLead.Storefront_Status__c}" />
+				<apex:outputField value="{!Lead.Storefront_Status__c}" />
+
+				<apex:outputField value="{!originalLead.Street}" />
+				<apex:inputField value="{!Lead.Street}" />
+
+				<apex:outputField value="{!originalLead.City}" />
+				<apex:inputField value="{!Lead.City}" />
+
+				<apex:outputField value="{!originalLead.State}" />
+				<apex:inputField value="{!Lead.StateCode}" />
+
+				<apex:outputField value="{!originalLead.PostalCode}" />
+				<apex:inputField value="{!Lead.PostalCode}" />
+
+				<apex:outputField value="{!originalLead.Country}" />
+				<apex:inputField value="{!Lead.CountryCode}" required="true"/>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

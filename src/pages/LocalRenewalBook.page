@@ -1,0 +1,159 @@
+<apex:page standardController="Zuora__Subscription__c" extensions="LocalRenewalBookController" sidebar="false" title="Renewal Book" tabStyle="Local_Sales_Administration__tab">
+	<script>
+		selectAllCheck = function(element){
+			var allCheckBoxes = document.getElementsByClassName('selectBox');
+			for(i = 0; i < allCheckBoxes.length; i++){
+				allCheckBoxes[i].checked = element.checked;
+			}
+		}
+
+		var statusAction = function(){		
+              var btnElements = document.getElementsByClassName("pbButtonClass");		
+              for(i = 0; i < btnElements.length; i++){		
+                    //btnElements[i].style.display = "none";		
+                    btnElements[i].className = btnElements[i].className + " btnDisabled";		
+                    btnElements[i].setAttribute("disabled", "disabled");		
+              }		
+        }
+
+        var keyUpTimeOut;
+	</script>
+
+	<apex:sectionHeader title="Renewal Book and Floater Rep Assignment!" subtitle="Assign Renewal Reps and Floater Reps"/>
+
+	<apex:form id="formId">
+		<apex:actionFunction name="filterResult" action="{!filterResults}" reRender="tablePanel, extraFilterPanel" status="fetchStatus"/>
+		<apex:actionFunction name="brandFilterFunction" action="{!brandFilterFunction}" reRender="tablePanel, extraFilterPanel" status="fetchStatus"/>
+		<apex:actionFunction name="reRenderPanel" action="{!reRenderPanel}" reRender="userPanel, tablePanel" status="fetchStatus"/>
+		<apex:pageBlock >
+			<apex:outputPanel id="filterPanel" layout="block" style="text-align: center; padding: 10px 0; background-color: #6aacd8; margin-bottom: 5px;">
+				Result Size:
+				&nbsp;
+				<apex:selectList value="{!resultSize}" multiselect="false" size="1" onchange="filterResult();">
+					<apex:selectOptions value="{!ResultSizeOptions}" />
+				</apex:selectList>
+				&nbsp;
+				<apex:selectList value="{!filterObject.brandFilter}" multiselect="false" size="1" onchange="brandFilterFunction();">
+					<apex:selectOptions value="{!BrandOptions}" />
+				</apex:selectList>
+				&nbsp;
+				<apex:inputText value="{!filterObject.postalCodeSelected}" html-placeholder="Search by Zip Code" onkeyup="clearTimeout(keyUpTimeOut);keyUpTimeOut = setTimeout(function(){ filterResult(); }, 500);"/>
+				&nbsp;
+				<apex:inputField value="{!filterObject.productLineFilter.Product_Line__c}" html-placeholder="Subscription Type" onchange="filterResult();"/>
+				&nbsp;
+				<apex:selectList value="{!sortBy}" multiselect="false" size="1" onchange="filterResult();">
+					<apex:selectOptions value="{!SortByList}" />
+				</apex:selectList>
+
+				<br/>
+				<hr/>
+
+				<apex:selectList value="{!ownerActiveFilter}" multiselect="false" size="1" onchange="reRenderPanel();">
+					<apex:selectOptions value="{!ActiveType}" />
+				</apex:selectList>
+				<apex:selectList value="{!roleFilter}" multiselect="false" size="1" onchange="reRenderPanel();">
+					<apex:selectOptions value="{!LocalAEOnly}" />
+				</apex:selectList>
+				<apex:outputPanel id="userPanel">
+					<apex:selectList value="{!filterObject.subscriptionFilter.Sales_Rep__c}" multiselect="false" size="1" onchange="filterResult();">
+						<apex:selectOptions value="{!UserList}" />
+					</apex:selectList>
+					<apex:selectList value="{!filterObject.subscriptionFilter.Renewal_Rep__c}" multiselect="false" size="1" onchange="filterResult();">
+						<apex:selectOptions value="{!UserRenewalList}" />
+					</apex:selectList>
+				</apex:outputPanel>
+			</apex:outputPanel>
+			
+			<apex:outputPanel id="extraFilterPanel" >
+				<apex:pageBlockSection rendered="{!filterObject.brandFilter != ''}" title="Filter by Market and Category" collapsible="false">
+					<c:MultiselectPicklist leftLabel="Available Categories"
+		                leftOption="{!CategoryOptions}"
+		                rightLabel="Selected Categories"
+		                rightOption="{!filterObject.categoryFilter}"
+		                size="14"
+		                width="250px"
+		                showUpDownButtons="false"/>
+
+					<c:MultiselectPicklist leftLabel="Available Market"
+		                leftOption="{!MarketOptions}"
+		                rightLabel="Selected Market"
+		                rightOption="{!filterObject.marketFilter}"
+		                size="14"
+		                width="250px"
+		                showUpDownButtons="false"/>
+                </apex:pageBlockSection>
+				<center>
+					<apex:commandButton value="Filter by Category and Market" action="{!filterResults}" reRender="tablePanel, extraFilterPanel" status="fetchStatus" rendered="{!filterObject.brandFilter != ''}"/>
+				</center>
+			</apex:outputPanel>
+		</apex:pageBlock>
+
+		<apex:outputPanel id="tablePanel">
+			<apex:pageMessages />
+			<apex:pageBlock >
+				<apex:outputPanel style="text-align: right; padding: 10px 0;" layout="block">
+					<apex:outputLabel value="Select New Owner to Assign: " for="newOwnerSelectList"/>
+					<apex:selectList id="newOwnerSelectList" value="{!salesRepToAssign}" multiselect="false" size="1" >
+						<apex:selectOptions value="{!LocalSalesRepActive}" />
+					</apex:selectList>
+					<apex:commandButton action="{!saveRenewalRep}" reRender="tablePanel" value="Assign Renewal Rep" status="saveStatus" styleClass="pbButtonClass"/>
+					OR&nbsp;
+					<apex:commandButton action="{!saveFloaterRep}" reRender="tablePanel" value="Assign Floater Rep" status="saveStatus" styleClass="pbButtonClass"/>
+					<apex:actionStatus id="saveStatus" onstart="statusAction();" startText="Saving..." stopText=""/>
+				</apex:outputPanel>
+				<hr/>
+
+				<center>
+                    <apex:panelGrid columns="7">
+                        <apex:commandButton status="fetchStatus" reRender="tablePanel" value="|<" action="{!first}" disabled="{!!hasPrevious}" title="First Page" />
+                        <apex:commandButton status="fetchStatus" reRender="tablePanel" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page" />
+                        <apex:outputText >{!(pageNumber * VALUE(resultSize))+1-VALUE(resultSize)}-{!IF((pageNumber * VALUE(resultSize))>noOfRecords, noOfRecords,(pageNumber * VALUE(resultSize)))} of {!noOfRecords}</apex:outputText>
+                        <apex:commandButton status="fetchStatus" reRender="tablePanel" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page" />
+                        <apex:commandButton status="fetchStatus" reRender="tablePanel" value=">|" action="{!last}" disabled="{!!hasNext}" title="Last Page" />
+                        <apex:commandButton status="fetchStatus" reRender="formId" value="Refresh" action="{!refresh}" title="Refresh Page" />
+                        <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                            <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                        </apex:outputPanel>
+                    </apex:panelGrid>
+                </center>
+
+				<apex:pageBlockTable value="{!Subscriptions}" var="subscription">
+					<apex:column >
+						<apex:facet name="header">
+							<input type="checkbox" id="selectAll" onchange="selectAllCheck(this);" />
+						</apex:facet>
+						<apex:inputCheckbox value="{!subSelectedMap[subscription.Id]}" styleClass="selectBox"/>
+					</apex:column>
+					<apex:column value="{!subscription.Name}" />
+					<apex:column value="{!subscription.Product_Line__c}" />
+					<apex:column value="{!subscription.Zuora__Account__r.Name}" />
+					<apex:column value="{!subscription.Zuora__Account__r.Primary_Category__c}" />
+					<apex:column value="{!subscription.Zuora__Account__r.Local_Sales_Market__c}" />
+					<apex:column value="{!subscription.Zuora__Account__r.BillingPostalCode}" />
+					<apex:column value="{!subscription.Sales_Rep__c}" />
+					<apex:column headerValue="{!$ObjectType.Zuora__Subscription__c.Fields.Renewal_Rep__c.Label}">
+						<apex:outputField value="{!subscription.Renewal_Rep__c}"/>
+					</apex:column>
+					<apex:column headerValue="{!$ObjectType.Zuora__Subscription__c.Fields.Floater_Rep__c.Label}">
+						<apex:outputField value="{!subscription.Floater_Rep__c}"/>
+					</apex:column>
+				</apex:pageBlockTable>
+
+				<center>
+                    <apex:panelGrid columns="7">
+                        <apex:commandButton status="fetchStatus" reRender="tablePanel" value="|<" action="{!first}" disabled="{!!hasPrevious}" title="First Page" />
+                        <apex:commandButton status="fetchStatus" reRender="tablePanel" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page" />
+                        <apex:outputText >{!(pageNumber * VALUE(resultSize))+1-VALUE(resultSize)}-{!IF((pageNumber * VALUE(resultSize))>noOfRecords, noOfRecords,(pageNumber * VALUE(resultSize)))} of {!noOfRecords}</apex:outputText>
+                        <apex:commandButton status="fetchStatus" reRender="tablePanel" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page" />
+                        <apex:commandButton status="fetchStatus" reRender="tablePanel" value=">|" action="{!last}" disabled="{!!hasNext}" title="Last Page" />
+                        <apex:commandButton status="fetchStatus" reRender="formId" value="Refresh" action="{!refresh}" title="Refresh Page" />
+                        <!--apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                            <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                        </apex:outputPanel-->
+                    </apex:panelGrid>
+                </center>
+			
+			</apex:pageBlock>
+		</apex:outputPanel>
+	</apex:form>
+</apex:page>

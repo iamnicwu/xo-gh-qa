@@ -1,0 +1,74 @@
+<aura:component description="CancelCaseChangeValueModal"
+                controller="CancelCaseModalController">
+    <aura:attribute name="title" type="String" />
+    <aura:attribute name="objectType" type="String" />
+    <aura:attribute name="searchValue" type="String" default=""/>
+    <aura:attribute name="currentTimeout" type="Integer" />
+    <aura:attribute name="searchResults" type="List" default="[]"/>
+    <aura:attribute name="searching" type="Boolean" default="false"/>
+    <aura:attribute name="selectedItemId" type="String" default=""/>
+    <aura:attribute name="accountId" type="String" default=""/>
+
+    <aura:handler event="c:openChangeModal" action="{!c.showModal}" />
+    <aura:registerEvent name="setModalValue" type="c:setModalValue" />
+
+    <div class="slds">
+        <div aria-hidden="true" role="dialog" class="slds-modal slds-modal_large slds-fade-in-hide" aura:id="modaldialog">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header">
+                    <h2 class="slds-text-heading--medium">{!v.title}</h2>
+                    <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideModal}">
+                        <lightning:icon iconName="utility:close" size="small" variant="inverse" alternativeText="Close"/>
+                    </button>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    <div>
+                        <lightning:input type="search"
+                                         label="Search"
+                                         name="search"
+                                         value="{!v.searchValue}"
+                                         onchange="{!c.searchValueChanged}"/>
+                    </div>
+                    <div class="slds-p-bottom_large slds-p-top_large cancel-case-modal-results">
+                        <aura:if isTrue="{!v.searching}">
+                            <lightning:spinner variant="brand" size="medium" class="cancel-case-spinner" alternativeText="loading"/>
+
+                            <aura:set attribute="else">
+                                <!-- If search was performed and no results -->
+                                <aura:if isTrue="{!v.searchResults.length == 0}">
+                                    <aura:if isTrue="{!v.searchValue.length > 0}">
+                                        <div>No results found</div>
+                                    </aura:if>
+                                </aura:if>
+
+                                <!-- Found results -->
+                                <aura:if isTrue="{!v.searchResults.length > 0}">
+                                    <aura:iteration items="{!v.searchResults}" var="result">
+                                        <div class="slds-p-bottom_xxx-small slds-p-top_xxx-small cancel-case-modal-row"
+                                             onclick="{!c.selectedItem}"
+                                             data-recordid="{!result.id}">
+                                            <span class="slds-p-right_x-small">{!result.resultName}</span>
+                                            <aura:if isTrue="{!v.selectedItemId == result.id}">
+                                                <lightning:icon iconName="utility:check"
+                                                                size="x-small"
+                                                                class="cancel-case-modal-row-check-icon"
+                                                                alternativeText="selected"/>
+                                            </aura:if>
+                                        </div>
+                                    </aura:iteration>
+                                </aura:if>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </div>
+                <div class="slds-modal__footer">
+                    <div class="slds-x-small-buttons--horizontal">
+                        <button class="slds-button slds-button--neutral" onclick="{!c.hideModal}">Cancel</button>
+                        <button class="slds-button slds-button--neutral" onclick="{!c.updateValue}">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--hide" aura:id="backdrop"></div>
+    </div>
+</aura:component>

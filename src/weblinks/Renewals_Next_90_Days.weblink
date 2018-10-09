@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>Shows all renewals for users in the next 90 days</description>
+    <displayType>link</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Renewals, Next 90 Days</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/apex/ReportRedirect?reportName=Renewals_Next_90_Days_Current</url>
+</CustomPageWebLink>

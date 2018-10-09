@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>National ThoughtStarter and RFP Field Mapping with Accounts</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Account_Field_API_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TS_RFP_API_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>TS/RFP API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>NationalTSRFPAccFieldMap</label>
+    <visibility>Public</visibility>
+</CustomObject>

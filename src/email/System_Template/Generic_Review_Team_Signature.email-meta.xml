@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>For CSP-2342</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Generic Review Team Signature</name>
+    <style>none</style>
+    <subject>Generic Escalation Team Signature</subject>
+    <type>custom</type>
+</EmailTemplate>

@@ -1,0 +1,11 @@
+<div style="padding-top:5px">Tell me how I’m doing!</div>
+<a href="{!Receiving_User.User_Survey_Link__c}" target="_blank"><img alt="Task Survey" src="https://xogrp--c.na55.content.force.com/servlet/servlet.ImageServer?id=015f1000002Tx8R&oid=00Dj0000000KVB8"></img></a><br><br>
+<div style="padding-top:5px"><b><span style="color: #5B9BD5;">{!Receiving_User.FirstName} {!Receiving_User.LastName}</span></b></div>
+<div style="padding-top:5px">{!Receiving_User.Title}</div>
+<div style="padding-top:5px">The Knot</div>
+<div style="padding-top:5px">P <span style="color: #1155CC; text-decoration: underline">{!Receiving_User.Phone}</span></b></div>
+<a href="https://www.theknot.com/" target="_blank"><img alt="TheKnot.png" src="https://xogrp--c.na55.content.force.com/servlet/servlet.ImageServer?id=015f1000002Tx8W&oid=00Dj0000000KVB8" style="height: 35px; width: 102px;"></img></a><br>
+<a href="http://www.theknot.com/blog" target="_blank"><img alt="Idea&Advice.png" src="https://xogrp--c.na55.content.force.com/servlet/servlet.ImageServer?id=015f1000002Tx8b&oid=00Dj0000000KVB8" style="height: 19px; width: 19px;"></img></a>
+<a href="https://www.facebook.com/theknot" target="_blank"><img alt="Facebook.png" src="https://xogrp--c.na55.content.force.com/servlet/servlet.ImageServer?id=015f1000002Tx8g&oid=00Dj0000000KVB8" style="height: 19px; width: 19px;"></img></a>
+<a href="http://twitter.com/theknot" target="_blank"><img alt="Twitter.png"  src="https://xogrp--c.na55.content.force.com/servlet/servlet.ImageServer?id=015f1000002Tx8l&oid=00Dj0000000KVB8" style="height: 19px; width: 19px;"></img></a>
+<a href="http://www.instagram.com/theknot" target="_blank"><img alt="Ins.png" src="https://xogrp--c.na55.content.force.com/servlet/servlet.ImageServer?id=015f1000002Tx8q&oid=00Dj0000000KVB8" style="height: 19px; width: 19px;"></img></a><br>

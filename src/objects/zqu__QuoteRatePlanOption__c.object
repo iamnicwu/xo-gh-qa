@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>zqu__EffectiveEndDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date when the corresponding Quote Rate Plan will expire.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date when the corresponding Quote Rate Plan will expire.</inlineHelpText>
+        <label>Effective End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>zqu__EffectiveStartDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date when the Quote Rate Plan becomes available.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date when the Quote Rate Plan becomes available.</inlineHelpText>
+        <label>Effective Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>zqu__OriginalPrpoId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Original Product Rate Plan Option Id</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductRatePlanOption__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>A reference to the initial Product Rate Plan Option from the Product Catalog.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A reference to the initial Product Rate Plan Option from the Product Catalog.</inlineHelpText>
+        <label>Product Rate Plan Option</label>
+        <referenceTo>zqu__ProductRatePlanOption__c</referenceTo>
+        <relationshipLabel>Quote Rate Plan Options</relationshipLabel>
+        <relationshipName>Quote_Rate_Plan_Options</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductRatePlan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The product rate plan being overridden.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The product rate plan being overridden.</inlineHelpText>
+        <label>Product Rate Plan</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>zqu__ProductRatePlan__c.zqu__Product__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.zqu__Product__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>zqu__ProductRatePlan__c.zqu__Deleted__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>zqu__ProductRatePlan__c</referenceTo>
+        <relationshipLabel>Quote Rate Plan Options</relationshipLabel>
+        <relationshipName>Quote_Rate_Plan_Options</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The product contains the overridden product rate plan.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The product contains the overridden product rate plan.</inlineHelpText>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Quote Rate Plan Options</relationshipLabel>
+        <relationshipName>Quote_Rate_Plan_Options</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__QuoteProductOption__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Quote Product Option</label>
+        <referenceTo>zqu__QuoteProductOption__c</referenceTo>
+        <relationshipLabel>Quote Rate Plan Options</relationshipLabel>
+        <relationshipName>Quote_Rate_Plan_Options</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>zqu__QuoteRatePlan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>A reference to the Quote Rate Plan that this option overrides.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A reference to the Quote Rate Plan that this option overrides.</inlineHelpText>
+        <label>Quote Rate Plan</label>
+        <referenceTo>zqu__QuoteRatePlan__c</referenceTo>
+        <relationshipLabel>Quote Rate Plan Options</relationshipLabel>
+        <relationshipName>Quote_Rate_Plan_Options</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Quote Rate Plan Option</label>
+    <nameField>
+        <label>Quote Rate Plan Option Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Quote Rate Plan Options</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>zqu__Effective_Date_Rule</fullName>
+        <active>true</active>
+        <description>Effective End Date should be after Effective Start Date</description>
+        <errorConditionFormula>AND(  
+NOT( ISNULL( zqu__EffectiveStartDate__c) ),
+NOT( ISNULL(  zqu__EffectiveEndDate__c ) ),
+zqu__EffectiveEndDate__c &lt; zqu__EffectiveStartDate__c
+ )</errorConditionFormula>
+        <errorDisplayField>zqu__EffectiveEndDate__c</errorDisplayField>
+        <errorMessage>Effective End Date cannot be before Effective Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>zqu__Override_Rule</fullName>
+        <active>true</active>
+        <description>Overridden ProductRatePlan should belong to the Quote Product Option&apos;s child product</description>
+        <errorConditionFormula>zqu__ProductRatePlan__r.zqu__Product__c  &lt;&gt;  zqu__QuoteProductOption__r.zqu__ChildProduct__c</errorConditionFormula>
+        <errorDisplayField>zqu__ProductRatePlan__c</errorDisplayField>
+        <errorMessage>Overridden ProductRatePlan should belong to the Quote Product Option&apos;s child product</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Available__c</fullName>
+        <description>Inventory is available for deletion if it:
+a) has expired
+b) has a rate plan id but no corresponding rate plan, and was last modified in the last 30 minutes
+or
+c) has no value in the waitlisted account, rate plan id, or quote rate plan</description>
+        <externalId>false</externalId>
+        <formula>OR(
+ Inventory_Hold_Expiry_Date__c &lt; TODAY(),
+ AND(
+     NOT(ISBLANK( Subscription_RatePlan_Id__c )),
+     ISBLANK( Subscription_Product_Charge__c ),
+     (NOW() - LastModifiedDate) &gt; 0.02
+    ),
+ AND(
+     ISBLANK( Waitlist_Account__c ),
+     ISBLANK( Subscription_RatePlan_Id__c ),
+     ISBLANK( Quote_Rate_Plan__c )
+    )
+)</formula>
+        <inlineHelpText>If the hold date has expired, or we don&apos;t have this slot reserved for anyone in particular, the slot is available.</inlineHelpText>
+        <label>Available</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Date_Reserved__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date that the slot was taken by the current inventory holder</inlineHelpText>
+        <label>Date Reserved</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Held_By_Account__c</fullName>
+        <description>&quot;Field used to provide a link to the associated Account which is holding the Inventory</description>
+        <externalId>false</externalId>
+        <formula>CASE(Held_By_Type__c, 
+&apos;Account&apos;, HYPERLINK(&apos;/&apos; + Waitlist_Account__r.Id, Waitlist_Account__r.Name), 
+&apos;Subscription&apos;, HYPERLINK(&apos;/&apos; + Subscription_Product_Charge__r.Zuora__Subscription__r.Zuora__Account__r.Id, Subscription_Product_Charge__r.Zuora__Subscription__r.Zuora__Account__r.Name), 
+&apos;Quote&apos;, HYPERLINK(&apos;/&apos; + Quote_Rate_Plan__r.zqu__Quote__r.zqu__Opportunity__r.Account.Id, Quote_Rate_Plan__r.zqu__Quote__r.zqu__Opportunity__r.Account.Name), 
+&apos;&apos; 
+) 
+
+
+/* 
+Code solution 
+
+if(Held_By_Type__c == &apos;Account&apos;) { 
+HYPERLINK(&apos;/&apos; + Waitlist_Account__r.Id, Waitlist_Account__r.Name); 
+} else if(Held_By_Type__c == &apos;Subscription&apos;) { 
+HYPERLINK(&apos;/&apos; + Subscription_Product_Charge__r.Zuora__Subscription__r.Zuora__Account__r.Id, Subscription_Product_Charge__r.Zuora__Subscription__r.Zuora__Account__r.Name); 
+} else if(Held_By_Type__c == &apos;Quote&apos;) { 
+HYPERLINK(&apos;/&apos; + Quote_Rate_Plan__r.zqu__Quote__r.zqu__Opportunity__r.Account.Id, Quote_Rate_Plan__r.zqu__Quote__r.zqu__Opportunity__r.Account.Name); 
+} else { 
+&apos;&apos;; 
+} 
+*/</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Held By Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Held_By_Migrated_Subscription__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked when applicable during the BatchRebuildInventoryFromSubscriptions nightly batch job. This field is primarily used by the InventoryUtilities.IsInventoryAvailable method.</description>
+        <externalId>false</externalId>
+        <label>Held By Migrated Subscription</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Held_By_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( NOT(ISBLANK(Subscription_RatePlan_Id__c)), &apos;Subscription&apos;,
+   IF ( NOT(ISBLANK(Quote_Rate_Plan__c)), &apos;Quote&apos;,
+   IF ( NOT(ISBLANK(Waitlist_Account__c)), &apos;Account&apos;, &apos;&apos;)))</formula>
+        <inlineHelpText>Returns blank if the slot is available, or Waitlist, Quote or Subscription if not available.</inlineHelpText>
+        <label>Held By Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Held_By__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( NOT(ISBLANK(Subscription_RatePlan_Id__c)),  
+        Subscription_Product_Charge__r.Zuora__Subscription__r.Name,
+   IF ( NOT(ISBLANK(Quote_Rate_Plan__c)),
+        Quote_Rate_Plan__r.zqu__Quote__r.Name,
+   IF ( NOT(ISBLANK(Waitlist_Account__c)),
+        Waitlist_Account__r.Name, 
+        &apos;&apos;)
+      )
+   )</formula>
+        <inlineHelpText>The record name that owns this slot</inlineHelpText>
+        <label>Held By</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Held_Until_Extended__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether or not the Held Until date has been extended already.  Only applies to Inventory held by an Account.</inlineHelpText>
+        <label>Held Until Extended</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>I_Am_the_Sales_Rep__c</fullName>
+        <externalId>false</externalId>
+        <formula>Waitlist_Account__r.OwnerId = $User.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>I Am the Sales Rep</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Inventory_Hold_Expiry_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date that this inventory slot is reserved through.  If a spot has a hold expiry date of 2/1/2017, for example, it becomes available as soon as the date switches to 2/2/2017</inlineHelpText>
+        <label>Held Until</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Expiry_Date_for_Account__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This date represents the value of the expiry date the last time it was held by a waitlisted Account.  It prevents users from artificially extending the expiry date by adding quote after quote after quote.</inlineHelpText>
+        <label>Last Expiry Date for Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_notification_for_Account__c</fullName>
+        <description>SF-1223
+Whenever an Account owns an inventory slot, we send out periodic notifications.  We record the last time this occurred to avoid sending notifications too often.</description>
+        <externalId>false</externalId>
+        <label>Last notification for Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Product_Rate_Plan__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The Product Rate Plan represents the product in a specific market/category.  In essence, this is the product we are tracking inventory against.</inlineHelpText>
+        <label>Product Rate Plan</label>
+        <referenceTo>zqu__ProductRatePlan__c</referenceTo>
+        <relationshipLabel>Inventory</relationshipLabel>
+        <relationshipName>Inventory</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Quote_Rate_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>If the inventory slot is reserved by a quote, this field will identify which quote rate plan is holding it.</inlineHelpText>
+        <label>Quote Rate Plan</label>
+        <referenceTo>zqu__QuoteRatePlan__c</referenceTo>
+        <relationshipLabel>Inventory</relationshipLabel>
+        <relationshipName>Inventory</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Subscription_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Subscription Name</label>
+        <length>64</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subscription_Product_Charge__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Subscription Product &amp; Charge</label>
+        <referenceTo>Zuora__SubscriptionProductCharge__c</referenceTo>
+        <relationshipLabel>Inventory</relationshipLabel>
+        <relationshipName>Inventory</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Subscription_RatePlan_Id__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The Id of the Subscription Product Rate Plan (this is a Zuora Id).  This is maintained as a reference to the Rate Plan object, as the charge itself may be deleted and rebuilt by an external system (Zuora).</inlineHelpText>
+        <label>Subscription RatePlan Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subscription_Version__c</fullName>
+        <externalId>false</externalId>
+        <label>Subscription Version</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Waitlist_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Waitlist Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Available for Purchase</relationshipLabel>
+        <relationshipName>Inventory</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Inventory</label>
+    <listViews>
+        <fullName>Main</fullName>
+        <columns>NAME</columns>
+        <columns>Product_Rate_Plan__c</columns>
+        <columns>Quote_Rate_Plan__c</columns>
+        <columns>Waitlist_Account__c</columns>
+        <columns>Held_By_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Main</label>
+    </listViews>
+    <nameField>
+        <displayFormat>INVN-{000000}</displayFormat>
+        <label>Inventory Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Inventory</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>Check_Capacity</fullName>
+        <active>false</active>
+        <description>Make sure when an Inventory record is being created, and it&apos;s tied to a QuoteRatePlan (new Quote) or an Account (new Waitlist), that it&apos;s only created if the &quot;Number Available&quot; formula on the ProductRatePlan is greater than 0.</description>
+        <errorConditionFormula>AND(
+ISNEW(),
+OR(NOT(ISBLANK(Quote_Rate_Plan__c)),
+   NOT(ISBLANK(Waitlist_Account__c))),
+Product_Rate_Plan__r.Number_Available__c &lt; 1
+)</errorConditionFormula>
+        <errorDisplayField>Date_Reserved__c</errorDisplayField>
+        <errorMessage>Cannot create this Inventory record as capacity for this ProductRatePlan has been met or exceeded.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,1651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>NVMStatsSF__NVMCSDefault</fullName>
+        <fields>NVMStatsSF__Interaction_Type__c</fields>
+        <fields>NVMStatsSF__CallTime__c</fields>
+        <fields>NVMStatsSF__Related_To__c</fields>
+        <fields>NVMStatsSF__Handle_Time__c</fields>
+        <fields>NVMStatsSF__Agent__c</fields>
+        <fields>NVMStatsSF__Agent2__c</fields>
+        <label>NVMCS Compact Layout</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>After_Call_Work_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__After_Call_Work_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>After Call Work Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>After_Call_Work_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__After_Call_Work_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>After Call Work Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agent2_Transfer_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Agent2_Transfer_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agent2 Transfer Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agent2_Transfer_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Agent2_Transfer_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agent2 Transfer Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agent_Consult_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Agent_Consult_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agent Consult Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agent_Consult_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Agent_Consult_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agent Consult Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agent_Talk_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Agent_Talk_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agent Talk Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agent_Talk_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Agent_Talk_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Agent Talk Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Duration_Hours__c</fullName>
+        <description>This is the call length in hours. Requested on SS-6812</description>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Total_Call_Duration__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Call Duration Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Duration_Minutes__c</fullName>
+        <description>This is how many minutes the call lasted. Requested on SS-6812</description>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Total_Call_Duration__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Call Duration Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Handle_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Handle_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Handle Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Handle_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Handle_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Handle Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hold_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Consult_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hold Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hold_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Consult_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Hold Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Abandoned__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Agent_Talk_Time__c == 0 &amp;&amp; NVMStatsSF__Post_Call_Automation__c == 0 &amp;&amp;  (TEXT(NVMStatsSF__Interaction_Type__c) == &apos;Inbound Call&apos; || TEXT(NVMStatsSF__Interaction_Type__c) == &apos;Internal Call&apos;) &amp;&amp;  NOT(NVMStatsSF__MessageTaken__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This box is checked if the Call was an abandoned Inbound or Internal Call</inlineHelpText>
+        <label>Abandoned</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__After_Call_Work_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Amount of time last Agent spent on post Call activity</inlineHelpText>
+        <label>After Call Work Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent2_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Agent ID of the last known agent who worked on the Call/Case (if transferred)</inlineHelpText>
+        <label>Agent2 ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent2_Transfer_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Total transfer-in durations (talk events immediately following each transfer)</inlineHelpText>
+        <label>Agent2 Transfer Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Agent 2 Name</inlineHelpText>
+        <label>Agent2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>NVM_Call_Summaries1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__AgentChkStr__c</fullName>
+        <deprecated>false</deprecated>
+        <description>System Checkstring - contributions from Agent Stats feed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>System Checkstring</inlineHelpText>
+        <label>AgentChkStr</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent_Consult_Time__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Time in seconds where additional agents were consulted but not subsequently transferred to (typically when an inbound caller is placed on hold).  See Warm Transfer Time for the duration of consultations which lead to transfers.  Counts towards Handle Time</inlineHelpText>
+        <label>Agent Consult Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent_Event_String__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Agent events related to this call with timestamp, agenr Id and duration in seconds - helps show where consultations fited into the call.  Format yyyyMMddHHmmss-[Agent Id]-[duration],...</inlineHelpText>
+        <label>Agent Event String</label>
+        <length>4096</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent_List__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>All agent IDs and durations where e.g. 123-30, 456-60 means agent 123 for 30s followed by agent 456 for 1 minute.  Excludes hold times</inlineHelpText>
+        <label>Agent List</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent_Percent__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Percentage of recording the Agent alone was talking</inlineHelpText>
+        <label>Agent Percent</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent_Phone_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Phone number Agent received Call on</inlineHelpText>
+        <label>Agent Phone Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent_Ring_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Total number of seconds agent phones rang</inlineHelpText>
+        <label>Total Ring Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent_Talk_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Total talk time in seconds (excluding Ringing, Hold, Consult, Transfer and Post Call work time). Add this and Agent2 Transfer time for All Agent talk time</inlineHelpText>
+        <label>Agent Talk Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Agent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Agent name (if known - links to User record in Salesforce)</inlineHelpText>
+        <label>Agent</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>NVM_Call_Summaries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__AutoPhaseStart__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The start of the last Automation phase identified during the Call - if there is post Call automation, this will be used to calculate the duration</inlineHelpText>
+        <label>AutoPhaseStart</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Automation_Segment__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Total duration of applets (Menu, Announcements, etc.)</inlineHelpText>
+        <label>Automation</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__CLID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The number presented by Caller (Caller ID)</inlineHelpText>
+        <label>CLID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__CR_Start_Immediate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if Call Recording Applet which first turns on Call Recording starts the recording without waiting for the two parties to be connected.
+Use Workflow (on create+update) to set this flag for Calls which don&apos;t defer CR Start based on the NVM Service</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if Call Recording Applet which first turns on Call Recording starts the recording without waiting for the two parties to be connected.
+Use Workflow (on create+update) to set this flag for Calls which don&apos;t defer CR Start based on the NVM Service</inlineHelpText>
+        <label>CR Start Immediate</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__CallDisposition__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Call Result value copied from the Call Task if one was found</inlineHelpText>
+        <label>Call Result</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__CallEndTime__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Date/Time stamp of Call End</inlineHelpText>
+        <label>CallEndTime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__CallGuid__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <inlineHelpText>Unique identifier for this Call/Case</inlineHelpText>
+        <label>CallGuid</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__CallTime__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Date/Time stamp of Call Start (stored internally as UTC but shown in Salesforce to you in your timezone)</inlineHelpText>
+        <label>CallTime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Call_Recording__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>URL of the Call recording</inlineHelpText>
+        <label>Call Recording</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Call_Transcription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Searchable Call Transcription</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Searchable Call Transcription</inlineHelpText>
+        <label>Call Transcription</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Categories__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Categories Matched in Speech Analytics</inlineHelpText>
+        <label>Categories</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Channel__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Channel used to import this record. (A configured Channel is analagous to a Contact World Account accessed via a Cloud URL and specifies a time offset into the past)</inlineHelpText>
+        <label>Channel</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__ChkStr__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Compressed, ordered representation of all unfiltered events in an inbound Call or Case. Can be used for advanced analysis. Do not edit data in this field.</inlineHelpText>
+        <label>ChkStr</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Confidence__c</fullName>
+        <defaultValue>&quot;Unknown&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Transcription Confidence</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Transcription Confidence</inlineHelpText>
+        <label>Confidence</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Consult_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Total in seconds of the time the Call or Case was put on hold by the person handling it</inlineHelpText>
+        <label>Hold Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Crosstalk_Percent__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Percentage of recording both connected parties were talking at once</inlineHelpText>
+        <label>Crosstalk Percent</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Customer_Percent__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Percentage of recording the Customer alone was talking</inlineHelpText>
+        <label>Customer Percent</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>UTC Date of the Call</inlineHelpText>
+        <label>UTC Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Day_of_Week__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(MOD(NVMStatsSF__Date__c - DATE(1900, 1, 7), 7), 
+1, &apos;1-Monday&apos;, 
+2, &apos;2-Tuesday&apos;, 
+3, &apos;3-Wednesday&apos;, 
+4, &apos;4-Thursday&apos;, 
+5, &apos;5-Friday&apos;, 
+6, &apos;6-Saturday&apos;, 
+0, &apos;7-Sunday&apos;, &apos; &apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Day of the week this Call or Case was received on in UTC</inlineHelpText>
+        <label>UTC Day of Week</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Delivery_Attempts__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>LEN(NVMStatsSF__Ring_List__c) -  LEN(SUBSTITUTE(NVMStatsSF__Ring_List__c, &quot;:&quot;, &quot;&quot;))</formula>
+        <inlineHelpText>Number of ring events for Inbound Calls</inlineHelpText>
+        <label>Delivery Attempts</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__EndApplet__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The final applet used on this Call/Case record</inlineHelpText>
+        <label>End Applet</label>
+        <length>70</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__EndReason__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Final status of Call</inlineHelpText>
+        <label>End Reason</label>
+        <length>70</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__EndRecorded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if the Call End Event was received from ContactWorld; indicative of completeness of a Call Summary. The End Event for Inbound Calls and Cases conveys the total duration; if missing, duration is approximated using sub totals known.</inlineHelpText>
+        <label>EndRecorded</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Fiscal_Quarter__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(MONTH(datevalue(  NVMStatsSF__CallTime__c  )) , 
+1, &quot;Q1-&quot;+ TEXT(year(datevalue(NVMStatsSF__CallTime__c))), 
+2, &quot;Q1-&quot;+ TEXT(year(datevalue(NVMStatsSF__CallTime__c))), 
+3, &quot;Q1-&quot;+ TEXT(year(datevalue(NVMStatsSF__CallTime__c))), 
+4, &quot;Q2-&quot;+ TEXT(year(datevalue(NVMStatsSF__CallTime__c))), 
+5, &quot;Q2-&quot;+ TEXT(year(datevalue(NVMStatsSF__CallTime__c))), 
+6, &quot;Q2-&quot;+ TEXT(year(datevalue(NVMStatsSF__CallTime__c))), 
+7, &quot;Q3-&quot;+ TEXT(year(datevalue(NVMStatsSF__CallTime__c))), 
+8, &quot;Q3-&quot;+ TEXT(year(datevalue(NVMStatsSF__CallTime__c))), 
+9, &quot;Q3-&quot;+ TEXT(year(datevalue(NVMStatsSF__CallTime__c))), 
+10, &quot;Q4-&quot;+ TEXT(year(datevalue(NVMStatsSF__CallTime__c))), 
+11, &quot;Q4-&quot;+ TEXT(year(datevalue(NVMStatsSF__CallTime__c))), 
+12, &quot;Q4-&quot;+ TEXT(year(datevalue(NVMStatsSF__CallTime__c))), &quot; &quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calendar quarter of this Call</inlineHelpText>
+        <label>Calendar Quarter</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Handle_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(NVMStatsSF__Interaction_Type__c, &quot;Case&quot;),
+ NVMStatsSF__Agent_Talk_Time__c +  NVMStatsSF__Agent2_Transfer_Time__c  +
+ NVMStatsSF__After_Call_Work_Time__c,
+
+
+ IF(ISPICKVAL(NVMStatsSF__Interaction_Type__c, &quot;Outbound Call&quot;),
+  NVMStatsSF__Agent_Talk_Time__c + NVMStatsSF__Agent2_Transfer_Time__c +
+  NVMStatsSF__After_Call_Work_Time__c +  NVMStatsSF__Consult_Time__c +
+  NVMStatsSF__Agent_Consult_Time__c +
+  NVMStatsSF__Warm_Transfer_Time__c +  NVMStatsSF__Agent_Ring_Duration__c,
+   
+ IF(ISPICKVAL(NVMStatsSF__Interaction_Type__c, &quot;Internal Call&quot;),
+  NVMStatsSF__Agent_Talk_Time__c * 2 +
+  NVMStatsSF__Agent_Consult_Time__c +
+  NVMStatsSF__After_Call_Work_Time__c * 2 +
+  NVMStatsSF__Agent_Ring_Duration__c,
+
+
+  NVMStatsSF__Agent_Talk_Time__c + NVMStatsSF__Agent2_Transfer_Time__c + 
+  NVMStatsSF__After_Call_Work_Time__c +  NVMStatsSF__Consult_Time__c +
+  NVMStatsSF__Agent_Consult_Time__c +
+  NVMStatsSF__Warm_Transfer_Time__c )))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Total working duration of all participating agents (i.e. Agent Talk Time + Transfer Time + Wrap + Hold + Consult Times for Calls and Working + Wrap up for Cases; Agent Handling time for Internal &amp; Outbound Calls also counts Ring time of Agent who dialled)</inlineHelpText>
+        <label>Handle Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Hour__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(FLOOR ( MOD( NVMStatsSF__CallTime__c - ($System.OriginDateTime),1) *24) &lt; 10,&apos;0&apos;,&apos;&apos;) &amp; 
+TEXT(FLOOR ( MOD( NVMStatsSF__CallTime__c- ($System.OriginDateTime),1) *24))</formula>
+        <inlineHelpText>System hour of the day in which the Call started</inlineHelpText>
+        <label>UTC Hour</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Interaction_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The Call or Case type, e.g. Inbound/Outbound/Case</inlineHelpText>
+        <label>Interaction Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outbound Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Automated Outbound Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Case</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internal Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Key_Event_String__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>System summary field of key Call events in order, derived from CheckString. Do not edit the data in this field.</inlineHelpText>
+        <label>Key Event String</label>
+        <length>16384</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Last_Agent_Summary__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to Agent Summary for the last agent to contribute an event to this Call</inlineHelpText>
+        <label>Last Agent&apos;s Calls this Day</label>
+        <referenceTo>NVMStatsSF__NVM_Agent_Summary__c</referenceTo>
+        <relationshipLabel>Call Summaries</relationshipLabel>
+        <relationshipName>NVM_Call_Summaries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Last_Ring_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>VALUE(RIGHT(&quot;0&quot; &amp; SUBSTITUTE(RIGHT(NVMStatsSF__Ring_List__c, 10), &quot;:&quot;, &quot;0000000000&quot;), 10))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The duration of the last ring event</inlineHelpText>
+        <label>Last Ring Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Last_State__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF ( TEXT(NVMStatsSF__Interaction_Type__c) == &apos;Outbound Call&apos; || TEXT(NVMStatsSF__Interaction_Type__c) == &apos;Internal Call&apos; , TEXT(NVMStatsSF__Interaction_Type__c), 
+IF ( NVMStatsSF__Total_Call_Duration__c &gt;= 0 &amp;&amp; NVMStatsSF__Agent_Talk_Time__c ==0 &amp;&amp; NVMStatsSF__Queue_Duration__c == 0 &amp;&amp; NVMStatsSF__Agent__c == null &amp;&amp; NVMStatsSF__Queue_Name__c == null &amp;&amp; NVMStatsSF__MessageTaken__c == false, &apos;Automation Abandoned&apos;, 
+IF (NVMStatsSF__MessageTaken__c == true &amp;&amp; NVMStatsSF__Agent_Talk_Time__c == 0 &amp;&amp; NVMStatsSF__Queue_Duration__c == 0 &amp;&amp; NVMStatsSF__Agent__c == null &amp;&amp; NVMStatsSF__Queue_Name__c == null &amp;&amp; NVMStatsSF__Total_Call_Duration__c &gt; 0, &apos;Message Taken (A)&apos;, 
+IF (NVMStatsSF__MessageTaken__c == true &amp;&amp; NVMStatsSF__Total_Call_Duration__c &gt; 0 &amp;&amp; (NVMStatsSF__Queue_Duration__c &gt; 0 || NVMStatsSF__Queue_Name__c != null) &amp;&amp; NVMStatsSF__Agent_Talk_Time__c == 0 &amp;&amp; NVMStatsSF__Agent__c == null, &apos;Message Taken (Q)&apos;, 
+IF ( NVMStatsSF__Total_Call_Duration__c &gt; 0 &amp;&amp; (NVMStatsSF__Queue_Duration__c &gt; 0 || NVMStatsSF__Queue_Name__c != null) &amp;&amp; NVMStatsSF__Agent_Talk_Time__c == 0 &amp;&amp; NVMStatsSF__Agent__c == null, &apos;Queue Abandoned&apos;, 
+IF (NVMStatsSF__Total_Call_Duration__c &gt; 0 &amp;&amp; NVMStatsSF__Agent_Talk_Time__c == 0 &amp;&amp; NVMStatsSF__Agent__c != null, &apos;Queue Abandoned&apos;, 
+IF(NVMStatsSF__Total_Call_Duration__c &gt; 0 &amp;&amp; NVMStatsSF__Agent_Talk_Time__c &gt; 0 &amp;&amp;  CONTAINS (NVMStatsSF__Agent_List__c,&apos;CCRConnect&apos;), &apos;CCR Handled&apos;, 
+
+IF( NVMStatsSF__Total_Call_Duration__c &gt; 0 &amp;&amp; NVMStatsSF__Agent_Talk_Time__c &gt; 0, &apos;Agent Handled&apos;, &apos;Unknown&apos;) 
+)))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Shows the final state logged during this Call</inlineHelpText>
+        <label>Last State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Local_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Date from the perspective of the last agent&apos;s or the Company&apos;s Default TimeZone adjusted for DST if DST applied</inlineHelpText>
+        <label>Local Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Local_Day_of_Week__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(MOD(NVMStatsSF__Local_Date__c - DATE(1900, 1, 7), 7), 
+1, &apos;1-Monday&apos;, 
+2, &apos;2-Tuesday&apos;, 
+3, &apos;3-Wednesday&apos;, 
+4, &apos;4-Thursday&apos;, 
+5, &apos;5-Friday&apos;, 
+6, &apos;6-Saturday&apos;, 
+0, &apos;7-Sunday&apos;, &apos; &apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Day of the week in the Agent or stats-loading user&apos;s timezone</inlineHelpText>
+        <label>Local Day of Week</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Local_Hour__c</fullName>
+        <defaultValue>&quot;00&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Start hour from the perspective of the last agent&apos;s or the Company&apos;s default Timezone with DST applied</inlineHelpText>
+        <label>Local Hour</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Local_ISO8601_Week__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Week number in ISO8601 form of the start of the event in its local timezone</inlineHelpText>
+        <label>Local ISO8601 Week</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__MessageTaken__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether a voicemail message was taken during this Call</inlineHelpText>
+        <label>Message Taken</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Month_of_Year__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>CASE(MONTH(datevalue(  NVMStatsSF__CallTime__c )) , 
+1, &quot;(01) Jan&quot;, 
+2, &quot;(02) Feb&quot;, 
+3, &quot;(03) Mar&quot;, 
+4, &quot;(04) Apr&quot;, 
+5, &quot;(05) May&quot;, 
+6, &quot;(06) Jun&quot;, 
+7, &quot;(07) Jul&quot;, 
+8, &quot;(08) Aug&quot;, 
+9, &quot;(09) Sep&quot;, 
+10, &quot;(10) Oct&quot;, 
+11, &quot;(11) Nov&quot;, 
+12, &quot;(12) Dec&quot;, &quot; &quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Month of year</inlineHelpText>
+        <label>Month of Year</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__NVM_AgentID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>ID of the Agent who received the Call</inlineHelpText>
+        <label>NVM AgentID</label>
+        <length>11</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__NVM_Service_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The service/line name that was called</inlineHelpText>
+        <label>NVM Service Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__NVM_Telephone_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The telephone number dialled by the Caller for inbound calls; the number presented for outbound calls</inlineHelpText>
+        <label>NVM Telephone Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__New_Events__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Internal flag used to highlight existing summaries for whom new events have materialised</inlineHelpText>
+        <label>New Events</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__NextTime__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Field not used</inlineHelpText>
+        <label>NextTime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Notes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Custom text notes entered for this summary record</inlineHelpText>
+        <label>Notes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Applets__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of Applets run in the Interaction or Call flow</inlineHelpText>
+        <label>Number of Applets</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_PCI_Transfers__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of transfers made to PCI Payment services</inlineHelpText>
+        <label>Number of PCI Transfers</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Segments__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates complexity of inbound interactions by counting discrete Key events for this summarised Call or Case (Key events include Queue, Talk, Hold, Retrieve, Transfer, Message, Recording, End).</inlineHelpText>
+        <label>Number of Segments</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Transfers__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Number of ACDTransfer events completed</description>
+        <externalId>false</externalId>
+        <label>Number of Transfers</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Transfers_to_Applet__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of times an agent transferred the interaction to an applet/queue</inlineHelpText>
+        <label>Number of Transfers to Applet</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Number_of_Warm_Transfers__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of warm transfers of the interaction from one agent to another</inlineHelpText>
+        <label>Number of Warm Transfers</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Numeric_Wk_of_Year__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>VALUE( NVMStatsSF__Week_of_Year__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Simple numeric week of the year - useful for grouping in reports and charts</inlineHelpText>
+        <label>Numeric Wk of Year</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__PCI_Time__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Time spent in PCI Payments in seconds</inlineHelpText>
+        <label>PCI Time</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Post_Call_Automation__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Duration of Applet events which took place after the agent left a Call (Especially Caller engaged in post Call survey. Tip: Label such Applets as POSTCALL in Call Plan Architect)</inlineHelpText>
+        <label>Post Call Automation Segment</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Queue_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Total time inbound Caller spent queuing on this Call or the total time a Case queued</inlineHelpText>
+        <label>Queue Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Queue_List__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>All Queues this Call/Case spent time in, in order, with the time in each. Format [Queue Name]-[Duration(s)], [Queue Name]-[Duration(s)],...</inlineHelpText>
+        <label>Queue List</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Queue_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the queue that this call was delivered to; the value &apos;Multiple&apos; denotes time spent in different named queues</inlineHelpText>
+        <label>Queue Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Related_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The Account this call relates to (as indicated by a Task record whose CallObject matches the GUID from this summary)</inlineHelpText>
+        <label>Related Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>NVM Call Summaries</relationshipLabel>
+        <relationshipName>NVM_Call_Summaries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Related_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The Case this call relates to (as indicated by a Task record whose CallObject matches the GUID from this summary)</inlineHelpText>
+        <label>Related Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>NVM Call Summaries</relationshipLabel>
+        <relationshipName>NVM_Call_Summaries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Related_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The Contact this call relates to (as indicated by a Task record whose CallObject matches the GUID from this summary)</inlineHelpText>
+        <label>Related Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>NVM Call Summaries</relationshipLabel>
+        <relationshipName>NVM_Call_Summaries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Related_Lead__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The Lead this call relates to (as indicated by a Task record whose CallObject matches the GUID from this summary)</inlineHelpText>
+        <label>Related Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>NVM Call Summaries</relationshipLabel>
+        <relationshipName>NVM_Call_Summaries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Related_Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The Opportunity this call relates to (as indicated by a Task record whose CallObject matches the GUID from this summary)</inlineHelpText>
+        <label>Related Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Call Summaries</relationshipLabel>
+        <relationshipName>NVM_Call_Summaries</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Related_To__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(NOT(ISBLANK(NVMStatsSF__Related_Account__c)),NVMStatsSF__Related_Account__r.Name, 
+
+IF(NOT(ISBLANK(NVMStatsSF__Related_Case__c)),NVMStatsSF__Related_Case__r.Account.Name, 
+
+IF(NOT(ISBLANK(NVMStatsSF__Related_Opportunity__c)),NVMStatsSF__Related_Opportunity__r.Account.Name, 
+
+IF(NOT(ISBLANK(NVMStatsSF__Related_Contact__r.Account.Name)),NVMStatsSF__Related_Contact__r.Account.Name, 
+
+IF(NOT(ISBLANK(NVMStatsSF__Related_Contact__c)), NVMStatsSF__Related_Contact__r.FirstName + &quot; &quot; + NVMStatsSF__Related_Contact__r.LastName, 
+
+IF(NOT(ISBLANK(NVMStatsSF__Related_Lead__c)), NVMStatsSF__Related_Lead__r.FirstName + &quot; &quot; + NVMStatsSF__Related_Lead__r.LastName,
+
+&quot;-&quot;))))))</formula>
+        <inlineHelpText>The Name of the Account if we know it from the Account, Case, Opportunity or Contact, otherwise the Contact&apos;s name or the Lead&apos;s name if we know either of those, otherwise &quot;-&quot;</inlineHelpText>
+        <label>Related To</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Ring_List__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Delimited list of Agents and Ring times for each from which we derive number of agents tried and last ring time.</inlineHelpText>
+        <label>Ring List</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Server__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The Server/Cloud instance this Summary data was first retrieved from</inlineHelpText>
+        <label>Server</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Short_Abandon__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>(NVMStatsSF__Abandoned__c = true) &amp;&amp; (NVMStatsSF__Total_Call_Duration__c &lt; 10)  &amp;&amp;  (NVMStatsSF__Agent_Talk_Time__c == 0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Calls abandoned within 10s where Agent Talk Time is zero</inlineHelpText>
+        <label>Short Abandon</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Silence_Percent__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Percentage of recording where there was silence</inlineHelpText>
+        <label>Silence Percent</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Skills_List__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Comma delimited list of Skill Tags applied</inlineHelpText>
+        <label>Skills List</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__StartRecorded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if a Start Event was seen - this zero-duration event fixes the inbound Call/Case Start Time</inlineHelpText>
+        <label>StartRecorded</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__TaskExists__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if a Salesforce Task exists for this call. ContactWorld injects Tasks for Outbound Calls + Agent answered Inbound ones; support cost to serve analysis. No Task if No Agent involvement</inlineHelpText>
+        <label>TaskExists</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__TaskID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Related Task for this record - use this Id after the Salesforce Hostname as a path to the Task</inlineHelpText>
+        <label>TaskID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Task_Link__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(NVMStatsSF__TaskExists__c, HYPERLINK(NVMStatsSF__TaskID__c, &quot;Open Task&quot; , &quot;_blank&quot;),&quot;&quot;)</formula>
+        <inlineHelpText>URL to open a new tab for the relates task if one exists</inlineHelpText>
+        <label>Task Link</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Time_Zone__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Time Zone this event occurred in from the perspective of the last Agent (or the User who configured the Channel if no Agent worked the Call)</inlineHelpText>
+        <label>Time Zone</label>
+        <length>64</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Total_Call_Duration__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Total time elapsed between Call placement and Call disconnected. Excludes Wrap time</inlineHelpText>
+        <label>Total Call Duration</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Trace__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Reserved for diagnostics</inlineHelpText>
+        <label>Trace</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__UTC_ISO8601_Week__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Week number in ISO8601 form of the start of the event in UTC</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Week number in ISO8601 form of the start of the event in UTC</inlineHelpText>
+        <label>UTC ISO8601 Week</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Version__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Version number of the Package which created this Summary</inlineHelpText>
+        <label>Version</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Warm_Transfer_Time__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Total time 2 agents were connected while the Caller was on hold prior to transfers</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Total time 2 agents were connected while the Caller was on hold prior to transfers</inlineHelpText>
+        <label>Warm Transfer Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Week_of_Year__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(IF(
+CEILING((NVMStatsSF__Date__c  - DATE(YEAR(NVMStatsSF__Date__c), 1, 1) + 1)/7) &gt; 52, 52, CEILING((NVMStatsSF__Date__c - DATE(YEAR(NVMStatsSF__Date__c), 1, 1) + 1)/7)
+))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Simple Week count of the UTC Week number of the event start</inlineHelpText>
+        <label>Week of Year</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__Yr_Wk_Day_Hr__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Text-sortable format E.g. YYYY/08/6-Saturday/00 Use this field to group and sort Calls in reports</description>
+        <externalId>false</externalId>
+        <formula>TEXT(YEAR(NVMStatsSF__Date__c)) + &apos;/&apos; +   RIGHT((&apos;0&apos; + NVMStatsSF__Week_of_Year__c),2) + &apos;/&apos; +  NVMStatsSF__Day_of_Week__c + &apos;/&apos; +  NVMStatsSF__Hour__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Text-sortable format E.g. YYYY/08/6-Saturday/00 Use this field to group and sort Calls in reports</inlineHelpText>
+        <label>Yr/Wk/Day/Hr</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NVMStatsSF__dateAgentId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used as an INDEXED key to find a summary of an agent&apos;s Calls on a given day. You may need to suffix this with Channel if any agents on different NVM clouds have matching Agent IDs.   NB it is NOT unique as many Calls will point to the same agent&apos;s daily summary; it is unique on the agent&apos;s daily summary object</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Combination field showing today&apos;s date and agent ID. You can use this value in Salesforce Search to find Agent State Summaries</inlineHelpText>
+        <label>dateAgentId</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warm_Transfer_Time_Hours__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Warm_Transfer_Time__c / 3600</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Warm Transfer Time Hours</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Warm_Transfer_Time_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <formula>NVMStatsSF__Warm_Transfer_Time__c / 60</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Warm Transfer Time Minutes</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>NVM Call Summary</label>
+    <listViews>
+        <fullName>NVMStatsSF__All</fullName>
+        <columns>NAME</columns>
+        <columns>NVMStatsSF__NVM_Service_Name__c</columns>
+        <columns>NVMStatsSF__CallTime__c</columns>
+        <columns>NVMStatsSF__Handle_Time__c</columns>
+        <columns>NVMStatsSF__Related_To__c</columns>
+        <columns>NVMStatsSF__Task_Link__c</columns>
+        <columns>NVMStatsSF__Last_State__c</columns>
+        <columns>NVMStatsSF__Abandoned__c</columns>
+        <columns>NVMStatsSF__Agent__c</columns>
+        <columns>NVMStatsSF__Queue_Name__c</columns>
+        <columns>NVMStatsSF__Automation_Segment__c</columns>
+        <columns>NVMStatsSF__Queue_Duration__c</columns>
+        <columns>NVMStatsSF__Agent_Ring_Duration__c</columns>
+        <columns>NVMStatsSF__Consult_Time__c</columns>
+        <columns>NVMStatsSF__After_Call_Work_Time__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>NVMCS-{0000000000}</displayFormat>
+        <label>NVM CS Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>NVM Call Summaries</pluralLabel>
+    <recordTypes>
+        <fullName>NVMStatsSF__Case</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>NVMStatsSF__NVMCSDefault</compactLayoutAssignment>
+        <label>Case</label>
+        <picklistValues>
+            <picklist>NVMStatsSF__Interaction_Type__c</picklist>
+            <values>
+                <fullName>Case</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NVMStatsSF__Inbound_Call</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>NVMStatsSF__NVMCSDefault</compactLayoutAssignment>
+        <label>Inbound Call</label>
+        <picklistValues>
+            <picklist>NVMStatsSF__Interaction_Type__c</picklist>
+            <values>
+                <fullName>Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inbound Call</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NVMStatsSF__Internal_Call</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>NVMStatsSF__NVMCSDefault</compactLayoutAssignment>
+        <description>Calls between Agents (outbound for one and inbound for the other)</description>
+        <label>Internal Call</label>
+        <picklistValues>
+            <picklist>NVMStatsSF__Interaction_Type__c</picklist>
+            <values>
+                <fullName>Internal Call</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NVMStatsSF__Outbound_Call</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>NVMStatsSF__NVMCSDefault</compactLayoutAssignment>
+        <label>Outbound Call</label>
+        <picklistValues>
+            <picklist>NVMStatsSF__Interaction_Type__c</picklist>
+            <values>
+                <fullName>Automated Outbound Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound Call</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>NVMStatsSF__Interaction_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>NVMStatsSF__CallTime__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>NVMStatsSF__NVM_Service_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>NVMStatsSF__Related_To__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>NVMStatsSF__Agent__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>NVMStatsSF__Agent2__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>NVMStatsSF__Handle_Time__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>NVMStatsSF__Interaction_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>NVMStatsSF__CallTime__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>NVMStatsSF__NVM_Service_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>NVMStatsSF__Related_To__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>NVMStatsSF__Handle_Time__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>NVMStatsSF__Agent__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>NVMStatsSF__Agent2__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NVMStatsSF__Interaction_Type__c</searchFilterFields>
+        <searchFilterFields>NVMStatsSF__CallTime__c</searchFilterFields>
+        <searchFilterFields>NVMStatsSF__Related_To__c</searchFilterFields>
+        <searchFilterFields>NVMStatsSF__Delivery_Attempts__c</searchFilterFields>
+        <searchFilterFields>NVMStatsSF__Queue_Duration__c</searchFilterFields>
+        <searchFilterFields>NVMStatsSF__Consult_Time__c</searchFilterFields>
+        <searchFilterFields>NVMStatsSF__Handle_Time__c</searchFilterFields>
+        <searchFilterFields>NVMStatsSF__After_Call_Work_Time__c</searchFilterFields>
+        <searchFilterFields>NVMStatsSF__MessageTaken__c</searchFilterFields>
+        <searchFilterFields>NVMStatsSF__Number_of_Transfers__c</searchFilterFields>
+        <searchResultsAdditionalFields>NVMStatsSF__Interaction_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>NVMStatsSF__CallTime__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>NVMStatsSF__Related_To__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>NVMStatsSF__CallDisposition__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>NVMStatsSF__Handle_Time__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>NVMStatsSF__Agent__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>NVMStatsSF__Agent2__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

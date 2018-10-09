@@ -1,0 +1,36 @@
+<apex:component controller="NotifyInternalCaseCancelsCaseController" access="global">
+    <apex:attribute name="attrCaseId" type="Id" description="Id of the case" assignTo="{!caseId}"/>
+            <p>Case Number {!currentCase.CaseNumber} has been closed with the following outcome(s):</p> 
+      <p></p>
+      <apex:outputText rendered="{!IF(currentCase.Feature_Requested_Cancelled__r.size == 0, false, true)}">  
+          <table id="templateTable" border="1" cellpadding="10" cellspacing="0" style="margin-left: 40px;font-size: 12px; width: 550px;text-align: center;">
+              <tr > 
+                <th width="70px">Status</th> 
+                <th width="200px">Rate Plan Name</th> 
+                <th>Sales Rep</th> 
+                <th>Price</th> 
+                <th>Period</th>
+                <th width="100px">Term End Date</th>    
+              </tr>
+              <apex:repeat var="CRF" value="{!currentCase.Feature_Requested_Cancelled__r}">
+                  <tr>
+                      <td>{!CRF.Status__c}</td>
+                      <td>{!CRF.Rate_plan_name__c}</td>
+                      <td>{!CRF.Subscription_Product_Charge__r.Zuora__Subscription__r.Sales_Rep__r.FirstName}&nbsp;{!CRF.Subscription_Product_Charge__r.Zuora__Subscription__r.Sales_Rep__r.LastName}</td>
+                      <td>${!IF(CRF.Price__c == null, '0.00', CRF.Price__c)} </td>
+                      <td>{!CRF.Period__c}</td>
+                      <td>
+                        <apex:outputText value="{0, date, MM/dd/yyyy}"> 
+                            <apex:param value="{!CRF.Term_End_Date__c}" />
+                        </apex:outputText>
+                      </td> 
+                  </tr>
+              </apex:repeat>  
+          </table>
+        </apex:outputText>
+      <p></p> 
+      <apex:outputLink value="{!LEFT($CurrentPage.URL,FIND('/',$CurrentPage.URL,9))}{!attrCaseId}">
+        <!-- {!caseLink} -->
+        {!LEFT($CurrentPage.URL,FIND('/',$CurrentPage.URL,9))}{!attrCaseId}
+      </apex:outputLink>
+</apex:component>

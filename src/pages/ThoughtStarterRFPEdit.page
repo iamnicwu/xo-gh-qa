@@ -1,0 +1,157 @@
+<apex:page standardController="ThoughtStarter_RFP__c" extensions="ThoughtStarterRFPEditController" title="New {!rtMapById[CASESAFEID(tsRFPRecord.RecordTypeId)]}">
+    <apex:sectionHeader title="{!rtMapById[CASESAFEID(tsRFPRecord.RecordTypeId)]} Edit" subtitle="{!IF(ThoughtStarter_RFP__c.Id == null, 'New ' + rtMapById[CASESAFEID(tsRFPRecord.RecordTypeId)], ThoughtStarter_RFP__c.Name)}" />
+
+    <apex:form >
+        <apex:pageBlock title="{!rtMapById[CASESAFEID(tsRFPRecord.RecordTypeId)]} Edit" mode="edit" id="pBlock">
+            <apex:pageMessages />
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save" onclick="disableInput();" reRender="pBlock" oncomplete="enableInput();"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Information" columns="2">
+                <apex:outputField value="{!ThoughtStarter_RFP__c.RecordTypeId}" />
+                <apex:pageBlockSectionItem />
+                <apex:outputField value="{!ThoughtStarter_RFP__c.Name}" />
+                <apex:pageBlockSectionItem />
+                <apex:outputField value="{!ThoughtStarter_RFP__c.Opportunity__c}" />
+                <apex:pageBlockSectionItem />
+                <!-- <apex:inputField value="{!ThoughtStarter_RFP__c.Description__c}" style="width: 100%"/> update by ticket CSP-1887, the field Description__c of RFP change to required-->
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Description__c}" required="{!CONTAINS(requiredFields, 'Description__c')}" 
+                                 style="width: 100%"/>
+                <apex:pageBlockSectionItem rendered="{!rtMapById[CASESAFEID(tsRFPRecord.RecordTypeId)] == 'RFP'}"/>
+                
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Related_ThoughtStarter__c}" rendered="{!rtMapById[CASESAFEID(tsRFPRecord.RecordTypeId)] == 'RFP'}"/>
+            </apex:pageBlockSection>
+
+            <!-- THOUGHTSTARTER SECTION ONLY -->
+            <apex:pageBlockSection title="ThoughtStarter" columns="1" rendered="{!rtMapById[CASESAFEID(tsRFPRecord.RecordTypeId)] == 'ThoughtStarter'}">
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Account_Strategist__c}" required="{!CONTAINS(requiredFields, 'Account_Strategist__c')}"/>
+                <apex:outputField value="{!ThoughtStarter_RFP__c.Sales_Dev_Needed__c}" />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Request_Type__c}" required="{!CONTAINS(requiredFields, 'Request_Type__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Internal_Due_Date__c}" required="{!CONTAINS(requiredFields, 'Internal_Due_Date__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Desired_Due_Date__c}" required="{!CONTAINS(requiredFields, 'Desired_Due_Date__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Campaign_Timing_Flight__c}" required="{!CONTAINS(requiredFields, 'Campaign_Timing_Flight__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Advertiser_Goals__c}" required="{!CONTAINS(requiredFields, 'Advertiser_Goals__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Deliverable__c}" required="{!CONTAINS(requiredFields, 'Deliverable__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Target_Audience__c}" required="{!CONTAINS(requiredFields, 'Target_Audience__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Budget__c}" required="{!CONTAINS(requiredFields, 'Budget__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Campaign_Category__c}" required="{!CONTAINS(requiredFields, 'Campaign_Category__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Campaign_Start_Date__c}" required="{!CONTAINS(requiredFields, 'Campaign_Start_Date__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Campaign_End_Date__c}" required="{!CONTAINS(requiredFields, 'Campaign_End_Date__c')}"/>
+            </apex:pageBlockSection>
+            <!-- END OF THOUGHTSTARTER SECTION ONLY -->
+
+            <!-- RFP SECTION ONLY -->
+            <apex:pageBlockSection title="Campaign Personnel" columns="2" rendered="{!rtMapById[CASESAFEID(tsRFPRecord.RecordTypeId)] == 'RFP'}">
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Account_Strategist__c}" required="{!CONTAINS(requiredFields, 'Account_Strategist__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Sales_Dev_Needed__c}" required="{!CONTAINS(requiredFields, 'Sales_Dev_Needed__c')}"/>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Custom_Content__c}" required="{!CONTAINS(requiredFields, 'Custom_Content__c')}"/>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Campaign Details" columns="2" rendered="{!rtMapById[CASESAFEID(tsRFPRecord.RecordTypeId)] == 'RFP'}">
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Request_Type__c}" required="{!CONTAINS(requiredFields, 'Request_Type__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Spend_Type__c}" required="{!CONTAINS(requiredFields, 'Spend_Type__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Campaign_Category__c}" required="{!CONTAINS(requiredFields, 'Campaign_Category__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Multiple_Spends__c}" required="{!CONTAINS(requiredFields, 'Multiple_Spends__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Internal_Due_Date__c}" required="{!CONTAINS(requiredFields, 'Internal_Due_Date__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.User_Targeting__c}" required="{!CONTAINS(requiredFields, 'User_Targeting__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Due_to_Client__c}" required="{!CONTAINS(requiredFields, 'Due_to_Client__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Geo_Targeting_Details__c}" required="{!CONTAINS(requiredFields, 'Geo_Targeting_Details__c')}"/>
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Campaign_Start_Date__c}" required="{!CONTAINS(requiredFields, 'Campaign_Start_Date__c')}"/>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Campaign_End_Date__c}" required="{!CONTAINS(requiredFields, 'Campaign_End_Date__c')}"/>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Maximum_Budget__c}" required="{!CONTAINS(requiredFields, 'Maximum_Budget__c')}"/>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Budget_Questionable__c}" required="{!CONTAINS(requiredFields, 'Budget_Questionable__c')}"/>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Client_Objectives__c}" style="width: 100%" required="{!CONTAINS(requiredFields, 'Client_Objectives__c')}"/>
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Next_Step__c}" style="width: 100%" required="{!CONTAINS(requiredFields, 'Next_Step__c')}"/>
+            </apex:pageBlockSection>
+            <!-- END OF RFP SECTION ONLY -->
+
+            <!-- SHARED TS/RFP METRICS SECTION -->
+            <apex:pageBlockSection title="Success Metrics - Clicks" columns="2" >
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Clicks__c}" />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.CTR__c}" />
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Cost_Per_Click__c}" />
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Success Metrics - End Actions" columns="2" >
+                <apex:inputField value="{!ThoughtStarter_RFP__c.End_Actions__c}" />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.No_of_Sales__c}" />
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Total_Sales__c}" />
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.No_of_Actions__c}" />
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Cost_Per_Action__c}" />
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Action_Explanation__c}" />
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Success Metrics - Leads" columns="2" >
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Leads__c}" />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.No_of_Op_ins__c}" />
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Cost_Per_Lead__c}" />
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Success Metrics - Others" columns="2" >
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Brand_Exposure__c}" />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Other__c}" />
+                <apex:pageBlockSectionItem />
+                <apex:inputField value="{!ThoughtStarter_RFP__c.Marketing_Channel__c}" />
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+    </apex:form>
+
+    <script type="text/javascript">
+        /* 
+            Disable input if element is not defined and not currently disabled.
+            Set cursor to 'not-allowed' for on hover visual representation of disablement.
+        */
+        var disableInput = function() {
+            var inputButtons = document.querySelectorAll('.editPage .btn');
+            console.log(inputButtons.length);
+
+            for(var i = 0; i < inputButtons.length; i++) {
+                var currentButton = inputButtons[i];
+                if(currentButton.disabled) {
+                    continue;
+                }
+
+                currentButton.style.cursor = 'not-allowed';
+                currentButton.disabled = true;
+                console.log(currentButton);
+                console.log(currentButton.disabled);
+            }
+        }
+
+        /*
+            Enable element if element is not undefined, current disabled, and there is a present
+            Visualforce error message on the page. Keep the element disabled if there is no error message
+            as this presumably means the page is loading/processing.
+         */
+        var enableInput = function() {
+            var errorMessage = document.getElementsByClassName('errorM3');
+            if(errorMessage.length > 0) {
+                var inputButtons = document.querySelectorAll('.editPage .btn');
+                
+                for(var i = 0; i < inputButtons.length; i++) {
+                var currentButton = inputButtons[i];
+                if(!currentButton.disabled) {
+                    continue;
+                }
+
+                currentButton.style.cursor = 'default';
+                currentButton.disabled = false;
+            }
+            }
+        }
+    </script>
+</apex:page>

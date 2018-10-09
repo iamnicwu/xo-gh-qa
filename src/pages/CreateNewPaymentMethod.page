@@ -1,0 +1,93 @@
+<apex:page showHeader="true" sidebar="false" StandardController="zqu__Quote__c" extensions="CreateNewPaymentMethodController">
+	<script src="https://static.zuora.com/Resources/libs/hosted/latest/zuora-min.js" />
+	<script>
+		jQuery(document).ready(function(){
+			// For CSP-1972, we will move forward if paused failure, so the payment method should be display in the page.
+			// toggleZuoraComp(false); // default set it false
+			pauseCall(); // execute rest callout to pause recording
+		});
+
+		// CSP-2096 Resume Call Recording before leaving CreateNewPaymentMethod.page
+		jQuery(window).bind('beforeunload',function(){
+			resumeCall();
+		});
+
+		// toggle the zuora component to display or not
+		function toggleZuoraComp(b){
+			if(b){
+				jQuery("[id*='zuoraOut']").attr('style','display:block');
+			}
+			else{
+				jQuery("[id*='zuoraOut']").attr('style','display:none');
+			}
+		}
+
+		// remote action to call pause recording
+		function pauseCall() {
+			Visualforce.remoting.Manager.invokeAction(
+				'{!$RemoteAction.CreateNewPaymentMethodController.pauseCallRecording}',
+				function(result, event){
+
+					if (event.status) {
+
+						// if successfully paused the recording, system will display payment component
+						if(result == 'Paused Call Recording Sucessfully'){
+							console.log('Paused NVM Call Recording successfully!');
+						}
+						// if pause failed, should add handling codes inside if statement
+						else if (result =='Paused Call Recording Failed') { 
+							console.log('Pause NVM Call Recording failed!');
+						}
+						// if get token failed, should add handling codes inside if statement
+						else if(result == 'Get NVM Token Failed'){
+							console.log('Call Remote Action Failed!');
+						}
+					}
+					else if (event.type === 'exception') {
+						console.log(event);
+					}
+
+				},
+				{escape: true}
+			);
+		}
+
+		// CSP-2096
+		// remote action to call resume recording
+		function resumeCall() {
+			console.log('pauseCall start!');
+			Visualforce.remoting.Manager.invokeAction(
+				'{!$RemoteAction.CreateNewPaymentMethodController.resumeCallRecording}',
+				function(result, event){
+
+					if (event.status) {
+
+						// if successfully resume the recording, system will display payment component
+						if(result == 'Started Call Recording Sucessfully'){
+							console.log('Started NVM Call Recording successfully!');
+						}
+						// if resume failed, should add handling codes inside if statement
+						else if (result =='Started Call Recording Failed') { 
+							console.log('Started NVM Call Recording failed!');
+						}
+						// if get token failed, should add hanlding codes inside if statement
+						else if(result == 'Get NVM Token Failed'){
+							console.log('Call Remote Action Failed!');
+						}
+					}
+					else if (event.type === 'exception') {
+						console.log(event);
+					}
+				},
+				{escape: true}
+			);
+			console.log('pauseCall end!');
+		}
+
+	</script>
+
+	<apex:outputPanel id="zuoraOut" >
+		<!-- Render the payment page component, using the url parameters as attribute values -->
+		<zqu:PaymentPage id="zuoraPaymentComp" zuoraPageId="{!pageId}" submitEnabled="false" style="inline" />
+	</apex:outputPanel>
+</apex:page>

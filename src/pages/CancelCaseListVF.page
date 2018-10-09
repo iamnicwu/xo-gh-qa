@@ -1,0 +1,30 @@
+<apex:page id="CancelCaseListVF" standardController="Case" recordSetVar="cases" extensions="AccountCasesControllerExtension">
+    <apex:includeLightning />
+
+    <div id="lightning" />
+
+    <script>
+        var recordId = '{!recordId}';
+
+        $Lightning.use("c:CancelCaseApp", function() {
+          var attributes = {
+            recordId: recordId
+          };
+
+          $Lightning.createComponent("c:CancelCase",
+            attributes,
+            "lightning",
+            function(cmp) {
+              console.log('GORDON2 ' + recordId);
+
+              $A.eventService.addHandler({
+                event: "force:navigateToSObject",
+                handler: function(event) {
+                  window.location = '{!URLFOR($Action.Account.View, recordId)}';
+                }
+              });
+            });
+        });
+
+    </script>
+</apex:page>

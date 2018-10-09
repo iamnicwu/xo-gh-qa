@@ -1,0 +1,5 @@
+<messaging:emailTemplate subject="{!relatedTo.Account.Name} Cancel Case Number {!relatedTo.CaseNumber} Outcome [{!relatedTo.Thread_ID__c}]" recipientType="User" relatedToType="Case" replyTo="no-reply@theknot.com">
+    <messaging:htmlEmailBody >
+            <c:NotifyInternalCaseTeamCancelsCaseCMP attrCaseId="{!relatedTo.Id}"/>
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

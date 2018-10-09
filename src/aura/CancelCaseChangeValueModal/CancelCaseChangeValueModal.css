@@ -1,0 +1,22 @@
+.THIS .cancel-case-modal-results {
+    position: relative;
+}
+
+.THIS .cancel-case-spinner {
+    top: 10px;
+}
+
+.THIS .cancel-case-modal-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.THIS .cancel-case-modal-row:hover {
+    color: rgb(0, 112, 210);
+    cursor: pointer;
+}
+
+.THIS .cancel-case-modal-row-check-icon {
+    color: inherit;
+}

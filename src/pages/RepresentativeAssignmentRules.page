@@ -1,0 +1,35 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" title="Assignment Rules">
+	<apex:includeScript value="/lightning/lightning.out.js" />
+
+  <div id="lightning" />
+
+  <script>
+    function getURLParameter(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+    }
+
+    $Lightning.use("c:LocalSalesAdministration", function() {
+      $Lightning.createComponent("c:RepresentativeAssignmentRules",
+        '',
+        'lightning',
+        function(cmp) {
+          // do some stuff
+      });
+    });
+  </script>
+
+  <style type="text/css">
+    body {
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    .noSidebarCell {
+      padding: 0 0 30px 0!important;
+    }
+
+    .hasMotif {
+      margin: 0!important;
+    }
+  </style>
+</apex:page>

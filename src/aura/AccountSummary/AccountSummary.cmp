@@ -1,0 +1,322 @@
+<aura:component access="GLOBAL" controller="AccountSummaryController" implements="force:appHostable">
+	<!-- <ltng:require styles="/resource/slds100/assets/styles/salesforce-lightning-design-system.css"/> -->
+	<ltng:require styles="/resource/animate" />
+
+	<aura:attribute name="accountId" type="String" />
+	<aura:attribute name="currentAccount" type="Account" />
+	<aura:attribute name="billingAccounts" type="Object[]" />
+	<aura:attribute name="subscriptions" type="Object[]" />
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+	<div class="slds">
+		
+		<!-- PAGE HEADER -->
+		<div class="slds-page-header" role="banner">
+			<div class="slds-grid">
+				<div class="slds-col slds-has-flexi-truncate">
+					<!-- Small Header -->
+					<p class="slds-text-heading--label">Account Summary</p>
+					<!-- Title -->
+					<div class="slds-grid">
+						<h1 class="slds-page-header__title slds-truncate" title="Sales Pipeline">{!v.currentAccount.accountInfo.Name}</h1>
+					</div>
+				</div>
+				<div class="account-details">
+					<span class="{!'info status ' + v.currentAccount.accountInfo.Local_Paid_Status__c}">
+						Account Status: {!v.currentAccount.accountInfo.Account_Status__c}
+					</span>
+					<span class="{!'info credit-status ' + v.currentAccount.creditStatus}">
+						Credit Status: <span class="coded">{!v.currentAccount.creditStatus}</span>
+						<aura:renderIf isTrue="{!v.currentAccount.creditStatus == 'Credit Hold'}">
+						  - Amount Due: <ui:outputCurrency value="{!v.currentAccount.accountInfo.Past_Due_Balance__c}" />
+						</aura:renderIf>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<!-- Page Tabs -->
+		<div class="slds-tabs--scoped">
+			<!-- Tabs List -->
+	    <ul class="slds-tabs--scoped__nav" role="tablist">
+	    	<!-- Subscriptions Tab -->
+	      <li class="slds-tabs--scoped__item slds-text-heading--label slds-active" title="Subscriptions" role="presentation">
+	      	<a class="slds-tabs--scoped__link" href="#subscriptions" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-scoped-1" id="tab-scoped-1__item" onclick="{!c.selectTab}">
+	      		<span class="tab-text">Subscriptions</span>
+	      		<span class="tab-count-container">
+	      			<span class="tab-count">{!v.subscriptions.length}</span>
+	      		</span>
+	      	</a>
+	      </li>
+
+	      <!-- Billing Accounts Tab -->
+	      <li class="slds-tabs--scoped__item slds-text-heading--label" title="Billing Accounts" role="presentation">
+	      	<a class="slds-tabs--scoped__link" href="#billing" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-scoped-2" id="tab-scoped-2__item" onclick="{!c.selectTab}">
+	      		<span class="tab-text">Billing Accounts</span> 
+	      		<span class="tab-count-container">
+	      			<span class="tab-count">{!v.billingAccounts.length}</span>
+	      		</span>
+	      	</a>
+	      </li>
+	    </ul>
+
+	    <!-- Subscriptions Section -->
+	    <div id="tab-scoped-1" class="slds-tabs--scoped__content animated fadeIn slds-show" role="tabpanel" aria-labelledby="tab-scoped-1__item">
+	    	<!-- Filter Options -->
+				<div class="slds-grid slds-wrap">
+					<!-- Year Select Option -->
+					<div class="slds-col slds-form-element slds-small-size--1-of-3 slds-medium-size--1-of-3 select-padding animated fadeIn">
+						<label class="slds-form-element__label" for="status-select">Status</label>
+						<div class="slds-form-element__control">
+							<div class="slds-select_container">
+								<select id="status-select" class="slds-select" onchange="{!c.subscriptionSearch}" >
+									<option value="active">Active Services</option>
+									<option value="all">All Services</option>
+									<option value="cancelled">Cancelled Services</option>
+									<option value="canceledlast90">Cancelled - Last 90 Days</option>
+									<option value="completed">Completed Services</option>
+									<option value="completedlast90">Completed - Last 90 Days</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<!-- Market Select Option -->
+					<div class="slds-col slds-form-element slds-small-size--1-of-3 slds-medium-size--1-of-3 select-padding animated fadeIn">
+						<label class="slds-form-element__label" for="market-select">Market</label>
+						<div class="slds-form-element__control">
+							<div class="slds-select_container">
+								<select id="market-select" data-index="3" class="slds-select" onchange="{!c.filterMarket}" >
+									<option value="none">All</option>
+									<!-- DYNAMICALLY POPULATED SMART FILTERS -->
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<!-- Category Select Option -->
+					<div class="slds-col slds-form-element slds-small-size--1-of-3 slds-medium-size--1-of-3 select-padding animated fadeIn">
+						<label class="slds-form-element__label" for="category-select">Category</label>
+						<div class="slds-form-element__control">
+							<div class="slds-select_container">
+								<select id="category-select" data-index="4" class="slds-select" onchange="{!c.filterCategory}" >
+									<option value="none">All</option>
+									<!-- DYNAMICALLY POPULATED SMART FILTERS -->
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+	    	<!-- SUBSCRIPTION PRODUCT CHARGE TABLE -->
+	    	<table id="subscription-table" class="slds-table slds-table--bordered slds-table--cell-buffer slds-max-medium-table--stacked-horizontal billing-table" >
+					<thead>
+						<tr class="slds-text-heading--label">
+							<!--<th class="slds-truncate" scope="col">
+								Type
+							</th>-->
+                            
+              <th class="slds-is-sortable slds-truncate desc" id="Product_Type__c" scope="col" onclick="{!c.sortProductType}" >
+								<div class="slds-th__action slds-truncate">Type
+									<button class="slds-button slds-button--icon-bare">
+										<span class="slds-assistive-text">Sort</span>
+									</button>
+								</div>
+							</th>
+							<th class="slds-truncate" scope="col">
+								Subscription Status
+							</th>
+							<th class="slds-truncate" scope="col">
+								Product Name
+							</th>
+							<th class="slds-is-sortable slds-truncate desc" id="Market__c" scope="col" onclick="{!c.sortProductRatePlan}" >
+								<div class="slds-th__action slds-truncate">Market Name
+									<button class="slds-button slds-button--icon-bare" >
+										<span class="slds-assistive-text">Sort</span>
+									</button>
+								</div>
+							</th>
+							<th class="slds-is-sortable slds-truncate desc" id="Category__c" scope="col" onclick="{!c.sortProductRatePlan}" >
+								<div class="slds-th__action slds-truncate">Category Name
+									<button class="slds-button slds-button--icon-bare">
+										<span class="slds-assistive-text">Sort</span>
+									</button>
+								</div>
+							</th>
+							<th class="slds-truncate" scope="col">
+								Start Date
+							</th>
+							<th class="slds-truncate" scope="col">
+								End Date
+							</th>
+              <th class="slds-truncate" scope="col">
+								LDE Launch Date
+							</th>
+							<th class="slds-truncate" scope="col">
+								Rate
+							</th>
+							<th class="slds-truncate" scope="col">
+								Customer Acceptance Date
+							</th>
+							<th class="slds-truncate" scope="col">
+								Subscription
+							</th>
+							<th class="slds-truncate" scope="col">
+								Legacy Dynamic ID
+							</th>
+							<th class="slds-truncate" scope="col">
+								EchoSign
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<aura:iteration items="{!v.subscriptions}" var="subscription">
+							<tr class="slds-hint-parent subscription-row">
+								<td class="slds-truncate" data-label="Type">
+									{!subscription.subProdCharge.Product_Type__c}
+								</td>
+								<td class="slds-truncate center-align" data-label="Subscription Status">
+									{!subscription.subProdCharge.Zuora__Subscription__r.True_Subscription_Status__c}
+								</td>
+								<td class="slds-truncate" data-label="Product Name" title="{!subscription.subProdCharge.Zuora__RatePlanName__c}">
+									{!subscription.subProdCharge.Zuora__RatePlanName__c}
+								</td>
+								<td class="slds-truncate" data-label="Market Name">
+									{!subscription.quoteRatePlan.zqu__ProductRatePlan__r.Market__c}
+								</td>
+								<td class="slds-truncate" data-label="Category Name">
+									{!subscription.quoteRatePlan.zqu__ProductRatePlan__r.Category__c}
+								</td>
+							  <td class="slds-truncate" data-label="Start Date">
+							  	<ui:outputDate value="{!subscription.subProdCharge.Zuora__Subscription__r.Zuora__TermStartDate__c}" />
+							  </td>
+							  <td class="slds-truncate" data-label="End Date">
+							  	<ui:outputDate value="{!subscription.subProdCharge.Zuora__Subscription__r.Zuora__TermEndDate__c}" />
+							  </td>
+                              <td class="slds-truncate" data-label="LDE Launch Date">
+							  	<ui:outputDate value="{!subscription.subProdCharge.LDE_Email_Launch_Date__c}" />
+							  </td>
+                                <td class="slds-truncate" data-label="Rate">
+                                    <aura:if isTrue="{!subscription.subProdCharge.Product_Type__c == 'Transactions'}">
+                                        <aura:if isTrue="{!subscription.subProdCharge.Zuora__Price__c lt 1}">
+                                            <ui:outputNumber value="{!subscription.subProdCharge.Zuora__Price__c}" format='0.%'/>
+                                            <aura:set attribute="else">
+                                                <ui:outputNumber value="{!subscription.subProdCharge.Zuora__Price__c}" format='00%'/>
+                                            </aura:set>
+                                        </aura:if>
+                                        <aura:set attribute="else">
+                                            <ui:outputCurrency value="{!subscription.subProdCharge.Zuora__Price__c}"/>
+                                        </aura:set>                                    
+                                    </aura:if>
+                                </td>
+							  <td class="slds-truncate center-align" data-label="Customer Acceptance Date">
+							  	{!subscription.subProdCharge.Zuora__Subscription__r.Zuora__ContractEffectiveDate__c}
+							  </td>
+							  <td class="slds-truncate" data-label="Subscription">
+									<a href="{!'/' + subscription.subProdCharge.Zuora__Subscription__c}" target="_blank">{!subscription.subProdCharge.Zuora__Subscription__r.Name}</a>
+								</td>
+								<td class="slds-truncate" data-label="Legacy Dynamic ID" title="{!subscription.subProdCharge.LocationVendorDynamicsAccountID__c}">
+									{!subscription.subProdCharge.LocationVendorDynamicsAccountID__c}
+								</td>
+							  <td class="slds-truncate" data-label="EchoSign">
+							  	<aura:unescapedHtml value="{!subscription.agreement.echosign_dev1__Document__c}" />
+							  </td>
+							</tr>
+						</aura:iteration>	
+					</tbody>
+				</table>
+	    </div>
+
+	    <!-- Billing Accounts Section -->
+	    <div id="tab-scoped-2" class="slds-tabs--scoped__content animated fadeIn slds-hide" role="tabpanel" aria-labelledby="tab-scoped-2__item">
+	    	<table id="billing-table" class="slds-table slds-table--bordered slds-table--cell-buffer slds-max-medium-table--stacked-horizontal billing-table" >
+					<thead>
+						<tr class="slds-text-heading--label">
+							<th class="slds-truncate" scope="col">
+								Billing Account Name
+							</th>
+							<th class="slds-truncate" scope="col">
+								Billing Cycle
+							</th>
+							<th class="slds-truncate" scope="col">
+								Payment Method
+							</th>
+							<th class="slds-truncate" scope="col">
+								Total Monthly Charge
+							</th>
+							<th class="slds-truncate" scope="col">
+								Invoice Count
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<aura:iteration items="{!v.billingAccounts}" var="billingAccount">
+							<tr class="slds-hint-parent">
+								<td class="slds-truncate" data-label="Billing Account Name">
+									{!billingAccount.Name}
+								</td>
+								<td class="slds-truncate" data-label="Billing Cycle">
+									{!billingAccount.Zuora__BillCycleDay__c}
+								</td>
+								<td class="slds-truncate" data-label="Payment Method">
+									{!billingAccount.Zuora__DefaultPaymentMethod__c}
+								</td>
+								<td class="slds-truncate" data-label="Total Monthly Charge">
+									<ui:outputCurrency value="{!billingAccount.Zuora__MRR__c}" />
+								</td>
+								<td class="slds-truncate" data-label="Invoice Count">
+									<a href="javascript:void(0);" onclick="{!c.showInvoices}">{!billingAccount.Zuora__ZInvoices__r.length}</a>
+								</td>
+							</tr>
+							<!-- INVOICE ROW - SHOWN ON CLICK -->
+							<tr class="invoice-row animated fadeInRight" style="display: none;">
+								<td colspan="6">
+									<table class="slds-table slds-table--bordered slds-max-medium-table--stacked-horizontal invoice-table">
+										<thead>
+											<tr class="slds-text-heading--label">
+												<th class="slds-truncate">Invoice</th>
+												<th class="slds-truncate">Invoice Date</th>
+												<th class="slds-truncate">Due Date</th>
+												<th class="slds-truncate">Invoice Total</th>
+												<th class="slds-truncate">Invoice Balance</th>
+												<th class="slds-truncate">Promise to Pay</th>
+											</tr>
+										</thead>
+										<tbody>
+											<aura:iteration items="{!billingAccount.Zuora__ZInvoices__r}" var="invoice">
+												<tr class="slds-hint-parent">
+													<td class="slds-truncate" data-label="Invoice">
+														<a href="{!'/' + invoice.Id}" target="_blank">{!invoice.Name}</a>
+													</td>
+													<td class="slds-truncate" data-label="Invoice Date">
+														<ui:outputDate value="{!invoice.Zuora__InvoiceDate__c}" />
+													</td>
+													<td class="slds-truncate" data-label="Due Date">
+														<ui:outputDate value="{!invoice.Zuora__DueDate__c}" />
+													</td>
+													<td class="slds-truncate" data-label="Invoice Total">
+														<ui:outputCurrency value="{!invoice.Zuora__TotalAmount__c}" />
+													</td>
+													<td class="slds-truncate" data-label="Invoice Balance">
+														<ui:outputCurrency value="{!invoice.Zuora__Balance2__c}" />
+													</td>
+												    <td class="slds-truncate" data-label="Promise To Pay">
+														<ui:outputDate value="{!invoice.Promise_to_Pay_Date__c}" />
+													</td>
+												</tr>
+											</aura:iteration>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</aura:iteration>	
+					</tbody>
+				</table>
+	    </div>
+	    
+	    
+	  </div>
+
+	</div>
+</aura:component>

@@ -1,0 +1,30 @@
+{!Account.OwnerFullName}, 
+
+Below is contact information received from an inbound paid media lead.  This is an extremely hot lead that you are expected to call within 1 hour of receiving this email during business hours.  
+
+Company:
+{!Account.Name}
+
+Website:
+{!Account.Website}
+
+Phone: 
+{!Account.Phone} 
+
+Postal Code: 
+{!Account.BillingPostalCode}
+
+Local Sales Market:
+{!Account.Local_Sales_Market__c}
+
+Primary Category: 
+{!Account.Primary_Category__c}
+
+Interest in Advertising in Multiple Categories:
+{!Account.Interest_in_Adv_in_Multiple_Categories__c}
+
+Created Date/Time: 
+{!Account.CreatedDate}
+
+Account Link:
+{!Account.Link}

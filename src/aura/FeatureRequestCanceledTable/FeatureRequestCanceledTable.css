@@ -1,0 +1,19 @@
+.THIS {
+}
+
+.THIS.heading-text {
+    width: 100%;
+}
+
+.THIS .slds-scrollable {
+    max-height: 500px;
+}
+
+.THIS td.select-cell {
+    padding-top: 4px;
+    padding-bottom: 0;
+}
+
+.THIS .slds-select {
+    height: 27px;
+}

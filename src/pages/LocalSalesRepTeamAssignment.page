@@ -1,0 +1,46 @@
+<apex:page showHeader="false" sidebar="false" controller="LocalSalesRepTeamAssignmentController">
+	<script>
+		var statusAction = function(){		
+              var btnElements = document.getElementsByClassName("pbButtonClass");		
+              for(i = 0; i < btnElements.length; i++){		
+                    //btnElements[i].style.display = "none";		
+                    btnElements[i].className = btnElements[i].className + " btnDisabled";		
+                    btnElements[i].setAttribute("disabled", "disabled");		
+              }		
+        }
+	</script>
+	<apex:sectionHeader title="Local Sales Rep Team Assignment!" subtitle="Assign Teams for Sales Reps!"/>
+
+	<apex:form >
+		<apex:pageBlock id="blockId">
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Save Changes" action="{!saveSalesRepRecord}" reRender="blockId" status="saveStatus" styleClass="pbButtonClass"/>
+				<apex:actionStatus id="saveStatus" onstart="statusAction();" startText="Saving..." stopText=""/>
+			</apex:pageBlockButtons>
+			<apex:pageMessages />	
+			<apex:pageBlockTable value="{!salesRepList}" var="rep">
+				<apex:column headerValue="Name">
+					<apex:outputText value="{!rep.FirstName} {!rep.LastName}"/>
+				</apex:column>
+				<apex:column headerValue="RSD">
+					<apex:inputField value="{!rep.ManagerId}"/>
+				</apex:column>
+				<apex:column headerValue="ARR">
+					<apex:inputField value="{!rep.ARR__c}"/>
+				</apex:column>
+				<apex:column headerValue="RSR">
+					<apex:inputField value="{!rep.RSR__c}"/>
+				</apex:column>
+				<apex:column headerValue="Strategy Specialist">
+					<apex:inputField value="{!rep.Strategy_Specialist__c}"/>
+				</apex:column>
+				<apex:column headerValue="Print Specialist">
+					<apex:inputField value="{!rep.Print_Specialist__c}"/>
+				</apex:column>
+				<apex:column headerValue="SOR">
+					<apex:inputField value="{!rep.SOR__c}"/>
+				</apex:column>
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

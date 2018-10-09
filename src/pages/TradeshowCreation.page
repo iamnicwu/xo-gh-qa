@@ -1,0 +1,32 @@
+<apex:page Controller="TradeshowCreationController">
+
+    <apex:form id="tradeshowformId">
+
+        <apex:sectionHeader title="New Tradeshow Deal" />
+
+        <apex:pageBlock mode="edit" title="Tradeshow Deal Edit" >
+
+          <apex:pageMessages />
+
+          <apex:pageBlockButtons location="both" >
+            <apex:commandButton value="Save" action="{!Save}" />
+            <apex:commandButton value="Cancel" immediate="true" action="{!Cancel}" />
+          </apex:pageBlockButtons>
+
+          <apex:pageBlockSection columns="2" collapsible="false" title="Contact Information">
+
+            <apex:repeat value="{!ContactFields}" var="f">
+                <apex:inputField value="{!newContact[f.FieldPath]}" required="{!f.Required}" />
+            </apex:repeat>
+
+          </apex:pageBlockSection>
+
+          <apex:pageBlockSection columns="1" collapsible="false" title="Opportunity Information">
+            <apex:repeat value="{!OppFields}" var="opp">
+              <apex:inputField value="{!newOpp[opp.FieldPath]}" required="{!opp.Required}" />
+            </apex:repeat>
+          </apex:pageBlockSection>
+        </apex:pageBlock>
+
+      </apex:form>
+</apex:page>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>The customer waiting on the product</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Waitlisted Products</relationshipLabel>
+        <relationshipName>Waitlist</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>I_Am_the_Sales_Rep__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.OwnerId =  $User.Id</formula>
+        <label>I Am the Sales Rep</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>InActive_Date__c</fullName>
+        <description>The date that the waitlist changed to inactive</description>
+        <externalId>false</externalId>
+        <label>InActive Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Inactive_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Inactive Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Deleted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Converted to Inventory</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Is Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Product_Rate_Plan__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The product (by market and category) that the customer is waitlisted for</inlineHelpText>
+        <label>Product Rate Plan</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Inventory is not managed for that Product Rate Plan, therefore it cannot have a waitlist.</errorMessage>
+            <filterItems>
+                <field>zqu__ProductRatePlan__c.Capacity__c</field>
+                <operation>notEqual</operation>
+                <value></value>
+            </filterItems>
+            <filterItems>
+                <field>zqu__ProductRatePlan__c.Capacity__c</field>
+                <operation>notEqual</operation>
+                <value>0</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>zqu__ProductRatePlan__c</referenceTo>
+        <relationshipLabel>Waitlist</relationshipLabel>
+        <relationshipName>Waitlists</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Sort_Order_Override__c</fullName>
+        <defaultValue>1000</defaultValue>
+        <externalId>false</externalId>
+        <label>Sort Order Override</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sort_Order__c</fullName>
+        <externalId>false</externalId>
+        <formula>RIGHT(&quot;0000&quot; + TEXT(Sort_Order_Override__c),4) + Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sort Order</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Waitlist</label>
+    <nameField>
+        <displayFormat>WAIT-{000000}</displayFormat>
+        <label>Waitlist Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Waitlist</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

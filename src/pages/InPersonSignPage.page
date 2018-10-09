@@ -1,0 +1,10 @@
+<apex:page cache="true" 
+           expires="600"
+           docType="html-5.0"
+           showHeader="false" 
+           sidebar="false"
+           standardStylesheets="false"
+           standardController="echosign_dev1__SIGN_Agreement__c"
+           extensions="echosign_dev1.AgreementMobileController">
+  
+</apex:page>

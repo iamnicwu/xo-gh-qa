@@ -1,0 +1,17 @@
+{
+    "headers": {
+        "Content-Type": "application/json; charset=UTF-8", 
+        "Accept": "application/json", 
+        "Authorization": "OAuth 00D3F000000Cq24!ARkAQPkAFVFKld62kPBnp.wkQCPm15j73fa9lM5ESVsNn85WrFrB_M58qHSDeJ9pt2_BXqQe17sGUsp9pMChqebpHsCGOIwA"
+    }, 
+    "session_id": "00D3F000000Cq24!ARkAQPkAFVFKld62kPBnp.wkQCPm15j73fa9lM5ESVsNn85WrFrB_M58qHSDeJ9pt2_BXqQe17sGUsp9pMChqebpHsCGOIwA", 
+    "success": true, 
+    "metadata_url": "https://xogrp--UAT.cs92.my.salesforce.com/services/Soap/m/36.0", 
+    "user_id": "0053F000000JSXCQA4", 
+    "instance_url": "https://xogrp--UAT.cs92.my.salesforce.com", 
+    "project name": "xo-beCreate-uat", 
+    "time_stamp": "2018-10-09 11:16:08", 
+    "apex_url": "https://xogrp--UAT.cs92.my.salesforce.com/services/Soap/s/36.0", 
+    "rest_url": "https://xogrp--UAT.cs92.my.salesforce.com/services/data/v36.0", 
+    "partner_url": "https://xogrp--UAT.cs92.my.salesforce.com/services/Soap/u/36.0"
+}

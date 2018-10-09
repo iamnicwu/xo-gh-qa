@@ -1,0 +1,322 @@
+.THIS .align-right {
+  text-align: right;
+}
+
+/* Adding Position Relative as there were issues with the absolute floating box results showing under table */
+.THIS .filter-options-grid, .THIS .mass-assign-grid {
+  position: relative;
+  z-index: 10;
+}
+
+.THIS .select-padding {
+  padding: 10px;
+}
+
+.THIS .searchBtn, .THIS .addRuleBtn, .THIS .massAssignBtn {
+  margin-top: 21px;
+}
+
+.THIS .overflow-allowed {
+  overflow: visible;
+}
+
+.THIS .message-row td {
+  text-align: center;
+}
+
+.THIS tr.save-error {
+  background-color: #c23934!important;
+  background-image: linear-gradient(45deg,rgba(0,0,0,.025) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.025) 50%,rgba(0,0,0,.025) 75%,transparent 75%,transparent);
+  background-size: 64px 64px;
+  color: white!important;
+}
+
+.THIS tr.save-error:hover td {
+  background-color: #c23934!important;
+  background-image: linear-gradient(45deg,rgba(0,0,0,.025) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.025) 50%,rgba(0,0,0,.025) 75%,transparent 75%,transparent);
+  background-size: 64px 64px;
+  color: white!important;
+}
+
+/* Button Spinner */
+.THIS .button-pending {
+  height: 36px;
+  width: 36px;
+  margin-top: 21px;
+}
+
+/* Custom Toast CSS Override */
+.THIS .custom-toast {
+  color: #54698d;
+  background-color: white;
+  border: 2px solid #54698d;
+}
+
+.THIS .custom-toast img {
+  width: 36px;
+  height: 36px;
+  vertical-align: top;
+  display: inline-block;
+}
+
+.THIS .custom-toast .slds-notify__content > img {
+  margin-right: 15px;
+}
+
+.THIS .custom-toast .slds-notify__content p {
+  margin-bottom: 10px;
+}
+
+.THIS .custom-toast .slds-notify__content a {
+  color: #54698d!important;
+}
+
+/* On hover show CSS ASC arrow when NOT having desc class on element */
+.THIS .slds-is-sortable:not(.desc):hover {
+  background-image: url("/resource/slds100/assets/icons/utility/arrowup_60.png");
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position: 95% 17px;
+}
+
+.THIS .slds-is-sortable:not(.asc):hover {
+  background-image: url("/resource/slds100/assets/icons/utility/arrowdown_60.png");
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position: 95% 17px;
+}
+
+/* Sorting Arrow CSS ASC*/
+.THIS .asc {
+  background-image: url("/resource/slds100/assets/icons/utility/arrowdown_60.png");
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position: 95% 17px;
+}
+
+/* Sorting Arrow CSS DESC */
+.THIS .desc {
+  background-image: url("/resource/slds100/assets/icons/utility/arrowup_60.png");
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position: 95% 17px;
+}
+
+.THIS .disabled {
+  cursor: not-allowed;
+}
+
+/* Assignmend Rules Table */
+.THIS .assign-rules-table {
+  table-layout: fixed;
+}
+
+.THIS .assign-rules-table .slds-is-sortable {
+  cursor: pointer;
+}
+
+.THIS .assign-rules-table th:hover {
+  background-color: rgb(244, 246, 249);
+}
+
+.THIS .assign-rules-table .slds-th__action {
+  /* Fallback for old browsers */
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0)!important;
+}
+
+.THIS .assign-rules-table .action-cell {
+  text-align: right;
+  padding-right: 20px;
+}
+
+.THIS .assign-rules-table .action-cell img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 10px;
+  background-color: white;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.THIS .assign-rules-table .error-row {
+  background-color: #c23934!important;
+  background-image: linear-gradient(45deg,rgba(0,0,0,.025) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.025) 50%,rgba(0,0,0,.025) 75%,transparent 75%,transparent);
+  background-size: 64px 64px;
+  color: white!important;
+}
+
+.THIS .assign-rules-table .error-row:hover td {
+  background-color: #c23934!important;
+  background-image: linear-gradient(45deg,rgba(0,0,0,.025) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.025) 50%,rgba(0,0,0,.025) 75%,transparent 75%,transparent);
+  background-size: 64px 64px;
+  color: white!important;
+}
+
+.THIS input.search {
+  padding-right: 25px;
+  background-image: url("/resource/slds100/assets/icons/utility/search_60.png");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 99% 5px;
+}
+
+.THIS input.input-loading {
+  background-image: url("/resource/slds100/assets/images/spinners/slds_spinner_brand.gif");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 99% 5px;
+}
+
+.THIS .search-result-area {
+  position: relative;
+  z-index: 2;
+}
+
+.THIS .search-result-area .search-input-results  {
+  position: absolute;
+  /* LDS Styling */
+  top: 40px;
+  background-color: white;
+  border: 1px solid #d8dde6;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.THIS .search-input-results .no-result {
+  cursor: not-allowed;
+  padding: 10px 1rem 10px 0.75rem;
+  color: red;
+}
+
+.THIS .search-input-results .result {
+  cursor: pointer;
+  padding: 10px 1rem 10px 0.75rem;
+  color: black;
+}
+
+.THIS .search-input-results .result:hover {
+  background-color: #0070d2;
+  color: white;
+}
+
+.THIS .zip-input {
+  min-height: 34px;
+  height: 34px;
+  padding-left: 85px;
+}
+
+.THIS .switch {
+  position: absolute;
+  display: inline-block;
+  width: 80px;
+  z-index: 2;
+  height: 32px;
+  top: 0.5px;
+  left: 0.5px;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.THIS .switch label {
+  cursor: pointer;
+}
+
+.THIS .multi-option {
+  position: relative;
+}
+
+.THIS .multi-option select {
+  padding-left: 85px!important;
+}
+
+.THIS .search-results {
+  position: absolute;
+  left: 15px;
+}
+
+.THIS input.switch-toggle-yes-no + label:before,
+.THIS input.switch-toggle-yes-no + label:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  line-height: 31px;
+}
+
+.THIS input.switch-toggle-yes-no + label:before {
+  background-color: #0070d2;
+  content: attr(data-off);
+  transition: transform 0.5s;
+  backface-visibility: hidden;
+}
+
+.THIS input.switch-toggle-yes-no + label:after {
+  background-color: #0070d2;
+  content: attr(data-on);
+  transition: transform 0.5s;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+.THIS input.switch-toggle-yes-no:checked + label:before {
+  transform: rotateY(180deg);
+}
+.THIS input.switch-toggle-yes-no:checked + label:after {
+  transform: rotateY(0);
+}
+
+.THIS .checkbox-header {
+  text-align: right;
+  width: 50px;
+}
+
+.THIS .checkbox {
+  text-align: right;
+  width: 50px;
+}
+
+.THIS .assignment-name-td {
+  width: 350px;
+}
+
+.THIS .mass-assign-container {
+  display: inline-block;
+  position: relative;
+  margin-left: 4px;
+}
+
+.THIS .mass-assign-container .massAssignBtn + .massAssignTip {
+  display: none;
+}
+
+.THIS .mass-assign-container .massAssignBtn:disabled:hover + .massAssignTip {
+  display: inline-block;
+}
+
+.THIS .mass-assign-container .massAssignTip {
+  position: absolute;
+  bottom: 47px;
+  right: 0;
+}
+
+.THIS .assignBtn, .THIS .cancelAssignBtn {
+  margin-top: 32px;
+}
+
+.THIS .assign-record-text {
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0 0 6px 4px;
+}
+
+.THIS .disabled {
+  cursor: not-allowed!important;
+}

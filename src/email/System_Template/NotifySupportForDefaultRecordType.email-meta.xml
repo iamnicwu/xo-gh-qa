@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>NotifySupportForDefaultRecordType</name>
+    <style>none</style>
+    <subject>Default Case {!Case.Id} Notification</subject>
+    <textOnly>Default Case Email
+Thank you for your email.
+
+There is a case created without recordType, refer to {!Case.Link}, please help to look into it.
+
+Thanks
+Salesforce Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

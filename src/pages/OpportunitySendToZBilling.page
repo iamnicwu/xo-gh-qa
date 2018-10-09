@@ -1,0 +1,30 @@
+<apex:page standardController="Opportunity" extensions="OpportunitySendToZBillingController" >
+	<apex:form >
+
+		<apex:sectionheader title="Send Quotes to Z-Billing" />
+		<apex:pageBlock id="allQuotes" title="Quotes Available to Send To Z-Billing">
+			<apex:pageBlockButtons location="top">
+				<apex:commandbutton rendered="{!ShowSendButton}" action="{!SendToZBilling}" value="Send" />
+				<apex:commandbutton action="{!Cancel}" value="Cancel" />
+			</apex:pageBlockButtons>
+	        <apex:outputPanel id="pageStatus" rendered="false">
+	            <img src="/img/loading32.gif" width="25" height="25" />
+	            <apex:outputLabel value="Processing..."/>
+	        </apex:outputPanel>
+
+			<apex:pageMessages />
+			
+			<apex:repeat value="{!Quotes}" var="quote">
+				<apex:OutputText value="{!quote.ErrorMessage}" StyleClass="error" rendered="{!quote.ErrorMessage != ''}" />
+				<apex:pageBlockSection title="{!quote.Quote.Name}" columns="2">
+					<apex:pageBlockTable value="{!quote.RatePlans}" var="ratePlan">
+						<apex:column value="{!ratePlan.Product_Type__c}" />
+						<apex:column value="{!ratePlan.zqu__QuoteProductName__c}" />
+						<apex:column value="{!ratePlan.Name}" />
+					</apex:pageBlockTable>
+				</apex:pageBlockSection>
+			</apex:repeat>
+		
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Always_Set_Credit_Hold_To_False__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>CSP-340</description>
+        <externalId>false</externalId>
+        <label>Always Set Credit Hold To False</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Always_Set_Geocode_Override_To_True__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>CSP-387</description>
+        <externalId>false</externalId>
+        <label>Always Set Geocode Override To True</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Turn_on_Fulfillment_Callouts__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Turns on and off partner fulfillment and account update callouts.</inlineHelpText>
+        <label>Turn on Fulfillment Callouts</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>XO Group Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

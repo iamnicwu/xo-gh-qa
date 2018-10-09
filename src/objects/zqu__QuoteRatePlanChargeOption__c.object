@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Object that overrides some of the predefined values in the Product Rate Plan Charge.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>zqu__Currency__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Currency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>USD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EUR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GBP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JPY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Default_Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Default Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Max_Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The maximum number of units allowed for the charge that this option overrides.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The maximum number of units allowed for the charge that this option overrides.</inlineHelpText>
+        <label>Maximum Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Min_Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The minimum number of units that must be selected for the charge that this option overrides.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The minimum number of units that must be selected for the charge that this option overrides.</inlineHelpText>
+        <label>Minimum Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Price__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>7</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductRatePlanChargeOption__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product Rate Plan Charge Option</label>
+        <referenceTo>zqu__ProductRatePlanChargeOption__c</referenceTo>
+        <relationshipLabel>Quote Rate Plan Charge Options</relationshipLabel>
+        <relationshipName>Quote_Rate_Plan_Charge_Options</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductRatePlanCharge__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product Rate Plan Charge</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>zqu__ProductRatePlanCharge__c.zqu__ProductRatePlan__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.zqu__ProductRatePlan__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>zqu__ProductRatePlanCharge__c.zqu__Deleted__c</field>
+                <operation>equals</operation>
+                <value>False</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>zqu__ProductRatePlanCharge__c</referenceTo>
+        <relationshipLabel>Quote Rate Plan Charge Options</relationshipLabel>
+        <relationshipName>Quote_Rate_Plan_Charge_Options</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductRatePlan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product Rate Plan</label>
+        <referenceTo>zqu__ProductRatePlan__c</referenceTo>
+        <relationshipLabel>Quote Rate Plan Charge Options</relationshipLabel>
+        <relationshipName>Quote_Rate_Plan_Charge_Options</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__QuoteRatePlanCharge__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>A reference to the Quote Rate Plan Charge that this option overrides.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A reference to the Quote Rate Plan Charge that this option overrides.</inlineHelpText>
+        <label>Quote Rate Plan Charge</label>
+        <referenceTo>zqu__QuoteRatePlanCharge__c</referenceTo>
+        <relationshipLabel>Quote Rate Plan Charge Options</relationshipLabel>
+        <relationshipName>Quote_Rate_Plan_Charge_Options</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__QuoteRatePlanOption__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Quote Rate Plan Option</label>
+        <referenceTo>zqu__QuoteRatePlanOption__c</referenceTo>
+        <relationshipLabel>Quote Rate Plan Charge Options</relationshipLabel>
+        <relationshipName>Quote_Rate_Plan_Charge_Options</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Quote Rate Plan Charge Option</label>
+    <nameField>
+        <label>Quote Rate Plan Charge Option Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Quote Rate Plan Charge Options</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>zqu__Default_Quantity_Rule</fullName>
+        <active>true</active>
+        <description>Default Quantity should be greater than or equal to 0.</description>
+        <errorConditionFormula>zqu__Default_Quantity__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>zqu__Default_Quantity__c</errorDisplayField>
+        <errorMessage>Default Quantity should be greater than or equal to 0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>zqu__Max_Quantity_Rule</fullName>
+        <active>true</active>
+        <description>Max Quantity should be greater than or equal to 0.</description>
+        <errorConditionFormula>zqu__Max_Quantity__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>zqu__Max_Quantity__c</errorDisplayField>
+        <errorMessage>Min Quantity should be greater than or equal to 0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>zqu__Min_Quantity_Less_Than_Max</fullName>
+        <active>true</active>
+        <description>Min quantity should be less than or equal to max quantity.</description>
+        <errorConditionFormula>zqu__Min_Quantity__c  &gt;  zqu__Max_Quantity__c</errorConditionFormula>
+        <errorDisplayField>zqu__Min_Quantity__c</errorDisplayField>
+        <errorMessage>Min quantity should be less than or equal to max quantity.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>zqu__Min_Quantity_Rule</fullName>
+        <active>true</active>
+        <description>Min quantity should be greater than or equal to 0.</description>
+        <errorConditionFormula>zqu__Min_Quantity__c &lt; 0</errorConditionFormula>
+        <errorDisplayField>zqu__Min_Quantity__c</errorDisplayField>
+        <errorMessage>Min quantity should be greater than or equal to 0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>zqu__Override_Rule</fullName>
+        <active>true</active>
+        <description>Overridden ProductRatePlanCharge should belong to the QuoteRatePlanOption&apos;s overridden ProductRatePlan.</description>
+        <errorConditionFormula>zqu__ProductRatePlanCharge__r.zqu__ProductRatePlan__c  &lt;&gt;  zqu__QuoteRatePlanOption__r.zqu__ProductRatePlan__c</errorConditionFormula>
+        <errorDisplayField>zqu__ProductRatePlanCharge__c</errorDisplayField>
+        <errorMessage>Overridden ProductRatePlanCharge should belong to the QuoteRatePlanOption&apos;s overridden ProductRatePlan.</errorMessage>
+    </validationRules>
+</CustomObject>

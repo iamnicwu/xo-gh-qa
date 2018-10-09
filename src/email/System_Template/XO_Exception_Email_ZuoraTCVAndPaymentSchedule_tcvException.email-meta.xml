@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This will be used to email salessupport@xogrp.com to create tickets when an opp goes to TCV Calculation Failure</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>XO Exception Email - ZuoraTCVAndPaymentSchedule.tcvException</name>
+    <style>none</style>
+    <subject>Opportunity Exception - {!XO_Exception__c.Id}</subject>
+    <type>text</type>
+</EmailTemplate>

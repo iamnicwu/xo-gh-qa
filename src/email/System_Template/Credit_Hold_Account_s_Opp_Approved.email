@@ -1,0 +1,9 @@
+Hello {!Opportunity.OwnerFullName}, 
+
+An Opportunity has been APPROVED for following account. 
+
+Account Name{!Opportunity.Account}. 
+Opportunity Link: {!Opportunity.Link} 
+{!IF(ApprovalRequest.Comments="","", "Notes: " & ApprovalRequest.Comments)} 
+
+Thank you!

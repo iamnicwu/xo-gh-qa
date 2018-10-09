@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>A QuoteRatePlan is part of a Quote.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>QRPC_To_QRP_Fieldset</fullName>
+        <description>This is used to identify which fields we copy from QRP to QRPC</description>
+        <displayedFields>
+            <field>LDE_Email_Launch_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Location_Vendor__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Discount_Override__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Discount_Reason__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Print_Issue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>DiscountOverrideModified__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Steelbrick_Calculated_Discount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Zuora_Id_of_Migrated_Charge__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>QRPC To QRP Fieldset</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>QRP_Edit_Line_Item_Concierge_Venue</fullName>
+        <description>Zuora edit line items page</description>
+        <displayedFields>
+            <field>Location_Vendor__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <label>QRP Edit Line Item - Concierge Venue</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>QRP_Edit_Line_Item_Direct_Mail</fullName>
+        <description>Zuora edit line items page</description>
+        <displayedFields>
+            <field>Discount_Override__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Discount_Reason__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LDE_Email_Launch_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <label>QRP Edit Line Item - Direct Mail</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>QRP_Edit_Line_Item_Discount</fullName>
+        <description>Zuora edit line items page</description>
+        <label>QRP Edit Line Item - Discount</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>QRP_Edit_Line_Item_Internet</fullName>
+        <description>Zuora edit line items page</description>
+        <displayedFields>
+            <field>Discount_Override__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Discount_Reason__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Location_Vendor__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <label>QRP Edit Line Item - Internet</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>QRP_Edit_Line_Item_Print</fullName>
+        <description>Zuora edit line items page</description>
+        <displayedFields>
+            <field>Discount_Override__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Discount_Reason__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Print_Issue__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <label>QRP Edit Line Item - Print</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>QRP_Edit_Line_Item_Transactions</fullName>
+        <description>Zuora edit line items page</description>
+        <displayedFields>
+            <field>Per_Booking_Discount__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Discount_Reason__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Location_Vendor__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>true</isRequired>
+        </displayedFields>
+        <label>QRP Edit Line Item - Transactions</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>zqu__CustomClonedFields</fullName>
+        <description>Fields in this field set will be cloned by the custom Zuora Quotes Clone functionality.</description>
+        <label>Custom Cloned Fields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>zqu__CustomRatePlanFields</fullName>
+        <description>Fields in this field set will be included in the subscription rate plan data when quotes are sent to Zuora.</description>
+        <label>Custom Rate Plan Fields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>zqu__CustomRatePlanQueryFields</fullName>
+        <description>Fields in this field set will be queried from Zuora during the Store Existing Products apex job</description>
+        <label>Custom Rate Plan Query Fields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>zqu__DisplayRatePlanFields</fullName>
+        <availableFields>
+            <field>zqu__SpecificUpdateDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <description>Fields in this field set will be displayed in the Product Selector.</description>
+        <label>Display Rate Plan Fields</label>
+    </fieldSets>
+    <fields>
+        <fullName>Account_ID__c</fullName>
+        <description>The Salesforce ID for the associated Account</description>
+        <externalId>false</externalId>
+        <formula>zqu__Quote__r.zqu__Account__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AvoidDuplicates__c</fullName>
+        <description>For Avoiding the Storefront Duplicates</description>
+        <externalId>false</externalId>
+        <formula>TEXT(zqu__ProductRatePlan__r.zqu__Product__r.AvoidDuplicates__c)</formula>
+        <inlineHelpText>For Avoiding the Storefront Duplicates</inlineHelpText>
+        <label>Avoid Duplicates</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CannotBeSoldPast__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(zqu__ProductRatePlan__r.zqu__Product__r.CannotBeSoldPast__c)</formula>
+        <label>Cannot Be Sold Past</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DiscountOverrideModified__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>DiscountOverrideModified</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Discount_Override__c</fullName>
+        <description>If the sales rep chooses to give a different discount % than what was calculated by Steelbrick, the &quot;custom&quot; discount amount is entered here.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If the sales rep chooses to give a different discount % than what was calculated by Steelbrick, the &quot;custom&quot; discount amount is entered here.</inlineHelpText>
+        <label>Discount Override %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Discount_Reason__c</fullName>
+        <description>SF-1336. Used on the &quot;Edit Line Items&quot; page in the Quote creation workflow if the sales rep enters a higher discount % than what was calculated by Steelbrick.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used on the &quot;Edit Line Items&quot; page in the Quote creation workflow if the sales rep enters a higher discount % than what was calculated by Steelbrick.</inlineHelpText>
+        <label>Discount Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None-Autocalculated Discount</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Make Good</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rate Freeze</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PIF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RSD Discretionary Code</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trade Show Discount</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blitz</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wedding Wire Switch Pitch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Is_Clone__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>CSP-2898 Enable Discounts for a Promotional Period (Switch Pitch)</description>
+        <externalId>false</externalId>
+        <label>Is Clone</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Split__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>CSP-2898 Enable Discounts for a Promotional Period (Switch Pitch)</description>
+        <externalId>false</externalId>
+        <label>Is Split</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LDE_Email_Launch_Date__c</fullName>
+        <description>The day that LDE (direct marketing) emails are sent out. SF-1555.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The day that LDE (direct marketing) emails are sent out. SF-1555.</inlineHelpText>
+        <label>LDE Email Launch Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Location_Vendor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The Location/Vendor account that we are selling this product for. For example if selling a storefront, select the location that this product will be fulfilled against.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Location/Vendor account that we are selling this product for. For example if selling a storefront, select the location that this product will be fulfilled against.</inlineHelpText>
+        <label>Location ID</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Quote Rate Plans</relationshipLabel>
+        <relationshipName>Quote_Rate_Plans</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>MaximumSubscriptionTerm__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(zqu__ProductRatePlan__r.zqu__Product__r.Maximum_Subscription_Term__c)</formula>
+        <label>Maximum Subscription Term</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MinimumSubscriptionTerm__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(zqu__ProductRatePlan__r.zqu__Product__r.Minimum_Subscription_Term__c)</formula>
+        <label>Minimum Subscription Term</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NoAutomatedDiscount__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(zqu__ProductRatePlan__r.zqu__Product__r.No_Automated_Discount__c)</formula>
+        <label>No Automated Discount</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Per_Booking_Discount__c</fullName>
+        <description>Discount for Transaction, ticket CSP-903</description>
+        <externalId>false</externalId>
+        <label>% per booking</label>
+        <picklist>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Print_Issue_Next_Issue_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Print_Issue__r.Next_Issue__c</formula>
+        <label>Print Issue - Next Issue ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Print_Issue_Previous_Issue_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Print_Issue__r.Previous_Issue__c</formula>
+        <label>Print Issue - Previous Issue ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Print_Issue_Step_2_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Print_Issue__r.Step_2__c</formula>
+        <label>Print Issue - Step 2 Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Print_Issue_Step_3_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Print_Issue__r.Step_3__c</formula>
+        <label>Print Issue - Step 3 Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Print_Issue__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Print Issue</label>
+        <referenceTo>Print_Issue__c</referenceTo>
+        <relationshipLabel>Quote Rate Plans</relationshipLabel>
+        <relationshipName>Quote_Rate_Plans</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(zqu__ProductRatePlan__r.zqu__Product__r.ProductType__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quote_Expiration_Date__c</fullName>
+        <description>The date the parent Quote is valid though.</description>
+        <externalId>false</externalId>
+        <formula>zqu__Quote__r.zqu__ValidUntil__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The date the parent Quote is valid though.</inlineHelpText>
+        <label>Quote Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Requires2X__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(zqu__ProductRatePlan__r.zqu__Product__r.Requires_2X__c)</formula>
+        <label>Requires 2X</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RequiresApproval__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(zqu__ProductRatePlan__r.zqu__Product__r.RequiresApproval__c)</formula>
+        <label>Requires Approval</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RequiresCallbackTask__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( zqu__ProductRatePlan__r.zqu__Product__r.RequiresCallbackTask__c )</formula>
+        <label>Requires Callback Task</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RequiresPaidStorefront__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(zqu__ProductRatePlan__r.zqu__Product__r.RequiresPaidStorefront__c)</formula>
+        <label>Requires Paid Storefront</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Steelbrick_Calculated_Discount__c</fullName>
+        <externalId>false</externalId>
+        <label>Steelbrick Calculated Discount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ZProduct_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>zqu__ProductRatePlan__r.zqu__Product__r.Name</formula>
+        <label>ZProduct Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora_Id_of_Migrated_Charge__c</fullName>
+        <description>This Field is used to get populated by zuora Id of migrated charge.</description>
+        <externalId>false</externalId>
+        <label>Zuora Id of Migrated Charge</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__AmendmentType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of amendment being made.</description>
+        <externalId>false</externalId>
+        <label>Amendment Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>NewProduct</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RemoveProduct</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TermsAndConditions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UpdateProduct</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>zqu__EntityID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>zqu__Quote__r.zqu__BillingEntity__r.zqu__EntityID__c</formula>
+        <label>EntityID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__OriginalPrpoId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Original Product Rate Plan Option ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Parent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The quote rate plan of the parent product.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The quote rate plan of the parent product.</inlineHelpText>
+        <label>Parent</label>
+        <referenceTo>zqu__QuoteRatePlan__c</referenceTo>
+        <relationshipLabel>Child Quote Rate Plans</relationshipLabel>
+        <relationshipName>ChildQuoteRatePlans</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductRatePlanZuoraId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>corresponding Id with Product Catalog on remote zuora server</description>
+        <externalId>false</externalId>
+        <label>Product Rate Plan Zuora Id</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__ProductRatePlan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Quote Rate Plan associated with a Product Rate Plan.</description>
+        <externalId>false</externalId>
+        <label>Product Rate Plan</label>
+        <referenceTo>zqu__ProductRatePlan__c</referenceTo>
+        <relationshipLabel>Quote Rate Plans</relationshipLabel>
+        <relationshipName>Quote_Rate_Plans</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Quote Rate Plans</relationshipLabel>
+        <relationshipName>Quote_Rate_Plans</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__QuoteAmendment__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The identification of the amendment that this quote rate plan applies to.</description>
+        <externalId>false</externalId>
+        <label>Quote Amendment</label>
+        <referenceTo>zqu__QuoteAmendment__c</referenceTo>
+        <relationshipLabel>Quote Rate Plans</relationshipLabel>
+        <relationshipName>Quote_Rate_Plans</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>zqu__QuoteProductName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Quote Product Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__QuoteRatePlanFullName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Full Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__QuoteRatePlanZuoraId__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>corresponding Id on remote zuora server</description>
+        <externalId>true</externalId>
+        <label>Quote Rate Plan Zuora Id</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Quote__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Quote Rate Plan associated with a Quote.</description>
+        <externalId>false</externalId>
+        <label>Quote</label>
+        <referenceTo>zqu__Quote__c</referenceTo>
+        <relationshipLabel>Quote Rate Plans</relationshipLabel>
+        <relationshipName>Quote_Rate_Plans</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>zqu__RatePlanOverrideReferenceId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Id of another Quote Rate Plan in the order that this charge is acting on.</description>
+        <externalId>false</externalId>
+        <label>Rate Plan Override Reference Id</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__RootQrpId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The unique ID corresponding to the root bundle that a Quote Rate Plan belongs to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The unique ID corresponding to the root bundle that a Quote Rate Plan belongs to.</inlineHelpText>
+        <label>Root Quote Rate Plan ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__SpecificUpdateDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Specifies when to activate a future dated Update Order Action.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifies when to activate a future dated Update Order Action.</inlineHelpText>
+        <label>Specific Update Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>zqu__SubscriptionRatePlanZuoraId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The identification number of the subscription rate plan that the amendment is modifying. Required if AmendmentType is set to RemoveProduct or UpdateProduct.</description>
+        <externalId>false</externalId>
+        <label>Subscription Rate Plan Zuora Id</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>zqu__Time_Product_Added__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Time Product Added</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Quote Rate Plan</label>
+    <listViews>
+        <fullName>zqu__All</fullName>
+        <columns>NAME</columns>
+        <columns>zqu__AmendmentType__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>zqu__All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Quote Rate Plan Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Quote Rate Plans</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>OBJECT_ID</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>zqu__ProductRatePlan__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>zqu__QuoteRatePlanZuoraId__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>zqu__QuoteProductName__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>OBJECT_ID</searchFilterFields>
+        <searchFilterFields>zqu__QuoteProductName__c</searchFilterFields>
+        <searchFilterFields>zqu__QuoteRatePlanZuoraId__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Promotion_For_Credit_Card_ACH</fullName>
+        <active>true</active>
+        <description>CSP-2898 Enable Discounts for a Promotional Period (Switch Pitch)</description>
+        <errorConditionFormula>AND (
+ ISCHANGED( Discount_Reason__c ),
+ ISPICKVAL(Discount_Reason__c,&apos;Wedding Wire Switch Pitch&apos;),
+ !ISPICKVAL(zqu__Quote__r.zqu__PaymentMethod__c,&apos;Credit Card&apos;),
+ !ISPICKVAL(zqu__Quote__r.zqu__PaymentMethod__c,&apos;ACH&apos;) 
+)</errorConditionFormula>
+        <errorMessage>Only payment Method of Credit Card or ACH/EFT on quotes can select &apos;Free Trial 3 Mos&apos; as the discount reason!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Promotion_For_Discount</fullName>
+        <active>true</active>
+        <description>CSP-2898 Enable Discounts for a Promotional Period (Switch Pitch)</description>
+        <errorConditionFormula>AND (
+ ISCHANGED( Discount_Reason__c ),
+ ISPICKVAL(Discount_Reason__c,&apos;Wedding Wire Switch Pitch&apos;),
+ Discount_Override__c != 0  
+)</errorConditionFormula>
+        <errorMessage>Don&apos;t fill discount override if select &apos;Free Trial 3 Mos&apos; as the discount reason!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Promotion_For_Initial_Term_12</fullName>
+        <active>true</active>
+        <description>CSP-2898 Enable Discounts for a Promotional Period (Switch Pitch)</description>
+        <errorConditionFormula>AND (
+ ISCHANGED( Discount_Reason__c ),
+ ISPICKVAL(Discount_Reason__c,&apos;Wedding Wire Switch Pitch&apos;),
+ zqu__Quote__r.zqu__InitialTerm__c != 12 
+)</errorConditionFormula>
+        <errorMessage>Select &apos;Free Trial 3 Mos&apos; as the discount reason only apply Initial Term is 12!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Promotion_For_Prospect_Account</fullName>
+        <active>true</active>
+        <description>CSP-2898 Enable Discounts for a Promotional Period (Switch Pitch)</description>
+        <errorConditionFormula>AND (
+ ISCHANGED( Discount_Reason__c ),
+ ISPICKVAL(Discount_Reason__c,&apos;Wedding Wire Switch Pitch&apos;),
+ OR(
+ 	 AND(
+ 		 NOT(ISBLANK(zqu__Quote__r.zqu__Account__r.Promotional_Quote__c)), 
+ 		 zqu__Quote__r.zqu__Account__r.Promotional_Quote__c != zqu__Quote__c 
+ 	 ),
+ 	 AND(
+ 	 	ISBLANK(zqu__Quote__r.zqu__Account__r.Promotional_Quote__c),
+ 	 	NOT(ISBLANK(TEXT(zqu__Quote__r.zqu__Account__r.Account_Anniversary_Status__c))), 
+	        NOT(ISPICKVAL(zqu__Quote__r.zqu__Account__r.Account_Anniversary_Status__c,&apos;Prospect&apos;))
+ 	 )
+  )
+)</errorConditionFormula>
+        <errorMessage>Only Accounts with an Anniversary Status of Prospect can select &apos;Free Trial 3 Mos&apos; as the discount reason!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Promotion_For_Storefront_and_FV</fullName>
+        <active>true</active>
+        <description>CSP-2898 Enable Discounts for a Promotional Period (Switch Pitch)</description>
+        <errorConditionFormula>AND (
+ ISCHANGED( Discount_Reason__c ),
+ ISPICKVAL(Discount_Reason__c,&apos;Wedding Wire Switch Pitch&apos;),
+ !CONTAINS(zqu__QuoteProductName__c, &apos;Storefront&apos;),
+ OR( CONTAINS(zqu__QuoteProductName__c, &apos;Premium&apos;),
+     !CONTAINS(zqu__QuoteProductName__c, &apos;Featured Vendor&apos;)
+ )   
+)</errorConditionFormula>
+        <errorMessage>Only storefront and featured vendor can select &apos;Free Trial 3 Mos&apos; as the discount reason!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Select_a_different_discount_reason</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+   Discount_Override__c &gt; Steelbrick_Calculated_Discount__c,
+   ISPICKVAL( Discount_Reason__c, &apos;None - Autocalculated Discount&apos;)
+)</errorConditionFormula>
+        <errorDisplayField>Discount_Reason__c</errorDisplayField>
+        <errorMessage>When overriding the discount, you must choose a different reason</errorMessage>
+    </validationRules>
+</CustomObject>

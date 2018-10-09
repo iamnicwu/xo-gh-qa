@@ -1,0 +1,262 @@
+<aura:component description="CancelCase"
+                controller="CancelCaseController">
+    <!-- Attributes -->
+    <aura:attribute name="recordId" type="Object" />
+    <aura:attribute name="currentCase" type="Map" default="{}" />
+    <aura:attribute name="currentPage" type="Integer" default="1"/>
+    <aura:attribute name="originOpts" type="List" default="[]"/>
+    <aura:attribute name="typeOpts" type="List" default="[]"/>
+    <aura:attribute name="reasonOpts" type="List" default="[]"/>
+    <aura:attribute name="outcomeOpts" type="List" default="[]"/>
+    <aura:attribute name="savedByOpts" type="List" default="[]"/>
+    <aura:attribute name="files" type="List" default="[]"/>
+    <aura:attribute name="saving" type="Boolean" default="false"/>
+    <aura:attribute name="retrievingCase" type="Boolean" default="false"/>
+    <aura:attribute name="savedByDisabled" type="Boolean" default="false"/>
+    <aura:attribute name="showUploadInput" type="Boolean" default="false"/>
+    <aura:attribute name="nextDisabledPageOne" type="Boolean" default="true"/>
+    <aura:attribute name="nextDisabledPageThree" type="Boolean" default="true"/>
+
+    <!-- Events -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:handler event="c:setModalValue" action="{!c.setValueFromModal}" />
+    <aura:registerEvent name="openChangeModal" type="c:openChangeModal" />
+    <aura:handler name="FeatureRequestCanceledEvent" event="c:FeatureRequestCanceledEvent" action="{!c.handleFRCEvent}"/>
+    <aura:handler name="change" value="{!v.currentCase}" action="{!c.checkNextButton}"/>
+    <aura:handler name="change" value="{!v.files}" action="{!c.checkNextButton}"/>
+
+    <!-- Modal -->
+    <c:CancelCaseChangeValueModal />
+
+    <div>
+        <c:CancelCaseHeader currentPage="{!v.currentPage}"/>
+        <div class="slds-size_1-of-1 slds-grid slds-wrap">
+            <aura:if isTrue="{!v.retrievingCase}">
+                <lightning:spinner variant="brand" size="large" alternativeText="loading"/>
+            </aura:if>
+
+            <!-- Main content -->
+            <!-- TODO: Break out into individual cmps -->
+            <aura:if isTrue="{!v.currentPage == 1}">
+                <div class="slds-grid slds-wrap slds-col slds-p-bottom_medium slds-m-left_medium slds-m-right_medium">
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium">
+                        <span class="slds-text-color_error">* Required</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium">
+                        <span class="slds-text-body_regular bold-text slds-p-right_medium">Case Owner:</span>
+                        <span class="slds-text-body_regular slds-p-right_xx-large">{!v.currentCase.caseOwnerName}</span>
+                        <lightning:button variant="base" label="Change" class="change-button" onclick="{!c.changeOwner}" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium">
+                        <span class="slds-text-body_regular bold-text slds-p-right_medium">Contact Name:</span>
+                        <span class="slds-text-body_regular slds-p-right_xx-large">{!v.currentCase.contactName}</span>
+                        <lightning:button variant="base" label="Change" class="change-button" onclick="{!c.changeContact}" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium">
+                        <span class="slds-text-body_regular bold-text slds-p-right_medium">Account Name:</span>
+                        <span class="slds-text-body_regular slds-p-right_xx-large">{!v.currentCase.accountName}</span>
+                        <lightning:button variant="base" label="Change" class="change-button" onclick="{!c.changeAccount}" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium">
+                        <span class="slds-text-body_regular bold-text slds-p-right_medium">
+                            How did customer make initial contact?<span class="slds-text-color_error">*</span>
+                        </span>
+                        <lightning:select class="select-input"
+                                          name="selectOriginItem"
+                                          label=""
+                                          value="{!v.currentCase.initialContact}">
+                            <aura:iteration items="{!v.originOpts}" var="opt">
+                                <option value="{!opt.value}">{!opt.label}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium slds-p-top_xxx-small slds-p-bottom_xxx-small">
+                        <span class="slds-text-body_regular bold-text slds-p-right_medium">
+                            Select Associated Task or Email
+                        </span>
+                        <aura:if isTrue="{!v.currentCase.associatedTaskOrEmailName}">
+                            <span class="slds-text-body_regular slds-p-right_xx-large">{!v.currentCase.associatedTaskOrEmailName}</span>
+                            <aura:set attribute="else">
+                                <aura:if isTrue="{!v.currentCase.tasks.length > 0}">
+                                    <span class="slds-text-body_regular slds-p-right_xx-large">{!v.currentCase.tasks[0].taskName}</span>
+                                </aura:if>
+                            </aura:set>
+                        </aura:if>
+                        <lightning:button variant="base" label="Change" class="change-button" onclick="{!c.changeTask}" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium">
+                        <span class="slds-text-body_regular bold-text slds-p-right_medium">
+                            Date Original Request Received:<span class="slds-text-color_error">*</span>
+                        </span>
+                        <lightning:input class="date-input"
+                                         type="date"
+                                         label=""
+                                         name="originalRequestDate"
+                                         value="{!v.currentCase.originalRequestDate}"/>
+                    </div>
+                </div>
+            </aura:if>
+
+            <aura:if isTrue="{!v.currentPage == 2}">
+                <div class="slds-grid slds-wrap slds-col slds-size_1-of-1 slds-p-bottom_medium slds-m-left_medium slds-m-right_medium">
+                    <c:FeatureRequestCanceledTable aura:id="frcTable" caseId="{! v.currentCase.id}" />
+                </div>
+            </aura:if>
+
+            <aura:if isTrue="{!v.currentPage == 3}">
+                <div class="slds-grid slds-wrap slds-col slds-p-bottom_medium slds-m-left_medium slds-m-right_medium">
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium">
+                        <span class="slds-text-color_error">* Required</span>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium slds-p-top_xxx-small slds-p-bottom_xxx-small">
+                        <span class="slds-text-body_regular bold-text slds-p-right_medium">Account Name:</span>
+                        <span class="slds-text-body_regular slds-p-right_xx-large">{!v.currentCase.accountName}</span>
+                        <lightning:button variant="base" label="Change" class="change-button" onclick="{!c.changeAccount}" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium slds-p-top_xxx-small slds-p-bottom_xxx-small">
+                        <span class="slds-text-body_regular bold-text slds-p-right_medium">
+                            Is this a request for Cancel or Non-Renewal?<span class="slds-text-color_error">*</span>
+                        </span>
+                        <lightning:select class="select-input"
+                                          name="selectRequestOpt"
+                                          label=""
+                                          value="{!v.currentCase.type}">
+                            <aura:iteration items="{!v.typeOpts}" var="opt">
+                                <option value="{!opt.value}">{!opt.label}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium slds-p-top_xxx-small slds-p-bottom_xxx-small">
+                        <span class="slds-text-body_regular bold-text slds-p-right_medium">
+                            Why is the customer requesting to cancel/non-renew?<span class="slds-text-color_error">*</span>
+                        </span>
+                        <lightning:select class="select-input"
+                                          name="selectReason"
+                                          label=""
+                                          value="{!v.currentCase.reason}">
+                            <aura:iteration items="{!v.reasonOpts}" var="opt">
+                                <option value="{!opt.value}">{!opt.label}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium slds-p-top_xxx-small slds-p-bottom_xxx-small cancel-flexbox">
+                        <span class="slds-text-body_regular bold-text slds-p-right_medium">
+                            Cancel Reason Notes (Required if "Other" is selected)?<span class="slds-text-color_error">*</span>
+                        </span>
+                        <lightning:textarea class="textarea-container" label="" name="myTextArea" value="{!v.currentCase.cancelReasonNotes}" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium slds-p-top_xxx-small slds-p-bottom_xxx-small">
+                        <span class="slds-text-body_regular bold-text slds-p-right_medium">
+                            Outcome<span class="slds-text-color_error">*</span>
+                        </span>
+                        <lightning:select class="select-input"
+                                          name="selectOutcome"
+                                          label=""
+                                          value="{!v.currentCase.outcome}">
+                            <aura:iteration items="{!v.outcomeOpts}" var="opt">
+                                <option value="{!opt.value}">{!opt.label}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium slds-p-top_xxx-small slds-p-bottom_xxx-small">
+                        <span class="slds-text-body_regular bold-text slds-p-right_medium">
+                            Saved By<span class="slds-text-color_error">*</span>
+                        </span>
+                        <lightning:select class="select-input"
+                                          name="selectOutcome"
+                                          label=""
+                                          disabled="{!v.savedByDisabled}"
+                                          value="{!v.currentCase.savedBy}">
+                            <aura:iteration items="{!v.savedByOpts}" var="opt">
+                                <option value="{!opt.value}">{!opt.label}</option>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div>
+                    <aura:if isTrue="{!v.showUploadInput}">
+                        <div class="slds-col slds-size_1-of-1 slds-p-left_medium slds-p-right_medium slds-p-top_xx-small slds-p-bottom_xxx-small cancel-flexbox">
+                            <span class="slds-text-body_regular bold-text slds-p-right_medium">
+                                Written Request<span class="slds-text-color_error">*</span>
+                            </span>
+                            <lightning:input type="file"
+                                             label=""
+                                             name="file"
+                                             multiple="false"
+                                             accept="*"
+                                             onchange="{!c.handleFileChange}"/>
+                            <aura:if isTrue="{!v.currentCase.attachments.length > 0}">
+                                <div class="cancel-case-selected-files slds-p-right_small slds-p-left_small">
+                                    <div class="cancel-flexbox flex-center slds-truncate">
+                                        <a href="{!'/servlet/servlet.FileDownload?file=' + v.currentCase.attachments[0].id}" target="_blank">
+                                                {!v.currentCase.attachments[0].attachmentName}
+                                        </a>
+                                    </div>
+                                </div>
+                            </aura:if>
+                            <div class="cancel-case-selected-files slds-p-right_small slds-p-left_small">
+                                <aura:iteration items="{!v.files}" var="file" indexVar="index">
+                                    <div class="cancel-flexbox flex-center">
+                                        <span>{!file.name}</span>
+                                        <aura:if isTrue="{!file.isUploading}">
+                                            <lightning:icon iconName="action:upload"
+                                                            class="file-uploading"
+                                                            size="xx-small"
+                                                            alternativeText="uploading"/>
+                                            <aura:set attribute="else">
+                                                <aura:if isTrue="{!file.isUploaded}">
+                                                    <div class="slds-p-left_xx-small">
+                                                        <lightning:icon iconName="action:check"
+                                                                        class="file-uploaded"
+                                                                        size="xx-small"
+                                                                        alternativeText="uploaded"/>
+                                                    </div>
+                                                    <aura:set attribute="else">
+                                                        <!-- Using name and index to be able to delete item from List-->
+                                                        <lightning:buttonIcon iconName="utility:clear"
+                                                                              class="slds-p-left_xx-small"
+                                                                              variant="bare"
+                                                                              name="{!index}"
+                                                                              onclick="{!c.removeFile}"
+                                                                              alternativeText="remove file" />
+                                                    </aura:set>
+                                                </aura:if>
+                                            </aura:set>
+                                        </aura:if>
+                                    </div>
+                                </aura:iteration>
+                            </div>
+                        </div>
+                    </aura:if>
+                </div>
+            </aura:if>
+
+            <!-- Footer buttons -->
+            <div class="slds-grid slds-col slds-p-top_medium slds-p-bottom_medium slds-m-left_medium slds-m-right_medium">
+                <div class="slds-col slds-size_3-of-12 slds-p-left_medium slds-p-right_medium">
+                    <lightning:button class="action-btn" variant="neutral" label="Cancel" onclick="{!c.cancel}" />
+                </div>
+                <div class="slds-col slds-size_9-of-12 slds-p-left_medium slds-p-right_medium btn-container">
+                    <lightning:button class="action-btn" variant="brand" label="Save for Later" disabled="{!v.saving}" onclick="{!c.saveExit}" />
+                    <aura:if isTrue="{!v.currentPage == 1}">
+                        <lightning:button class="action-btn" variant="brand" label="Call Contact" onclick="{!c.callContact}" />
+                    </aura:if>
+                    <aura:if isTrue="{!v.currentPage != 1}">
+                        <lightning:button class="action-btn" variant="brand" label="Back" onclick="{!c.previous}" />
+                    </aura:if>
+                    <aura:if isTrue="{!v.currentPage == 1}">
+                        <lightning:button class="action-btn" variant="brand" label="Next" disabled="{! v.saving || v.nextDisabledPageOne }" onclick="{!c.next}" />
+                    </aura:if>
+                    <aura:if isTrue="{!v.currentPage == 2}">
+                        <lightning:button class="action-btn" variant="brand" label="Next" disabled="{! v.saving }" onclick="{!c.next}" />
+                    </aura:if>
+                    <aura:if isTrue="{!v.currentPage == 3}">
+                        <lightning:button variant="neutral"
+                                          class="action-btn"
+                                          label="Close case/ Submit Cancel opp"
+                                          disabled="{! v.saving || v.nextDisabledPageThree }"
+                                          onclick="{!c.closeCaseSubmitOpp}" />
+                    </aura:if>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

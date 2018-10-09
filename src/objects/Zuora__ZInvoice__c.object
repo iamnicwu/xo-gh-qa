@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Zuora Invoice object. Invoices are bills that you send to customers.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Acc_Owner__c</fullName>
+        <externalId>false</externalId>
+        <formula>Zuora__Account__r.Owner.FirstName &amp;&apos; &apos;&amp;  Zuora__Account__r.Owner.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Owner</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Invoices</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Bill_To_Contact_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Zuora__BillingAccount__r.Zuora__BillToWorkEmail__c</formula>
+        <label>Bill To Contact Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bill_To_Contact_Name__c</fullName>
+        <description>Refer SF-1172 Documentation</description>
+        <externalId>false</externalId>
+        <formula>Zuora__BillingAccount__r.Zuora__BillToName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bill To Contact Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CES_Migration_Data__c</fullName>
+        <description>When Invoices are migrated over from CES this field is used to capture pertinent data. (SF-1560)</description>
+        <externalId>false</externalId>
+        <label>CES Migration Data</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Past_Due__c</fullName>
+        <externalId>false</externalId>
+        <formula>TODAY() - Zuora__DueDate__c</formula>
+        <label>Past Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Promise_To_Pay_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Promise to Pay Amount</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Promise_to_Pay_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Promise to Pay Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The CRM account that the invoice is associated to.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The CRM account that the invoice is associated to.</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Invoices</relationshipLabel>
+        <relationshipName>Invoices</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__AdjustmentAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The currency amount of the adjustment applied to the invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The currency amount of the adjustment applied to the invoice.</inlineHelpText>
+        <label>Adjustment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__Age_Bucket__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Age Buckets for Aging Reports</description>
+        <externalId>false</externalId>
+        <formula>IF(Zuora__Balance2__c &lt;= 0, NULL,
+IF(TODAY() - Zuora__DueDate__c &lt;= 0, &quot;On Time&quot;,
+IF(TODAY() - Zuora__DueDate__c &lt;= 30, &quot;1-30&quot;,
+IF(TODAY() - Zuora__DueDate__c &lt;= 60, &quot;31-60&quot;,
+IF(TODAY() - Zuora__DueDate__c &lt;= 90, &quot;61-90&quot;, &quot;91-&quot;)))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Age Buckets for Aging Reports</inlineHelpText>
+        <label>Age Bucket</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__AmountWithoutTax__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The total of the invoice before any taxes are applied.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The total of the invoice before any taxes are applied.</inlineHelpText>
+        <label>Amount Without Tax</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__Balance2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The balance due on the invoice after the value for the Amount field is applied.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The balance due on the invoice after the value for the Amount field is applied.</inlineHelpText>
+        <label>Balance</label>
+        <precision>14</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__Balance__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Zuora Invoice Balance.  This field is deprecated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Zuora Invoice Balance.  This field is deprecated.</inlineHelpText>
+        <label>Balance (Deprecated)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__BillToId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>zuora bill to contact id</description>
+        <externalId>false</externalId>
+        <label>Bill To Contact Id</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__BillingAccount__c</fullName>
+        <deleteConstraint>Cascade</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Zuora billing account that the invoice is for.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Zuora billing account that the invoice is for.</inlineHelpText>
+        <label>Billing Account</label>
+        <referenceTo>Zuora__CustomerAccount__c</referenceTo>
+        <relationshipLabel>Invoices</relationshipLabel>
+        <relationshipName>ZInvoices</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__CreditBalanceAdjustmentAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The currency amount of the adjustment applied to the customer&apos;s credit balance.</description>
+        <externalId>false</externalId>
+        <label>Credit Balance Adjustment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Invoice Description.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Invoice Description.</inlineHelpText>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__DueDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date by which the payment for this invoice is due.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date by which the payment for this invoice is due.</inlineHelpText>
+        <label>Due Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__External_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>This field holds the Zuora object ID, and is used as external ID for data synchronization between Salesforce and Zuora.</description>
+        <externalId>true</externalId>
+        <inlineHelpText>This field holds the Zuora object ID, and is used as external ID for data synchronization between Salesforce and Zuora.</inlineHelpText>
+        <label>External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__GeneratedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Generated On Date (Deprecated)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__Generated_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Generated On Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__InvoiceDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The generation date of the invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The generation date of the invoice.</inlineHelpText>
+        <label>Invoice Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__PaymentAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The amount of payments applied to the invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The amount of payments applied to the invoice.</inlineHelpText>
+        <label>Payment Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__PaymentTerm__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The payment term of the associated billing account.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The payment term of the associated billing account.</inlineHelpText>
+        <label>Payment Term</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__Payment_Term__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Payment Term</label>
+        <referenceTo>Zuora__PaymentTerm__c</referenceTo>
+        <relationshipLabel>Invoices</relationshipLabel>
+        <relationshipName>Invoices</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__PostedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date when the invoice was posted.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date when the invoice was posted.</inlineHelpText>
+        <label>Posted On Date (Deprecated)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__Posted_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date when the invoice was posted.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date when the invoice was posted.</inlineHelpText>
+        <label>Posted On Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__RefundedAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Specifies the amount of a refund that applied against a payment on an earlier the invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Specifies the amount of a refund that applied against a payment on an earlier the invoice.</inlineHelpText>
+        <label>Refunded Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__SoldToId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>zuora sold to contact id</description>
+        <externalId>false</externalId>
+        <label>Sold To Contact Id</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of the invoice in the system. This status is not the status of the payment of the invoice, just the status of the invoice itself.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The status of the invoice in the system. This status is not the status of the payment of the invoice, just the status of the invoice itself.</inlineHelpText>
+        <label>Status</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__TargetDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date you want the invoice generated on.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The date you want the invoice generated on.</inlineHelpText>
+        <label>Target Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__TaxAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The total amount of the taxes applied to the invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The total amount of the taxes applied to the invoice.</inlineHelpText>
+        <label>Tax Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__TaxExemptAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The total amount of the invoice that is exempt from taxation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The total amount of the invoice that is exempt from taxation.</inlineHelpText>
+        <label>Tax Exempt Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__TotalAmount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The amount of the invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The amount of the invoice.</inlineHelpText>
+        <label>Total Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Zuora__ZuoraId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Invoice ID in the Zuora system.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Invoice ID in the Zuora system.</inlineHelpText>
+        <label>Invoice ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zuora__Zuora_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Zuora ID of the invoice.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Zuora ID of the invoice.</inlineHelpText>
+        <label>Zuora Id</label>
+        <length>32</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Invoice</label>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Zuora__All</fullName>
+        <columns>NAME</columns>
+        <columns>Zuora__Status__c</columns>
+        <columns>Zuora__Balance2__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Invoice Number</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Invoices</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>PromiseToPay_cannot_be_lesser_than_Today</fullName>
+        <active>true</active>
+        <description>Promise to pay date cannot be lesser than today!</description>
+        <errorConditionFormula>Promise_to_Pay_Date__c &lt;= TODAY()</errorConditionFormula>
+        <errorDisplayField>Promise_to_Pay_Date__c</errorDisplayField>
+        <errorMessage>Promise to pay date cannot be less than or equal to today!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Required_Field_Rule_for_Promise_to_Pay</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(OR(AND(NOT(ISNULL(Promise_to_Pay_Date__c )), OR(ISNULL(Promise_To_Pay_Amount__c),Promise_To_Pay_Amount__c = 0)) , 
+AND(ISNULL(Promise_to_Pay_Date__c),NOT(ISNULL(Promise_To_Pay_Amount__c)),Promise_To_Pay_Amount__c &gt; 0)), true, false)</errorConditionFormula>
+        <errorMessage>Please ensure a promise to pay date has been entered and it is greater than today and the promise to pay amount is equal to the amount owed on the invoice. Note:The invoice outstanding balance must have a value greater than $0 in order to assign a promise</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Zuora__InvoicePDF</fullName>
+        <availability>online</availability>
+        <description>Click here view Zuora invoice PDF</description>
+        <displayType>link</displayType>
+        <hasMenubar>true</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>true</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Invoice PDF</masterLabel>
+        <openType>newWindow</openType>
+        <page>Zuora__viewInvoicePdf</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>true</showsLocation>
+        <showsStatus>true</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>Zuora__Invoice_PDF</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Invoice PDF</masterLabel>
+        <openType>sidebar</openType>
+        <page>Zuora__viewInvoicePdf</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Zuora__View_Invoice_PDF</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>View Invoice PDF</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/viewInvoicePdf?id={!Zuora__ZInvoice__c.Id}&amp;viewInline=true</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Zuora__View_Invoice_PDF_Link</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>View Invoice PDF</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/viewInvoicePdf?id={!Zuora__ZInvoice__c.Id}&amp;viewInline=true</url>
+    </webLinks>
+</CustomObject>
